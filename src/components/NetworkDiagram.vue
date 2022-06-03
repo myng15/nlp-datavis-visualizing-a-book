@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import * as d3 from "d3";
+import d3 from '@/assets/d3';
 
 export default {
   name: "NetworkDiagram"
@@ -80,6 +80,12 @@ d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/d
           return d.y - 6;
         });
   }
+  simulation
+      .nodes(data.nodes)
+      .on("tick", ticked);
+
+  simulation.force("link")
+      .links(data.links);
 
 });
 

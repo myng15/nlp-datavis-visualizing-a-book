@@ -1,0 +1,116 @@
+{
+  "nodes": [
+    {
+      "id": 1,
+      "name": "Anne Shirley"
+    },
+    {
+      "id": 2,
+      "name": "Marilla Cuthbert"
+    },
+    {
+      "id": 3,
+      "name": "Diana Barry"
+    },
+    {
+      "id": 4,
+      "name": "Rachel Lynde"
+    },
+    {
+      "id": 5,
+      "name": "Matthew Cuthbert"
+    }
+  ],
+  "links": [
+    {
+      "source": 1,
+      "target": 2,
+      "strokeWidth": 0.197
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "strokeWidth": 0.95
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "strokeWidth": 0.15
+    },
+    {
+      "source": 1,
+      "target": 5,
+      "strokeWidth": 0.65
+    },
+    {
+      "source": 2,
+      "target": 1,
+      "strokeWidth": 0.197
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "strokeWidth": 0.22
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "strokeWidth": 0.17
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "strokeWidth": 0.69
+    },
+    {
+      "source": 3,
+      "target": 1,
+      "strokeWidth": 0.95
+    },
+    {
+      "source": 3,
+      "target": 3,
+      "strokeWidth": 0.22
+    },
+    {
+      "source": 3,
+      "target": 5,
+      "strokeWidth": 0.06
+    },
+    {
+      "source": 4,
+      "target": 1,
+      "strokeWidth": 0.15
+    },
+    {
+      "source": 4,
+      "target": 2,
+      "strokeWidth": 0.17
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "strokeWidth": 0.09
+    },
+    {
+      "source": 5,
+      "target": 1,
+      "strokeWidth": 0.65
+    },
+    {
+      "source": 5,
+      "target": 2,
+      "strokeWidth": 0.69
+    },
+    {
+      "source": 5,
+      "target": 3,
+      "strokeWidth": 0.06
+    },
+    {
+      "source": 5,
+      "target": 4,
+      "strokeWidth": 0.09
+    }
+  ]
+}

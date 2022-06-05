@@ -1,38 +1,18 @@
 <template>
   <div id="app">
     <BarChart title="Bar Chart" xKey="name" yKey="amount" :data="barChartData"/>
+    <NetworkDiagram></NetworkDiagram>
   </div>
 </template>
 
 <script>
-import BarChart from "@/components/BarChart";
-
+import NetworkDiagram from "@/components/NetworkDiagram";
 export default {
-  name: "App",
+  name: 'App',
   components: {
-    BarChart
-  },
-  data: () => ({
-    barChartData: [
-      {
-        name: "Roses",
-        amount: 25
-      },
-      {
-        name: "Tulips",
-        amount: 40
-      },
-      {
-        name: "Daisies",
-        amount: 15
-      },
-      {
-        name: "Narcissuses",
-        amount: 9
-      }
-    ]
-  })
-};
+    NetworkDiagram
+  }
+}
 </script>
 
 <style>

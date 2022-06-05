@@ -1,10 +1,13 @@
-import { select, selectAll } from 'd3-selection';
+import { select, selectAll, selector} from 'd3-selection';
 
 import {
     scaleLinear,
     scaleTime,
     scaleOrdinal,
 } from 'd3-scale';
+
+import {words} from 'd3-cloud';
+
 
 import { axisTop } from 'd3-axis';
 
@@ -20,6 +23,7 @@ export default {
     forceLink,
     forceSimulation,
     forceManyBody,
-    forceCenter
-
+    forceCenter,
+    selector,
+    words
 };

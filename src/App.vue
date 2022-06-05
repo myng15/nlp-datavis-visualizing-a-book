@@ -1,17 +1,38 @@
 <template>
-  <h1> BookVisualizer </h1>
-  <NetworkDiagram/>
+  <div id="app">
+    <BarChart title="Bar Chart" xKey="name" yKey="amount" :data="barChartData"/>
+  </div>
 </template>
 
 <script>
-import NetworkDiagram from "@/components/NetworkDiagram";
+import BarChart from "@/components/BarChart";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    NetworkDiagram,
-  }
-}
+    BarChart
+  },
+  data: () => ({
+    barChartData: [
+      {
+        name: "Roses",
+        amount: 25
+      },
+      {
+        name: "Tulips",
+        amount: 40
+      },
+      {
+        name: "Daisies",
+        amount: 15
+      },
+      {
+        name: "Narcissuses",
+        amount: 9
+      }
+    ]
+  })
+};
 </script>
 
 <style>

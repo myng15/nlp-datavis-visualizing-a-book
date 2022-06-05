@@ -6,7 +6,7 @@
 <script>
 
 import * as d3 from "d3";
-import cooccurrences from "/Users/alina/IdeaProjects/vis/src/data/cooccurrences.json";
+import cooccurrences from "@/data/cooccurrences.json";
 
 export default {
   components: {},

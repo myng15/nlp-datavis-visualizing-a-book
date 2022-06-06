@@ -1,14 +1,29 @@
 <template>
   <div id="app">
-    <BarChart title="Bar Chart" xKey="name" yKey="amount" :data="barChartData"/>
-    <NetworkDiagram></NetworkDiagram>
+    <div id="header">
+      <div id="div1">
+      <img :src="book" />
+      </div>
+      <div id="div2">
+      <H1>BookVisualizer</H1>
+      </div>
+    </div>
+    <div id="main">
+      <NetworkDiagram></NetworkDiagram>
+    </div>
   </div>
 </template>
 
 <script>
 import NetworkDiagram from "@/components/NetworkDiagram";
+
 export default {
   name: 'App',
+  data() {
+    return {
+      book: require('./assets/book.svg')
+    }
+  },
   components: {
     NetworkDiagram
   }
@@ -23,5 +38,18 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+#header {
+}
+#div1 {
+  display: inline-block;
+  width:120px;
+  height:120px;
+}
+#div2 {
+  display: inline-block;
+  width:120px;
+  height:120px;
 }
 </style>

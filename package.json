@@ -24,6 +24,7 @@
     "vue-d3-charts": "^0.2.8",
     "vue-d3-cloud": "^0.2.0",
     "vue-d3-network": "^0.1.28",
+    "vue-material-design-icons": "^5.0.0",
     "vue-network-d3": "^0.1.2",
     "vue-plugin-load-script": "^2.1.1"
   },

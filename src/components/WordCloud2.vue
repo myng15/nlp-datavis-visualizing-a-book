@@ -12,7 +12,7 @@ import * as Vue from "vue-plugin-load-script";
 
 Vue.loadScript("d3.layout.cloud()");
 
-import d3 from '@/assets/d3';
+import * as d3 from "d3";
 
 export default {
   name: "WordCloud2"
@@ -48,13 +48,13 @@ function draw(words) {
       .selectAll("text")
       .data(words)
       .enter().append("text")
-      .style("font-size", function(d) { return d.size + "px"; })
+      .style("font-size", function(d) { return d[1] + "px"; })
       .style("font-family", "Impact")
       .attr("text-anchor", "middle")
       .attr("transform", function(d) {
         return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
       })
-      .text(function(d) { return d.text; });
+      .text(function(d) { return d[0]; });
 }
 
 </script>

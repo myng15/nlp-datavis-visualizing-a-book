@@ -6,7 +6,7 @@
 <script>
 
 import * as d3 from "d3";
-import cooccurrences from "@/data/cooccurrences.json";
+import cooccurrences from "@/data/cooccurrences_15characters.json";
 
 export default {
 
@@ -32,6 +32,7 @@ export default {
       const data = cooccurrences;
 
       console.log(data.links)
+      console.log(data.links.strokeWidth)
 
       /* eslint-disable */
       // Initialize the links
@@ -40,26 +41,52 @@ export default {
           .data(data.links)
           .join("line")
           .style("stroke", "#aaa")
+          .attr("stroke-width", function (data) {
+            return data.strokeWidth/10;
+          })
+
+      function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
 
       /* eslint-disable */
       const node = svg
           .selectAll("circle")
           .data(data.nodes)
           .join("circle")
-          .attr("r", 20)
-          .style("fill", "#69b3a2")
+          .attr("fill", function () {
+            return getRandomColor();
+          })
+          .attr("r", function (data) {
+            return data.size/50;
+          })
 
-      /* eslint-disable */
-      const label = svg
-          .selectAll("circle")
+
+
+      const text = node.append("text")
           .data(data.nodes)
-          .append("text")
-          .attr("fill","black")
           .text(function(data) {
             return data.name;
           })
-      /* eslint-enable */
+          .attr("fill","black");
 
+   /*   /!* eslint-disable *!/
+      const label = svg
+          .selectAll("g")
+          .data(data.nodes)
+          .text(function(data) {
+            return data.name;
+          })
+          .append("text")
+          .attr("fill","black")
+
+      /!* eslint-enable *!/
+*/
       /* eslint-disable */
       // Let's list the force we wanna apply on the network
       var simulation = d3.forceSimulation(data.nodes)                 // Force algorithm is applied to data.nodes

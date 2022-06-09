@@ -18,6 +18,7 @@
     "d3-selection": "^3.0.0",
     "d3-shape": "^3.1.0",
     "d3-transition": "^3.0.1",
+    "d3.layout.cloud": "^1.2.0",
     "sass": "^1.52.2",
     "sass-loader": "^13.0.0",
     "vue": "^3.2.13",
@@ -26,7 +27,8 @@
     "vue-d3-network": "^0.1.28",
     "vue-material-design-icons": "^5.0.0",
     "vue-network-d3": "^0.1.2",
-    "vue-plugin-load-script": "^2.1.1"
+    "vue-plugin-load-script": "^2.1.1",
+    "vue-wordcloud": "^1.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

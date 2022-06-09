@@ -13,6 +13,7 @@ export default {
   components: {},
   mounted() {
     this.init();
+    this.drawlabels();
   },
   methods: {
     init() {
@@ -66,15 +67,6 @@ export default {
             return data.size/50;
           })
 
-
-
-      const text = node.append("text")
-          .data(data.nodes)
-          .text(function(data) {
-            return data.name;
-          })
-          .attr("fill","black");
-
    /*   /!* eslint-disable *!/
       const label = svg
           .selectAll("g")
@@ -126,6 +118,30 @@ export default {
             });
         /* eslint-enable */
       }
+
+    },
+    drawlabels() {
+
+      const data = cooccurrences;
+
+      const svg = d3.select("#network");
+
+      var text = svg.selectAll("text")
+          .data(data.nodes)
+          .enter()
+          .append("text");
+
+
+      /* eslint-disable */
+      var textLabels = text
+          .attr("x", function(d) { return d.x; })
+          .attr("y", function(d) { return d.y; })
+          .text( function (d) { return d.name })
+          .attr("font-family", "sans-serif")
+          .attr("font-size", "10px")
+          .attr("fill", "red");
+
+      /* eslint-enable */
 
     }
   }

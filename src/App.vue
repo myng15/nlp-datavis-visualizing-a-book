@@ -1,23 +1,23 @@
 <template>
   <div id="app">
     <div id="header">
-      <div id="div1">
+      <div id="div1" >
       <img :src="book" />
       </div>
-      <div id="div2">
+      <div id="div2" >
       <H1>BookVisualizer</H1>
       </div>
-    </div>
+      </div>
     <div id="main">
       <NetworkDiagram></NetworkDiagram>
-      <WordCloud></WordCloud>
+      <WordCloud2></WordCloud2>
     </div>
   </div>
 </template>
 
 <script>
 import NetworkDiagram from "@/components/NetworkDiagram";
-import WordCloud from "@/components/WordCloud";
+import WordCloud2 from "@/components/WordCloud2";
 
 export default {
   name: 'App',
@@ -28,7 +28,7 @@ export default {
   },
   components: {
     NetworkDiagram,
-    WordCloud
+    WordCloud2
   }
 }
 </script>
@@ -40,17 +40,27 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 10px;
 }
 
-#header {
+#main{
+  display: grid;
+  row-gap: 10px;
+  row-gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+  grid-column: 3 / 3;
+  grid-row: 2;
 }
 #div1 {
+  padding: 10px;
   display: inline-block;
   width:120px;
   height:120px;
 }
 #div2 {
+  padding: 10px;
   display: inline-block;
   width:120px;
   height:120px;

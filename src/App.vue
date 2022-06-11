@@ -10,14 +10,14 @@
       </div>
     <div id="main">
       <NetworkDiagram></NetworkDiagram>
-      <WordCloud2></WordCloud2>
+      <WordCloud></WordCloud>
     </div>
   </div>
 </template>
 
 <script>
 import NetworkDiagram from "@/components/NetworkDiagram";
-import WordCloud2 from "@/components/WordCloud2";
+import WordCloud from "@/components/WordCloud";
 
 export default {
   name: 'App',
@@ -28,7 +28,7 @@ export default {
   },
   components: {
     NetworkDiagram,
-    WordCloud2
+    WordCloud
   }
 }
 </script>

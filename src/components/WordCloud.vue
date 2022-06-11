@@ -1,5 +1,6 @@
 <template>
   <div id="wordcloud">
+    <h3>Chapter 1</h3>
   </div>
 </template>
 
@@ -7,28 +8,31 @@
 
 import * as d3 from "d3";
 import data from "@/data/top_words_by_chapter.json";
+import cloud from "d3-cloud"
 
 export default {
-
-components: {},
+  components: {},
   mounted() {
-    const plugin = document.createElement("script");
-    plugin.setAttribute(
-        "src",
-        "https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"
-    );
-    plugin.async = true;
-    document.head.appendChild(plugin);
     this.init();
+  },
+  data() {
+    return {
+      selectchapter: [
+        {chapter: "1"},
+        {chapter: "2"},
+        {chapter: "3"},
+        {chapter: "4"},
+        {chapter: "5"}
+      ]
+    }
   },
   methods: {
     init() {
 
-      // List of words
       var myWords = data["1"];
 
 // set the dimensions and margins of the graph
-      var margin = {top: 10, right: 10, bottom: 10, left: 10},
+      var margin = {top: 2, right: 2, bottom: 2, left: 2},
           width = 450 - margin.left - margin.right,
           height = 450 - margin.top - margin.bottom;
 
@@ -42,20 +46,29 @@ components: {},
 
 // Constructs a new cloud layout instance. It run an algorithm to find the position of words that suits your requirements
 // Wordcloud features that are different from one word to the other must be here
-      var layout = d3.layout.cloud()
+      var layout = cloud()
           .size([width, height])
           .words(myWords.map(function (d) {
-            return {text: d.word, size: d.size};
+            return {text: d[0], size: d[1]};
           }))
-          .padding(5)        //space between words
+          .padding(4, 5)        //space between words
           .rotate(function () {
             return ~~(Math.random() * 2) * 90;
-          })
+          }) // font size of words
           .fontSize(function (d) {
-            return d.size;
-          })      // font size of words
+            return d.size * 7;
+          })
           .on("end", draw);
       layout.start();
+
+      function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
 
 // This function takes the output of 'layout' above and draw the words
 // Wordcloud features that are THE SAME from one word to the other can be here
@@ -69,7 +82,9 @@ components: {},
             .style("font-size", function (d) {
               return d.size;
             })
-            .style("fill", "#69b3a2")
+            .attr("fill", function () {
+              return getRandomColor();
+            })
             .attr("text-anchor", "middle")
             .style("font-family", "Impact")
             .attr("transform", function (d) {

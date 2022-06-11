@@ -13,14 +13,13 @@ export default {
   components: {},
   mounted() {
     this.init();
-    this.drawlabels();
   },
   methods: {
     init() {
 
-      const margin = {top: 10, right: 30, bottom: 30, left: 40},
-          width = 400 - margin.left - margin.right,
-          height = 400 - margin.top - margin.bottom;
+      const margin = {top: 2, right: 10, bottom: 10, left: 20},
+          width = 500 - margin.left - margin.right,
+          height = 500 - margin.top - margin.bottom;
 
       const svg = d3.select("#network")
           .append("svg")
@@ -43,7 +42,7 @@ export default {
           .join("line")
           .style("stroke", "#aaa")
           .attr("stroke-width", function (data) {
-            return data.strokeWidth/10;
+            return data.strokeWidth / 15;
           })
 
       function getRandomColor() {
@@ -64,22 +63,14 @@ export default {
             return getRandomColor();
           })
           .attr("r", function (data) {
-            return data.size/50;
+            return data.size / 50;
           })
-
-   /*   /!* eslint-disable *!/
-      const label = svg
-          .selectAll("g")
-          .data(data.nodes)
-          .text(function(data) {
-            return data.name;
+      node.append("text")
+          .text(function (d) {
+            return d.name;
           })
-          .append("text")
-          .attr("fill","black")
+          .style("font-size", 8)
 
-      /!* eslint-enable *!/
-*/
-      /* eslint-disable */
       // Let's list the force we wanna apply on the network
       var simulation = d3.forceSimulation(data.nodes)                 // Force algorithm is applied to data.nodes
           .force("link", d3.forceLink()                               // This force provides links between nodes
@@ -116,34 +107,11 @@ export default {
             .attr("cy", function (d) {
               return d.y - 6;
             });
-        /* eslint-enable */
       }
 
-    },
-    drawlabels() {
-
-      const data = cooccurrences;
-
-      const svg = d3.select("#network");
-
-      var text = svg.selectAll("text")
-          .data(data.nodes)
-          .enter()
-          .append("text");
-
-
-      /* eslint-disable */
-      var textLabels = text
-          .attr("x", function(d) { return d.x; })
-          .attr("y", function(d) { return d.y; })
-          .text( function (d) { return d.name })
-          .attr("font-family", "sans-serif")
-          .attr("font-size", "10px")
-          .attr("fill", "red");
-
-      /* eslint-enable */
-
     }
+
+    /* eslint-enable */
   }
 };
 </script>

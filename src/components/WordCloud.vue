@@ -1,6 +1,15 @@
 <template>
   <div id="wordcloud">
-    <h3>Chapter 1</h3>
+    <h3>Most frequent words</h3>
+    <div>Select a chapter: {{ selected }}
+      <select name="selected" @change="onChange($event)" v-model="key">
+        <option disabled value="">Please select a chapter</option>
+        <option value="1">Chapter 1</option>
+        <option value="2">Chapter 2</option>
+        <option value="3">Chapter 3</option>
+        <option value="4">Chapter 4</option>
+      </select>
+    </div>
   </div>
 </template>
 
@@ -13,28 +22,34 @@ import cloud from "d3-cloud"
 export default {
   components: {},
   mounted() {
-    this.init();
+    this.onChange();
   },
   data() {
-    return {
-      selectchapter: [
-        {chapter: "1"},
-        {chapter: "2"},
-        {chapter: "3"},
-        {chapter: "4"},
-        {chapter: "5"}
-      ]
+    return {key: ""};
+  },
+  /* eslint-disable */
+  watch: {
+    key: {
+      deep: true,
+      handler() {
+        d3.select("#wordcloud").select("svg").remove()
+        this.init();
+      }
+      /* eslint-enable */
     }
   },
   methods: {
+    onChange(event) {
+      console.log(event.target.value, this.key);
+    },
     init() {
-
-      var myWords = data["1"];
-
+      var myWords = data[this.key];
+      console.log(data[this.key]);
 // set the dimensions and margins of the graph
       var margin = {top: 2, right: 2, bottom: 2, left: 2},
           width = 450 - margin.left - margin.right,
           height = 450 - margin.top - margin.bottom;
+
 
 // append the svg object to the body of the page
       var svg = d3.select("#wordcloud").append("svg")

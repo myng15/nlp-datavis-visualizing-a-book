@@ -2,7 +2,7 @@
   <div id="wordcloud">
     <h3>Most frequent words</h3>
     <div>Select a chapter: {{ selected }}
-      <select name="selected" @change="onChange($event)" v-model="key">
+      <select style="font-family:'PT Sans', sans-serifSans" name="selected" @change="onChange($event)" v-model="key">
         <option disabled value="">Please select a chapter</option>
         <option value="1">Chapter 1</option>
         <option value="2">Chapter 2</option>

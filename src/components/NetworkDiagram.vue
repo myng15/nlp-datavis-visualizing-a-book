@@ -30,87 +30,96 @@ export default {
               `translate(${margin.left}, ${margin.top})`);
 
       const data = cooccurrences;
-
-      console.log(data.links)
-      console.log(data.links.strokeWidth)
-
+      console.log("Data", data)
+ 
       /* eslint-disable */
-      // Initialize the links
-      const link = svg
+
+      //Scales
+      let color = d3.scaleOrdinal(d3.schemeCategory10);
+      let nodeSize = d3.scaleLinear()
+          .domain([0, 1000]) // unit: occurences 
+          .range([5, 25]) // unit: pixels
+
+      let simulation = d3.forceSimulation()
+          .force("link", d3.forceLink().id(function(d) { return d.id; }))
+          .force("charge", d3.forceManyBody().strength(-400))
+          .force("center", d3.forceCenter(width / 2, height / 2));
+
+      let link = svg.append("g")
+          .attr("class", "links")
           .selectAll("line")
           .data(data.links)
-          .join("line")
-          .style("stroke", "#aaa")
-          .attr("stroke-width", function (data) {
-            return data.strokeWidth / 15;
-          })
+          .enter().append("line")
+          .attr("stroke-width", 2); //Define a scale for stroke width or stroke opacity!
 
-      function getRandomColor() {
-        var letters = '0123456789ABCDEF';
-        var color = '#';
-        for (var i = 0; i < 6; i++) {
-          color += letters[Math.floor(Math.random() * 16)];
-        }
-        return color;
-      }
-
-      /* eslint-disable */
-      const node = svg
-          .selectAll("circle")
+      let node = svg.append("g")
+          .attr("class", "nodes")
+          .selectAll("g")
           .data(data.nodes)
-          .join("circle")
-          .attr("fill", function () {
-            return getRandomColor();
-          })
-          .attr("r", function (data) {
-            return data.size / 50;
-          })
-      node.append("text")
-          .text(function (d) {
+          .enter().append("g");
+
+      let circles = node.append("circle")
+          .attr("r", d => nodeSize(d.size))
+          .attr("fill", function(d) { return color(d.id)});
+
+      
+      let lables = node.append("text")
+          .text(function(d) {
             return d.name;
           })
-          .style("font-size", 8)
+          .attr('x', 6)
+          .attr('y', 3);
 
-      // Let's list the force we wanna apply on the network
-      var simulation = d3.forceSimulation(data.nodes)                 // Force algorithm is applied to data.nodes
-          .force("link", d3.forceLink()                               // This force provides links between nodes
-              .id(function (d) {
-                return d.id;
-              })                     // This provide  the id of a node
-              .links(data.links)                                    // and this the list of links
-          )
-          .force("charge", d3.forceManyBody().strength(-400))         // This adds repulsion between nodes. Play with the -400 for the repulsion strength
-          .force("center", d3.forceCenter(width / 2, height / 2))     // This force attracts nodes to the center of the svg area
-          .on("end", ticked);
+      node.append("title")
+          .text(function(d) { return 'Whatever you want to show as tooltip!' });
 
+      
+      // Create a drag handler and append it to the node object instead
+      let drag_handler = d3.drag()
+          .on("start", dragstarted)
+          .on("drag", dragged)
+          .on("end", dragended);
+      
+      drag_handler(node);
 
-      // This function is run at each iteration of the force algorithm, updating the nodes position.
+      simulation
+          .nodes(data.nodes)
+          .on("tick", ticked);
+
+      simulation.force("link")
+          .links(data.links);
+
       function ticked() {
         link
-            .attr("x1", function (d) {
-              return d.source.x;
-            })
-            .attr("y1", function (d) {
-              return d.source.y;
-            })
-            .attr("x2", function (d) {
-              return d.target.x;
-            })
-            .attr("y2", function (d) {
-              return d.target.y;
-            });
+            .attr("x1", function(d) { return d.source.x; })
+            .attr("y1", function(d) { return d.source.y; })
+            .attr("x2", function(d) { return d.target.x; })
+            .attr("y2", function(d) { return d.target.y; });
 
         node
-            .attr("cx", function (d) {
-              return d.x + 6;
+            .attr("transform", function(d) {
+              return "translate(" + d.x + "," + d.y + ")";
             })
-            .attr("cy", function (d) {
-              return d.y - 6;
-            });
       }
 
+    function dragstarted(event, d) {
+      if (!event.active) simulation.alphaTarget(0.3).restart();
+      d.fx = d.x;
+      d.fy = d.y;
     }
 
+    function dragged(event, d) {
+      d.fx = event.x;
+      d.fy = event.y;
+    }
+
+    function dragended(event, d) {
+      if (!event.active) simulation.alphaTarget(0);
+      d.fx = null;
+      d.fy = null;
+    }
+
+    }
     /* eslint-enable */
   }
 };
@@ -146,5 +155,20 @@ ul.menu {
 ul.menu li {
   margin-top: 1em;
   position: relative;
+}
+
+.links line {
+  stroke: #999;
+  stroke-opacity: 0.6;
+}
+
+.nodes circle {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+text {
+  font-family: sans-serif;
+  font-size: 10px;
 }
 </style>

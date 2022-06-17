@@ -8,7 +8,7 @@
       <H1>BookVisualizer</H1>
       </div>
       </div>
-    <div id="main">
+    <div id="main1">
       <NetworkDiagram></NetworkDiagram>
       <WordCloud></WordCloud>
     </div>
@@ -23,7 +23,25 @@ export default {
   name: 'App',
   data() {
     return {
-      book: require('./assets/book.svg')
+      book: require('./assets/book.svg'),
+      barChartData: [
+          {
+            name: "Roses",
+            amount: 25
+          },
+          {
+            name: "Tulips",
+            amount: 40
+          },
+          {
+            name: "Daisies",
+            amount: 15
+          },
+          {
+            name: "Narcissuses",
+            amount: 9
+          }
+        ]
     }
   },
   components: {
@@ -43,16 +61,17 @@ export default {
   margin-top: 10px;
 }
 
-#main{
+#main1{
   display: grid;
   row-gap: 10px;
   row-gap: 10px;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
   grid-auto-rows: minmax(100px, auto);
-  grid-column: 3 / 3;
+  grid-column: 4 / 4;
   grid-row: 2;
 }
+
 #div1 {
   padding: 10px;
   display: inline-block;

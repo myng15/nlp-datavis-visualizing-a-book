@@ -8,7 +8,41 @@
         <option value="2">Chapter 2</option>
         <option value="3">Chapter 3</option>
         <option value="4">Chapter 4</option>
-      </select>
+        <option value="5">Chapter 5</option>
+        <option value="6">Chapter 6</option>
+        <option value="7">Chapter 7</option>
+        <option value="8">Chapter 8</option>
+        <option value="9">Chapter 9</option>
+        <option value="10">Chapter 10</option>
+        <option value="11">Chapter 11</option>
+        <option value="12">Chapter 12</option>
+        <option value="13">Chapter 13</option>
+        <option value="14">Chapter 14</option>
+        <option value="15">Chapter 15</option>
+        <option value="16">Chapter 16</option>
+        <option value="17">Chapter 17</option>
+        <option value="18">Chapter 18</option>
+        <option value="19">Chapter 19</option>
+        <option value="20">Chapter 20</option>
+        <option value="21">Chapter 21</option>
+        <option value="22">Chapter 22</option>
+        <option value="23">Chapter 23</option>
+        <option value="24">Chapter 24</option>
+        <option value="25">Chapter 25</option>
+        <option value="26">Chapter 26</option>
+        <option value="27">Chapter 27</option>
+        <option value="28">Chapter 28</option>
+        <option value="29">Chapter 29</option>
+        <option value="30">Chapter 30</option>
+        <option value="31">Chapter 31</option>
+        <option value="32">Chapter 32</option>
+        <option value="33">Chapter 33</option>
+        <option value="34">Chapter 34</option>
+        <option value="35">Chapter 35</option>
+        <option value="36">Chapter 36</option>
+        <option value="37">Chapter 37</option>
+        <option value="38">Chapter 38</option>
+         </select>
     </div>
   </div>
 </template>

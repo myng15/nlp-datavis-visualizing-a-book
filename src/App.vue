@@ -1,52 +1,39 @@
 <template>
   <div id="app">
     <div id="header">
-      <div id="div1" >
-      <img :src="book" />
+      <div id="div1">
+        <img :src="book"/>
       </div>
-      <div id="div2" >
-      <H1>BookVisualizer</H1>
+      <div id="div2">
+        <H1>BookVisualizer</H1>
       </div>
-      </div>
+    </div>
     <div id="main1">
       <NetworkDiagram></NetworkDiagram>
       <WordCloud></WordCloud>
+    </div>
+    <div>
+      <BarChart></BarChart>
     </div>
   </div>
 </template>
 
 <script>
 import NetworkDiagram from "@/components/NetworkDiagram";
-import WordCloud from "@/components/WordCloud";
+import BarChart from "@/components/BarChart";
+// import WordCloud from "@/components/WordCloud";
 
 export default {
   name: 'App',
   data() {
     return {
-      book: require('./assets/book.svg'),
-      barChartData: [
-          {
-            name: "Roses",
-            amount: 25
-          },
-          {
-            name: "Tulips",
-            amount: 40
-          },
-          {
-            name: "Daisies",
-            amount: 15
-          },
-          {
-            name: "Narcissuses",
-            amount: 9
-          }
-        ]
-    }
+      book: require('./assets/book.svg')
+  }
   },
   components: {
     NetworkDiagram,
-    WordCloud
+    // WordCloud,
+    BarChart
   }
 }
 </script>
@@ -61,7 +48,7 @@ export default {
   margin-top: 10px;
 }
 
-#main1{
+#main1 {
   display: grid;
   row-gap: 10px;
   row-gap: 10px;
@@ -75,13 +62,14 @@ export default {
 #div1 {
   padding: 10px;
   display: inline-block;
-  width:120px;
-  height:120px;
+  width: 120px;
+  height: 120px;
 }
+
 #div2 {
   padding: 10px;
   display: inline-block;
-  width:120px;
-  height:120px;
+  width: 120px;
+  height: 120px;
 }
 </style>

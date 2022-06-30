@@ -7,10 +7,14 @@
       <div id="div2" >
       <H1>BookVisualizer</H1>
       </div>
-      </div>
+    </div>
     <div id="main1">
       <NetworkDiagram></NetworkDiagram>
       <WordCloud></WordCloud>
+    </div>
+    <div id="main2">
+      <BubblePackChart></BubblePackChart>
+      <BarChart title="Bar Chart" xKey="name" yKey="amount" :data="barChartData"/>
     </div>
   </div>
 </template>
@@ -18,6 +22,8 @@
 <script>
 import NetworkDiagram from "@/components/NetworkDiagram";
 import WordCloud from "@/components/WordCloud";
+import BubblePackChart from '@/components/BubblePackChart'
+import BarChart from "@/components/BarChart";
 
 export default {
   name: 'App',
@@ -46,12 +52,21 @@ export default {
   },
   components: {
     NetworkDiagram,
-    WordCloud
+    WordCloud,
+    BubblePackChart,
+    BarChart
   }
 }
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+body {
+  font-family: 'PT Sans', sans-serif;
+  background-color: #eee;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -61,7 +76,7 @@ export default {
   margin-top: 10px;
 }
 
-#main1{
+#main1, #main2{
   display: grid;
   row-gap: 10px;
   row-gap: 10px;

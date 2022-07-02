@@ -15,16 +15,16 @@ import Rachel from "@/data/Rachel Lynde.json";
 export default {
   components: {},
   mounted() {
-    this.init(Anne);
-    this.init(Diana);
-    this.init(Marilla);
-    this.init(Mathew);
-    this.init(Rachel);
+    this.init(Anne, "Anne Shirley");
+    this.init(Diana, "Diana Barry");
+    this.init(Marilla, "Marilla Cuthbert");
+    this.init(Mathew, "Matthew Cuthbert");
+    this.init(Rachel, "Rachel Lynde");
   },
   methods: {
-    init(data) {
+    init(data, name) {
       // set the dimensions and margins of the graph
-      var margin = {top:0 , right: 0, bottom: 0, left: 0},
+      var margin = {top:0 , right: 0, bottom: 0, left: 100},
           width = 460 - margin.left - margin.right,
           height = 20 - margin.top - margin.bottom;
 
@@ -32,16 +32,16 @@ export default {
       var svg = d3.select("#barchart")
           .append("div")
           .append("svg")
-          .attr("style", "outline: solid #D3D3D3;")
+          .attr("style", "outline: solid #D3D3D3")
           .attr("width", width + margin.left + margin.right)
           .attr("height", height + margin.top + margin.bottom)
           .append("g")
           .attr("transform",
-              "translate(" + margin.left + "," + margin.top + ")");
+              "translate(" + margin.left + "," + margin.top + ")")
 
 // X axis
       var x = d3.scaleBand()
-          .range([0, width])
+          .range([20, width])
           .domain(data.map(function (d) {
             return d.Segment;
           }))
@@ -64,6 +64,15 @@ export default {
           .domain([0, maxValue])
           .range([height, 0]);
       svg.append("g")
+      svg.append("text")
+          .style("fill", "#696969")
+          .style("font-size", "12px")
+          .attr("class", "y label")
+          .attr("text-anchor", "end")
+          .attr("y", 2)
+          .attr("dy", "1em")
+         // .attr("transform", "rotate(-90)")
+          .text(name);
           /*.call(d3.axisLeft(y))
           .selectAll("text").remove();*/
 

@@ -24,23 +24,20 @@ export default {
   methods: {
     init(data) {
       // set the dimensions and margins of the graph
-      var margin = {top: 0, right: 0, bottom: 0, left: 0},
+      var margin = {top:0 , right: 0, bottom: 0, left: 0},
           width = 460 - margin.left - margin.right,
-          height = 400 - margin.top - margin.bottom;
+          height = 20 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
       var svg = d3.select("#barchart")
           .append("div")
           .append("svg")
+          .attr("style", "outline: solid #D3D3D3;")
           .attr("width", width + margin.left + margin.right)
           .attr("height", height + margin.top + margin.bottom)
           .append("g")
           .attr("transform",
               "translate(" + margin.left + "," + margin.top + ")");
-
-// Parse the Data
-
-      console.log(data)
 
 // X axis
       var x = d3.scaleBand()
@@ -57,9 +54,14 @@ export default {
           .style("text-anchor", "end")
           .selectAll("text").remove();*/
 
+//Getting max value to set length of y-axis
+      var maxValue = Math.max(...data.map(o => o.Value))
+      console.log(maxValue);
+
+
 // Add Y axis
       var y = d3.scaleLinear()
-          .domain([0, 30])
+          .domain([0, maxValue])
           .range([height, 0]);
       svg.append("g")
           /*.call(d3.axisLeft(y))
@@ -74,11 +76,11 @@ export default {
             return x(d.Segment);
           })
           .attr("y", function (d) {
-            return y(d.Value/4);
+            return y(d.Value);
           })
           .attr("width", x.bandwidth())
           .attr("height", function (d) {
-            return height - y(d.Value/4);
+            return height - y(d.Value);
           })
           .attr("fill", "#69b3a2")
 

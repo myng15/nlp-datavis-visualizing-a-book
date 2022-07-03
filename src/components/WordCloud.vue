@@ -166,7 +166,7 @@ body {
 }
 
 h1, a {
-  color: #1aad8d;
+  color: #18A999;
   text-decoration: none;
 }
 

@@ -6,23 +6,16 @@
 <script>
 
 import * as d3 from "d3";
-import cooccurrences from "@/data/network/cooccurrences_15characters.json";
+import cooccurrences from "@/data/network/cooccurrences_15characters_color.json";
 
 export default {
 
   components: {},
   mounted() {
-    this.calculateLineColor()
     this.init();
   },
   methods: {
 
-    calculateLineColor(){
-
-      const data = cooccurrences;
-      console.log(data.links.strokeWidth)
-
-    },
     init() {
 
       const margin = {top: 2, right: 10, bottom: 10, left: 20},
@@ -39,11 +32,14 @@ export default {
 
       const data = cooccurrences;
       console.log("Data", data)
+
+
+      console.log(data.links.index)
  
       /* eslint-disable */
 
       //Scales
-      let color = d3.scaleOrdinal(d3.schemeCategory10);
+      let colorNode = d3.scaleOrdinal(d3.schemeCategory10);
       let nodeSize = d3.scaleLinear()
           .domain([0, 1000]) // unit: occurences 
           .range([5, 25]) // unit: pixels
@@ -54,11 +50,14 @@ export default {
           .force("center", d3.forceCenter(width / 2, height / 2));
 
       let link = svg.append("g")
-          .attr("class", "links")
+          //.attr("class", "links")
           .selectAll("line")
           .data(data.links)
           .enter().append("line")
-          .attr("stroke-width", 2); //Define a scale for stroke width or stroke opacity!
+          .attr("stroke", function(d) {
+            return d.color;
+          })
+          .attr("stroke-width", 2);//Define a scale for stroke width or stroke opacity!
 
       let node = svg.append("g")
           .attr("class", "nodes")
@@ -68,7 +67,7 @@ export default {
 
       let circles = node.append("circle")
           .attr("r", d => nodeSize(d.size))
-          .attr("fill", function(d) { return color(d.id)});
+          .attr("fill", function(d) { return colorNode(d.id)});
 
       
       let lables = node.append("text")
@@ -81,7 +80,8 @@ export default {
       node.append("title")
           .text(function(d) { return 'Whatever you want to show as tooltip!' });
 
-      
+      node.on("click", click)
+
       // Create a drag handler and append it to the node object instead
       let drag_handler = d3.drag()
           .on("start", dragstarted)
@@ -97,6 +97,13 @@ export default {
       simulation.force("link")
           .links(data.links);
 
+        function click() {
+          d3.select(this).select("circle").transition()
+              .duration(750)
+              .attr("r",6)
+              .style("fill", "#ccc");
+
+        }
       function ticked() {
         link
             .attr("x1", function(d) { return d.source.x; })
@@ -136,9 +143,8 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
 
-body {
+#network {
   font-family: 'PT Sans', sans-serif;
-  background-color: #eee;
 }
 
 .title {
@@ -148,7 +154,7 @@ body {
 }
 
 h1, a {
-  color: #1aad8d;
+  color: #18A999;
   text-decoration: none;
 }
 
@@ -166,8 +172,7 @@ ul.menu li {
 }
 
 .links line {
-  stroke: #999;
-  stroke-opacity: 0.6;
+  stroke-opacity: 1;
 }
 
 .nodes circle {

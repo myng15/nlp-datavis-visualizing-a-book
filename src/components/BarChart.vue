@@ -52,7 +52,7 @@ export default {
       var svg = d3.select("#barchart")
           .append("div")
           .append("svg")
-          .attr("style", "outline: solid #D3D3D3")
+          .attr("style", "outline: solid #bdbdbd")
           .attr("width", width + margin.left + margin.right)
           .attr("height", height + margin.top + margin.bottom)
           .append("g")
@@ -111,7 +111,7 @@ export default {
           .attr("height", function (d) {
             return height - y(d.Value);
           })
-          .attr("fill", "#69b3a2")
+          .attr("fill", "#484349")
 
     }
 
@@ -134,7 +134,7 @@ body {
 }
 
 h1, a {
-  color: #1aad8d;
+  color: #18A999;
   text-decoration: none;
 }
 

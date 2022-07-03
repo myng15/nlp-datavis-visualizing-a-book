@@ -6,12 +6,13 @@
 <script>
 
 import * as d3 from "d3";
-import cooccurrences from "@/data/cooccurrences_15characters.json";
+import cooccurrences from "@/data/network/cooccurrences_15characters.json";
 
 export default {
 
   components: {},
   mounted() {
+    this.calculateLineColor()
     this.init();
   },
   methods: {
@@ -19,7 +20,7 @@ export default {
     calculateLineColor(){
 
       const data = cooccurrences;
-      console.log("Data", data)
+      console.log(data.links.strokeWidth)
 
     },
     init() {

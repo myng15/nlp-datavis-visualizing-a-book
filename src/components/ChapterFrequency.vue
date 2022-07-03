@@ -15,7 +15,7 @@
 
 
 import * as d3 from "d3";
-import data from "@/data/segmentInfo.json";
+import data from "@/data/barcharts/segmentInfo.json";
 
 export default {
   name: "ChapterFrequency",

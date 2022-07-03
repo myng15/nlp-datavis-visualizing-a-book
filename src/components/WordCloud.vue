@@ -50,7 +50,7 @@
 <script>
 
 import * as d3 from "d3";
-import data from "@/data/top_words_by_chapter.json";
+import data from "@/data/wordcloud/top_words_by_chapter.json";
 import cloud from "d3-cloud"
 
 export default {

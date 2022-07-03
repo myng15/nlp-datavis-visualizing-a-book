@@ -1,0 +1,1300 @@
+{
+    "topic 1": {
+        "chapters": [
+            35
+        ],
+        "terms": [
+            {
+                "key": "school",
+                "value": "0.01583424"
+            },
+            {
+                "key": "hair",
+                "value": "0.012434716"
+            },
+            {
+                "key": "picnic",
+                "value": "0.0108178025"
+            },
+            {
+                "key": "room",
+                "value": "0.009371025"
+            },
+            {
+                "key": "boy",
+                "value": "0.00920829"
+            },
+            {
+                "key": "gilbert",
+                "value": "0.008679399"
+            },
+            {
+                "key": "grow",
+                "value": "0.008383583"
+            },
+            {
+                "key": "imagine",
+                "value": "0.0079666395"
+            },
+            {
+                "key": "avonlea",
+                "value": "0.007725593"
+            },
+            {
+                "key": "dress",
+                "value": "0.0075078905"
+            },
+            {
+                "key": "brooch",
+                "value": "0.007296233"
+            },
+            {
+                "key": "child",
+                "value": "0.0067195343"
+            },
+            {
+                "key": "green_gable",
+                "value": "0.006719521"
+            },
+            {
+                "key": "miss_stacy",
+                "value": "0.0066324184"
+            },
+            {
+                "key": "big",
+                "value": "0.006541007"
+            },
+            {
+                "key": "field",
+                "value": "0.0062144264"
+            },
+            {
+                "key": "write",
+                "value": "0.0061179674"
+            },
+            {
+                "key": "matthew_cuthbert",
+                "value": "0.005889939"
+            },
+            {
+                "key": "prayer",
+                "value": "0.0058847447"
+            },
+            {
+                "key": "jane",
+                "value": "0.0058180145"
+            },
+            {
+                "key": "dye",
+                "value": "0.005682766"
+            },
+            {
+                "key": "heart",
+                "value": "0.00561972"
+            },
+            {
+                "key": "minister",
+                "value": "0.0056058406"
+            },
+            {
+                "key": "face",
+                "value": "0.005567238"
+            },
+            {
+                "key": "bed",
+                "value": "0.0053269365"
+            },
+            {
+                "key": "house",
+                "value": "0.0050603515"
+            },
+            {
+                "key": "live",
+                "value": "0.00506035"
+            },
+            {
+                "key": "orphan_asylum",
+                "value": "0.0050603477"
+            },
+            {
+                "key": "book",
+                "value": "0.005054416"
+            },
+            {
+                "key": "concert",
+                "value": "0.0050125676"
+            }
+        ]
+    },
+    "topic 2": {
+        "chapters": [
+            1
+        ],
+        "terms": [
+            {
+                "key": "gilbert",
+                "value": "0.007880632"
+            },
+            {
+                "key": "avonlea",
+                "value": "0.0075491318"
+            },
+            {
+                "key": "picnic",
+                "value": "0.0059130373"
+            },
+            {
+                "key": "child",
+                "value": "0.0057514794"
+            },
+            {
+                "key": "miss_stacy",
+                "value": "0.0056197275"
+            },
+            {
+                "key": "imagine",
+                "value": "0.005567246"
+            },
+            {
+                "key": "dress",
+                "value": "0.005120106"
+            },
+            {
+                "key": "write",
+                "value": "0.004698436"
+            },
+            {
+                "key": "concert",
+                "value": "0.00467997"
+            },
+            {
+                "key": "school",
+                "value": "0.0045574456"
+            },
+            {
+                "key": "face",
+                "value": "0.0042113233"
+            },
+            {
+                "key": "hair",
+                "value": "0.004184042"
+            },
+            {
+                "key": "afternoon",
+                "value": "0.003912737"
+            },
+            {
+                "key": "wear",
+                "value": "0.0039104195"
+            },
+            {
+                "key": "jane",
+                "value": "0.0038370974"
+            },
+            {
+                "key": "minister",
+                "value": "0.0037771491"
+            },
+            {
+                "key": "study",
+                "value": "0.0037771447"
+            },
+            {
+                "key": "love",
+                "value": "0.0037771442"
+            },
+            {
+                "key": "bed",
+                "value": "0.0037755955"
+            },
+            {
+                "key": "boy",
+                "value": "0.0036591934"
+            },
+            {
+                "key": "glad",
+                "value": "0.0033006805"
+            },
+            {
+                "key": "old",
+                "value": "0.0031981554"
+            },
+            {
+                "key": "live",
+                "value": "0.0031466438"
+            },
+            {
+                "key": "class",
+                "value": "0.0031380032"
+            },
+            {
+                "key": "man",
+                "value": "0.0029710864"
+            },
+            {
+                "key": "josie",
+                "value": "0.0029566241"
+            },
+            {
+                "key": "room",
+                "value": "0.0029512667"
+            },
+            {
+                "key": "woman",
+                "value": "0.0029321339"
+            },
+            {
+                "key": "recite",
+                "value": "0.002869451"
+            },
+            {
+                "key": "book",
+                "value": "0.002855857"
+            }
+        ]
+    },
+    "topic 3": {
+        "chapters": [
+            12,
+            19,
+            23,
+            25,
+            29,
+            34
+        ],
+        "terms": [
+            {
+                "key": "miss_stacy",
+                "value": "0.0054471986"
+            },
+            {
+                "key": "child",
+                "value": "0.004769131"
+            },
+            {
+                "key": "dress",
+                "value": "0.0038382418"
+            },
+            {
+                "key": "hair",
+                "value": "0.0036535154"
+            },
+            {
+                "key": "imagine",
+                "value": "0.0034321162"
+            },
+            {
+                "key": "love",
+                "value": "0.003432115"
+            },
+            {
+                "key": "afternoon",
+                "value": "0.0034011751"
+            },
+            {
+                "key": "boy",
+                "value": "0.00337461"
+            },
+            {
+                "key": "old",
+                "value": "0.0030957067"
+            },
+            {
+                "key": "glad",
+                "value": "0.002855856"
+            },
+            {
+                "key": "jane",
+                "value": "0.0028008448"
+            },
+            {
+                "key": "room",
+                "value": "0.0027630732"
+            },
+            {
+                "key": "woman",
+                "value": "0.002571585"
+            },
+            {
+                "key": "face",
+                "value": "0.002551348"
+            },
+            {
+                "key": "concert",
+                "value": "0.0024550438"
+            },
+            {
+                "key": "school",
+                "value": "0.0023565798"
+            },
+            {
+                "key": "nice",
+                "value": "0.002306787"
+            },
+            {
+                "key": "class",
+                "value": "0.002306786"
+            },
+            {
+                "key": "minister",
+                "value": "0.002306786"
+            },
+            {
+                "key": "bad",
+                "value": "0.0022589946"
+            },
+            {
+                "key": "drive",
+                "value": "0.0021092468"
+            },
+            {
+                "key": "lady",
+                "value": "0.0021092435"
+            },
+            {
+                "key": "study",
+                "value": "0.0020028246"
+            },
+            {
+                "key": "book",
+                "value": "0.002002824"
+            },
+            {
+                "key": "week",
+                "value": "0.0020028222"
+            },
+            {
+                "key": "avonlea",
+                "value": "0.00198009"
+            },
+            {
+                "key": "friend",
+                "value": "0.0019670397"
+            },
+            {
+                "key": "live",
+                "value": "0.001967039"
+            },
+            {
+                "key": "dream",
+                "value": "0.0019670385"
+            },
+            {
+                "key": "man",
+                "value": "0.001934567"
+            }
+        ]
+    },
+    "topic 4": {
+        "chapters": [
+            8,
+            14,
+            20,
+            33
+        ],
+        "terms": [
+            {
+                "key": "child",
+                "value": "0.0035541786"
+            },
+            {
+                "key": "imagine",
+                "value": "0.003145512"
+            },
+            {
+                "key": "love",
+                "value": "0.00294087"
+            },
+            {
+                "key": "boy",
+                "value": "0.002887216"
+            },
+            {
+                "key": "afternoon",
+                "value": "0.0028558623"
+            },
+            {
+                "key": "jane",
+                "value": "0.0027633063"
+            },
+            {
+                "key": "glad",
+                "value": "0.002455048"
+            },
+            {
+                "key": "class",
+                "value": "0.0020640115"
+            },
+            {
+                "key": "old",
+                "value": "0.0019402445"
+            },
+            {
+                "key": "hair",
+                "value": "0.0019402434"
+            },
+            {
+                "key": "avonlea",
+                "value": "0.001940243"
+            },
+            {
+                "key": "open",
+                "value": "0.0019175824"
+            },
+            {
+                "key": "school",
+                "value": "0.0018371859"
+            },
+            {
+                "key": "nice",
+                "value": "0.0018371834"
+            },
+            {
+                "key": "week",
+                "value": "0.0017630527"
+            },
+            {
+                "key": "gilbert",
+                "value": "0.0017011842"
+            },
+            {
+                "key": "minister",
+                "value": "0.0016943838"
+            },
+            {
+                "key": "imagination",
+                "value": "0.0016110386"
+            },
+            {
+                "key": "book",
+                "value": "0.0016110375"
+            },
+            {
+                "key": "friend",
+                "value": "0.0016110366"
+            },
+            {
+                "key": "smile",
+                "value": "0.0016110364"
+            },
+            {
+                "key": "woman",
+                "value": "0.0016110354"
+            },
+            {
+                "key": "church",
+                "value": "0.0016103524"
+            },
+            {
+                "key": "laugh",
+                "value": "0.0016103414"
+            },
+            {
+                "key": "mother",
+                "value": "0.0016103406"
+            },
+            {
+                "key": "recite",
+                "value": "0.001610057"
+            },
+            {
+                "key": "dark",
+                "value": "0.0015789319"
+            },
+            {
+                "key": "year",
+                "value": "0.0015077047"
+            },
+            {
+                "key": "turn",
+                "value": "0.0014611384"
+            },
+            {
+                "key": "work",
+                "value": "0.0014611373"
+            }
+        ]
+    },
+    "topic 5": {
+        "chapters": [
+            31
+        ],
+        "terms": [
+            {
+                "key": "child",
+                "value": "0.0031466484"
+            },
+            {
+                "key": "jane",
+                "value": "0.002537899"
+            },
+            {
+                "key": "class",
+                "value": "0.0019345615"
+            },
+            {
+                "key": "school",
+                "value": "0.0017634485"
+            },
+            {
+                "key": "afternoon",
+                "value": "0.0017634451"
+            },
+            {
+                "key": "minister",
+                "value": "0.0016110373"
+            },
+            {
+                "key": "imagine",
+                "value": "0.001422282"
+            },
+            {
+                "key": "laugh",
+                "value": "0.0014222802"
+            },
+            {
+                "key": "friend",
+                "value": "0.0014222797"
+            },
+            {
+                "key": "rachel",
+                "value": "0.001422279"
+            },
+            {
+                "key": "nice",
+                "value": "0.0014222787"
+            },
+            {
+                "key": "avonlea",
+                "value": "0.0013835246"
+            },
+            {
+                "key": "tea",
+                "value": "0.0013162427"
+            },
+            {
+                "key": "smile",
+                "value": "0.001221585"
+            },
+            {
+                "key": "brook",
+                "value": "0.0012215847"
+            },
+            {
+                "key": "hair",
+                "value": "0.0011879636"
+            },
+            {
+                "key": "wear",
+                "value": "0.0011814456"
+            },
+            {
+                "key": "work",
+                "value": "0.0011566958"
+            },
+            {
+                "key": "book",
+                "value": "0.001156694"
+            },
+            {
+                "key": "cold",
+                "value": "0.0011433737"
+            },
+            {
+                "key": "concert",
+                "value": "0.0010132389"
+            },
+            {
+                "key": "shed",
+                "value": "0.0009931959"
+            },
+            {
+                "key": "queen",
+                "value": "0.0009931913"
+            },
+            {
+                "key": "light",
+                "value": "0.0009820302"
+            },
+            {
+                "key": "learn",
+                "value": "0.0009820301"
+            },
+            {
+                "key": "dark",
+                "value": "0.0009802689"
+            },
+            {
+                "key": "boy",
+                "value": "0.00095251977"
+            },
+            {
+                "key": "road",
+                "value": "0.0009298636"
+            },
+            {
+                "key": "woman",
+                "value": "0.0008644662"
+            },
+            {
+                "key": "beautiful",
+                "value": "0.00086446566"
+            }
+        ]
+    },
+    "topic 6": {
+        "chapters": [
+            2,
+            4,
+            5,
+            6,
+            16,
+            26,
+            32,
+            36,
+            37,
+            38
+        ],
+        "terms": [
+            {
+                "key": "jane",
+                "value": "0.002282393"
+            },
+            {
+                "key": "friend",
+                "value": "0.0014176447"
+            },
+            {
+                "key": "avonlea",
+                "value": "0.0011879624"
+            },
+            {
+                "key": "wear",
+                "value": "0.0011566948"
+            },
+            {
+                "key": "nice",
+                "value": "0.0010718432"
+            },
+            {
+                "key": "work",
+                "value": "0.0010718406"
+            },
+            {
+                "key": "book",
+                "value": "0.0010718403"
+            },
+            {
+                "key": "imagine",
+                "value": "0.0009743477"
+            },
+            {
+                "key": "dark",
+                "value": "0.0008644653"
+            },
+            {
+                "key": "minister",
+                "value": "0.0007260333"
+            },
+            {
+                "key": "cold",
+                "value": "0.0007260317"
+            },
+            {
+                "key": "queen",
+                "value": "0.00072603155"
+            },
+            {
+                "key": "imagination",
+                "value": "0.0007114358"
+            },
+            {
+                "key": "romantic",
+                "value": "0.00061874883"
+            },
+            {
+                "key": "play",
+                "value": "0.0006187483"
+            },
+            {
+                "key": "sky",
+                "value": "0.0006187475"
+            },
+            {
+                "key": "brook",
+                "value": "0.0005855519"
+            },
+            {
+                "key": "enjoy",
+                "value": "0.00058555155"
+            },
+            {
+                "key": "light",
+                "value": "0.0005855513"
+            },
+            {
+                "key": "jane_andrew",
+                "value": "0.0005855511"
+            },
+            {
+                "key": "learn",
+                "value": "0.0005855511"
+            },
+            {
+                "key": "settle",
+                "value": "0.0005207499"
+            },
+            {
+                "key": "table",
+                "value": "0.00050694385"
+            },
+            {
+                "key": "black",
+                "value": "0.00050291244"
+            },
+            {
+                "key": "brown",
+                "value": "0.0005029123"
+            },
+            {
+                "key": "sound",
+                "value": "0.00050291227"
+            },
+            {
+                "key": "honor",
+                "value": "0.0005029119"
+            },
+            {
+                "key": "woman",
+                "value": "0.00048634724"
+            },
+            {
+                "key": "smile",
+                "value": "0.00047619396"
+            },
+            {
+                "key": "tea",
+                "value": "0.00047619376"
+            }
+        ]
+    },
+    "topic 7": {
+        "chapters": [
+            3,
+            7,
+            9,
+            10,
+            21,
+            28
+        ],
+        "terms": [
+            {
+                "key": "friend",
+                "value": "0.0007030325"
+            },
+            {
+                "key": "cold",
+                "value": "0.0005278659"
+            },
+            {
+                "key": "jane_andrew",
+                "value": "0.0005029119"
+            },
+            {
+                "key": "enjoy",
+                "value": "0.00050291175"
+            },
+            {
+                "key": "romantic",
+                "value": "0.00050137815"
+            },
+            {
+                "key": "minister",
+                "value": "0.00041398994"
+            },
+            {
+                "key": "doctor",
+                "value": "0.0003066124"
+            },
+            {
+                "key": "sky",
+                "value": "0.0003066123"
+            },
+            {
+                "key": "usual",
+                "value": "0.00021406404"
+            },
+            {
+                "key": "dish",
+                "value": "0.00013594981"
+            },
+            {
+                "key": "imagine",
+                "value": "9.5387666e-05"
+            },
+            {
+                "key": "learn",
+                "value": "9.5386524e-05"
+            },
+            {
+                "key": "nice",
+                "value": "9.5385716e-05"
+            },
+            {
+                "key": "dark",
+                "value": "9.538429e-05"
+            },
+            {
+                "key": "imagination",
+                "value": "9.5384145e-05"
+            },
+            {
+                "key": "play",
+                "value": "9.538367e-05"
+            },
+            {
+                "key": "brook",
+                "value": "9.5383584e-05"
+            },
+            {
+                "key": "woman",
+                "value": "9.5383555e-05"
+            },
+            {
+                "key": "teacher",
+                "value": "9.538321e-05"
+            },
+            {
+                "key": "tea",
+                "value": "9.538303e-05"
+            },
+            {
+                "key": "work",
+                "value": "9.5382755e-05"
+            },
+            {
+                "key": "sound",
+                "value": "9.538249e-05"
+            },
+            {
+                "key": "wicked",
+                "value": "9.538235e-05"
+            },
+            {
+                "key": "lane",
+                "value": "9.538208e-05"
+            },
+            {
+                "key": "careful",
+                "value": "9.538204e-05"
+            },
+            {
+                "key": "table",
+                "value": "9.538203e-05"
+            },
+            {
+                "key": "smile",
+                "value": "9.538191e-05"
+            },
+            {
+                "key": "decide",
+                "value": "9.538187e-05"
+            },
+            {
+                "key": "bough",
+                "value": "9.538182e-05"
+            },
+            {
+                "key": "black",
+                "value": "9.538181e-05"
+            }
+        ]
+    },
+    "topic 8": {
+        "chapters": [
+            11,
+            22,
+            27
+        ],
+        "terms": [
+            {
+                "key": "minister",
+                "value": "9.5385454e-05"
+            },
+            {
+                "key": "romantic",
+                "value": "9.538338e-05"
+            },
+            {
+                "key": "cold",
+                "value": "9.538257e-05"
+            },
+            {
+                "key": "doctor",
+                "value": "9.5382115e-05"
+            },
+            {
+                "key": "usual",
+                "value": "9.5380936e-05"
+            },
+            {
+                "key": "dish",
+                "value": "9.538043e-05"
+            },
+            {
+                "key": "imagine",
+                "value": "9.214054e-05"
+            },
+            {
+                "key": "brook",
+                "value": "9.2139824e-05"
+            },
+            {
+                "key": "tea",
+                "value": "9.213792e-05"
+            },
+            {
+                "key": "lane",
+                "value": "9.2137336e-05"
+            },
+            {
+                "key": "nice",
+                "value": "9.2136775e-05"
+            },
+            {
+                "key": "friend",
+                "value": "9.213656e-05"
+            },
+            {
+                "key": "dark",
+                "value": "9.2135546e-05"
+            },
+            {
+                "key": "table",
+                "value": "9.213552e-05"
+            },
+            {
+                "key": "return",
+                "value": "9.213456e-05"
+            },
+            {
+                "key": "case",
+                "value": "9.213365e-05"
+            },
+            {
+                "key": "sensation",
+                "value": "9.213338e-05"
+            },
+            {
+                "key": "imagination",
+                "value": "9.213326e-05"
+            },
+            {
+                "key": "smile",
+                "value": "9.2133e-05"
+            },
+            {
+                "key": "play",
+                "value": "9.21321e-05"
+            },
+            {
+                "key": "clean",
+                "value": "9.213186e-05"
+            },
+            {
+                "key": "brown",
+                "value": "9.213172e-05"
+            },
+            {
+                "key": "sound",
+                "value": "9.213163e-05"
+            },
+            {
+                "key": "teacher",
+                "value": "9.213162e-05"
+            },
+            {
+                "key": "stranger",
+                "value": "9.213153e-05"
+            },
+            {
+                "key": "sky",
+                "value": "9.213152e-05"
+            },
+            {
+                "key": "deny",
+                "value": "9.213147e-05"
+            },
+            {
+                "key": "light",
+                "value": "9.213138e-05"
+            },
+            {
+                "key": "bough",
+                "value": "9.2131166e-05"
+            },
+            {
+                "key": "spoil",
+                "value": "9.213101e-05"
+            }
+        ]
+    },
+    "topic 9": {
+        "chapters": [
+            15,
+            17,
+            18,
+            30
+        ],
+        "terms": [
+            {
+                "key": "romantic",
+                "value": "9.213303e-05"
+            },
+            {
+                "key": "cold",
+                "value": "9.213297e-05"
+            },
+            {
+                "key": "dish",
+                "value": "9.213203e-05"
+            },
+            {
+                "key": "usual",
+                "value": "9.2131035e-05"
+            },
+            {
+                "key": "friend",
+                "value": "8.297002e-05"
+            },
+            {
+                "key": "nice",
+                "value": "8.296738e-05"
+            },
+            {
+                "key": "imagine",
+                "value": "8.2965234e-05"
+            },
+            {
+                "key": "minister",
+                "value": "8.296442e-05"
+            },
+            {
+                "key": "teacher",
+                "value": "8.296332e-05"
+            },
+            {
+                "key": "imagination",
+                "value": "8.296329e-05"
+            },
+            {
+                "key": "smile",
+                "value": "8.296311e-05"
+            },
+            {
+                "key": "sky",
+                "value": "8.296308e-05"
+            },
+            {
+                "key": "sound",
+                "value": "8.296164e-05"
+            },
+            {
+                "key": "play",
+                "value": "8.2961e-05"
+            },
+            {
+                "key": "light",
+                "value": "8.2960854e-05"
+            },
+            {
+                "key": "fond",
+                "value": "8.296074e-05"
+            },
+            {
+                "key": "brown",
+                "value": "8.296069e-05"
+            },
+            {
+                "key": "black",
+                "value": "8.296063e-05"
+            },
+            {
+                "key": "sing",
+                "value": "8.296056e-05"
+            },
+            {
+                "key": "wicked",
+                "value": "8.296053e-05"
+            },
+            {
+                "key": "braid",
+                "value": "8.2960396e-05"
+            },
+            {
+                "key": "account",
+                "value": "8.2960345e-05"
+            },
+            {
+                "key": "poetry",
+                "value": "8.296024e-05"
+            },
+            {
+                "key": "bough",
+                "value": "8.296019e-05"
+            },
+            {
+                "key": "scope_imagination",
+                "value": "8.2960156e-05"
+            },
+            {
+                "key": "line",
+                "value": "8.295992e-05"
+            },
+            {
+                "key": "wave",
+                "value": "8.295991e-05"
+            },
+            {
+                "key": "hold_tongue",
+                "value": "8.2959705e-05"
+            },
+            {
+                "key": "school",
+                "value": "7.673348e-05"
+            },
+            {
+                "key": "hair",
+                "value": "7.6730714e-05"
+            }
+        ]
+    },
+    "topic 10": {
+        "chapters": [
+            13,
+            24
+        ],
+        "terms": [
+            {
+                "key": "cold",
+                "value": "8.2962324e-05"
+            },
+            {
+                "key": "romantic",
+                "value": "8.2961174e-05"
+            },
+            {
+                "key": "nice",
+                "value": "7.67303e-05"
+            },
+            {
+                "key": "sound",
+                "value": "7.672673e-05"
+            },
+            {
+                "key": "black",
+                "value": "7.672641e-05"
+            },
+            {
+                "key": "light",
+                "value": "7.6726246e-05"
+            },
+            {
+                "key": "wicked",
+                "value": "7.672568e-05"
+            },
+            {
+                "key": "poetry",
+                "value": "7.672435e-05"
+            },
+            {
+                "key": "wave",
+                "value": "7.672373e-05"
+            },
+            {
+                "key": "jane",
+                "value": "5.627692e-05"
+            },
+            {
+                "key": "friend",
+                "value": "5.6269895e-05"
+            },
+            {
+                "key": "sorry",
+                "value": "5.6269542e-05"
+            },
+            {
+                "key": "dark",
+                "value": "5.62694e-05"
+            },
+            {
+                "key": "smile",
+                "value": "5.6269302e-05"
+            },
+            {
+                "key": "dare",
+                "value": "5.626927e-05"
+            },
+            {
+                "key": "enjoy",
+                "value": "5.6268727e-05"
+            },
+            {
+                "key": "imagination",
+                "value": "5.6268404e-05"
+            },
+            {
+                "key": "shed",
+                "value": "5.6268353e-05"
+            },
+            {
+                "key": "forgive",
+                "value": "5.626827e-05"
+            },
+            {
+                "key": "return",
+                "value": "5.626812e-05"
+            },
+            {
+                "key": "taste",
+                "value": "5.6267876e-05"
+            },
+            {
+                "key": "gasp",
+                "value": "5.626781e-05"
+            },
+            {
+                "key": "case",
+                "value": "5.6267807e-05"
+            },
+            {
+                "key": "brook",
+                "value": "5.6267727e-05"
+            },
+            {
+                "key": "careful",
+                "value": "5.6267596e-05"
+            },
+            {
+                "key": "braid",
+                "value": "5.626756e-05"
+            },
+            {
+                "key": "apple",
+                "value": "5.626748e-05"
+            },
+            {
+                "key": "path",
+                "value": "5.6267407e-05"
+            },
+            {
+                "key": "door",
+                "value": "5.626738e-05"
+            },
+            {
+                "key": "freckle",
+                "value": "5.626731e-05"
+            }
+        ]
+    }
+}

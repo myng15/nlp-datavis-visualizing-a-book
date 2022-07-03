@@ -6,11 +6,21 @@
 <script>
 
 import * as d3 from "d3";
-import Anne from "@/data/Anne Shirley.json";
-import Diana from "@/data/Diana Barry.json";
-import Marilla from "@/data/Marilla Cuthbert.json";
-import Mathew from "@/data/Matthew Cuthbert.json";
-import Rachel from "@/data/Rachel Lynde.json";
+import Anne from "@/data/barcharts/Anne Shirley.json";
+import Diana from "@/data/barcharts/Diana Barry.json";
+import Marilla from "@/data/barcharts/Marilla Cuthbert.json";
+import Matthew from "@/data/barcharts/Matthew Cuthbert.json";
+import Rachel from "@/data/barcharts/Rachel Lynde.json";
+import Allan from "@/data/barcharts/Allan Anne.json";
+import Carmody from "@/data/barcharts/Carmody.json";
+import Gilbert from "@/data/barcharts/Gilbert Blythe.json";
+import Jane from "@/data/barcharts/Jane Andrews.json";
+import Josie from "@/data/barcharts/Josie Pye.json";
+import Phillips from "@/data/barcharts/Phillips.json";
+import Ruby from "@/data/barcharts/Ruby Gillis.json";
+import Spencer from "@/data/barcharts/Spencer.json";
+import Stacy from "@/data/barcharts/Stacy.json";
+import Thomas from "@/data/barcharts/Thomas Lynde.json";
 
 export default {
   components: {},
@@ -18,8 +28,18 @@ export default {
     this.init(Anne, "Anne Shirley");
     this.init(Diana, "Diana Barry");
     this.init(Marilla, "Marilla Cuthbert");
-    this.init(Mathew, "Matthew Cuthbert");
+    this.init(Matthew, "Matthew Cuthbert");
     this.init(Rachel, "Rachel Lynde");
+    this.init(Allan, "Allan Anne");
+    this.init(Carmody, "Carmody");
+    this.init(Gilbert, "Gilbert Blythe");
+    this.init(Jane, "Jane Andrews");
+    this.init(Josie, "Josie Pye");
+    this.init(Phillips, "Phillips");
+    this.init(Ruby, "Ruby Gillis");
+    this.init(Spencer, "Spencer");
+    this.init(Stacy, "Stacy");
+    this.init(Thomas, "Thomas Lynde");
   },
   methods: {
     init(data, name) {

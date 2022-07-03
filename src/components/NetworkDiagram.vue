@@ -15,6 +15,13 @@ export default {
     this.init();
   },
   methods: {
+
+    calculateLineColor(){
+
+      const data = cooccurrences;
+      console.log("Data", data)
+
+    },
     init() {
 
       const margin = {top: 2, right: 10, bottom: 10, left: 20},

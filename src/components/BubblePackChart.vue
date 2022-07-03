@@ -9,9 +9,10 @@
 </template>
 
 <script>
+/* eslint-disable */
 import * as d3 from "d3";
 import topics from "@/data/bubblechart/top_terms_per_topic.json";
-// eslint-disable-next-line no-unused-vars
+
 import dataset from "@/data/bubblechart/topic_bubbles_data.json";
 
 import BubbleChart from '@/components/BubbleChart.vue'
@@ -33,6 +34,8 @@ export default {
     //this.colorScale = d3.scaleOrdinal(d3.schemeSet3)
   }
 }
+
+/* eslint-enable */
 </script>
 
 <style>

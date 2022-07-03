@@ -6,7 +6,7 @@
 <script>
 
 import * as d3 from "d3";
-import cooccurrences from "@/data/network/cooccurrences_15characters_color.json";
+import cooccurrences from "@/data/network/cooccurrences_15characters_darkcolor.json";
 
 export default {
 
@@ -172,7 +172,7 @@ ul.menu li {
 }
 
 .links line {
-  stroke-opacity: 1;
+  stroke-opacity: 0.5;
 }
 
 .nodes circle {

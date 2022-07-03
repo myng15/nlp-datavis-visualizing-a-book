@@ -6,21 +6,21 @@
 <script>
 
 import * as d3 from "d3";
-import Anne from "@/data/barcharts/Anne Shirley.json";
-import Diana from "@/data/barcharts/Diana Barry.json";
-import Marilla from "@/data/barcharts/Marilla Cuthbert.json";
-import Matthew from "@/data/barcharts/Matthew Cuthbert.json";
-import Rachel from "@/data/barcharts/Rachel Lynde.json";
-import Allan from "@/data/barcharts/Allan Anne.json";
-import Carmody from "@/data/barcharts/Carmody.json";
-import Gilbert from "@/data/barcharts/Gilbert Blythe.json";
-import Jane from "@/data/barcharts/Jane Andrews.json";
-import Josie from "@/data/barcharts/Josie Pye.json";
-import Phillips from "@/data/barcharts/Phillips.json";
-import Ruby from "@/data/barcharts/Ruby Gillis.json";
-import Spencer from "@/data/barcharts/Spencer.json";
-import Stacy from "@/data/barcharts/Stacy.json";
-import Thomas from "@/data/barcharts/Thomas Lynde.json";
+import Anne from "@/data/barchart_sentiment/Anne Shirley.json";
+import Diana from "@/data/barchart_sentiment/Diana Barry.json";
+import Marilla from "@/data/barchart_sentiment/Marilla Cuthbert.json";
+import Matthew from "@/data/barchart_sentiment/Matthew Cuthbert.json";
+import Rachel from "@/data/barchart_sentiment/Rachel Lynde.json";
+import Allan from "@/data/barchart_sentiment/Allan Anne.json";
+import Carmody from "@/data/barchart_sentiment/Carmody.json";
+import Gilbert from "@/data/barchart_sentiment/Gilbert Blythe.json";
+import Jane from "@/data/barchart_sentiment/Jane Andrews.json";
+import Josie from "@/data/barchart_sentiment/Josie Pye.json";
+import Phillips from "@/data/barchart_sentiment/Phillips.json";
+import Ruby from "@/data/barchart_sentiment/Ruby Gillis.json";
+import Spencer from "@/data/barchart_sentiment/Spencer.json";
+import Stacy from "@/data/barchart_sentiment/Stacy.json";
+import Thomas from "@/data/barchart_sentiment/Thomas Lynde.json";
 
 export default {
   components: {},
@@ -111,7 +111,9 @@ export default {
           .attr("height", function (d) {
             return height - y(d.Value);
           })
-          .attr("fill", "#484349")
+          .attr("fill", function(d) {
+            return d.Color;
+          })
 
     }
 

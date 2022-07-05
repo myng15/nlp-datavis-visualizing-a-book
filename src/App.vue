@@ -8,7 +8,7 @@
       </div>
       <div id = "main1">
         <div> general info following soon </div>
-        <BubblePackChart></BubblePackChart>
+        <BubbleChart></BubbleChart>
         <BarChart></BarChart>
       </div>
     </div>
@@ -23,7 +23,7 @@
 import NetworkDiagram from "@/components/NetworkDiagram";
 import BarChart from "@/components/BarChart";
 import WordCloud from "@/components/WordCloud";
-import BubblePackChart from "@/components/BubblePackChart";
+import BubbleChart from "@/components/BubbleChart";
 
 export default {
   name: 'App',
@@ -36,7 +36,7 @@ export default {
     NetworkDiagram,
     WordCloud,
     BarChart,
-    BubblePackChart
+    BubbleChart
   }
 }
 </script>

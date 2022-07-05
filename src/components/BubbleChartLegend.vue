@@ -1,7 +1,5 @@
 <template>
   <div id="bubble-chart-legends">
-    <h2>Legend</h2>
-    Click to filter topics
     <ul id="bubble-legends">
       <li 
         v-for="(input, index) in legend_class" 

@@ -4,7 +4,7 @@
 
 <script>
 import * as d3 from "d3";
-import data from "@/data/top_terms_per_topic.json";
+import data from "@/data/bubblechart/top_terms_per_topic.json";
 // eslint-disable-next-line no-unused-vars
 const dataset = {...data['topic 1'].terms}
 export default {

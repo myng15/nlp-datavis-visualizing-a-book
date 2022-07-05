@@ -23,7 +23,7 @@
 <script>
 // import * as d3 from "d3";
 
-import data from "@/data/topic_bubbles_data.json";
+import data from "@/data/bubblechart/topic_bubbles_data.json";
 // const chartData = Object.values(data)
 
 import BubbleChartMain from '@/components/BubbleChartMain.vue'

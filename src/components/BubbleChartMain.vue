@@ -7,6 +7,9 @@
 <script>
 
 import * as d3 from "d3";
+import termsData from "@/data/bubblechart/top_terms_per_topic.json";
+const terms = Object.values(termsData)
+
 // import data from "@/data/topic_bubbles_data.json";
 // const chartData = Object.values(data) //can be used interchangeably with data_chart from props
 
@@ -123,8 +126,10 @@ export default {
 
     const tooltip = d3.select('#bubble-chart').append("div")
                       .attr("id", "bubble-tooltip");
-
+    
     const handleMouseOver = (e, d) => { //e: MouseEvent, d: chart data
+      const topTermsArray = terms[this.data_chart.indexOf(d)].terms.slice(0, 10);
+      const topTerms = topTermsArray.map(i => i.key).join(", ")
       d3.select("#bubble-tooltip")
               .style("left", e.pageX + "px")
               .style("top", e.pageY + "px")
@@ -132,7 +137,8 @@ export default {
               .style("background", "white")
               .style("box-shadow", "3px 3px 10px rgba(0, 0, 0, 0.4)")
               .style("border-radius", "5px")
-              .text("Words in book that belong to this topic: " + d.count);
+              .html("Frequency (words): " + d.count 
+                    + "<br>Top words: " + topTerms + ",...");
     }
 
     bubbles.on("mouseover", handleMouseOver)
@@ -158,5 +164,6 @@ export default {
     pointer-events: none;
     font-size: 16px;
     line-height: 20px;
+    text-align: left;
   }
 </style>

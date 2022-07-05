@@ -11,8 +11,6 @@ import Diana from "@/data/barchart_sentiment/Diana Barry.json";
 import Marilla from "@/data/barchart_sentiment/Marilla Cuthbert.json";
 import Matthew from "@/data/barchart_sentiment/Matthew Cuthbert.json";
 import Rachel from "@/data/barchart_sentiment/Rachel Lynde.json";
-import Allan from "@/data/barchart_sentiment/Allan Anne.json";
-import Carmody from "@/data/barchart_sentiment/Carmody.json";
 import Gilbert from "@/data/barchart_sentiment/Gilbert Blythe.json";
 import Jane from "@/data/barchart_sentiment/Jane Andrews.json";
 import Josie from "@/data/barchart_sentiment/Josie Pye.json";
@@ -21,6 +19,8 @@ import Ruby from "@/data/barchart_sentiment/Ruby Gillis.json";
 import Spencer from "@/data/barchart_sentiment/Spencer.json";
 import Stacy from "@/data/barchart_sentiment/Stacy.json";
 import Thomas from "@/data/barchart_sentiment/Thomas Lynde.json";
+import Cordelia from "@/data/barchart_sentiment/Cordelia Fitzgerald.json";
+import Hammond from "@/data/barchart_sentiment/Hammond.json";
 
 export default {
   components: {},
@@ -30,8 +30,6 @@ export default {
     this.init(Marilla, "Marilla Cuthbert");
     this.init(Matthew, "Matthew Cuthbert");
     this.init(Rachel, "Rachel Lynde");
-    this.init(Allan, "Allan Anne");
-    this.init(Carmody, "Carmody");
     this.init(Gilbert, "Gilbert Blythe");
     this.init(Jane, "Jane Andrews");
     this.init(Josie, "Josie Pye");
@@ -40,6 +38,8 @@ export default {
     this.init(Spencer, "Spencer");
     this.init(Stacy, "Stacy");
     this.init(Thomas, "Thomas Lynde");
+    this.init(Cordelia, "Cordelia Fitzgerald");
+    this.init(Hammond, "Hammond");
   },
   methods: {
     init(data, name) {

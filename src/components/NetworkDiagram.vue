@@ -6,7 +6,7 @@
 <script>
 
 import * as d3 from "d3";
-import cooccurrences from "@/data/network/cooccurrences_15characters_darkcolor.json";
+import cooccurrences from "@/data/network/corrected_cooccurrences.json";
 
 export default {
 

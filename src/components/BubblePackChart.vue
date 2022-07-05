@@ -1,46 +1,80 @@
 <template>
+
     <div id="bubble-pack">
-      <BubbleChart
-      :data="data"
-      :data_chart="data_chart"
-      :colorScale="colorScale"
-      ></BubbleChart>   
+      <div id="main-chart">
+        <h3>Topic distribution</h3>
+        <BubbleChart
+        :data="data"
+        :data_chart="data_chart"
+        :key="chartReloadKey"
+        />
+      </div>
+      <BubbleChartLegend 
+        :data="data"
+        :data_chart="data_chart"
+        :legend_class="legend_class"
+        @inputChange="filterInput"
+        @inputChangeBack="filterInputBack"
+      />
+    
     </div>
 </template>
 
 <script>
-import * as d3 from "d3";
-// eslint-disable-next-line no-unused-vars
-import dataset from "@/data/topic_bubbles_data.json";
+// import * as d3 from "d3";
+
+import data from "@/data/topic_bubbles_data.json";
+// const chartData = Object.values(data)
 
 import BubbleChart from '@/components/BubbleChart.vue'
+import BubbleChartLegend from '@/components/BubbleChartLegend.vue'
 
 export default {
   components: {
-    BubbleChart
+    BubbleChart,
+    BubbleChartLegend
   },
   data() {
     return {
       data: [],
       data_chart: [],
       legend_class: [],
-      colorScale: null,
+      chartReloadKey: 0,
+      // colorScale: null,
     }
   },
-  created: function() {
+  created: async function() {
     var that = this 
-
-    d3.json("'/src/data/top_terms_per_topic.json'",
-      function(data) {  
-        that.data.push(data)
-      }
-    );
+    that.data = Object.values(data)
+    // await d3.json("/src/data/topic_bubbles_data.json",
+    //   function(data) {  
+    //     that.data.push(data)
+    //   }
+    // );
     this.data_chart = this.data
-    this.colorScale = d3.scaleOrdinal(d3.schemeSet3)
+    // this.data_chart = chartData
+    // this.colorScale = d3.scaleOrdinal(d3.schemeSet3)
+  },
+  methods: {
+    filterInput (input) {
+      // console.log(input)
+      // console.log(`Topic ${this.data_chart.indexOf(this.data_chart[0])+1}` == input)
+      this.data_chart = this.data_chart.filter(function(d){return `Topic ${this.data_chart.indexOf(d)+1}` != input;})
+      this.chartReloadKey += 1
+    },
+    filterInputBack (input) {
+      // console.log(input)
+      // console.log(`Topic ${this.data_chart.indexOf(this.data_chart[0])+1}` == input)
+      this.data_chart = this.data_chart.concat(this.data.filter(function(d){return `Topic ${this.data.indexOf(d)+1}` == input;}))
+      this.chartReloadKey += 1
+    },
   }
 }
 </script>
 
 <style>
-
+  #bubble-pack {
+    display: flex;
+    flex-direction: row;
+  }
 </style>

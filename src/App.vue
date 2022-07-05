@@ -8,6 +8,7 @@
       </div>
       <div id = "main1">
         <div> general info following soon </div>
+        <BubblePackChart></BubblePackChart>
         <BarChart></BarChart>
       </div>
     </div>
@@ -15,12 +16,14 @@
       <NetworkDiagram></NetworkDiagram>
       <WordCloud></WordCloud>
     </div>
+    
 </template>
 
 <script>
 import NetworkDiagram from "@/components/NetworkDiagram";
 import BarChart from "@/components/BarChart";
 import WordCloud from "@/components/WordCloud";
+import BubblePackChart from "@/components/BubblePackChart";
 
 export default {
   name: 'App',
@@ -32,7 +35,8 @@ export default {
   components: {
     NetworkDiagram,
     WordCloud,
-    BarChart
+    BarChart,
+    BubblePackChart
   }
 }
 </script>

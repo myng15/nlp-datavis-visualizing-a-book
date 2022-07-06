@@ -2,11 +2,11 @@
 
     <div id="bubble-pack">
       <div id="main-chart">
-        <h3>Topic distribution</h3>
+        <h3>Intertopic Distance Map</h3>
         <BubbleChartMain
-        :data="data"
-        :data_chart="data_chart"
-        :key="chartReloadKey"
+          :data="data"
+          :data_chart="data_chart"
+          :key="chartReloadKey"
         />
       </div>
       <BubbleChartLegend 
@@ -23,7 +23,7 @@
 <script>
 // import * as d3 from "d3";
 
-import data from "@/data/bubblechart/topic_bubbles_data.json";
+import data from "@/data/bubblechart/topic_bubbles_data_7.json";
 // const chartData = Object.values(data)
 
 import BubbleChartMain from '@/components/BubbleChartMain.vue'

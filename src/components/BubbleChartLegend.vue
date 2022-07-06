@@ -8,7 +8,7 @@
         <div class="legendElementWrapper"
           @click="sendFilterInput(input, index)"
         >
-          <svg width="20" height="20">
+          <svg width="15" height="15">
             <!-- <rect :style="cssRectFill(input)" width="20" height="20"/> -->
             <rect width="20" height="20"/>
           </svg>
@@ -40,7 +40,17 @@ export default {
     }
   },
   created: function() {
-    this.legend_class = this.data_chart.map(a => `Topic ${this.data_chart.indexOf(a)+1}`)
+    const topicNames = {
+      1: "Friends & love", 
+      2:"School activities", 
+      3: "Fashion & shows", 
+      4: "Anne's emotional world", 
+      5: "Life at Green Gables", 
+      6: "Incidents with the Barrys", 
+      7: "Blunders, misunderstandings & apologies"
+    }
+    this.legend_class = this.data_chart.map(a => topicNames[this.data_chart.indexOf(a)+1])
+
     // this.legend_class = chartData.map(a => `Topic ${chartData.indexOf(a)+1}`)
     // this.legend_class = this.data.map(a => `Topic ${this.data.indexOf(a)+1}`)
     this.clickInput = new Array(this.legend_class.length).fill(false)
@@ -57,7 +67,7 @@ export default {
       .attr("height", (this.height))
 
     const rScale = d3.scaleLinear()
-        .range([10,20])
+        .range([15,25])
         .domain(this.key_dom(this.key_r))
 
     const valuesToShow = [500, 1000, 1500, 2000]
@@ -120,6 +130,8 @@ ul li {
 }
 .legendElementWrapper {
   cursor: pointer;
+  font-size: 14px;
+  max-width: 120px;
 }
 rect {
   fill: var(--fill);

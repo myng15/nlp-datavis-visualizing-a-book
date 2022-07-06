@@ -1,5 +1,6 @@
 <template>
   <div id="network">
+    <h3>Character Network</h3>
   </div>
 </template>
 
@@ -19,7 +20,7 @@ export default {
     init() {
 
       const margin = {top: 2, right: 10, bottom: 10, left: 20},
-          width = 500 - margin.left - margin.right,
+          width = 800 - margin.left - margin.right,
           height = 500 - margin.top - margin.bottom;
 
       const svg = d3.select("#network")
@@ -44,20 +45,22 @@ export default {
           .domain([0, 1000]) // unit: occurences 
           .range([5, 25]) // unit: pixels
 
+
+
       let simulation = d3.forceSimulation()
-          .force("link", d3.forceLink().id(function(d) { return d.id; }))
-          .force("charge", d3.forceManyBody().strength(-400))
-          .force("center", d3.forceCenter(width / 2, height / 2));
+          .force("link", d3.forceLink().id(function(d) { return d.id; }).distance(100).strength(1))
+          .force("charge", d3.forceManyBody().strength(-1000))
+          .force("center", d3.forceCenter(width/2 , height/2))
+
 
       let link = svg.append("g")
-          //.attr("class", "links")
           .selectAll("line")
           .data(data.links)
           .enter().append("line")
           .attr("stroke", function(d) {
             return d.color;
           })
-          .attr("stroke-width", 2);//Define a scale for stroke width or stroke opacity!
+          .attr("stroke-width", 1);//Define a scale for stroke width or stroke opacity!
 
       let node = svg.append("g")
           .attr("class", "nodes")
@@ -75,12 +78,14 @@ export default {
             return d.name;
           })
           .attr('x', 6)
-          .attr('y', 3);
+          .attr('y', 3)
+          .attr("fill", function(d) { return colorNode(d.id)})
+          .attr("fontSize",20)
 
       node.append("title")
           .text(function(d) { return 'Whatever you want to show as tooltip!' });
 
-      node.on("click", click)
+      //node.on("click", click(function(d) { return d.text}))
 
       // Create a drag handler and append it to the node object instead
       let drag_handler = d3.drag()
@@ -97,11 +102,8 @@ export default {
       simulation.force("link")
           .links(data.links);
 
-        function click() {
-          d3.select(this).select("circle").transition()
-              .duration(750)
-              .attr("r",6)
-              .style("fill", "#ccc");
+        function click(name) {
+         console.log(name)
 
         }
       function ticked() {

@@ -1,6 +1,6 @@
 <template>
   <div id="wordcloud">
-    <h3>Most frequent words</h3>
+    <h3>Most frequent words per chapter</h3>
     <div>Select a chapter: {{ selected }}
       <select style="font-family:'PT Sans', sans-serifSans" name="selected" @change="onChange($event)" v-model="key">
         <option disabled value="">Please select a chapter</option>

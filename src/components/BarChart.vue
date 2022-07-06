@@ -1,5 +1,6 @@
 <template>
   <div id="barchart">
+    <h3>Character Occurrences & Sentiment</h3>
   </div>
 </template>
 
@@ -65,14 +66,8 @@ export default {
           .domain(data.map(function (d) {
             return d.Segment;
           }))
-          .padding(0.1);
+          .padding(0.2);
       svg.append("g")
-        /*  .attr("transform", "translate(0," + height + ")")
-          .call(d3.axisBottom(x))
-          .selectAll("text")
-          .attr("transform", "translate(-10,0)rotate(-45)")
-          .style("text-anchor", "end")
-          .selectAll("text").remove();*/
 
 //Getting max value to set length of y-axis
       var maxValue = Math.max(...data.map(o => o.Value))
@@ -91,10 +86,8 @@ export default {
           .attr("text-anchor", "end")
           .attr("y", 2)
           .attr("dy", "1em")
-         // .attr("transform", "rotate(-90)")
+          .attr("dx", "0.5em")
           .text(name);
-          /*.call(d3.axisLeft(y))
-          .selectAll("text").remove();*/
 
 // Bars
       svg.selectAll("mybar")

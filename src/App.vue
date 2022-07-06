@@ -9,23 +9,23 @@
       </div>
     </div>
     <div id = "main1">
-      <div> general info following soon </div>
+      <div> general info following soon</div>
       <BarChart></BarChart>
     </div>
-  </div>
   <div id="main2">
-    <BubbleChart></BubbleChart>
+    <NetworkDiagram></NetworkDiagram>
   </div>
   <div id="main3">
-    <NetworkDiagram></NetworkDiagram>
-    <WordCloud></WordCloud>
+    <BubbleChart></BubbleChart>
+    <WordCloudChapter></WordCloudChapter>
+  </div>
   </div>
 </template>
 
 <script>
 import NetworkDiagram from "@/components/NetworkDiagram";
 import BarChart from "@/components/BarChart";
-import WordCloud from "@/components/WordCloud";
+import WordCloudChapter from "@/components/WordCloudChapter";
 import BubbleChart from "@/components/BubbleChart";
 
 export default {
@@ -36,10 +36,9 @@ export default {
     }
   },
   components: {
-    NetworkDiagram,
-    WordCloud,
+    WordCloudChapter,
     BarChart,
-    BubbleChart
+    BubbleChart, NetworkDiagram
   }
 }
 </script>

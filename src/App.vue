@@ -8,14 +8,14 @@
         <H1>BookVisualizer - Anne of Green Gables </H1>
       </div>
     </div>
-      <div id = "main1">
-        <div> general info following soon </div>
-        <BarChart></BarChart>
-      </div>
+    <div id = "main1">
+      <div> general info following soon </div>
+      <BarChart></BarChart>
     </div>
-    <div id="main2">
-      <BubblePackChart></BubblePackChart>
-    </div>
+  </div>
+  <div id="main2">
+    <BubbleChart></BubbleChart>
+  </div>
   <div id="main3">
     <NetworkDiagram></NetworkDiagram>
     <WordCloud></WordCloud>
@@ -26,20 +26,20 @@
 import NetworkDiagram from "@/components/NetworkDiagram";
 import BarChart from "@/components/BarChart";
 import WordCloud from "@/components/WordCloud";
-import BubblePackChart from "@/components/BubblePackChart";
+import BubbleChart from "@/components/BubbleChart";
 
 export default {
   name: 'App',
   data() {
     return {
       anne: require('./assets/anne.svg')
-  }
+    }
   },
   components: {
     NetworkDiagram,
     WordCloud,
-    BubblePackChart,
-    BarChart
+    BarChart,
+    BubbleChart
   }
 }
 </script>

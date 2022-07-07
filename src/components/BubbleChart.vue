@@ -58,7 +58,7 @@ export default {
     // this.colorScale = d3.scaleOrdinal(d3.schemeSet3)
   },
   watch: {
-    key: {
+    chapterKey: {
       deep: true,
       handler() {
         console.log(this.chapterKey)

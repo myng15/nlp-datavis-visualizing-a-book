@@ -100,9 +100,11 @@ export default {
     sendFilterInput(input, index) {
       if ( this.clickInput[index] == false ) {
         this.clickInput[index] = true
+        console.log(input)
         this.$emit('inputChange', input)
       } else if ( this.clickInput[index] == true ) {
         this.clickInput[index] = false
+        console.log(input)
         this.$emit('inputChangeBack', input)
       }
     },

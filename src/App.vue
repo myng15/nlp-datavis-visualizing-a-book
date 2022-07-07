@@ -36,7 +36,7 @@
         <CirclePack></CirclePack>
       </div>
     </div>
-    <WordCloudChapter></WordCloudChapter>
+    <WordCloudChapter v-on:changeChapter="chapterChange($event)"></WordCloudChapter>
   </div>
   </div>
 </template>

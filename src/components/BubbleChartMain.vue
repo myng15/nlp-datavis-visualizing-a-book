@@ -1,14 +1,19 @@
 <template>
  <div id="bubble-chart">
-  
+  <svg id="bubble-chart-svg">
+    <g id="chartWrapper">
+      <g class="grid-x"></g>
+      <g class="grid-y"></g>
+      <g id="bubbles"></g>
+    </g>
+  </svg>
  </div>
 </template>
 
 <script>
 
 import * as d3 from "d3";
-import termsData from "@/data/bubblechart/top_terms_per_topic.json";
-const terms = Object.values(termsData)
+// import termsData from "@/data/bubblechart/top_terms_arr_per_topic_7.json";
 
 // import data from "@/data/topic_bubbles_data.json";
 // const chartData = Object.values(data) //can be used interchangeably with data_chart from props
@@ -22,14 +27,14 @@ export default {
   data: function() {
     return {
       settings: {
-        margin: { // just test values
+        margin: { 
           top: 20, 
-          right: 20, 
+          right: 40, 
           bottom: 30, 
-          left: 35
+          left: 40
         },
-      width: 500,
-      height: 333,
+      width: 400,
+      height: 267,
       opacityCircles: 0.8,
       // colorScale: d3.scaleOrdinal(d3.schemeSet2).domain(chartData)
       },
@@ -42,15 +47,14 @@ export default {
   },
   mounted() {
     this.init(); 
-    // console.log({...data_chart['topic 1']})
-    // console.log(...chartData.map(function(d) {return chartData.indexOf(d)+1}));
-    // console.log(...chartData.map(function(d) {return chartData.indexOf(d)+1}));
-    // console.log(d3.extent(chartData, function(d) { return parseFloat(d.count) ; }));
   },
   methods: {
     init() {
-    this.svgContainer = d3.select("#bubble-chart")
-      .append("svg")
+      
+    this.svgContainer = d3
+      // .select("#bubble-chart")
+      // .append("svg")
+      .select("#bubble-chart-svg")
       .attr("width", (this.settings.width + this.settings.margin.left + this.settings.margin.right))
       .attr("height", (this.settings.height + this.settings.margin.top + this.settings.margin.bottom))
 
@@ -64,31 +68,37 @@ export default {
     const yScale = d3.scaleLinear()
           .range([this.settings.height, 0])
           .domain(this.key_dom(this.key_y))
-        this.svgContainer.append("g")
-          .attr("transform", "translate(" + this.settings.margin.left + "," + this.settings.margin.top + ")")
-          .call(d3.axisLeft(yScale));
+    this.svgContainer.append("g")
+      .attr("transform", "translate(" + this.settings.margin.left + "," + this.settings.margin.top + ")")
+      .call(d3.axisLeft(yScale));
 
     this.chartWrapper = this.svgContainer
-          .append("g")
-          .attr("class", "chartWrapper")
+          // .append("g")
+          // .attr("class", "chartWrapper")
+          .select("#chartWrapper")
           .attr("transform", "translate(" + this.settings.margin.left + "," + this.settings.margin.top + ")");
 
     this.chartWrapper
-      .append("g")
-        .attr("class", "grid")
+      // .append("g")
+      //   .attr("class", "grid")
+        .select(".grid-x")
         .attr("transform", "translate(0," + this.settings.height + ")")
         .call(d3.axisBottom(xScale)
             .ticks(5)
             .tickSize(-this.settings.height)
             .tickFormat("")
         )
-    this.chartWrapper.append("g")
-        .attr("class", "grid")
+    this.chartWrapper
+        // .append("g")
+        // .attr("class", "grid")
+        .select(".grid-y")
         .call(d3.axisLeft(yScale)
             .ticks(5)
             .tickSize(-this.settings.width)
             .tickFormat("")
         )
+    
+    //Add axis labels   
     // this.chartWrapper.append("text")
     //       .attr("x", (this.settings.width / 2))
     //       .attr("y", this.settings.height + this.settings.margin.top)
@@ -105,31 +115,34 @@ export default {
     //       .text("y");
 
     const rScale = d3.scaleLinear()
-			.range([10,20])
+			.range([15, 25])
       .domain(this.key_dom(this.key_r))
 
     const colorScale = d3.scaleOrdinal(d3.schemeTableau10).domain(this.data_chart)
-  
-    // var that = this
-    const bubbles = this.chartWrapper.append('g')
+
+    this.bubbles = 
+      this.chartWrapper
+      // .append('g')
+      .select("#bubbles")
       .selectAll("dot")
       .data(this.data_chart)
       .enter()
       .append("circle")
-        .attr("class", function() { return "bubble" ; })
+        .attr("class", "bubble")
         .style("opacity", this.settings.opacityCircles)
         .style("fill", function(d) {return colorScale(d);})
         .style("stroke", "gray")
         .attr("cx", function(d) {return xScale(d.x);})
         .attr("cy", function(d) {return yScale(d.y);})
-        .attr("r", function(d) {return rScale(d.count)});
-
+        .attr("r", function(d) {return rScale(d.count)})
+       
+    // Add bubble tooltips
     const tooltip = d3.select('#bubble-chart').append("div")
                       .attr("id", "bubble-tooltip");
     
     const handleMouseOver = (e, d) => { //e: MouseEvent, d: chart data
-      const topTermsArray = terms[this.data_chart.indexOf(d)].terms.slice(0, 10);
-      const topTerms = topTermsArray.map(i => i.key).join(", ")
+      // const topTermsArray = termsData[this.data_chart.indexOf(d)].terms.slice(0, 10);
+      // const topTerms = topTermsArray.map(i => i.name).join(", ")
       d3.select("#bubble-tooltip")
               .style("left", e.pageX + "px")
               .style("top", e.pageY + "px")
@@ -137,11 +150,12 @@ export default {
               .style("background", "white")
               .style("box-shadow", "3px 3px 10px rgba(0, 0, 0, 0.4)")
               .style("border-radius", "5px")
-              .html("Frequency (words): " + d.count 
-                    + "<br>Top words: " + topTerms + ",...");
+              .html("Frequency (terms): " + d.count 
+                    // + "<br>Top words: " + topTerms + ",..."
+                    );
     }
 
-    bubbles.on("mouseover", handleMouseOver)
+    this.bubbles.on("mouseover", handleMouseOver)
            .on("mouseout", () => {
               tooltip.style("display", "none");
     });
@@ -162,8 +176,8 @@ export default {
     height: auto;
     padding: 5px;
     pointer-events: none;
-    font-size: 16px;
     line-height: 20px;
     text-align: left;
   }
+  
 </style>

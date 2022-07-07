@@ -1,20 +1,20 @@
 <template>
   <div id="bubble-chart-legends">
     <ul id="bubble-legends">
-      <li 
-        v-for="(input, index) in legend_class" 
-        :key="`input-${index}`"
+      <li
+          v-for="(input, index) in legend_class"
+          :key="`input-${index}`"
       >
-        <div class="legendElementWrapper"
-          @click="sendFilterInput(input, index)"
+        <div id="legendElementWrapper"
+             @click="sendFilterInput(input, index)"
         >
-          <svg width="20" height="20">
+          <svg id="rectLegend" width="20" height="20">
             <!-- <rect :style="cssRectFill(input)" width="20" height="20"/> -->
-            <rect width="20" height="20"/>
+            <rect id="rectLegend2" width="20" height="20"/>
           </svg>
-          {{ input }} 
+          {{ input }}
         </div>
-        
+
       </li>
     </ul>
   </div>
@@ -22,15 +22,13 @@
 
 <script>
 import * as d3 from "d3";
-// import data from "@/data/topic_bubbles_data.json";
-// const chartData = Object.values(data)
 
 export default {
   props: {
     data: Array,
     data_chart: Array
-    },
-  data: function() {
+  },
+  data: function () {
     return {
       legend_class: [],
       clickInput: [],
@@ -40,7 +38,17 @@ export default {
     }
   },
   created: function() {
-    this.legend_class = this.data_chart.map(a => `Topic ${this.data_chart.indexOf(a)+1}`)
+    const topicNames = {
+      1: "Friends & love", 
+      2:"School activities", 
+      3: "Fashion & shows", 
+      4: "Anne's emotional world", 
+      5: "Life at Green Gables", 
+      6: "Incidents with the Barrys", 
+      7: "Blunders, misunderstandings & apologies"
+    }
+    this.legend_class = this.data_chart.map(a => topicNames[this.data_chart.indexOf(a)+1])
+
     // this.legend_class = chartData.map(a => `Topic ${chartData.indexOf(a)+1}`)
     // this.legend_class = this.data.map(a => `Topic ${this.data.indexOf(a)+1}`)
     this.clickInput = new Array(this.legend_class.length).fill(false)
@@ -48,7 +56,7 @@ export default {
   mounted: function() {
     // Add topic legends
     const colorScale = d3.scaleOrdinal(d3.schemeTableau10).domain(this.data_chart);
-    d3.selectAll(".legendElementWrapper").select("svg").select("rect").data(this.data_chart).style("fill", function(d) {return colorScale(d);})
+    d3.selectAll("#legendElementWrapper").select("svg").select("rect").data(this.data_chart).style("fill", function(d) {return colorScale(d);})
 
     // Add word count legends
     this.svg = d3.select("#bubble-chart-legends")
@@ -57,7 +65,7 @@ export default {
       .attr("height", (this.height))
 
     const rScale = d3.scaleLinear()
-        .range([10,20])
+        .range([15,25])
         .domain(this.key_dom(this.key_r))
 
     const valuesToShow = [500, 1000, 1500, 2000]
@@ -118,10 +126,12 @@ ul {
 ul li {
   list-style: none;
 }
-.legendElementWrapper {
+#legendElementWrapper {
   cursor: pointer;
+  /* font-size: 14px;
+  max-width: 120px; */
 }
 rect {
-  fill: var(--fill);
+  /* fill: var(--fill); */
 }
 </style>

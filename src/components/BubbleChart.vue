@@ -2,11 +2,10 @@
 
     <div id="bubble-pack">
       <div id="main-chart">
-        <h3>Topic distribution</h3>
         <BubbleChartMain
-        :data="data"
-        :data_chart="data_chart"
-        :key="chartReloadKey"
+          :data="data"
+          :data_chart="data_chart"
+          :key="chartReloadKey"
         />
       </div>
       <BubbleChartLegend 
@@ -23,13 +22,16 @@
 <script>
 // import * as d3 from "d3";
 
-import data from "@/data/bubblechart/topic_bubbles_data.json";
+import data from "@/data/bubblechart/topic_bubbles_data_7.json";
 // const chartData = Object.values(data)
 
 import BubbleChartMain from '@/components/BubbleChartMain.vue'
 import BubbleChartLegend from '@/components/BubbleChartLegend.vue'
 
 export default {
+  props: {
+    chapterKey: Number
+  },
   components: {
     BubbleChartMain,
     BubbleChartLegend
@@ -43,7 +45,7 @@ export default {
       // colorScale: null,
     }
   },
-  created: async function() {
+  created: function() {
     var that = this 
     that.data = Object.values(data)
     // await d3.json("/src/data/topic_bubbles_data.json",
@@ -54,6 +56,14 @@ export default {
     this.data_chart = this.data
     // this.data_chart = chartData
     // this.colorScale = d3.scaleOrdinal(d3.schemeSet3)
+  },
+  watch: {
+    chapterKey: {
+      deep: true,
+      handler() {
+        console.log(this.chapterKey)
+      }
+    }
   },
   methods: {
     filterInput (input) {

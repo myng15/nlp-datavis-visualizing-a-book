@@ -1,0 +1,1209 @@
+[
+    {
+        "topic": 1,
+        "chapters": [
+            15,
+            17,
+            30,
+            35
+        ],
+        "terms": [
+            {
+                "name": "school",
+                "value": 0.019
+            },
+            {
+                "name": "gilbert",
+                "value": 0.011
+            },
+            {
+                "name": "miss_stacy",
+                "value": 0.006
+            },
+            {
+                "name": "gilbert_blythe",
+                "value": 0.005
+            },
+            {
+                "name": "love",
+                "value": 0.005
+            },
+            {
+                "name": "book",
+                "value": 0.005
+            },
+            {
+                "name": "class",
+                "value": 0.005
+            },
+            {
+                "name": "read",
+                "value": 0.005
+            },
+            {
+                "name": "avonlea",
+                "value": 0.005
+            },
+            {
+                "name": "home",
+                "value": 0.004
+            },
+            {
+                "name": "friend",
+                "value": 0.004
+            },
+            {
+                "name": "study",
+                "value": 0.004
+            },
+            {
+                "name": "write",
+                "value": 0.004
+            },
+            {
+                "name": "jane",
+                "value": 0.004
+            },
+            {
+                "name": "boy",
+                "value": 0.004
+            },
+            {
+                "name": "teacher",
+                "value": 0.004
+            },
+            {
+                "name": "head",
+                "value": 0.003
+            },
+            {
+                "name": "year",
+                "value": 0.003
+            },
+            {
+                "name": "afternoon",
+                "value": 0.003
+            },
+            {
+                "name": "queen",
+                "value": 0.003
+            },
+            {
+                "name": "desk",
+                "value": 0.003
+            },
+            {
+                "name": "wood",
+                "value": 0.003
+            },
+            {
+                "name": "scholar",
+                "value": 0.003
+            },
+            {
+                "name": "world",
+                "value": 0.002
+            },
+            {
+                "name": "old",
+                "value": 0.002
+            },
+            {
+                "name": "hair",
+                "value": 0.002
+            },
+            {
+                "name": "ruby_gilli",
+                "value": 0.002
+            },
+            {
+                "name": "master",
+                "value": 0.002
+            },
+            {
+                "name": "queen_class",
+                "value": 0.002
+            },
+            {
+                "name": "birch_path",
+                "value": 0.002
+            },
+            {
+                "name": "slate",
+                "value": 0.002
+            },
+            {
+                "name": "prissy",
+                "value": 0.002
+            },
+            {
+                "name": "seat",
+                "value": 0.002
+            },
+            {
+                "name": "bell",
+                "value": 0.002
+            },
+            {
+                "name": "sloane",
+                "value": 0.002
+            },
+            {
+                "name": "understand",
+                "value": 0.002
+            },
+            {
+                "name": "fun",
+                "value": 0.002
+            },
+            {
+                "name": "nice",
+                "value": 0.002
+            },
+            {
+                "name": "summer",
+                "value": 0.002
+            },
+            {
+                "name": "happen",
+                "value": 0.002
+            }
+        ]
+    },
+    {
+        "topic": 2,
+        "chapters": [
+            18,
+            24
+        ],
+        "terms": [
+            {
+                "name": "field",
+                "value": 0.005
+            },
+            {
+                "name": "word",
+                "value": 0.004
+            },
+            {
+                "name": "away",
+                "value": 0.004
+            },
+            {
+                "name": "miss_stacy",
+                "value": 0.004
+            },
+            {
+                "name": "concert",
+                "value": 0.003
+            },
+            {
+                "name": "bad",
+                "value": 0.003
+            },
+            {
+                "name": "premier",
+                "value": 0.003
+            },
+            {
+                "name": "croup",
+                "value": 0.003
+            },
+            {
+                "name": "doctor",
+                "value": 0.003
+            },
+            {
+                "name": "guess",
+                "value": 0.003
+            },
+            {
+                "name": "need",
+                "value": 0.003
+            },
+            {
+                "name": "school",
+                "value": 0.003
+            },
+            {
+                "name": "study",
+                "value": 0.003
+            },
+            {
+                "name": "book",
+                "value": 0.003
+            },
+            {
+                "name": "ipecac",
+                "value": 0.003
+            },
+            {
+                "name": "afternoon",
+                "value": 0.003
+            },
+            {
+                "name": "cold",
+                "value": 0.003
+            },
+            {
+                "name": "plate",
+                "value": 0.003
+            },
+            {
+                "name": "nod",
+                "value": 0.003
+            },
+            {
+                "name": "sleep",
+                "value": 0.002
+            },
+            {
+                "name": "express",
+                "value": 0.002
+            },
+            {
+                "name": "teacher",
+                "value": 0.002
+            },
+            {
+                "name": "town",
+                "value": 0.002
+            },
+            {
+                "name": "lesson",
+                "value": 0.002
+            },
+            {
+                "name": "recitation",
+                "value": 0.002
+            },
+            {
+                "name": "sorry",
+                "value": 0.002
+            },
+            {
+                "name": "young_mary",
+                "value": 0.002
+            },
+            {
+                "name": "russet",
+                "value": 0.002
+            },
+            {
+                "name": "conservative",
+                "value": 0.002
+            },
+            {
+                "name": "remarkable",
+                "value": 0.002
+            },
+            {
+                "name": "explain",
+                "value": 0.002
+            },
+            {
+                "name": "all_right",
+                "value": 0.002
+            },
+            {
+                "name": "groan",
+                "value": 0.002
+            },
+            {
+                "name": "politic",
+                "value": 0.002
+            },
+            {
+                "name": "now_dunno",
+                "value": 0.002
+            },
+            {
+                "name": "account",
+                "value": 0.002
+            },
+            {
+                "name": "forward",
+                "value": 0.002
+            },
+            {
+                "name": "dialogue",
+                "value": 0.002
+            },
+            {
+                "name": "vain",
+                "value": 0.002
+            },
+            {
+                "name": "kitchen",
+                "value": 0.002
+            }
+        ]
+    },
+    {
+        "topic": 3,
+        "chapters": [
+            11,
+            12,
+            19,
+            22,
+            23,
+            25,
+            29,
+            32,
+            34,
+            36
+        ],
+        "terms": [
+            {
+                "name": "dress",
+                "value": 0.007
+            },
+            {
+                "name": "jane",
+                "value": 0.004
+            },
+            {
+                "name": "evening",
+                "value": 0.004
+            },
+            {
+                "name": "josie",
+                "value": 0.004
+            },
+            {
+                "name": "old",
+                "value": 0.003
+            },
+            {
+                "name": "dare",
+                "value": 0.003
+            },
+            {
+                "name": "concert",
+                "value": 0.003
+            },
+            {
+                "name": "room",
+                "value": 0.003
+            },
+            {
+                "name": "whisper",
+                "value": 0.003
+            },
+            {
+                "name": "town",
+                "value": 0.003
+            },
+            {
+                "name": "diana",
+                "value": 0.003
+            },
+            {
+                "name": "child",
+                "value": 0.002
+            },
+            {
+                "name": "sleeve",
+                "value": 0.002
+            },
+            {
+                "name": "glad",
+                "value": 0.002
+            },
+            {
+                "name": "school",
+                "value": 0.002
+            },
+            {
+                "name": "nice",
+                "value": 0.002
+            },
+            {
+                "name": "class",
+                "value": 0.002
+            },
+            {
+                "name": "win",
+                "value": 0.002
+            },
+            {
+                "name": "stay",
+                "value": 0.002
+            },
+            {
+                "name": "week",
+                "value": 0.002
+            },
+            {
+                "name": "bed",
+                "value": 0.002
+            },
+            {
+                "name": "pass",
+                "value": 0.002
+            },
+            {
+                "name": "tear",
+                "value": 0.002
+            },
+            {
+                "name": "breakfast",
+                "value": 0.002
+            },
+            {
+                "name": "miss",
+                "value": 0.002
+            },
+            {
+                "name": "boy",
+                "value": 0.002
+            },
+            {
+                "name": "work",
+                "value": 0.002
+            },
+            {
+                "name": "garden",
+                "value": 0.002
+            },
+            {
+                "name": "fall",
+                "value": 0.002
+            },
+            {
+                "name": "wish",
+                "value": 0.002
+            },
+            {
+                "name": "church",
+                "value": 0.002
+            },
+            {
+                "name": "puff_sleeve",
+                "value": 0.002
+            },
+            {
+                "name": "high",
+                "value": 0.002
+            },
+            {
+                "name": "flower",
+                "value": 0.002
+            },
+            {
+                "name": "end",
+                "value": 0.002
+            },
+            {
+                "name": "recite",
+                "value": 0.002
+            },
+            {
+                "name": "miss_stacy",
+                "value": 0.002
+            },
+            {
+                "name": "cold",
+                "value": 0.002
+            },
+            {
+                "name": "tomorrow",
+                "value": 0.002
+            },
+            {
+                "name": "guess",
+                "value": 0.002
+            }
+        ]
+    },
+    {
+        "topic": 4,
+        "chapters": [
+            2,
+            8,
+            14,
+            20,
+            33
+        ],
+        "terms": [
+            {
+                "name": "imagine",
+                "value": 0.01
+            },
+            {
+                "name": "room",
+                "value": 0.006
+            },
+            {
+                "name": "white",
+                "value": 0.006
+            },
+            {
+                "name": "brooch",
+                "value": 0.005
+            },
+            {
+                "name": "child",
+                "value": 0.005
+            },
+            {
+                "name": "face",
+                "value": 0.004
+            },
+            {
+                "name": "hair",
+                "value": 0.004
+            },
+            {
+                "name": "drive",
+                "value": 0.004
+            },
+            {
+                "name": "glad",
+                "value": 0.004
+            },
+            {
+                "name": "picnic",
+                "value": 0.004
+            },
+            {
+                "name": "place",
+                "value": 0.004
+            },
+            {
+                "name": "away",
+                "value": 0.004
+            },
+            {
+                "name": "road",
+                "value": 0.003
+            },
+            {
+                "name": "confess",
+                "value": 0.003
+            },
+            {
+                "name": "pink",
+                "value": 0.003
+            },
+            {
+                "name": "beautiful",
+                "value": 0.003
+            },
+            {
+                "name": "dark",
+                "value": 0.003
+            },
+            {
+                "name": "recite",
+                "value": 0.003
+            },
+            {
+                "name": "dress",
+                "value": 0.003
+            },
+            {
+                "name": "learn",
+                "value": 0.003
+            },
+            {
+                "name": "hang",
+                "value": 0.003
+            },
+            {
+                "name": "sorry",
+                "value": 0.003
+            },
+            {
+                "name": "fall",
+                "value": 0.003
+            },
+            {
+                "name": "afraid",
+                "value": 0.003
+            },
+            {
+                "name": "pretty",
+                "value": 0.002
+            },
+            {
+                "name": "bridge",
+                "value": 0.002
+            },
+            {
+                "name": "expect",
+                "value": 0.002
+            },
+            {
+                "name": "remember",
+                "value": 0.002
+            },
+            {
+                "name": "mayflower",
+                "value": 0.002
+            },
+            {
+                "name": "nice",
+                "value": 0.002
+            },
+            {
+                "name": "live",
+                "value": 0.002
+            },
+            {
+                "name": "asylum",
+                "value": 0.002
+            },
+            {
+                "name": "wear",
+                "value": 0.002
+            },
+            {
+                "name": "shell",
+                "value": 0.002
+            },
+            {
+                "name": "apple_blossom",
+                "value": 0.002
+            },
+            {
+                "name": "hotel",
+                "value": 0.002
+            },
+            {
+                "name": "exactly",
+                "value": 0.002
+            },
+            {
+                "name": "try",
+                "value": 0.002
+            },
+            {
+                "name": "tree",
+                "value": 0.002
+            },
+            {
+                "name": "jane",
+                "value": 0.002
+            }
+        ]
+    },
+    {
+        "topic": 5,
+        "chapters": [
+            1,
+            13,
+            31
+        ],
+        "terms": [
+            {
+                "name": "picnic",
+                "value": 0.006
+            },
+            {
+                "name": "boy",
+                "value": 0.005
+            },
+            {
+                "name": "avonlea",
+                "value": 0.004
+            },
+            {
+                "name": "grow",
+                "value": 0.004
+            },
+            {
+                "name": "green_gable",
+                "value": 0.004
+            },
+            {
+                "name": "child",
+                "value": 0.004
+            },
+            {
+                "name": "woman",
+                "value": 0.003
+            },
+            {
+                "name": "big",
+                "value": 0.003
+            },
+            {
+                "name": "matthew_cuthbert",
+                "value": 0.003
+            },
+            {
+                "name": "man",
+                "value": 0.003
+            },
+            {
+                "name": "afternoon",
+                "value": 0.003
+            },
+            {
+                "name": "house",
+                "value": 0.003
+            },
+            {
+                "name": "step",
+                "value": 0.003
+            },
+            {
+                "name": "orphan_asylum",
+                "value": 0.003
+            },
+            {
+                "name": "live",
+                "value": 0.003
+            },
+            {
+                "name": "minister",
+                "value": 0.003
+            },
+            {
+                "name": "heart",
+                "value": 0.003
+            },
+            {
+                "name": "miss_stacy",
+                "value": 0.003
+            },
+            {
+                "name": "course",
+                "value": 0.003
+            },
+            {
+                "name": "bright_river",
+                "value": 0.002
+            },
+            {
+                "name": "able",
+                "value": 0.002
+            },
+            {
+                "name": "learn",
+                "value": 0.002
+            },
+            {
+                "name": "book",
+                "value": 0.002
+            },
+            {
+                "name": "summer",
+                "value": 0.002
+            },
+            {
+                "name": "hollow",
+                "value": 0.002
+            },
+            {
+                "name": "cuthbert",
+                "value": 0.002
+            },
+            {
+                "name": "amethyst",
+                "value": 0.002
+            },
+            {
+                "name": "run",
+                "value": 0.002
+            },
+            {
+                "name": "church",
+                "value": 0.002
+            },
+            {
+                "name": "word",
+                "value": 0.002
+            },
+            {
+                "name": "brook",
+                "value": 0.002
+            },
+            {
+                "name": "patchwork",
+                "value": 0.002
+            },
+            {
+                "name": "write",
+                "value": 0.002
+            },
+            {
+                "name": "entrance",
+                "value": 0.002
+            },
+            {
+                "name": "sewing",
+                "value": 0.002
+            },
+            {
+                "name": "set",
+                "value": 0.002
+            },
+            {
+                "name": "diamond",
+                "value": 0.002
+            },
+            {
+                "name": "lane",
+                "value": 0.002
+            },
+            {
+                "name": "window",
+                "value": 0.002
+            },
+            {
+                "name": "train",
+                "value": 0.002
+            }
+        ]
+    },
+    {
+        "topic": 6,
+        "chapters": [
+            4,
+            5,
+            6,
+            16,
+            26,
+            37,
+            38
+        ],
+        "terms": [
+            {
+                "name": "imagine",
+                "value": 0.005
+            },
+            {
+                "name": "child",
+                "value": 0.005
+            },
+            {
+                "name": "nice",
+                "value": 0.004
+            },
+            {
+                "name": "tea",
+                "value": 0.004
+            },
+            {
+                "name": "story",
+                "value": 0.004
+            },
+            {
+                "name": "morning",
+                "value": 0.004
+            },
+            {
+                "name": "forget",
+                "value": 0.004
+            },
+            {
+                "name": "love",
+                "value": 0.004
+            },
+            {
+                "name": "tear",
+                "value": 0.003
+            },
+            {
+                "name": "woman",
+                "value": 0.003
+            },
+            {
+                "name": "home",
+                "value": 0.003
+            },
+            {
+                "name": "glad",
+                "value": 0.003
+            },
+            {
+                "name": "mother",
+                "value": 0.003
+            },
+            {
+                "name": "hand",
+                "value": 0.003
+            },
+            {
+                "name": "old",
+                "value": 0.003
+            },
+            {
+                "name": "write",
+                "value": 0.003
+            },
+            {
+                "name": "school",
+                "value": 0.003
+            },
+            {
+                "name": "read",
+                "value": 0.003
+            },
+            {
+                "name": "raspberry_cordial",
+                "value": 0.003
+            },
+            {
+                "name": "face",
+                "value": 0.002
+            },
+            {
+                "name": "year",
+                "value": 0.002
+            },
+            {
+                "name": "live",
+                "value": 0.002
+            },
+            {
+                "name": "laugh",
+                "value": 0.002
+            },
+            {
+                "name": "set",
+                "value": 0.002
+            },
+            {
+                "name": "white_sand",
+                "value": 0.002
+            },
+            {
+                "name": "teach",
+                "value": 0.002
+            },
+            {
+                "name": "bring",
+                "value": 0.002
+            },
+            {
+                "name": "stay_here",
+                "value": 0.002
+            },
+            {
+                "name": "bear",
+                "value": 0.002
+            },
+            {
+                "name": "brook",
+                "value": 0.002
+            },
+            {
+                "name": "table",
+                "value": 0.002
+            },
+            {
+                "name": "pantry",
+                "value": 0.002
+            },
+            {
+                "name": "father",
+                "value": 0.002
+            },
+            {
+                "name": "decide",
+                "value": 0.002
+            },
+            {
+                "name": "friend",
+                "value": 0.002
+            },
+            {
+                "name": "drive",
+                "value": 0.002
+            },
+            {
+                "name": "sort",
+                "value": 0.002
+            },
+            {
+                "name": "carmody",
+                "value": 0.002
+            },
+            {
+                "name": "kitchen",
+                "value": 0.002
+            },
+            {
+                "name": "winter",
+                "value": 0.002
+            }
+        ]
+    },
+    {
+        "topic": 7,
+        "chapters": [
+            3,
+            7,
+            9,
+            10,
+            21,
+            27,
+            28
+        ],
+        "terms": [
+            {
+                "name": "hair",
+                "value": 0.008
+            },
+            {
+                "name": "prayer",
+                "value": 0.005
+            },
+            {
+                "name": "minister",
+                "value": 0.005
+            },
+            {
+                "name": "bed",
+                "value": 0.004
+            },
+            {
+                "name": "flat",
+                "value": 0.004
+            },
+            {
+                "name": "child",
+                "value": 0.004
+            },
+            {
+                "name": "cake",
+                "value": 0.004
+            },
+            {
+                "name": "face",
+                "value": 0.004
+            },
+            {
+                "name": "eat",
+                "value": 0.003
+            },
+            {
+                "name": "sorry",
+                "value": 0.003
+            },
+            {
+                "name": "temper",
+                "value": 0.003
+            },
+            {
+                "name": "bad",
+                "value": 0.003
+            },
+            {
+                "name": "new",
+                "value": 0.003
+            },
+            {
+                "name": "minister_wife",
+                "value": 0.003
+            },
+            {
+                "name": "table",
+                "value": 0.003
+            },
+            {
+                "name": "wicked",
+                "value": 0.003
+            },
+            {
+                "name": "mistake",
+                "value": 0.003
+            },
+            {
+                "name": "boy",
+                "value": 0.003
+            },
+            {
+                "name": "old",
+                "value": 0.003
+            },
+            {
+                "name": "hard",
+                "value": 0.003
+            },
+            {
+                "name": "bring",
+                "value": 0.003
+            },
+            {
+                "name": "dye",
+                "value": 0.002
+            },
+            {
+                "name": "bridge",
+                "value": 0.002
+            },
+            {
+                "name": "lovely",
+                "value": 0.002
+            },
+            {
+                "name": "turn",
+                "value": 0.002
+            },
+            {
+                "name": "away",
+                "value": 0.002
+            },
+            {
+                "name": "jane",
+                "value": 0.002
+            },
+            {
+                "name": "rachel",
+                "value": 0.002
+            },
+            {
+                "name": "black",
+                "value": 0.002
+            },
+            {
+                "name": "pile",
+                "value": 0.002
+            },
+            {
+                "name": "all_right",
+                "value": 0.002
+            },
+            {
+                "name": "tea",
+                "value": 0.002
+            },
+            {
+                "name": "pray",
+                "value": 0.002
+            },
+            {
+                "name": "elaine",
+                "value": 0.002
+            },
+            {
+                "name": "exactly",
+                "value": 0.002
+            },
+            {
+                "name": "spring",
+                "value": 0.002
+            },
+            {
+                "name": "expect",
+                "value": 0.002
+            },
+            {
+                "name": "asylum",
+                "value": 0.002
+            },
+            {
+                "name": "avonlea",
+                "value": 0.002
+            },
+            {
+                "name": "forgive",
+                "value": 0.002
+            }
+        ]
+    }
+]

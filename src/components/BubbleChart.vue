@@ -2,7 +2,6 @@
 
     <div id="bubble-pack">
       <div id="main-chart">
-        <h3>Intertopic Distance Map</h3>
         <BubbleChartMain
           :data="data"
           :data_chart="data_chart"
@@ -30,6 +29,9 @@ import BubbleChartMain from '@/components/BubbleChartMain.vue'
 import BubbleChartLegend from '@/components/BubbleChartLegend.vue'
 
 export default {
+  props: {
+    chapterKey: Number
+  },
   components: {
     BubbleChartMain,
     BubbleChartLegend
@@ -43,7 +45,7 @@ export default {
       // colorScale: null,
     }
   },
-  created: async function() {
+  created: function() {
     var that = this 
     that.data = Object.values(data)
     // await d3.json("/src/data/topic_bubbles_data.json",
@@ -54,6 +56,14 @@ export default {
     this.data_chart = this.data
     // this.data_chart = chartData
     // this.colorScale = d3.scaleOrdinal(d3.schemeSet3)
+  },
+  watch: {
+    key: {
+      deep: true,
+      handler() {
+        console.log(this.chapterKey)
+      }
+    }
   },
   methods: {
     filterInput (input) {

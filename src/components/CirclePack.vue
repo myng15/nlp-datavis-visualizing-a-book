@@ -9,8 +9,14 @@ import termsData from "@/data/bubblechart/top_terms_arr_per_topic_7.json";
 export default {
   data: () => ({
     settings: {
+      margin: { 
+          top: 20, 
+          right: 40, 
+          bottom: 30, 
+          left: 40
+        },
       width:      400,
-      height:     267,
+      height:     250,
     }
   }),
   mounted() {
@@ -52,7 +58,7 @@ export default {
       .join("circle")
         .attr("fill", d => d.children ? color(d.depth) : "white")
         .attr("pointer-events", d => !d.children ? "none" : null)
-        .on("mouseover", function() { d3.select(this).attr("stroke", "#000"); })
+        .on("mouseover", function() { d3.select(this).attr("stroke", "gray"); })
         .on("mouseout", function() { d3.select(this).attr("stroke", null); })
         .on("click", (event, d) => focus !== d && (zoom(event, d), event.stopPropagation()));
 
@@ -65,7 +71,7 @@ export default {
       6: "Incidents with the Barrys", 
       7: "Blunders, misunderstandings & apologies"
     }
-    console.log(Object.keys(topicNames).includes("5"))
+    
     const label = circlePackSvg.append("g")
         .style("font", "5px sans-serif")
         .attr("pointer-events", "none")

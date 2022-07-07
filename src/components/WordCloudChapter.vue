@@ -1,6 +1,6 @@
 <template>
   <div id="wordcloud">
-    <h3>Most frequent words</h3>
+    <h3>Most frequent words per chapter</h3>
     <div>Select a chapter: {{ selected }}
       <select style="font-family:'PT Sans', sans-serifSans" name="selected" @change="onChange($event)" v-model="key">
         <option disabled value="">Please select a chapter</option>
@@ -74,11 +74,12 @@ export default {
   },
   methods: {
     onChange(event) {
+      this.$emit("changeChapter", this.key)
       console.log(event.target.value, this.key);
     },
     init() {
       var myWords = data[this.key];
-      console.log(data[this.key]);
+      // console.log(data[this.key]);
 // set the dimensions and margins of the graph
       var margin = {top: 2, right: 2, bottom: 2, left: 2},
           width = 450 - margin.left - margin.right,

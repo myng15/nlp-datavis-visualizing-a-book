@@ -8,41 +8,72 @@
         <H1>BookVisualizer - Anne of Green Gables </H1>
       </div>
     </div>
-      <div id = "main1">
-        <div> general info following soon </div>
-        <BarChart></BarChart>
+    <div id = "main1">
+      <div> general info following soon</div>
+      <BarChart></BarChart>
+    </div>
+  <div id="main2">
+    <NetworkDiagram></NetworkDiagram>
+  </div>
+  <div id="main3">
+    <div id="submain3">
+      <div id="submain3-buttons">
+        <button
+          class="toggle"
+          @click="toggle"
+          :class="[showBubbleChart ? 'btn-active' : 'btn-inactive']"
+        >Intertopic Distance Map</button>
+        <button
+          class="toggle"
+          @click="toggle"
+          :class="[!showBubbleChart ? 'btn-active' : 'btn-inactive']"
+        >Top terms per topic</button>
+      </div>
+      <div id="bubble-chart-container" :class="[showBubbleChart ? 'chart-active' : 'chart-inactive']">
+        <BubbleChart :chapterKey="chapterKey" @changeChapter="chapterChange"></BubbleChart>
+      </div>
+      <div id="circle-pack-container" :class="[!showBubbleChart ? 'chart-active' : 'chart-inactive']">
+        <CirclePack></CirclePack>
       </div>
     </div>
-    <div id="main2">
-      <BubbleChart></BubbleChart>
-      <CirclePack></CirclePack>
-      <WordCloud></WordCloud>
-    </div>
-  <div id="main3">
-    <NetworkDiagram></NetworkDiagram>
+    <WordCloudChapter></WordCloudChapter>
+  </div>
   </div>
 </template>
 
 <script>
 import NetworkDiagram from "@/components/NetworkDiagram";
 import BarChart from "@/components/BarChart";
-import WordCloud from "@/components/WordCloud";
+import WordCloudChapter from "@/components/WordCloudChapter";
 import BubbleChart from "@/components/BubbleChart";
-import CirclePack from "@/components/CirclePack";
+import CirclePack from "./components/CirclePack.vue";
 
 export default {
   name: 'App',
   data() {
     return {
-      anne: require('./assets/anne.svg')
-  }
+      anne: require('./assets/anne.svg'),
+      showBubbleChart: true,
+      chapterKey: ""
+    }
   },
   components: {
-    NetworkDiagram,
-    WordCloud,
+    WordCloudChapter,
     BarChart,
     BubbleChart,
+    NetworkDiagram,
     CirclePack
+},
+  methods: {
+    toggle(e) {
+      if (!e.target.classList.contains('btn-active')){
+        this.showBubbleChart = !this.showBubbleChart;
+      }
+    },
+    chapterChange(event){
+      this.chapterKey = event;
+      console.log(event)
+    }
   }
 }
 </script>
@@ -92,6 +123,55 @@ export default {
   grid-row: 1;
 }
 
+#submain3{
+  margin-bottom: 10px;
+}
+
+#submain3-buttons button {
+  /* background-color: #18A999;  */
+  border: 1px solid green; 
+  color: white;
+  font-weight: bold; 
+  padding: 10px 24px; 
+  cursor: pointer; 
+  transition: 0.3s;
+}
+
+#submain3-buttons button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* #submain3-buttons:after {
+  content: "";
+  clear: both;
+  display: table;
+} */
+
+#submain3-buttons button:hover{
+  background-color: #3e8e41;
+}
+
+#bubble-chart-container,
+#circle-pack-container {
+  padding: 20px;
+}
+
+.btn-active {
+  background-color: #3e8e41;
+}
+
+.btn-inactive {
+  background-color: #18A999;
+}
+
+.chart-active {
+  display: block;
+}
+
+.chart-inactive {
+  display: none;
+}
+
 #div1 {
   background: #109648;
   padding: 2px;
@@ -122,4 +202,5 @@ h1 {
   color: #F7F0F0;
   text-align:center;
 }
+
 </style>

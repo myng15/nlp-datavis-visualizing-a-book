@@ -13,7 +13,7 @@
 <script>
 
 import * as d3 from "d3";
-import termsData from "@/data/bubblechart/top_terms_arr_per_topic_7.json";
+// import termsData from "@/data/bubblechart/top_terms_arr_per_topic_7.json";
 
 // import data from "@/data/topic_bubbles_data.json";
 // const chartData = Object.values(data) //can be used interchangeably with data_chart from props
@@ -27,7 +27,7 @@ export default {
   data: function() {
     return {
       settings: {
-        margin: { // just test values
+        margin: { 
           top: 20, 
           right: 40, 
           bottom: 30, 
@@ -50,7 +50,7 @@ export default {
   },
   methods: {
     init() {
-      console.log(this.data_chart)
+      
     this.svgContainer = d3
       // .select("#bubble-chart")
       // .append("svg")
@@ -141,8 +141,8 @@ export default {
                       .attr("id", "bubble-tooltip");
     
     const handleMouseOver = (e, d) => { //e: MouseEvent, d: chart data
-      const topTermsArray = termsData[this.data_chart.indexOf(d)].terms.slice(0, 10);
-      const topTerms = topTermsArray.map(i => i.name).join(", ")
+      // const topTermsArray = termsData[this.data_chart.indexOf(d)].terms.slice(0, 10);
+      // const topTerms = topTermsArray.map(i => i.name).join(", ")
       d3.select("#bubble-tooltip")
               .style("left", e.pageX + "px")
               .style("top", e.pageY + "px")
@@ -150,8 +150,9 @@ export default {
               .style("background", "white")
               .style("box-shadow", "3px 3px 10px rgba(0, 0, 0, 0.4)")
               .style("border-radius", "5px")
-              .html("Frequency (words): " + d.count 
-                    + "<br>Top words: " + topTerms + ",...");
+              .html("Frequency (terms): " + d.count 
+                    // + "<br>Top words: " + topTerms + ",..."
+                    );
     }
 
     this.bubbles.on("mouseover", handleMouseOver)

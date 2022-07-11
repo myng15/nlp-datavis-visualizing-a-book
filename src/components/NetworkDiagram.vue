@@ -79,7 +79,7 @@ export default {
 
       let strokeWidth = d3.scaleLinear()
           .domain([1, 343]) // unit: occurences
-          .range([0.5, 2.5]) // unit: pixels
+          .range([0.5, 4]) // unit: pixels
 
 
       let link = svg.append("g")

@@ -2,115 +2,401 @@
   "nodes": [
     {
       "id": 1,
-      "name": "Anne Shirley"
+      "name": "Anne Shirley",
+      "size": 1205,
+      "color": "#548C2F"
     },
     {
       "id": 2,
-      "name": "Marilla Cuthbert"
+      "name": "Marilla Cuthbert",
+      "size": 908,
+      "color": "#1C448E"
     },
     {
       "id": 3,
-      "name": "Diana Barry"
+      "name": "Diana Barry",
+      "size": 545,
+      "color": "#BC69AA"
     },
     {
       "id": 4,
-      "name": "Rachel Lynde"
+      "name": "Matthew Cuthbert",
+      "size": 368,
+      "color": "#4CC9F0"
     },
     {
       "id": 5,
-      "name": "Matthew Cuthbert"
+      "name": "Rachel Lynde",
+      "size": 246,
+      "color": "#931F1D"
+    },
+    {
+      "id": 6,
+      "name": "Gilbert Blythe",
+      "size": 113,
+      "color": "#313036"
+    },
+    {
+      "id": 7,
+      "name": "Jane Andrews",
+      "size": 146,
+      "color": "#313036"
+    },
+    {
+      "id": 8,
+      "name": "Josie Pye",
+      "size": 73,
+      "color": "#313036"
+    },
+    {
+      "id": 9,
+      "name": "Miss Stacy",
+      "size": 63,
+      "color": "#313036"
+    },
+    {
+      "id": 10,
+      "name": "Mrs. Allan",
+      "size": 63,
+      "color": "#313036"
+    },
+    {
+      "id": 11,
+      "name": "Ruby Gillis",
+      "size": 136,
+      "color": "#313036"
+    },
+    {
+      "id": 12,
+      "name": "Josephine Barry",
+      "size": 53,
+      "color": "#313036"
+    },
+    {
+      "id": 13,
+      "name": "Mrs. Barry",
+      "size": 47,
+      "color": "#313036"
+    },
+    {
+      "id": 14,
+      "name": "Mr. Phillips",
+      "size": 45,
+      "color": "#313036"
+    },
+    {
+      "id": 15,
+      "name": "Alexander Spencer",
+      "size": 38,
+      "color": "#313036"
     }
   ],
   "links": [
     {
       "source": 1,
       "target": 2,
-      "strokeWidth": 0.197
+      "strokewidth": 343,
+      "color": "#000000"
     },
     {
       "source": 1,
       "target": 3,
-      "strokeWidth": 0.95
+      "strokewidth": 222,
+      "color": "#000000"
     },
     {
       "source": 1,
       "target": 4,
-      "strokeWidth": 0.15
+      "strokewidth": 118,
+      "color": "#525252"
     },
     {
       "source": 1,
       "target": 5,
-      "strokeWidth": 0.65
+      "strokewidth": 66,
+      "color": "#737373"
     },
     {
-      "source": 2,
-      "target": 1,
-      "strokeWidth": 0.197
+      "source": 1,
+      "target": 6,
+      "strokewidth": 73,
+      "color": "#737373"
+    },
+    {
+      "source": 1,
+      "target": 7,
+      "strokewidth": 36,
+      "color": "#737373"
+    },
+    {
+      "source": 1,
+      "target": 8,
+      "strokewidth": 22,
+      "color": "#737373"
+    },
+    {
+      "source": 1,
+      "target": 9,
+      "strokewidth": 19,
+      "color": "#737373"
+    },
+    {
+      "source": 1,
+      "target": 10,
+      "strokewidth": 20,
+      "color": "#737373"
+    },
+    {
+      "source": 1,
+      "target": 11,
+      "strokewidth": 29,
+      "color": "#737373"
+    },
+    {
+      "source": 1,
+      "target": 12,
+      "strokewidth": 19,
+      "color": "#737373"
+    },
+    {
+      "source": 1,
+      "target": 13,
+      "strokewidth": 26,
+      "color": "#737373"
+    },
+    {
+      "source": 1,
+      "target": 14,
+      "strokewidth": 17,
+      "color": "#737373"
+    },
+    {
+      "source": 1,
+      "target": 15,
+      "strokewidth": 6,
+      "color": "#737373"
     },
     {
       "source": 2,
       "target": 3,
-      "strokeWidth": 0.22
+      "strokewidth": 94,
+      "color": "#737373"
     },
     {
       "source": 2,
       "target": 4,
-      "strokeWidth": 0.17
+      "strokewidth": 146,
+      "color": "#525252"
     },
     {
       "source": 2,
       "target": 5,
-      "strokeWidth": 0.69
+      "strokewidth": 73,
+      "color": "#737373"
+    },
+    {
+      "source": 2,
+      "target": 7,
+      "strokewidth": 12,
+      "color": "#737373"
+    },
+    {
+      "source": 2,
+      "target": 8,
+      "strokewidth": 9,
+      "color": "#737373"
+    },
+    {
+      "source": 2,
+      "target": 9,
+      "strokewidth": 18,
+      "color": "#737373"
+    },
+    {
+      "source": 2,
+      "target": 10,
+      "strokewidth": 20,
+      "color": "#737373"
+    },
+    {
+      "source": 2,
+      "target": 11,
+      "strokewidth": 9,
+      "color": "#737373"
+    },
+    {
+      "source": 2,
+      "target": 12,
+      "strokewidth": 8,
+      "color": "#737373"
+    },
+    {
+      "source": 2,
+      "target": 13,
+      "strokewidth": 15,
+      "color": "#737373"
+    },
+    {
+      "source": 2,
+      "target": 14,
+      "strokewidth": 5,
+      "color": "#969696"
+    },
+    {
+      "source": 2,
+      "target": 15,
+      "strokewidth": 8,
+      "color": "#737373"
     },
     {
       "source": 3,
-      "target": 1,
-      "strokeWidth": 0.95
-    },
-    {
-      "source": 3,
-      "target": 3,
-      "strokeWidth": 0.22
-    },
-    {
-      "source": 3,
-      "target": 5,
-      "strokeWidth": 0.06
-    },
-    {
-      "source": 4,
-      "target": 1,
-      "strokeWidth": 0.15
-    },
-    {
-      "source": 4,
-      "target": 2,
-      "strokeWidth": 0.17
-    },
-    {
-      "source": 4,
-      "target": 5,
-      "strokeWidth": 0.09
-    },
-    {
-      "source": 5,
-      "target": 1,
-      "strokeWidth": 0.65
-    },
-    {
-      "source": 5,
-      "target": 2,
-      "strokeWidth": 0.69
-    },
-    {
-      "source": 5,
-      "target": 3,
-      "strokeWidth": 0.06
-    },
-    {
-      "source": 5,
       "target": 4,
-      "strokeWidth": 0.09
+      "strokewidth": 23,
+      "color": "#737373"
+    },
+    {
+      "source": 3,
+      "target": 5,
+      "strokewidth": 16,
+      "color": "#737373"
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "strokewidth": 20,
+      "color": "#737373"
+    },
+    {
+      "source": 3,
+      "target": 7,
+      "strokewidth": 25,
+      "color": "#737373"
+    },
+    {
+      "source": 3,
+      "target": 8,
+      "strokewidth": 11,
+      "color": "#737373"
+    },
+    {
+      "source": 3,
+      "target": 9,
+      "strokewidth": 6,
+      "color": "#737373"
+    },
+    {
+      "source": 3,
+      "target": 11,
+      "strokewidth": 20,
+      "color": "#737373"
+    },
+    {
+      "source": 3,
+      "target": 12,
+      "strokewidth": 44,
+      "color": "#737373"
+    },
+    {
+      "source": 3,
+      "target": 13,
+      "strokewidth": 46,
+      "color": "#737373"
+    },
+    {
+      "source": 3,
+      "target": 14,
+      "strokewidth": 5,
+      "color": "#969696"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "strokewidth": 36,
+      "color": "#737373"
+    },
+    {
+      "source": 4,
+      "target": 7,
+      "strokewidth": 6,
+      "color": "#737373"
+    },
+    {
+      "source": 4,
+      "target": 10,
+      "strokewidth": 6,
+      "color": "#737373"
+    },
+    {
+      "source": 4,
+      "target": 11,
+      "strokewidth": 5,
+      "color": "#969696"
+    },
+    {
+      "source": 4,
+      "target": 15,
+      "strokewidth": 8,
+      "color": "#737373"
+    },
+    {
+      "source": 5,
+      "target": 13,
+      "strokewidth": 5,
+      "color": "#969696"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "strokewidth": 14,
+      "color": "#737373"
+    },
+    {
+      "source": 6,
+      "target": 8,
+      "strokewidth": 5,
+      "color": "#969696"
+    },
+    {
+      "source": 6,
+      "target": 11,
+      "strokewidth": 9,
+      "color": "#737373"
+    },
+    {
+      "source": 6,
+      "target": 14,
+      "strokewidth": 10,
+      "color": "#737373"
+    },
+    {
+      "source": 7,
+      "target": 8,
+      "strokewidth": 18,
+      "color": "#737373"
+    },
+    {
+      "source": 7,
+      "target": 11,
+      "strokewidth": 33,
+      "color": "#737373"
+    },
+    {
+      "source": 7,
+      "target": 14,
+      "strokewidth": 13,
+      "color": "#737373"
+    },
+    {
+      "source": 8,
+      "target": 11,
+      "strokewidth": 16,
+      "color": "#737373"
+    },
+    {
+      "source": 9,
+      "target": 10,
+      "strokewidth": 5,
+      "color": "#969696"
     }
   ]
 }

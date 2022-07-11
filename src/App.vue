@@ -13,7 +13,8 @@
       <BarChart></BarChart>
     </div>
   <div id="main2">
-    <NetworkDiagram></NetworkDiagram>
+    <NetworkDiagram v-on:changeCharacter="characterChange($event)"></NetworkDiagram>
+<!--    <WordCloudCharacter :characterKey="characterKey" @changeCharacter="characterChange"></WordCloudCharacter>-->
   </div>
   <div id="main3">
     <div id="submain3">
@@ -36,7 +37,7 @@
         <CirclePack></CirclePack>
       </div>
     </div>
-    <WordCloudChapter></WordCloudChapter>
+    <WordCloudChapter :chapterKey="chapterKey"></WordCloudChapter>
   </div>
   </div>
 </template>
@@ -47,6 +48,7 @@ import BarChart from "@/components/BarChart";
 import WordCloudChapter from "@/components/WordCloudChapter";
 import BubbleChart from "@/components/BubbleChart";
 import CirclePack from "./components/CirclePack.vue";
+//import WordCloudCharacter from "@/components/WordCloudCharacter";
 
 export default {
   name: 'App',
@@ -54,7 +56,8 @@ export default {
     return {
       anne: require('./assets/anne.svg'),
       showBubbleChart: true,
-      chapterKey: ""
+      chapterKey: "",
+      characterKey:""
     }
   },
   components: {
@@ -62,7 +65,8 @@ export default {
     BarChart,
     BubbleChart,
     NetworkDiagram,
-    CirclePack
+    CirclePack,
+    //WordCloudCharacter
 },
   methods: {
     toggle(e) {
@@ -72,6 +76,10 @@ export default {
     },
     chapterChange(event){
       this.chapterKey = event;
+      console.log(event)
+    },
+    characterChange(event){
+      this.characterKey=event;
       console.log(event)
     }
   }

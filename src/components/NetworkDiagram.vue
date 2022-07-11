@@ -8,38 +8,43 @@
 <script>
 
 import * as d3 from "d3";
-import cooccurrences from "@/data/network/corrected_cooccurrences.json";
-import data from "@/data/wordcloud/top_words_by_chapter.json";
+import cooccurrences from "@/data/network/cooccurrences.json";
+import data from "@/data/wordcloud/top_words_by_character.json";
 import cloud from "d3-cloud";
 
 export default {
-
+  /* eslint-disable */
   components: {},
   mounted() {
     this.init();
   },
 
   data() {
-    return {selectedcharacter:""};
+    return {characterKey: ""}
   },
 
   watch: {
-    key: {
+    characterKey: {
       deep: true,
       handler() {
-        d3.select("#wordcloudcharacter").select("svg").remove()
-        this.initWordCloud();
+        this.initWordCloud()
       }
-      /* eslint-enable */
+
     }
   },
   methods: {
 
-    init() {
+    onChange() {
+      console.log(this.characterKey)
+      this.$emit("changeCharacter", this.characterKey)
+      console.log(event.target.value, this.characterKey);
+      this.init()
+    },
 
+    init() {
       const margin = {top: 2, right: 10, bottom: 10, left: 20},
           width = 800 - margin.left - margin.right,
-          height = 500 - margin.top - margin.bottom;
+          height = 700 - margin.top - margin.bottom;
 
       const svg = d3.select("#network")
           .append("svg")
@@ -54,58 +59,73 @@ export default {
 
 
       console.log(data.links.index)
- 
+
       /* eslint-disable */
 
       //Scales
       let colorNode = d3.scaleOrdinal(d3.schemeTableau10.concat(d3.schemeDark2)); //change color theme from schemeCategory10
-      
+
       let nodeSize = d3.scaleLinear()
           .domain([0, 1000]) // unit: occurences 
           .range([5, 25]) // unit: pixels
 
 
-
       let simulation = d3.forceSimulation()
-          .force("link", d3.forceLink().id(function(d) { return d.id; }).distance(100).strength(1))
-          .force("charge", d3.forceManyBody().strength(-1000))
-          .force("center", d3.forceCenter(width/2 , height/2))
+          .force("link", d3.forceLink().id(function (d) {
+            return d.id;
+          }).distance(200).strength(1))
+          .force("charge", d3.forceManyBody().strength(-2000))
+          .force("center", d3.forceCenter(width / 2, height / 2))
+
+      let strokeWidth = d3.scaleLinear()
+          .domain([1, 343]) // unit: occurences
+          .range([0.5, 4]) // unit: pixels
 
 
       let link = svg.append("g")
           .selectAll("line")
           .data(data.links)
           .enter().append("line")
-          .attr("stroke", function(d) {
+          .attr("stroke-width", function (d) {
+            return strokeWidth(d.strokewidth);
+          })
+          .attr("stroke", function (d) {
             return d.color;
           })
-          .attr("stroke-width", 1);//Define a scale for stroke width or stroke opacity!
+          //.attr("stroke-width", strokeWidth);//Define a scale for stroke width or stroke opacity!
 
       let node = svg.append("g")
           .attr("class", "nodes")
           .selectAll("g")
           .data(data.nodes)
           .enter().append("g")
-          .on("click",function(event,d) {
-            console.log(d.name);
+          .on("click", function (event, d) {
+            this.characterKey = d.name;
+            console.log(this.characterKey);
           })
 
       let circles = node.append("circle")
           .attr("r", d => nodeSize(d.size))
-          .attr("fill", function(d) { return colorNode(d.id)});
+          .attr("fill", function(d) {
+            return d.color;
+          })
 
-      
+
       let lables = node.append("text")
-          .text(function(d) {
+          .text(function (d) {
             return d.name;
           })
           .attr('x', -15)
-          .attr('y', d => d.name == "Anne Shirley" ||  d.name == "Marilla Cuthbert" ||  d.name == "Diana Barry" ? -30 : -15)
-          .attr("fill", function(d) { return colorNode(d.id)})
-          .attr("fontSize", 15)
+          .attr('y', d => d.name == "Anne Shirley" || d.name == "Marilla Cuthbert" || d.name == "Diana Barry" ? -30 : -15)
+          .attr("fill", function(d) {
+            return d.color;
+          })
+          .style("font-size", "12px")
 
       node.append("title")
-          .text(function(d) { return 'Whatever you want to show as tooltip!' });
+          .text(function (d) {
+            return 'Whatever you want to show as tooltip!'
+          });
 
 
       // Create a drag handler and append it to the node object instead
@@ -113,7 +133,7 @@ export default {
           .on("start", dragstarted)
           .on("drag", dragged)
           .on("end", dragended);
-      
+
       drag_handler(node);
 
       simulation
@@ -123,19 +143,23 @@ export default {
       simulation.force("link")
           .links(data.links);
 
-        function click(name) {
-         console.log(name)
-
-        }
       function ticked() {
         link
-            .attr("x1", function(d) { return d.source.x; })
-            .attr("y1", function(d) { return d.source.y; })
-            .attr("x2", function(d) { return d.target.x; })
-            .attr("y2", function(d) { return d.target.y; });
+            .attr("x1", function (d) {
+              return d.source.x;
+            })
+            .attr("y1", function (d) {
+              return d.source.y;
+            })
+            .attr("x2", function (d) {
+              return d.target.x;
+            })
+            .attr("y2", function (d) {
+              return d.target.y;
+            });
 
         node
-            .attr("transform", function(d) {
+            .attr("transform", function (d) {
               return "translate(" + d.x + "," + d.y + ")";
             })
       }
@@ -156,14 +180,11 @@ export default {
         d.fx = null;
         d.fy = null;
       }
-
     },
+    initWordCloud(key){
 
-    initWordCloud(character) {
-      var myWords = data[this.key];
-      console.log(data[this.key]);
-
-
+      var myWords = data[key];
+      console.log(data[key]);
 // set the dimensions and margins of the graph
       var margin = {top: 2, right: 2, bottom: 2, left: 2},
           width = 450 - margin.left - margin.right,
@@ -228,8 +249,6 @@ export default {
               return d.text;
             });
       }
-
-
     }
     /* eslint-enable */
   }

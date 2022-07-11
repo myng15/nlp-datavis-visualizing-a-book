@@ -1,85 +1,39 @@
 <template>
-  <div id="wordcloud">
-    <h3>Most frequent words per chapter</h3>
-    <div>Select a chapter: {{ selected }}
-      <select style="font-family:'PT Sans', sans-serifSans" name="selected" @change="onChange($event)" v-model="key">
-        <option disabled value="">Please select a chapter</option>
-        <option value="1">Chapter 1</option>
-        <option value="2">Chapter 2</option>
-        <option value="3">Chapter 3</option>
-        <option value="4">Chapter 4</option>
-        <option value="5">Chapter 5</option>
-        <option value="6">Chapter 6</option>
-        <option value="7">Chapter 7</option>
-        <option value="8">Chapter 8</option>
-        <option value="9">Chapter 9</option>
-        <option value="10">Chapter 10</option>
-        <option value="11">Chapter 11</option>
-        <option value="12">Chapter 12</option>
-        <option value="13">Chapter 13</option>
-        <option value="14">Chapter 14</option>
-        <option value="15">Chapter 15</option>
-        <option value="16">Chapter 16</option>
-        <option value="17">Chapter 17</option>
-        <option value="18">Chapter 18</option>
-        <option value="19">Chapter 19</option>
-        <option value="20">Chapter 20</option>
-        <option value="21">Chapter 21</option>
-        <option value="22">Chapter 22</option>
-        <option value="23">Chapter 23</option>
-        <option value="24">Chapter 24</option>
-        <option value="25">Chapter 25</option>
-        <option value="26">Chapter 26</option>
-        <option value="27">Chapter 27</option>
-        <option value="28">Chapter 28</option>
-        <option value="29">Chapter 29</option>
-        <option value="30">Chapter 30</option>
-        <option value="31">Chapter 31</option>
-        <option value="32">Chapter 32</option>
-        <option value="33">Chapter 33</option>
-        <option value="34">Chapter 34</option>
-        <option value="35">Chapter 35</option>
-        <option value="36">Chapter 36</option>
-        <option value="37">Chapter 37</option>
-        <option value="38">Chapter 38</option>
-         </select>
-    </div>
+  <div id="wordcloudcharacter">
+    <h3>Most frequent words per character</h3>
   </div>
 </template>
 
 <script>
 
 import * as d3 from "d3";
-import data from "@/data/wordcloud/top_words_by_chapter.json";
+import data from "@/data/wordcloud/top_words_by_character.json";
 import cloud from "d3-cloud"
 
 export default {
+  props: {
+    characterKey: String
+  },
   components: {},
   mounted() {
-    this.onChange();
-  },
-  data() {
-    return {key: ""};
+    console.log(this.characterKey)
+    this.init();
   },
   /* eslint-disable */
   watch: {
-    key: {
+    characterKey: {
       deep: true,
       handler() {
-        d3.select("#wordcloud").select("svg").remove()
+        d3.select("#wordcloudcharacter").select("svg").remove()
         this.init();
       }
       /* eslint-enable */
     }
   },
   methods: {
-    onChange(event) {
-      this.$emit("changeChapter", this.key)
-      console.log(event.target.value, this.key);
-    },
     init() {
-      var myWords = data[this.key];
-      // console.log(data[this.key]);
+      var myWords = data[this.characterKey];
+      console.log(data[this.characterKey]);
 // set the dimensions and margins of the graph
       var margin = {top: 2, right: 2, bottom: 2, left: 2},
           width = 450 - margin.left - margin.right,
@@ -87,7 +41,7 @@ export default {
 
 
 // append the svg object to the body of the page
-      var svg = d3.select("#wordcloud").append("svg")
+      var svg = d3.select("#wordcloudcharacter").append("svg")
           .attr("width", width + margin.left + margin.right)
           .attr("height", height + margin.top + margin.bottom)
           .append("g")
@@ -101,17 +55,24 @@ export default {
           .words(myWords.map(function (d) {
             return {text: d[0], size: d[1]};
           }))
-          .padding(8, 15)        //space between words
+          .padding(4, 5)        //space between words
           .rotate(function () {
             return ~~(Math.random() * 2) * 90;
           }) // font size of words
-          .font("Impact")
           .fontSize(function (d) {
-            return d.size * 4;
+            return d.size * 7;
           })
           .on("end", draw);
       layout.start();
 
+      function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
 
 // This function takes the output of 'layout' above and draw the words
 // Wordcloud features that are THE SAME from one word to the other can be here
@@ -125,7 +86,9 @@ export default {
             .style("font-size", function (d) {
               return d.size;
             })
-            .attr("fill", "#96949E")
+            .attr("fill", function () {
+              return getRandomColor();
+            })
             .attr("text-anchor", "middle")
             .style("font-family", "Impact")
             .attr("transform", function (d) {

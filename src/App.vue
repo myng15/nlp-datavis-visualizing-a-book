@@ -11,6 +11,10 @@
     <div id = "main1">
       <div> general info following soon</div>
       <BarChart></BarChart>
+      <div class="arrow">
+        <div class="line"></div>
+        <div class="point"></div>
+      </div>
     </div>
   <div id="main2">
     <NetworkDiagram v-on:changeCharacter="characterChange($event)"></NetworkDiagram>
@@ -37,7 +41,7 @@
         <CirclePack></CirclePack>
       </div>
     </div>
-    <WordCloudChapter :chapterKey="chapterKey"></WordCloudChapter>
+    <WordCloudChapter v-on:changeChapter="chapterChange($event)"></WordCloudChapter>
   </div>
   </div>
 </template>
@@ -209,6 +213,28 @@ export default {
 h1 {
   color: #F7F0F0;
   text-align:center;
+}
+
+.arrow {
+  width: 120px;
+  position:relative;
+}
+
+.line {
+  margin-top: 14px;
+  width: 90px;
+  background: blue;
+  height: 10px;
+  float: left;
+}
+
+.point {
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 30px solid blue;
+  float: right;
 }
 
 </style>

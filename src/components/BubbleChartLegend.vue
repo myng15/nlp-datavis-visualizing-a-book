@@ -1,22 +1,19 @@
 <template>
   <div id="bubble-chart-legends">
-    <ul id="bubble-legends">
+    <!-- <ul id="bubble-legends">
       <li
           v-for="(input, index) in legend_class"
           :key="`input-${index}`"
       >
         <div id="legendElementWrapper"
-             @click="sendFilterInput(input, index)"
         >
-          <svg id="rectLegend" width="20" height="20">
-            <!-- <rect :style="cssRectFill(input)" width="20" height="20"/> -->
-            <rect id="rectLegend2" width="20" height="20"/>
+          <svg id="rectLegend" width="15" height="15">
+            <rect id="rectLegend2" width="15" height="15"/>
           </svg>
           {{ input }}
         </div>
-
       </li>
-    </ul>
+    </ul> -->
   </div>
 </template>
 
@@ -31,32 +28,28 @@ export default {
   data: function () {
     return {
       legend_class: [],
-      clickInput: [],
       width: 100,
       height: 333,
       key_r: "count"
     }
   },
   created: function() {
-    const topicNames = {
-      1: "Friends & love", 
-      2:"School activities", 
-      3: "Fashion & shows", 
-      4: "Anne's emotional world", 
-      5: "Life at Green Gables", 
-      6: "Incidents with the Barrys", 
-      7: "Blunders, misunderstandings & apologies"
-    }
-    this.legend_class = this.data_chart.map(a => topicNames[this.data_chart.indexOf(a)+1])
-
-    // this.legend_class = chartData.map(a => `Topic ${chartData.indexOf(a)+1}`)
-    // this.legend_class = this.data.map(a => `Topic ${this.data.indexOf(a)+1}`)
-    this.clickInput = new Array(this.legend_class.length).fill(false)
+    // For topic legends
+    // const topicNames = {
+    //   1: "Friends & love", 
+    //   2:"School activities", 
+    //   3: "Fashion & shows", 
+    //   4: "Anne's emotional world", 
+    //   5: "Life at Green Gables", 
+    //   6: "Incidents with the Barrys", 
+    //   7: "Mistakes & apologies"
+    // }
+    // this.legend_class = this.data_chart.map(a => topicNames[this.data_chart.indexOf(a)+1])
   },
   mounted: function() {
     // Add topic legends
-    const colorScale = d3.scaleOrdinal(d3.schemeTableau10).domain(this.data_chart);
-    d3.selectAll("#legendElementWrapper").select("svg").select("rect").data(this.data_chart).style("fill", function(d) {return colorScale(d);})
+    // const colorScale = d3.scaleOrdinal(d3.schemeTableau10).domain(this.data_chart);
+    // d3.selectAll("#legendElementWrapper").select("svg").select("rect").data(this.data_chart).style("fill", function(d) {return colorScale(d);})
 
     // Add word count legends
     this.svg = d3.select("#bubble-chart-legends")
@@ -97,22 +90,7 @@ export default {
       var dom = d3.extent(this.data_chart, function(d) { return parseFloat(d[key]) ; })  // d3.extent returns [min, max] in a single pass over the input --> used to set a scale's domain
       return dom
     },
-    sendFilterInput(input, index) {
-      if ( this.clickInput[index] == false ) {
-        this.clickInput[index] = true
-        this.$emit('inputChange', input)
-      } else if ( this.clickInput[index] == true ) {
-        this.clickInput[index] = false
-        this.$emit('inputChangeBack', input)
-      }
-    },
-    cssRectFill(legItem) {
-      // const colorScale = d3.scaleOrdinal(d3.schemeTableau10).domain(chartData);
-      const colorScale = d3.scaleOrdinal(d3.schemeTableau10).domain(this.data_chart);
-      return {
-        '--fill': colorScale(legItem)
-      }
-    }
+    
   },
   computed: {
   }
@@ -128,10 +106,6 @@ ul li {
 }
 #legendElementWrapper {
   cursor: pointer;
-  /* font-size: 14px;
-  max-width: 120px; */
 }
-rect {
-  /* fill: var(--fill); */
-}
+
 </style>

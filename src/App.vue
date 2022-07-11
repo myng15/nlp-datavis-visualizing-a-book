@@ -123,14 +123,13 @@ export default {
   grid-row: 1;
 }
 
+
 #submain3{
   margin-bottom: 10px;
 }
 
 #submain3-buttons button {
-  /* background-color: #18A999;  */
   border: 1px solid green; 
-  color: white;
   font-weight: bold; 
   padding: 10px 24px; 
   cursor: pointer; 
@@ -138,30 +137,29 @@ export default {
 }
 
 #submain3-buttons button:not(:last-child) {
-  border-right: none; /* Prevent double borders */
+  border-right: none; 
 }
-
-/* #submain3-buttons:after {
-  content: "";
-  clear: both;
-  display: table;
-} */
 
 #submain3-buttons button:hover{
   background-color: #3e8e41;
+  color: white;
 }
 
-#bubble-chart-container,
+#bubble-chart-container {
+  padding: 20px 0;
+}
 #circle-pack-container {
-  padding: 20px;
+  padding: 10px;
 }
 
 .btn-active {
   background-color: #3e8e41;
+  color: white;
 }
 
 .btn-inactive {
-  background-color: #18A999;
+  background-color: white;
+  color: #3e8e41;
 }
 
 .chart-active {

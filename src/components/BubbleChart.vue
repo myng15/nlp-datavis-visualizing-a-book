@@ -5,15 +5,12 @@
         <BubbleChartMain
           :data="data"
           :data_chart="data_chart"
-          :key="chartReloadKey"
         />
       </div>
       <BubbleChartLegend 
         :data="data"
         :data_chart="data_chart"
-        :legend_class="legend_class"
-        @inputChange="filterInput"
-        @inputChangeBack="filterInputBack"
+        :legend_class="legend_class" 
       />
     
     </div>
@@ -41,21 +38,12 @@ export default {
       data: [],
       data_chart: [],
       legend_class: [],
-      chartReloadKey: 0,
-      // colorScale: null,
     }
   },
   created: function() {
     var that = this 
     that.data = Object.values(data)
-    // await d3.json("/src/data/topic_bubbles_data.json",
-    //   function(data) {  
-    //     that.data.push(data)
-    //   }
-    // );
     this.data_chart = this.data
-    // this.data_chart = chartData
-    // this.colorScale = d3.scaleOrdinal(d3.schemeSet3)
   },
   watch: {
     chapterKey: {
@@ -66,18 +54,7 @@ export default {
     }
   },
   methods: {
-    filterInput (input) {
-      // console.log(input)
-      // console.log(`Topic ${this.data_chart.indexOf(this.data_chart[0])+1}` == input)
-      this.data_chart = this.data_chart.filter(function(d){return `Topic ${this.data_chart.indexOf(d)+1}` != input;})
-      this.chartReloadKey += 1
-    },
-    filterInputBack (input) {
-      // console.log(input)
-      // console.log(`Topic ${this.data_chart.indexOf(this.data_chart[0])+1}` == input)
-      this.data_chart = this.data_chart.concat(this.data.filter(function(d){return `Topic ${this.data.indexOf(d)+1}` == input;}))
-      this.chartReloadKey += 1
-    },
+    
   }
 }
 </script>
@@ -86,5 +63,9 @@ export default {
   #bubble-pack {
     display: flex;
     flex-direction: row;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
   }
 </style>

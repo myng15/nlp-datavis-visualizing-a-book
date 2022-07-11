@@ -30,8 +30,8 @@ export default {
         margin: { 
           top: 20, 
           right: 40, 
-          bottom: 30, 
-          left: 40
+          bottom: 60, 
+          left: 80
         },
       width: 400,
       height: 267,
@@ -55,7 +55,7 @@ export default {
       // .select("#bubble-chart")
       // .append("svg")
       .select("#bubble-chart-svg")
-      .attr("width", (this.settings.width + this.settings.margin.left + this.settings.margin.right))
+      .attr("width", (this.settings.width + this.settings.margin.left + this.settings.margin.right + 50))
       .attr("height", (this.settings.height + this.settings.margin.top + this.settings.margin.bottom))
 
     const xScale = d3.scaleLinear()
@@ -66,7 +66,7 @@ export default {
       .call(d3.axisBottom(xScale))
 
     const yScale = d3.scaleLinear()
-          .range([this.settings.height, 0])
+          .range([this.settings.height, 50]) //range go in the opposite direction as compared to xScale because yScale grows from the bottom upwards
           .domain(this.key_dom(this.key_y))
     this.svgContainer.append("g")
       .attr("transform", "translate(" + this.settings.margin.left + "," + this.settings.margin.top + ")")
@@ -78,64 +78,107 @@ export default {
           .select("#chartWrapper")
           .attr("transform", "translate(" + this.settings.margin.left + "," + this.settings.margin.top + ")");
 
-    this.chartWrapper
-      // .append("g")
-      //   .attr("class", "grid")
-        .select(".grid-x")
-        .attr("transform", "translate(0," + this.settings.height + ")")
-        .call(d3.axisBottom(xScale)
-            .ticks(5)
-            .tickSize(-this.settings.height)
-            .tickFormat("")
-        )
-    this.chartWrapper
-        // .append("g")
-        // .attr("class", "grid")
-        .select(".grid-y")
-        .call(d3.axisLeft(yScale)
-            .ticks(5)
-            .tickSize(-this.settings.width)
-            .tickFormat("")
-        )
+    // this.chartWrapper
+    //   // .append("g")
+    //   //   .attr("class", "grid")
+    //     .select(".grid-x")
+    //     .attr("transform", "translate(0," + this.settings.height + ")")
+    //     .call(d3.axisBottom(xScale)
+    //         .ticks(5)
+    //         .tickSize(-this.settings.height)
+    //         .tickFormat("")
+    //     )
+    // this.chartWrapper
+    //     // .append("g")
+    //     // .attr("class", "grid")
+    //     .select(".grid-y")
+    //     .call(d3.axisLeft(yScale)
+    //         .ticks(5)
+    //         .tickSize(-this.settings.width)
+    //         .tickFormat("")
+    //     )
     
     //Add axis labels   
-    // this.chartWrapper.append("text")
-    //       .attr("x", (this.settings.width / 2))
-    //       .attr("y", this.settings.height + this.settings.margin.top)
-    //       .attr("dy", "1em")
-    //       .style("text-anchor", "middle")
-    //       .text("x");
+    this.chartWrapper.append("text")
+          .attr("x", (this.settings.width / 2))
+          .attr("y", this.settings.height + this.settings.margin.top)
+          .attr("dy", "1em")
+          .style("text-anchor", "middle")
+          .style("fill", "#18A999")
+          .text("PC2");
 
-    // this.chartWrapper.append("text")
-    //       .attr("transform", "rotate(-90)")
-    //       .attr("y", 0 - this.settings.margin.left)
-    //       .attr("x", 0 - (this.settings.height / 2))
-    //       .attr("dy", "1em")
-    //       .style("text-anchor", "middle")
-    //       .text("y");
+    this.chartWrapper.append("text")
+          .attr("transform", "rotate(-90)")
+          .attr("y", 0 - this.settings.margin.left)
+          .attr("x", 0 - (this.settings.height / 2))
+          .attr("dy", "2.5em")
+          .style("text-anchor", "middle")
+          .style("fill", "#18A999")
+          .text("PC1");
 
     const rScale = d3.scaleLinear()
 			.range([15, 25])
       .domain(this.key_dom(this.key_r))
 
-    const colorScale = d3.scaleOrdinal(d3.schemeTableau10).domain(this.data_chart)
+    // const colorScale = d3.scaleOrdinal(d3.schemeTableau10).domain(this.data_chart)
 
-    this.bubbles = 
-      this.chartWrapper
-      // .append('g')
+    // Use this if no annotation text
+    // this.bubbles = 
+    //   this.chartWrapper
+    //   // .append('g')
+    //   .select("#bubbles")
+    //   .selectAll("dot")
+    //   .data(this.data_chart)
+    //   .enter()
+    //   .append("circle")
+    //     .attr("class", "bubble")
+    //     .style("opacity", this.settings.opacityCircles)
+    //     .style("fill", function(d) {return colorScale(d);})
+    //     .style("stroke", "gray")
+    //     .attr("cx", function(d) {return xScale(d.x);})
+    //     .attr("cy", function(d) {return yScale(d.y);})
+    //     .attr("r", function(d) {return rScale(d.count)})
+       
+    //Use this to add bubbles with annotation text 
+    this.bubbles = this.chartWrapper
       .select("#bubbles")
       .selectAll("dot")
       .data(this.data_chart)
       .enter()
-      .append("circle")
-        .attr("class", "bubble")
-        .style("opacity", this.settings.opacityCircles)
-        .style("fill", function(d) {return colorScale(d);})
-        .style("stroke", "gray")
-        .attr("cx", function(d) {return xScale(d.x);})
-        .attr("cy", function(d) {return yScale(d.y);})
-        .attr("r", function(d) {return rScale(d.count)})
-       
+      .append("g")
+      .attr("class", "bubble-container")
+
+    this.bubbles.append("circle")
+                .attr("class", "bubble")
+                .style("opacity", this.settings.opacityCircles)
+                // .style("fill", function(d) {return colorScale(d);})
+                .style("fill", "#bbc1be")
+                .style("stroke", "white")
+                .attr("cx", function(d) {return xScale(d.x);})
+                .attr("cy", function(d) {return yScale(d.y);})
+                .attr("r", function(d) {return rScale(d.count)})
+
+    // Add bubble labels
+    const topicNames = {
+      1: "Friends & love", 
+      2:"School activities", 
+      3: "Fashion & shows", 
+      4: "Anne's emotional world", 
+      5: "Life at Green Gables", 
+      6: "Incidents with the Barrys", 
+      7: "Mistakes & apologies"
+    }
+
+    this.bubbles.append('text')
+                .attr("class", "bubble-label")
+                .attr("x", function(d) {return xScale(d.x)})
+                .attr("y", function(d) {return d.count < 1200 ? yScale(d.y) - 22 
+                                                              : d.count > 2000 ? yScale(d.y) - 30
+                                                              : yScale(d.y) - 28}) //https://jonathansoma.com/lede/storytelling/d3/text-elements/ for difference between attr "x"/"y" and "dx"/"dy"
+                .attr("text-anchor", "middle")
+                .style("font-size", "12px")
+                .text(d => topicNames[this.data_chart.indexOf(d)+1]);
+
     // Add bubble tooltips
     const tooltip = d3.select('#bubble-chart').append("div")
                       .attr("id", "bubble-tooltip");

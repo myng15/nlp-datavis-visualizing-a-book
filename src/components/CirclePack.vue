@@ -26,7 +26,7 @@ export default {
     init() {
       const packData = {name: "packData", children: []} //keys MUST be "name" and "children" (for all data levels) to be able to apply d3.hierarchy()
       for (const topic of termsData) {
-        packData.children.push({name: topic.topic, children: topic.terms.slice(0, 10)})
+        packData.children.push({name: topic.topic, children: topic.terms.slice(0, 15)})
       }
 
       const pack = data => d3.pack()
@@ -39,10 +39,10 @@ export default {
       let focus = root;
       let view;
       //Color scheme according to a data node's depth in the hierarchy (here there is only 1 level i.e. only the topic nodes have children and therefore have the first color in the range hsl(110,80%,80%))
-      const color = d3.scaleLinear()
-                      .domain([0, 5])
-                      .range(["hsl(110,80%,80%)", "hsl(228,30%,40%)"])
-                      .interpolate(d3.interpolateHcl)
+      // const color = d3.scaleLinear()
+      //                 .domain([0, 5])
+      //                 .range(["hsl(110,80%,80%)", "hsl(228,30%,40%)"])
+      //                 .interpolate(d3.interpolateHcl)
 
       const circlePackSvg = d3.select("#circle-pack").append("svg")
       .attr("viewBox", `-${this.settings.width/2} -${this.settings.height/2} ${this.settings.width} ${this.settings.height}`)
@@ -56,7 +56,8 @@ export default {
       .selectAll("circle")
       .data(root.descendants().slice(1))
       .join("circle")
-        .attr("fill", d => d.children ? color(d.depth) : "white")
+        // .attr("fill", d => d.children ? color(d.depth) : "white") //if using color scale above
+        .attr("fill", d => d.children ? "#bbc1be" : "white")
         .attr("pointer-events", d => !d.children ? "none" : null)
         .on("mouseover", function() { d3.select(this).attr("stroke", "gray"); })
         .on("mouseout", function() { d3.select(this).attr("stroke", null); })
@@ -69,10 +70,11 @@ export default {
       4: "Anne's emotional world", 
       5: "Life at Green Gables", 
       6: "Incidents with the Barrys", 
-      7: "Blunders, misunderstandings & apologies"
+      7: "Mistakes & apologies"
     }
     
     const label = circlePackSvg.append("g")
+        .attr("id", "circle-labels")
         .style("font", "5px sans-serif")
         .attr("pointer-events", "none")
         .attr("text-anchor", "middle")
@@ -81,7 +83,8 @@ export default {
       .join("text")
         .style("fill-opacity", d => d.parent === root ? 1 : 0)
         .style("display", d => d.parent === root ? "inline" : "none")
-        .text(d => Object.keys(topicNames).includes(d.data.name.toString()) ? topicNames[d.data.name] : `${d.data.name} (${d.data.value})` );
+        .text(d => Object.keys(topicNames).includes(d.data.name.toString()) ? 
+                               topicNames[d.data.name] : `${d.data.name} (${d.data.value})` );
 
     zoomTo([root.x, root.y, root.r * 2]);
 
@@ -123,7 +126,7 @@ export default {
 </script>
 
 <style>
-text {
-    font-size: min(130%, 30px)
+ #circle-labels text {
+    font-size: min(130%, 30px);
   }
 </style>

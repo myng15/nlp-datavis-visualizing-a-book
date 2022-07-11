@@ -109,7 +109,9 @@ export default {
           .attr("fill", function(d) {
             return d.Color;
           })
+
     }
+
   }
 };
 </script>
@@ -139,4 +141,7 @@ ul.menu li {
   margin-top: 0;
   position: relative;
 }
+
+
+
 </style>

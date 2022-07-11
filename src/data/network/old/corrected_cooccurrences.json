@@ -1,0 +1,339 @@
+{
+  "nodes": [
+    {
+      "id": 1,
+      "name": "Anne Shirley",
+      "size": 1108,
+      "color": "#548C2F"
+    },
+    {
+      "id": 2,
+      "name": "Marilla Cuthbert",
+      "size": 623,
+      "color": "#1C448E"
+    },
+    {
+      "id": 3,
+      "name": "Diana Barry",
+      "size": 492,
+      "color": "#BC69AA"
+    },
+    {
+      "id": 4,
+      "name": "Matthew Cuthbert",
+      "size": 316,
+      "color": "#4CC9F0"
+    },
+    {
+      "id": 5,
+      "name": "Rachel Lynde",
+      "size": 220,
+      "color": "#931F1D"
+    },
+    {
+      "id": 6,
+      "name": "Jane Andrews",
+      "size": 92,
+      "color": "#96949E"
+    },
+    {
+      "id": 7,
+      "name": "Gilbert Blythe",
+      "size": 113,
+      "color": "#96949E"
+    },
+    {
+      "id": 8,
+      "name": "Stacy",
+      "size": 62,
+      "color": "#96949E"
+    },
+    {
+      "id": 9,
+      "name": "Phillips",
+      "size": 45,
+      "color": "#96949E"
+    },
+    {
+      "id": 10,
+      "name": "Ruby Gillis",
+      "size": 42,
+      "color": "#96949E"
+    },
+    {
+      "id": 11,
+      "name": "Josie Pye",
+      "size": 69,
+      "color": "#96949E"
+    },
+    {
+      "id": 12,
+      "name": "Spencer",
+      "size": 37,
+      "color": "#96949E"
+    },
+    {
+      "id": 13,
+      "name": "Thomas Lynde",
+      "size": 24,
+      "color": "#96949E"
+    }
+  ],
+  "links": [
+    {
+      "source": 1,
+      "target": 2,
+      "color": "#96949E"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "color": "#737373"
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "color": "#737373"
+    },
+    {
+      "source": 1,
+      "target": 5,
+      "color": "#969696"
+    },
+    {
+      "source": 1,
+      "target": 6,
+      "color": "#969696"
+    },
+    {
+      "source": 1,
+      "target": 7,
+      "color": "#969696"
+    },
+    {
+      "source": 1,
+      "target": 8,
+      "color": "#969696"
+    },
+    {
+      "source": 1,
+      "target": 9,
+      "color": "#969696"
+    },
+    {
+      "source": 1,
+      "target": 10,
+      "color": "#969696"
+    },
+    {
+      "source": 1,
+      "target": 11,
+      "color": "#969696"
+    },
+    {
+      "source": 1,
+      "target": 12,
+      "color": "#969696"
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "color": "#969696"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "color": "#737373"
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "color": "#969696"
+    },
+    {
+      "source": 2,
+      "target": 6,
+      "color": "#969696"
+    },
+    {
+      "source": 2,
+      "target": 7,
+      "color": "#969696"
+    },
+    {
+      "source": 2,
+      "target": 8,
+      "color": "#969696"
+    },
+    {
+      "source": 2,
+      "target": 9,
+      "color": "#969696"
+    },
+    {
+      "source": 2,
+      "target": 10,
+      "color": "#969696"
+    },
+    {
+      "source": 2,
+      "target": 11,
+      "color": "#969696"
+    },
+    {
+      "source": 2,
+      "target": 12,
+      "color": "#969696"
+    },
+    {
+      "source": 2,
+      "target": 13,
+      "color": "#969696"
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "color": "#969696"
+    },
+    {
+      "source": 3,
+      "target": 5,
+      "color": "#969696"
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "color": "#969696"
+    },
+    {
+      "source": 3,
+      "target": 7,
+      "color": "#969696"
+    },
+    {
+      "source": 3,
+      "target": 8,
+      "color": "#969696"
+    },
+    {
+      "source": 3,
+      "target": 9,
+      "color": "#969696"
+    },
+    {
+      "source": 3,
+      "target": 10,
+      "color": "#969696"
+    },
+    {
+      "source": 3,
+      "target": 11,
+      "color": "#969696"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "color": "#969696"
+    },
+    {
+      "source": 4,
+      "target": 6,
+      "color": "#969696"
+    },
+    {
+      "source": 4,
+      "target": 8,
+      "color": "#969696"
+    },
+    {
+      "source": 4,
+      "target": 12,
+      "color": "#969696"
+    },
+    {
+      "source": 4,
+      "target": 13,
+      "color": "#969696"
+    },
+    {
+      "source": 5,
+      "target": 8,
+      "color": "#969696"
+    },
+    {
+      "source": 5,
+      "target": 13,
+      "color": "#969696"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "color": "#969696"
+    },
+    {
+      "source": 6,
+      "target": 8,
+      "color": "#969696"
+    },
+    {
+      "source": 6,
+      "target": 9,
+      "color": "#969696"
+    },
+    {
+      "source": 6,
+      "target": 10,
+      "color": "#969696"
+    },
+    {
+      "source": 6,
+      "target": 11,
+      "color": "#969696"
+    },
+    {
+      "source": 7,
+      "target": 8,
+      "color": "#969696"
+    },
+    {
+      "source": 7,
+      "target": 9,
+      "color": "#969696"
+    },
+    {
+      "source": 7,
+      "target": 10,
+      "color": "#969696"
+    },
+    {
+      "source": 7,
+      "target": 11,
+      "color": "#969696"
+    },
+    {
+      "source": 8,
+      "target": 9,
+      "color": "#969696"
+    },
+    {
+      "source": 8,
+      "target": 10,
+      "color": "#969696"
+    },
+    {
+      "source": 8,
+      "target": 11,
+      "color": "#969696"
+    },
+    {
+      "source": 9,
+      "target": 10,
+      "color": "#969696"
+    },
+    {
+      "source": 10,
+      "target": 11,
+      "color": "#969696"
+    }
+  ]
+}

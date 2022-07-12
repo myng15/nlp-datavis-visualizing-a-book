@@ -3,7 +3,7 @@
     <h3>Most frequent words per chapter</h3>
     <div>Select a chapter: {{ selected }}
       <select style="font-family:'PT Sans', sans-serifSans" name="selected" @change="onChange($event)" v-model="key">
-        <option disabled value="">Please select a chapter</option>
+        <option disabled value="">Select a chapter</option>
         <option value="0">Entire Book</option>
         <option value="1">Chapter 1</option>
         <option value="2">Chapter 2</option>
@@ -56,9 +56,6 @@ import cloud from "d3-cloud"
 
 export default {
   components: {},
-  mounted() {
-    // this.onChange();
-  },
   data() {
     return {key: ""};
   },
@@ -68,18 +65,21 @@ export default {
       deep: true,
       handler() {
         d3.select("#wordcloud").select("svg").remove()
-        this.init();
+        this.init(this.key);
       }
       /* eslint-enable */
     }
+  },
+  mounted() {
+    this.init("0");
   },
   methods: {
     onChange() {
       this.$emit("changeChapter", this.key)
     },
-    init() {
-      var myWords = data[this.key];
-       console.log(data[this.key]);
+    init(key) {
+      var myWords = data[key];
+       console.log(data[key]);
 // set the dimensions and margins of the graph
       var margin = {top: 2, right: 2, bottom: 2, left: 2},
           width = 450 - margin.left - margin.right,
@@ -101,13 +101,13 @@ export default {
           .words(myWords.map(function (d) {
             return {text: d[0], size: d[1]};
           }))
-          .padding(8, 15)        //space between words
+          .padding(0)        //space between words
           .rotate(function () {
             return ~~(Math.random() * 2) * 90;
           }) // font size of words
           .font("Impact")
           .fontSize(function (d) {
-            return d.size * 4;
+            return key === "0" ? d.size/2 : d.size * 5;
           })
           .on("end", draw);
       layout.start();
@@ -128,6 +128,8 @@ export default {
             .attr("fill", "#96949E")
             .attr("text-anchor", "middle")
             .style("font-family", "Impact")
+            .transition()
+            .duration(500)
             .attr("transform", function (d) {
               return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
             })

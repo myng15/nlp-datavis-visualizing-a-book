@@ -49,24 +49,29 @@ export default {
     chapterKey: {
       deep: true,
       handler() {
-        const chapter = parseInt(this.chapterKey)
-        const matchTopic = termsData.find(topic => topic.chapters.includes(chapter)).topic;
-        const noMatchTopics = termsData.filter(topic => !topic.chapters.includes(chapter));
+        // const chapter = parseInt(this.chapterKey)
+        const chapter = parseInt(this.chapterKey);
         
         // If word cloud for the entire book is being shown:
-        if(this.chapterKey === "") termsData.forEach(topic => d3.select(`#topic-${topic.topic}`)
+        if(chapter === 0) {
+          termsData.forEach(topic => d3.select(`#topic-${topic.topic}`)
                                                        .transition()
                                                        .duration(300)
                                                        .style("opacity", this.settings.opacityCircles))
-        d3.select(`#topic-${matchTopic}`)
-          .transition()
-          .duration(300)
-          .style("opacity", this.settings.opacityCircles);
+        } else {
+          const matchTopic = termsData.find(topic => topic.chapters.includes(chapter)).topic;
 
-        noMatchTopics.forEach(topic => d3.select(`#topic-${topic.topic}`)
-                     .transition()
-                     .duration(300)
-                     .style("opacity", 0.3))
+          const noMatchTopics = termsData.filter(topic => !topic.chapters.includes(chapter));
+          d3.select(`#topic-${matchTopic}`)
+            .transition()
+            .duration(300)
+            .style("opacity", this.settings.opacityCircles);
+
+          noMatchTopics.forEach(topic => d3.select(`#topic-${topic.topic}`)
+                      .transition()
+                      .duration(300)
+                      .style("opacity", 0.3))
+        }
       }
     }
   },

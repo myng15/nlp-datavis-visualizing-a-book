@@ -58,7 +58,7 @@ export default {
             return ~~(Math.random() * 2) * 90;
           }) // font size of words
           .fontSize(function (d) {
-            return d.size * 7;
+            return d.size * 12;
           })
           .on("end", draw);
       layout.start();

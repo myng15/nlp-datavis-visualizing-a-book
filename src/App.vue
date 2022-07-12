@@ -11,10 +11,10 @@
     <div id = "main1">
       <div> general info following soon</div>
       <BarChart></BarChart>
-      <div class="arrow">
+<!--      <div class="arrow">
         <div class="line"></div>
         <div class="point"></div>
-      </div>
+      </div>-->
     </div>
   <div id="main2">
    <NetworkDiagram v-on:changeCharacter="characterChange($event)"></NetworkDiagram>

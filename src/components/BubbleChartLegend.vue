@@ -58,7 +58,7 @@ export default {
       .append("svg")
       .attr("width", (this.width))
       .attr("height", (this.height))
-      .attr("transform", "translate(" + this.settings.margin.left*-.8 + "," + + (this.settings.height - this.settings.margin.top - this.settings.margin.bottom - 55) + ")");
+      .attr("transform", "translate(" + this.settings.margin.left*-.8 + "," + + (this.settings.height - this.settings.margin.top - this.settings.margin.bottom - 20) + ")");
 
     const rScale = d3.scaleLinear()
         .range([15,25])
@@ -102,7 +102,7 @@ export default {
       .attr('y', function(d){ return valuesToShow.indexOf(d) === 1 ? yCircle - rScale(d) - 5 : valuesToShow.indexOf(d) === 2 ? yCircle - rScale(d) - 10 
                                                                       : yCircle - rScale(d) } )
       .text( function(d){ return d } )
-      .style("font-size", 12)
+      .style("font-size", 11)
       .attr('alignment-baseline', 'middle')
   },
   methods: {

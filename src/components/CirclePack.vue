@@ -7,6 +7,9 @@ import * as d3 from "d3";
 import termsData from "@/data/bubblechart/top_terms_arr_per_topic_7.json";
 
 export default {
+  props: {
+    chapterKey: String
+  },
   data: () => ({
     settings: {
       margin: { 
@@ -17,8 +20,38 @@ export default {
         },
       width:      200,
       height:     130,
+      opacityCircles: 0.9
     }
   }),
+  watch: {
+    chapterKey: {
+      deep: true,
+      handler() {
+        const chapter = parseInt(this.chapterKey);
+        
+        // If word cloud for the entire book is being shown:
+        if(chapter === 0) {
+          termsData.forEach(topic => d3.select(`#topicPack-${topic.topic}`)
+                                                       .transition()
+                                                       .duration(300)
+                                                       .style("opacity", this.opacityCircles))
+        } else {
+            const matchTopic = termsData.find(topic => topic.chapters.includes(chapter)).topic;
+
+            const noMatchTopics = termsData.filter(topic => !topic.chapters.includes(chapter));
+            d3.select(`#topicPack-${matchTopic}`)
+              .transition()
+              .duration(300)
+              .style("opacity", this.opacityCircles);
+
+            noMatchTopics.forEach(topic => d3.select(`#topicPack-${topic.topic}`)
+                        .transition()
+                        .duration(300)
+                        .style("opacity", 0.3))
+        }
+      }
+    }
+  },
   mounted() {
     this.init()
   },
@@ -56,6 +89,7 @@ export default {
       .data(root.descendants().slice(1))
       .join("circle")
         // .attr("fill", d => d.children ? color(d.depth) : "white") //if using color scale above
+        .attr("id", d => `topicPack-${d.data.name}`)
         .attr("fill", d => d.children ? "#bbc1be" : "white")
         .attr("pointer-events", d => !d.children ? "none" : null)
         .on("mouseover", function() { d3.select(this).attr("stroke", "gray"); })

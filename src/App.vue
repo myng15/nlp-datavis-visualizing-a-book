@@ -35,13 +35,13 @@
         >Top Terms per Topic</button>
       </div>
       <div id="bubble-chart-container" :class="[showBubbleChart ? 'chart-active' : 'chart-inactive']">
-        <BubbleChart :chapterKey="chapterKey" @changeChapter="chapterChange"></BubbleChart>
+        <BubbleChart :chapterKey="chapterKey" @changeChapter="chapterChange" v-on:topic="getTopic($event)"></BubbleChart>
       </div>
       <div id="circle-pack-container" :class="[!showBubbleChart ? 'chart-active' : 'chart-inactive']">
-        <CirclePack></CirclePack>
+        <CirclePack :chapterKey="chapterKey" @changeChapter="chapterChange"></CirclePack>
       </div>
     </div>
-    <WordCloudChapter :characterKey="characterKey" v-on:changeChapter="chapterChange($event)"></WordCloudChapter>
+    <WordCloudChapter v-on:changeChapter="chapterChange($event)" :topicKey="topicKey" @topic="getTopic"></WordCloudChapter>
   </div>
   </div>
 </template>
@@ -61,7 +61,8 @@ export default {
       anne: require('./assets/anne.svg'),
       showBubbleChart: true,
       chapterKey: "",
-      characterKey:""
+      characterKey: "",
+      topicKey: ""
     }
   },
   components: {
@@ -83,6 +84,10 @@ export default {
     },
     characterChange(event){
       this.characterKey=event;
+      console.log(event)
+    },
+    getTopic(event){
+      this.topicKey=event;
       console.log(event)
     }
   }
@@ -140,7 +145,7 @@ export default {
 }
 
 #submain3-buttons button {
-  border: 1px solid green; 
+  border: 1px solid #bbc1be; 
   font-weight: bold; 
   padding: 10px 24px; 
   cursor: pointer; 
@@ -152,7 +157,7 @@ export default {
 }
 
 #submain3-buttons button:hover{
-  background-color: #3e8e41;
+  background-color: #18A999; /* #3e8e41; */
   color: white;
 }
 
@@ -161,13 +166,13 @@ export default {
 }
 
 .btn-active {
-  background-color: #3e8e41;
+  background-color: #18A999;/* #3e8e41; */
   color: white;
 }
 
 .btn-inactive {
   background-color: white;
-  color: #3e8e41;
+  color: #18A999; /* #3e8e41; */
 }
 
 .chart-active {

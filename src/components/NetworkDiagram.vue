@@ -2,7 +2,6 @@
   <div id="network">
     <h3>Character Network</h3>
   </div>
-  <div id="wordcloudcharacter"> </div>
 </template>
 
 <script>
@@ -17,11 +16,9 @@ export default {
   mounted() {
     this.init();
   },
-
   data() {
     return {characterKey: ""}
   },
-
   watch: {
     characterKey: {
       deep: true,

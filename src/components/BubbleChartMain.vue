@@ -43,13 +43,13 @@ export default {
       key_x: "x", //x-coordinate of bubble
       key_y: "y", //y-coordinate of bubble
       key_r: "count", //count of terms in corpus that belong to bubble
+      topicKey: ""
     }
   },
   watch: {
     chapterKey: {
       deep: true,
       handler() {
-        // const chapter = parseInt(this.chapterKey)
         const chapter = parseInt(this.chapterKey);
         
         // If word cloud for the entire book is being shown:
@@ -59,18 +59,18 @@ export default {
                                                        .duration(300)
                                                        .style("opacity", this.settings.opacityCircles))
         } else {
-          const matchTopic = termsData.find(topic => topic.chapters.includes(chapter)).topic;
+            const matchTopic = termsData.find(topic => topic.chapters.includes(chapter)).topic;
 
-          const noMatchTopics = termsData.filter(topic => !topic.chapters.includes(chapter));
-          d3.select(`#topic-${matchTopic}`)
-            .transition()
-            .duration(300)
-            .style("opacity", this.settings.opacityCircles);
+            const noMatchTopics = termsData.filter(topic => !topic.chapters.includes(chapter));
+            d3.select(`#topic-${matchTopic}`)
+              .transition()
+              .duration(300)
+              .style("opacity", this.settings.opacityCircles);
 
-          noMatchTopics.forEach(topic => d3.select(`#topic-${topic.topic}`)
-                      .transition()
-                      .duration(300)
-                      .style("opacity", 0.3))
+            noMatchTopics.forEach(topic => d3.select(`#topic-${topic.topic}`)
+                        .transition()
+                        .duration(300)
+                        .style("opacity", 0.3))
         }
       }
     }
@@ -79,6 +79,10 @@ export default {
     this.init(); 
   },
   methods: {
+    onChange(event, data) {
+      this.$emit("changeTopic", data)
+    },
+
     init() {
       
     this.svgContainer = d3
@@ -191,6 +195,7 @@ export default {
                 .style("fill", "#bbc1be")
                 .style("stroke", "white")
                 .attr("stroke-width", 2)
+                .on("click", (event, d) => this.onChange(event, this.data_chart.indexOf(d)+1))
 
     // Add bubble labels
     const topicNames = {
@@ -211,7 +216,8 @@ export default {
                                                               : yScale(d.y) - 28}) //https://jonathansoma.com/lede/storytelling/d3/text-elements/ for difference between attr "x"/"y" and "dx"/"dy"
                 .attr("text-anchor", "middle")
                 .style("font-size", "12px")
-                .text(d => topicNames[this.data_chart.indexOf(d)+1]);
+                .text(d => topicNames[this.data_chart.indexOf(d)+1])
+                .on("click", (event, d) => this.onChange(event, this.data_chart.indexOf(d)+1));
 
     // Add bubble tooltips
     const tooltip = d3.select('#bubble-chart').append("div")
@@ -250,6 +256,10 @@ export default {
 </script>
 
 <style>
+#bubbles {
+  cursor: pointer; 
+}
+
 #bubble-tooltip {
     position: absolute;
     max-width: 200px;

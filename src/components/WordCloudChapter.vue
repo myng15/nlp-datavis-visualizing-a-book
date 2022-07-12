@@ -1,7 +1,7 @@
 <template>
   <div id="wordcloud">
-    <h3>Most frequent words per chapter</h3>
-    <div>Select a chapter: {{ selected }}
+    <!-- <h3>Most frequent words per chapter</h3> -->
+    <div><strong>Most frequent words:</strong> {{ selected }}
       <select style="font-family:'PT Sans', sans-serifSans" name="selected" @change="onChange($event)" v-model="key">
         <option disabled value="">Select a chapter</option>
         <option value="0">Entire Book</option>
@@ -52,14 +52,18 @@
 
 import * as d3 from "d3";
 import data from "@/data/wordcloud/top_words_whole_book.json";
+// eslint-disable-next-line no-unused-vars
+import termsData from "@/data/bubblechart/top_terms_arr_per_topic_7.json";
 import cloud from "d3-cloud"
 
 export default {
+  props: {
+    topicKey: String
+  },
   components: {},
   data() {
     return {key: ""};
   },
-  /* eslint-disable */
   watch: {
     key: {
       deep: true,
@@ -67,7 +71,22 @@ export default {
         d3.select("#wordcloud").select("svg").remove()
         this.init(this.key);
       }
-      /* eslint-enable */
+    },
+    topicKey: {
+      deep: true,
+      handler() {
+        const topic = parseInt(this.topicKey);
+        const chaptersOfTopic = termsData[topic-1].chapters;
+        this.key = chaptersOfTopic[0];
+        const otherChaptersOfTopic = chaptersOfTopic.slice(1).join(", ")
+        d3.select("#wordcloud").select("#other-chapters").remove()
+        d3.select("#wordcloud").select("svg").remove()
+        d3.select("#wordcloud")
+          .append("div")
+          .attr("id", "other-chapters")
+          .text(`Other chapters associated with this topic: ${otherChaptersOfTopic}`);
+        this.init(this.key);
+      }
     }
   },
   mounted() {
@@ -77,13 +96,13 @@ export default {
     onChange() {
       this.$emit("changeChapter", this.key)
     },
+
     init(key) {
       var myWords = data[key];
-       console.log(data[key]);
 // set the dimensions and margins of the graph
       var margin = {top: 2, right: 2, bottom: 2, left: 2},
-          width = 450 - margin.left - margin.right,
-          height = 450 - margin.top - margin.bottom;
+          width = 400 - margin.left - margin.right,
+          height = 400 - margin.top - margin.bottom;
 
 
 // append the svg object to the body of the page
@@ -101,7 +120,7 @@ export default {
           .words(myWords.map(function (d) {
             return {text: d[0], size: d[1]};
           }))
-          .padding(0)        //space between words
+          .padding(1)        //space between words
           .rotate(function () {
             return ~~(Math.random() * 2) * 90;
           }) // font size of words
@@ -164,6 +183,14 @@ h1, a {
   text-decoration: none;
 }
 
+h3 {
+  margin-top: 0;
+
+}
+
+select {
+  margin-bottom: 10px;
+}
 ul.menu {
   list-style: none;
   position: absolute;

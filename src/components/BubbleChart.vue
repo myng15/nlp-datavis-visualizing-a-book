@@ -6,6 +6,7 @@
           :data_chart="data_chart"
           :settings="settings"
           :chapterKey="chapterKey"
+          v-on:changeTopic="topicChange($event)"
         />
       </div>
       <BubbleChartLegend 
@@ -38,15 +39,16 @@ export default {
       legend_class: [],
       settings: {
         margin: { 
-          top: 10, 
-          right: 20, 
-          bottom: 30, 
+          top: 20, 
+          right: 30, 
+          bottom: 40, 
           left: 80
         },
       width: 400,
       height: 267,
       opacityCircles: 0.9,
       // colorScale: d3.scaleOrdinal(d3.schemeSet2).domain(chartData)
+      topicKey: ""
       },
     }
   },
@@ -64,8 +66,12 @@ export default {
   //     }
   //   }
   // },
+   
   methods: {
-    
+    topicChange(event){
+      this.topicKey=event;
+      this.$emit("topic", this.topicKey)
+    }
   }
 }
 </script>

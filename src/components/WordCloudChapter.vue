@@ -4,6 +4,7 @@
     <div>Select a chapter: {{ selected }}
       <select style="font-family:'PT Sans', sans-serifSans" name="selected" @change="onChange($event)" v-model="key">
         <option disabled value="">Please select a chapter</option>
+        <option value="0">Entire Book</option>
         <option value="1">Chapter 1</option>
         <option value="2">Chapter 2</option>
         <option value="3">Chapter 3</option>
@@ -50,7 +51,8 @@
 <script>
 
 import * as d3 from "d3";
-import data from "@/data/wordcloud/top_words_by_chapter.json";
+import data1 from "@/data/wordcloud/top_words_by_chapter.json";
+import data2 from "@/data/wordcloud/top_words_whole_book.json";
 import cloud from "d3-cloud"
 
 export default {
@@ -77,7 +79,14 @@ export default {
       this.$emit("changeChapter", this.key)
     },
     init() {
-      var myWords = data[this.key];
+
+      if (this.key >0) {
+        var myWords = data1[this.key]
+      }
+        else if (this.key == 0){
+          myWords = data2[this.key]
+      }
+
       // console.log(data[this.key]);
 // set the dimensions and margins of the graph
       var margin = {top: 2, right: 2, bottom: 2, left: 2},

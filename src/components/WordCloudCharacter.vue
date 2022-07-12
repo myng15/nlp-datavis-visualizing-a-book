@@ -7,12 +7,12 @@
 <script>
 
 import * as d3 from "d3";
-import data from "@/data/wordcloud/top_words_by_character.json";
+import data from "@/data/wordcloud/top_words_quotes_by_character.json";
 import cloud from "d3-cloud"
 
 export default {
   props: {
-    characterKey: String
+    characterKey: Object // {charName: String, charColor: String}
   },
   components: {},
   mounted() {
@@ -30,11 +30,17 @@ export default {
   },
   methods: {
     init() {
-      var myWords = data[this.characterKey]; 
+      var myWords = data[this.characterKey.charName]; 
+      var characterColor = this.characterKey.charColor;
+      var wordSizes = myWords.map(d => d[1]);
+      var colorScale = d3.scaleSequential()
+                     .domain(d3.extent(wordSizes))
+                     .interpolator(d3.interpolate("#bbc1be", characterColor));
+      
 // set the dimensions and margins of the graph
       var margin = {top: 2, right: 2, bottom: 2, left: 2},
-          width = 450 - margin.left - margin.right,
-          height = 450 - margin.top - margin.bottom;
+          width = 300 - margin.left - margin.right,
+          height = 300 - margin.top - margin.bottom;
 
 
 // append the svg object to the body of the page
@@ -53,16 +59,17 @@ export default {
           .words(myWords.map(function (d) {
             return {text: d[0], size: d[1]};
           }))
-          .padding(4, 5)        //space between words
+          .padding(4,2)        //space between words
           .rotate(function () {
             return ~~(Math.random() * 2) * 90;
           }) // font size of words
           .fontSize(function (d) {
-            return d.size * 12;
+            return d3.min(wordSizes) >= 20 ? d.size : d3.min(wordSizes) >= 10 ? d.size*2 : d3.min(wordSizes) >= 3 ? d.size*4 : d.size*15;
           })
           .on("end", draw);
       layout.start();
 
+      // If using random colors:
       function getRandomColor() {
         var letters = '0123456789ABCDEF';
         var color = '#';
@@ -72,6 +79,10 @@ export default {
         return color;
       }
 
+      // Use the same color as this character's node in node-link diagram
+      // const characterColor = this.characterKey.charColor;
+      // console.log(characterColor)
+      
 // This function takes the output of 'layout' above and draw the words
 // Wordcloud features that are THE SAME from one word to the other can be here
       function draw(words) {
@@ -84,11 +95,14 @@ export default {
             .style("font-size", function (d) {
               return d.size;
             })
-            .attr("fill", function () {
-              return getRandomColor();
-            })
+            .attr("fill", function (d) {
+              return colorScale(d.size);
+            }
+            )
             .attr("text-anchor", "middle")
             .style("font-family", "Impact")
+            .transition()
+            .duration(500)
             .attr("transform", function (d) {
               return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
             })

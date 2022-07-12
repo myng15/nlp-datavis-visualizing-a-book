@@ -8,7 +8,7 @@
 
 import * as d3 from "d3";
 import cooccurrences from "@/data/network/cooccurrences.json";
-import data from "@/data/wordcloud/top_words_by_character.json";
+import wordsData from "@/data/wordcloud/top_words_quotes_by_character.json";
 import cloud from "d3-cloud";
 
 export default {
@@ -31,9 +31,9 @@ export default {
   },
   methods: {
 
-    onChange(event, data) {
-      this.$emit("changeCharacter", data)
-      // this.init()
+    onChange(event, name, color) {
+      // this.$emit("changeCharacter", data)
+      this.$emit("changeCharacter", {charName: name, charColor: color})
     },
 
     init() {
@@ -93,14 +93,13 @@ export default {
           .selectAll("g")
           .data(data.nodes)
           .enter().append("g")
-          .on("click", (event, d) => this.onChange(event, d.name))
+          .on("click", (event, d) => this.onChange(event, d.name, d.color))
 
       let circles = node.append("circle")
           .attr("r", d => nodeSize(d.size))
           .attr("fill", function(d) {
             return d.color;
           })
-
 
       let lables = node.append("text")
           .text(function (d) {
@@ -112,7 +111,7 @@ export default {
             return d.color;
           })
           .style("font-size", "12px")
-          .on("click", (event, d) => this.onChange(event, d.name))
+          .on("click", (event, d) => this.onChange(event, d.name, d.color))
 
       node.append("title")
           .text(function (d) {
@@ -175,7 +174,7 @@ export default {
     },
     initWordCloud(key){
 
-      var myWords = data[key];
+      var myWords = wordsData[key];
       // console.log(data[key]);
 // set the dimensions and margins of the graph
       var margin = {top: 2, right: 2, bottom: 2, left: 2},
@@ -203,7 +202,7 @@ export default {
             return ~~(Math.random() * 2) * 90;
           }) // font size of words
           .fontSize(function (d) {
-            return d.size * 7;
+            return d.size;
           })
           .on("end", draw);
       layout.start();

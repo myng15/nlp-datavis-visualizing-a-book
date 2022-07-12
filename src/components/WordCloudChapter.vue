@@ -144,7 +144,7 @@ export default {
             .style("font-size", function (d) {
               return d.size;
             })
-            .attr("fill", "#96949E")
+            .attr("fill", "#7e8983") //#96949E
             .attr("text-anchor", "middle")
             .style("font-family", "Impact")
             .transition()

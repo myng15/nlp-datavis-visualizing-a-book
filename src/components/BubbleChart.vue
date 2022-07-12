@@ -1,5 +1,5 @@
 <template>
-    <div id="bubble-pack">
+    <div id="bubble-chart-all">
       <div id="main-chart">
         <BubbleChartMain
           :data="data"
@@ -77,7 +77,7 @@ export default {
 </script>
 
 <style>
-  #bubble-pack {
+  #bubble-chart-all {
     display: flex;
     flex-direction: row;
     margin: 0;

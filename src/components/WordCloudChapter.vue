@@ -1,7 +1,7 @@
 <template>
   <div id="wordcloud">
     <!-- <h3>Most frequent words per chapter</h3> -->
-    <div><strong>Most frequent words:</strong> {{ selected }}
+    <div><span id="chapter-wc-title">Most frequent words (N-grams):</span> {{ selected }}
       <select style="font-family:'PT Sans', sans-serifSans" name="selected" @change="onChange($event)" v-model="key">
         <option disabled value="">Select a chapter</option>
         <option value="0">Entire Book</option>
@@ -108,7 +108,6 @@ export default {
       var colorScaleEntireBook = d3.scaleSequential()
                      .domain(d3.extent(wordSizes))
                      .interpolator(d3.interpolate("#9ca5a1", "#202321"));
-      console.log(colorScaleEntireBook(122));
       var colorScaleChapters = d3.scaleSequential()
                      .domain(d3.extent(wordSizes))
                      .interpolator(d3.interpolate("#bbc1be", "#7d8983"));
@@ -198,9 +197,23 @@ h3 {
 
 }
 
-select {
-  margin-bottom: 10px;
+#chapter-wc-title {
+  font-size: 18px;
+  font-weight: bold;
 }
+select{
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    background: #18A999;
+    color: white;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.05);
+    cursor: pointer;
+    font-size: 16px;
+}
+
 ul.menu {
   list-style: none;
   position: absolute;

@@ -63,7 +63,13 @@ export default {
       const noMatchTopics = termsData.filter(topic => topic.topic !== data);
       noMatchTopics.forEach(topic => d3.select(`#topicPack-${topic.topic}`)
                                        .style("opacity", 0.3))
-            
+          
+      // Sync with Circle Packs
+      d3.select(`#topic-${data}`)
+        .style("opacity", this.settings.opacityCircles);
+      noMatchTopics.forEach(topic => d3.select(`#topic-${topic.topic}`)
+                                       .style("opacity", 0.3))
+      
       this.$emit("changeTopicFromCirclePack", data);
     },
 

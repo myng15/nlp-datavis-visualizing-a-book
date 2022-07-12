@@ -85,12 +85,16 @@ export default {
       const noMatchTopics = termsData.filter(topic => topic.topic !== data);
       noMatchTopics.forEach(topic => d3.select(`#topic-${topic.topic}`)
                                        .style("opacity", 0.3))
-            
+      
+      // Sync with Circle Packs
+      d3.select(`#topicPack-${data}`)
+        .style("opacity", this.opacityCircles);
+      noMatchTopics.forEach(topic => d3.select(`#topicPack-${topic.topic}`)
+                                       .style("opacity", 0.3))
+
       this.$emit("changeTopic", data);
     },
-
     init() {
-      
     this.svgContainer = d3
       // .select("#bubble-chart")
       // .append("svg")

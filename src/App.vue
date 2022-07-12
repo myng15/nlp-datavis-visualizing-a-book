@@ -93,6 +93,13 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+body {
+  font-family: 'PT Sans', sans-serif;
+  background-color: #eee;
+}
+
 #app {
   background: #F7F0F0;
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -144,10 +151,12 @@ export default {
 
 #submain3-buttons button {
   border: 1px solid #bbc1be; 
+  font-size: 16px;
   font-weight: bold; 
   padding: 10px 24px; 
   cursor: pointer; 
   transition: 0.3s;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.05);
 }
 
 #submain3-buttons button:not(:last-child) {

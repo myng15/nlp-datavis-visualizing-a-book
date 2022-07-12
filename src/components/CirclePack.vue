@@ -20,7 +20,8 @@ export default {
         },
       width:      200,
       height:     130,
-      opacityCircles: 0.9
+      opacityCircles: 0.9,
+      topicKey: ""
     }
   }),
   watch: {
@@ -56,6 +57,16 @@ export default {
     this.init()
   },
   methods: {
+    onChange(event, data) {
+      d3.select(`#topicPack-${data}`)
+        .style("opacity", this.opacityCircles);
+      const noMatchTopics = termsData.filter(topic => topic.topic !== data);
+      noMatchTopics.forEach(topic => d3.select(`#topicPack-${topic.topic}`)
+                                       .style("opacity", 0.3))
+            
+      this.$emit("changeTopicFromCirclePack", data);
+    },
+
     init() {
       const packData = {name: "packData", children: []} //keys MUST be "name" and "children" (for all data levels) to be able to apply d3.hierarchy()
       for (const topic of termsData) {
@@ -94,7 +105,12 @@ export default {
         .attr("pointer-events", d => !d.children ? "none" : null)
         .on("mouseover", function() { d3.select(this).attr("stroke", "gray"); })
         .on("mouseout", function() { d3.select(this).attr("stroke", null); })
-        .on("click", (event, d) => focus !== d && (zoom(event, d), event.stopPropagation()));
+        .on("click", (event, d) => {
+          //For zooming effect
+          focus !== d && (zoom(event, d), event.stopPropagation())
+          //For interaction with WordCloudChapter
+          this.onChange(event, d.data.name)
+        });
 
     const topicNames = {
       1: "Friends & love", 

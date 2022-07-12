@@ -38,7 +38,7 @@
         <BubbleChart :chapterKey="chapterKey" @changeChapter="chapterChange" v-on:topic="getTopic($event)"></BubbleChart>
       </div>
       <div id="circle-pack-container" :class="[!showBubbleChart ? 'chart-active' : 'chart-inactive']">
-        <CirclePack :chapterKey="chapterKey" @changeChapter="chapterChange"></CirclePack>
+        <CirclePack :chapterKey="chapterKey" @changeChapter="chapterChange" @changeTopicFromCirclePack="getTopic($event)"></CirclePack>
       </div>
     </div>
     <WordCloudChapter v-on:changeChapter="chapterChange($event)" :topicKey="topicKey" @topic="getTopic"></WordCloudChapter>

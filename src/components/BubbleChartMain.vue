@@ -21,22 +21,23 @@ export default {
   props: { // all following props are typed (optional)
     data: Array,
     data_chart: Array,
+    settings: Object,
     chapterKey: String
     },
   data: function() {
     return {
-      settings: {
-        margin: { 
-          top: 20, 
-          right: 40, 
-          bottom: 60, 
-          left: 80
-        },
-      width: 400,
-      height: 267,
-      opacityCircles: 0.9,
-      // colorScale: d3.scaleOrdinal(d3.schemeSet2).domain(chartData)
-      },
+      // settings: {
+      //   margin: { 
+      //     top: 20, 
+      //     right: 40, 
+      //     bottom: 60, 
+      //     left: 80
+      //   },
+      // width: 400,
+      // height: 267,
+      // opacityCircles: 0.9,
+      // // colorScale: d3.scaleOrdinal(d3.schemeSet2).domain(chartData)
+      // },
       svgContainer: Object,
       chartWrapper: Object,
       key_x: "x", //x-coordinate of bubble
@@ -52,7 +53,8 @@ export default {
         const matchTopic = termsData.find(topic => topic.chapters.includes(chapter)).topic;
         const noMatchTopics = termsData.filter(topic => !topic.chapters.includes(chapter));
         
-        if(chapter === 0) termsData.forEach(topic => d3.select(`#topic-${topic.topic}`)
+        // If word cloud for the entire book is being shown:
+        if(this.chapterKey === "") termsData.forEach(topic => d3.select(`#topic-${topic.topic}`)
                                                        .transition()
                                                        .duration(300)
                                                        .style("opacity", this.settings.opacityCircles))
@@ -84,6 +86,7 @@ export default {
     const xScale = d3.scaleLinear()
       .range([0, this.settings.width])
       .domain(this.key_dom(this.key_x))
+    // Add x-axis
     this.svgContainer.append("g")
       .attr("transform", "translate(" + this.settings.margin.left + "," + (this.settings.height + this.settings.margin.top) + ")")
       .call(d3.axisBottom(xScale))
@@ -91,6 +94,7 @@ export default {
     const yScale = d3.scaleLinear()
           .range([this.settings.height, 50]) //range goes in the opposite direction as compared to xScale because yScale grows from the bottom upwards
           .domain(this.key_dom(this.key_y))
+    // Add y-axis
     this.svgContainer.append("g")
       .attr("transform", "translate(" + this.settings.margin.left + "," + this.settings.margin.top + ")")
       .call(d3.axisLeft(yScale));
@@ -121,7 +125,7 @@ export default {
     //         .tickFormat("")
     //     )
     
-    //Add axis labels   
+    // Add axis labels   
     this.chartWrapper.append("text")
           .attr("x", (this.settings.width / 2))
           .attr("y", this.settings.height + this.settings.margin.top)

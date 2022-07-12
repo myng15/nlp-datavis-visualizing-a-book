@@ -157,7 +157,7 @@ export default {
 }
 
 #bubble-chart-container {
-  padding: 20px 0;
+  padding: 5px 0;
 }
 
 .btn-active {

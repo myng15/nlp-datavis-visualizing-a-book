@@ -1,19 +1,19 @@
 <template>
-
     <div id="bubble-pack">
       <div id="main-chart">
         <BubbleChartMain
           :data="data"
           :data_chart="data_chart"
+          :settings="settings"
           :chapterKey="chapterKey"
         />
       </div>
       <BubbleChartLegend 
         :data="data"
         :data_chart="data_chart"
+        :settings="settings"
         :legend_class="legend_class" 
       />
-    
     </div>
 </template>
 
@@ -36,6 +36,18 @@ export default {
       data: [],
       data_chart: [],
       legend_class: [],
+      settings: {
+        margin: { 
+          top: 10, 
+          right: 20, 
+          bottom: 30, 
+          left: 80
+        },
+      width: 400,
+      height: 267,
+      opacityCircles: 0.9,
+      // colorScale: d3.scaleOrdinal(d3.schemeSet2).domain(chartData)
+      },
     }
   },
   created: function() {

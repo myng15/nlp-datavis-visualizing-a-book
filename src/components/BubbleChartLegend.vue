@@ -24,13 +24,14 @@ import * as d3 from "d3";
 export default {
   props: {
     data: Array,
-    data_chart: Array
+    data_chart: Array,
+    settings: Object
   },
   data: function () {
     return {
       legend_class: [],
-      width: 100,
-      height: 100,
+      width: 150,
+      height: 150,
       key_r: "count"
     }
   },
@@ -53,38 +54,56 @@ export default {
     // d3.selectAll("#legendElementWrapper").select("svg").select("rect").data(this.data_chart).style("fill", function(d) {return colorScale(d);})
 
     // Add word count legends
-    this.svg = d3.select("#bubble-chart-legends")
+    const svg = d3.select("#bubble-chart-legends")
       .append("svg")
       .attr("width", (this.width))
       .attr("height", (this.height))
+      .attr("transform", "translate(" + this.settings.margin.left*-.8 + "," + + (this.settings.height - this.settings.margin.top - this.settings.margin.bottom - 55) + ")");
 
     const rScale = d3.scaleLinear()
         .range([15,25])
         .domain(this.key_dom(this.key_r))  
 
-    const valuesToShow = [500, 1000, 1500, 2000]
-    const xCircle = 30
-    const xLabel = 40
-    this.svg
+    const valuesToShow = [1000, 1500, 2000]
+    const xCircle = 70
+    const xLabel = 115
+    const yCircle = 100
+    svg
+      .selectAll("legend")
       .data(valuesToShow)
       .enter()
       .append("circle")
         .attr("cx", xCircle)
-        .attr("cy", function(d){ return this.height - rScale(d) } )
+        .attr("cy", function(d){ return yCircle - rScale(d) } )
         .attr("r", function(d){ return rScale(d) })
         .style("fill", "none")
         .attr("stroke", "black")
 
-    this.svg
+    svg
+      .selectAll("legend")
       .data(valuesToShow)
       .enter()
       .append("line")
         .attr('x1', function(d){ return xCircle + rScale(d) } )
         .attr('x2', xLabel)
-        .attr('y1', function(d){ return this.height - rScale(d) } )
-        .attr('y2', function(d){ return this.height - rScale(d) } )
+        .attr('y1', function(d){ return valuesToShow.indexOf(d) === 1 ? yCircle - rScale(d) - 5 : valuesToShow.indexOf(d) === 2 ? yCircle - rScale(d) - 10 
+                                                                      : yCircle - rScale(d) } )
+        .attr('y2', function(d){ return valuesToShow.indexOf(d) === 1 ? yCircle - rScale(d) - 5 : valuesToShow.indexOf(d) === 2 ? yCircle - rScale(d) - 10 
+                                                                      : yCircle - rScale(d) } )
         .attr('stroke', 'black')
         .style('stroke-dasharray', ('2,2'))
+
+    svg
+      .selectAll("legend")
+      .data(valuesToShow)
+      .enter()
+      .append("text")
+      .attr('x', xLabel)
+      .attr('y', function(d){ return valuesToShow.indexOf(d) === 1 ? yCircle - rScale(d) - 5 : valuesToShow.indexOf(d) === 2 ? yCircle - rScale(d) - 10 
+                                                                      : yCircle - rScale(d) } )
+      .text( function(d){ return d } )
+      .style("font-size", 12)
+      .attr('alignment-baseline', 'middle')
   },
   methods: {
     key_dom: function(key){

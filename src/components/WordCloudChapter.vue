@@ -51,8 +51,7 @@
 <script>
 
 import * as d3 from "d3";
-import data1 from "@/data/wordcloud/top_words_by_chapter.json";
-import data2 from "@/data/wordcloud/top_words_whole_book.json";
+import data from "@/data/wordcloud/top_words_whole_book.json";
 import cloud from "d3-cloud"
 
 export default {
@@ -79,15 +78,8 @@ export default {
       this.$emit("changeChapter", this.key)
     },
     init() {
-
-      if (this.key >0) {
-        var myWords = data1[this.key]
-      }
-        else if (this.key == 0){
-          myWords = data2[this.key]
-      }
-
-      // console.log(data[this.key]);
+      var myWords = data[this.key];
+       console.log(data[this.key]);
 // set the dimensions and margins of the graph
       var margin = {top: 2, right: 2, bottom: 2, left: 2},
           width = 450 - margin.left - margin.right,

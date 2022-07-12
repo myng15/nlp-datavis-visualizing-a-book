@@ -5,6 +5,7 @@
         <BubbleChartMain
           :data="data"
           :data_chart="data_chart"
+          :chapterKey="chapterKey"
         />
       </div>
       <BubbleChartLegend 
@@ -18,16 +19,13 @@
 
 <script>
 // import * as d3 from "d3";
-
 import data from "@/data/bubblechart/topic_bubbles_data_7.json";
-// const chartData = Object.values(data)
-
 import BubbleChartMain from '@/components/BubbleChartMain.vue'
 import BubbleChartLegend from '@/components/BubbleChartLegend.vue'
 
 export default {
   props: {
-    chapterKey: Number
+    chapterKey: String
   },
   components: {
     BubbleChartMain,
@@ -45,14 +43,15 @@ export default {
     that.data = Object.values(data)
     this.data_chart = this.data
   },
-  watch: {
-    chapterKey: {
-      deep: true,
-      handler() {
-        console.log(this.chapterKey)
-      }
-    }
-  },
+  // watch: {
+  //   chapterKey: {
+  //     deep: true,
+  //     handler() {
+  //       console.log(this.chapterKey)
+  //       // const topTermsArray = termsData[this.data_chart.indexOf(d)].terms.slice(0, 10);
+  //     }
+  //   }
+  // },
   methods: {
     
   }

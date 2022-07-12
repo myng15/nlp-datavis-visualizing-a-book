@@ -10,13 +10,13 @@ export default {
   data: () => ({
     settings: {
       margin: { 
-          top: 20, 
-          right: 40, 
-          bottom: 30, 
-          left: 40
+          top: 10, 
+          right: 10, 
+          bottom: 10, 
+          left: 10
         },
-      width:      400,
-      height:     250,
+      width:      200,
+      height:     130,
     }
   }),
   mounted() {
@@ -46,7 +46,6 @@ export default {
 
       const circlePackSvg = d3.select("#circle-pack").append("svg")
       .attr("viewBox", `-${this.settings.width/2} -${this.settings.height/2} ${this.settings.width} ${this.settings.height}`)
-      // .attr("viewBox", `0 0 ${this.settings.width} ${this.settings.height}`)
       .style("display", "block")
       .style("margin", "0 -5px")
       .style("cursor", "pointer")
@@ -89,7 +88,7 @@ export default {
     zoomTo([root.x, root.y, root.r * 2]);
 
     function zoomTo(v) {
-      const k = 300 / v[2];
+      const k = 120 / v[2];
 
       view = v;
 
@@ -127,6 +126,6 @@ export default {
 
 <style>
  #circle-labels text {
-    font-size: min(130%, 30px);
+    font-size: 60%;
   }
 </style>

@@ -17,8 +17,8 @@
       </div>
     </div>
   <div id="main2">
-    <NetworkDiagram v-on:changeCharacter="characterChange($event)"></NetworkDiagram>
-<!--    <WordCloudCharacter :characterKey="characterKey" @changeCharacter="characterChange"></WordCloudCharacter>-->
+   <NetworkDiagram v-on:changeCharacter="characterChange($event)"></NetworkDiagram>
+   <WordCloudCharacter :characterKey="characterKey" @changeCharacter="characterChange"></WordCloudCharacter>
   </div>
   <div id="main3">
     <div id="submain3">
@@ -32,7 +32,7 @@
           class="toggle"
           @click="toggle"
           :class="[!showBubbleChart ? 'btn-active' : 'btn-inactive']"
-        >Top terms per topic</button>
+        >Top Terms per Topic</button>
       </div>
       <div id="bubble-chart-container" :class="[showBubbleChart ? 'chart-active' : 'chart-inactive']">
         <BubbleChart :chapterKey="chapterKey" @changeChapter="chapterChange"></BubbleChart>
@@ -41,7 +41,7 @@
         <CirclePack></CirclePack>
       </div>
     </div>
-    <WordCloudChapter v-on:changeChapter="chapterChange($event)"></WordCloudChapter>
+    <WordCloudChapter :characterKey="characterKey" v-on:changeChapter="chapterChange($event)"></WordCloudChapter>
   </div>
   </div>
 </template>
@@ -52,7 +52,7 @@ import BarChart from "@/components/BarChart";
 import WordCloudChapter from "@/components/WordCloudChapter";
 import BubbleChart from "@/components/BubbleChart";
 import CirclePack from "./components/CirclePack.vue";
-//import WordCloudCharacter from "@/components/WordCloudCharacter";
+import WordCloudCharacter from "@/components/WordCloudCharacter";
 
 export default {
   name: 'App',
@@ -70,7 +70,7 @@ export default {
     BubbleChart,
     NetworkDiagram,
     CirclePack,
-    //WordCloudCharacter
+    WordCloudCharacter
 },
   methods: {
     toggle(e) {
@@ -80,7 +80,6 @@ export default {
     },
     chapterChange(event){
       this.chapterKey = event;
-      console.log(event)
     },
     characterChange(event){
       this.characterKey=event;
@@ -159,9 +158,6 @@ export default {
 
 #bubble-chart-container {
   padding: 20px 0;
-}
-#circle-pack-container {
-  padding: 10px;
 }
 
 .btn-active {

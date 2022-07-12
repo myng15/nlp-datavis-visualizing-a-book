@@ -13,8 +13,7 @@
 <script>
 
 import * as d3 from "d3";
-// import termsData from "@/data/bubblechart/top_terms_arr_per_topic_7.json";
-
+import termsData from "@/data/bubblechart/top_terms_arr_per_topic_7.json";
 // import data from "@/data/topic_bubbles_data.json";
 // const chartData = Object.values(data) //can be used interchangeably with data_chart from props
 
@@ -22,7 +21,7 @@ export default {
   props: { // all following props are typed (optional)
     data: Array,
     data_chart: Array,
-    // colorScale: null,
+    chapterKey: String
     },
   data: function() {
     return {
@@ -35,7 +34,7 @@ export default {
         },
       width: 400,
       height: 267,
-      opacityCircles: 0.8,
+      opacityCircles: 0.9,
       // colorScale: d3.scaleOrdinal(d3.schemeSet2).domain(chartData)
       },
       svgContainer: Object,
@@ -43,6 +42,30 @@ export default {
       key_x: "x", //x-coordinate of bubble
       key_y: "y", //y-coordinate of bubble
       key_r: "count", //count of terms in corpus that belong to bubble
+    }
+  },
+  watch: {
+    chapterKey: {
+      deep: true,
+      handler() {
+        const chapter = parseInt(this.chapterKey)
+        const matchTopic = termsData.find(topic => topic.chapters.includes(chapter)).topic;
+        const noMatchTopics = termsData.filter(topic => !topic.chapters.includes(chapter));
+        
+        if(chapter === 0) termsData.forEach(topic => d3.select(`#topic-${topic.topic}`)
+                                                       .transition()
+                                                       .duration(300)
+                                                       .style("opacity", this.settings.opacityCircles))
+        d3.select(`#topic-${matchTopic}`)
+          .transition()
+          .duration(300)
+          .style("opacity", this.settings.opacityCircles);
+
+        noMatchTopics.forEach(topic => d3.select(`#topic-${topic.topic}`)
+                     .transition()
+                     .duration(300)
+                     .style("opacity", 0.3))
+      }
     }
   },
   mounted() {
@@ -66,7 +89,7 @@ export default {
       .call(d3.axisBottom(xScale))
 
     const yScale = d3.scaleLinear()
-          .range([this.settings.height, 50]) //range go in the opposite direction as compared to xScale because yScale grows from the bottom upwards
+          .range([this.settings.height, 50]) //range goes in the opposite direction as compared to xScale because yScale grows from the bottom upwards
           .domain(this.key_dom(this.key_y))
     this.svgContainer.append("g")
       .attr("transform", "translate(" + this.settings.margin.left + "," + this.settings.margin.top + ")")
@@ -147,16 +170,18 @@ export default {
       .enter()
       .append("g")
       .attr("class", "bubble-container")
+      .attr("id", d => `topic-${this.data_chart.indexOf(d)+1}`)
 
     this.bubbles.append("circle")
                 .attr("class", "bubble")
+                .attr("cx", function(d) {return xScale(d.x);})
+                .attr("cy", function(d) {return yScale(d.y);})
+                .attr("r", function(d) {return rScale(d.count)})
                 .style("opacity", this.settings.opacityCircles)
                 // .style("fill", function(d) {return colorScale(d);})
                 .style("fill", "#bbc1be")
                 .style("stroke", "white")
-                .attr("cx", function(d) {return xScale(d.x);})
-                .attr("cy", function(d) {return yScale(d.y);})
-                .attr("r", function(d) {return rScale(d.count)})
+                .attr("stroke-width", 2)
 
     // Add bubble labels
     const topicNames = {
@@ -183,7 +208,10 @@ export default {
     const tooltip = d3.select('#bubble-chart').append("div")
                       .attr("id", "bubble-tooltip");
     
-    const handleMouseOver = (e, d) => { //e: MouseEvent, d: chart data
+    /** @param {MouseEvent} e 
+     * @param {Object} d //Each topic object in chart data
+    */
+    const handleMouseOver = (e, d) => {
       // const topTermsArray = termsData[this.data_chart.indexOf(d)].terms.slice(0, 10);
       // const topTerms = topTermsArray.map(i => i.name).join(", ")
       d3.select("#bubble-tooltip")

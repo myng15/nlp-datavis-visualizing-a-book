@@ -13,7 +13,6 @@ import data from "@/data/wordcloud/top_words_by_character.json";
 import cloud from "d3-cloud";
 
 export default {
-  /* eslint-disable */
   components: {},
   mounted() {
     this.init();
@@ -27,6 +26,7 @@ export default {
     characterKey: {
       deep: true,
       handler() {
+        // console.log(this.characterKey)
         this.initWordCloud()
       }
 
@@ -34,11 +34,9 @@ export default {
   },
   methods: {
 
-    onChange() {
-      console.log(this.characterKey)
-      this.$emit("changeCharacter", this.characterKey)
-      console.log(event.target.value, this.characterKey);
-      this.init()
+    onChange(event, data) {
+      this.$emit("changeCharacter", data)
+      // this.init()
     },
 
     init() {
@@ -55,10 +53,9 @@ export default {
               `translate(${margin.left}, ${margin.top})`);
 
       const data = cooccurrences;
-      console.log("Data", data)
+      // console.log("Data", data)
 
-
-      console.log(data.links.index)
+      // console.log(data.links.index)
 
       /* eslint-disable */
 
@@ -99,10 +96,7 @@ export default {
           .selectAll("g")
           .data(data.nodes)
           .enter().append("g")
-          .on("click", function (event, d) {
-            this.characterKey = d.name;
-            console.log(this.characterKey);
-          })
+          .on("click", (event, d) => this.onChange(event, d.name))
 
       let circles = node.append("circle")
           .attr("r", d => nodeSize(d.size))
@@ -116,11 +110,12 @@ export default {
             return d.name;
           })
           .attr('x', -15)
-          .attr('y', d => d.name == "Anne Shirley" || d.name == "Marilla Cuthbert" || d.name == "Diana Barry" ? -30 : -15)
+          .attr('y', d => d.name == "Anne Shirley" || d.name == "Marilla Cuthbert" ? -35 : d.name == "Diana Barry" ? -25 : -15)
           .attr("fill", function(d) {
             return d.color;
           })
           .style("font-size", "12px")
+          .on("click", (event, d) => this.onChange(event, d.name))
 
       node.append("title")
           .text(function (d) {
@@ -184,7 +179,7 @@ export default {
     initWordCloud(key){
 
       var myWords = data[key];
-      console.log(data[key]);
+      // console.log(data[key]);
 // set the dimensions and margins of the graph
       var margin = {top: 2, right: 2, bottom: 2, left: 2},
           width = 450 - margin.left - margin.right,
@@ -293,10 +288,12 @@ ul.menu li {
 .nodes circle {
   stroke: #fff;
   stroke-width: 1.5px;
+  cursor: pointer; 
 }
 
 text {
   font-family: sans-serif;
   font-weight: bold;
+  cursor: pointer; 
 }
 </style>

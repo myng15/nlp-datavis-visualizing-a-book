@@ -1,6 +1,7 @@
 <template>
   <div id="bubble-chart-legends">
-    <!-- <ul id="bubble-legends">
+    <!-- //For adding topic legends:
+    <ul id="bubble-legends">
       <li
           v-for="(input, index) in legend_class"
           :key="`input-${index}`"
@@ -29,12 +30,12 @@ export default {
     return {
       legend_class: [],
       width: 100,
-      height: 333,
+      height: 100,
       key_r: "count"
     }
   },
   created: function() {
-    // For topic legends
+    // For adding topic legends:
     // const topicNames = {
     //   1: "Friends & love", 
     //   2:"School activities", 
@@ -59,7 +60,7 @@ export default {
 
     const rScale = d3.scaleLinear()
         .range([15,25])
-        .domain(this.key_dom(this.key_r))
+        .domain(this.key_dom(this.key_r))  
 
     const valuesToShow = [500, 1000, 1500, 2000]
     const xCircle = 30

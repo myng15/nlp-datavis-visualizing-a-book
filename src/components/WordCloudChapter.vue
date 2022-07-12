@@ -56,7 +56,7 @@ import cloud from "d3-cloud"
 export default {
   components: {},
   mounted() {
-    this.onChange();
+    // this.onChange();
   },
   data() {
     return {key: ""};
@@ -73,9 +73,8 @@ export default {
     }
   },
   methods: {
-    onChange(event) {
+    onChange() {
       this.$emit("changeChapter", this.key)
-      console.log(event.target.value, this.key);
     },
     init() {
       var myWords = data[this.key];

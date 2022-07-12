@@ -73,7 +73,7 @@ export default {
           .selectAll("text").remove();*/
 //Getting max value to set length of y-axis
       var maxValue = Math.max(...data.map(o => o.Value))
-      console.log(maxValue);
+      // console.log(maxValue);
 // Add Y axis
       var y = d3.scaleLinear()
           .domain([0, maxValue])

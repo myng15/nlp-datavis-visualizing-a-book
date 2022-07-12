@@ -16,8 +16,7 @@ export default {
   },
   components: {},
   mounted() {
-    console.log(this.characterKey)
-    this.init();
+    // this.init();
   },
   /* eslint-disable */
   watch: {
@@ -27,13 +26,11 @@ export default {
         d3.select("#wordcloudcharacter").select("svg").remove()
         this.init();
       }
-      /* eslint-enable */
     }
   },
   methods: {
     init() {
-      var myWords = data[this.characterKey];
-      console.log(data[this.characterKey]);
+      var myWords = data[this.characterKey]; 
 // set the dimensions and margins of the graph
       var margin = {top: 2, right: 2, bottom: 2, left: 2},
           width = 450 - margin.left - margin.right,
@@ -41,6 +38,7 @@ export default {
 
 
 // append the svg object to the body of the page
+      
       var svg = d3.select("#wordcloudcharacter").append("svg")
           .attr("width", width + margin.left + margin.right)
           .attr("height", height + margin.top + margin.bottom)
@@ -98,8 +96,6 @@ export default {
               return d.text;
             });
       }
-
-
     }
   }
 };

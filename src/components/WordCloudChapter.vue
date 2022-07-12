@@ -104,6 +104,14 @@ export default {
           width = 400 - margin.left - margin.right,
           height = 400 - margin.top - margin.bottom;
 
+      var wordSizes = myWords.map(d => d[1]);
+      var colorScaleEntireBook = d3.scaleSequential()
+                     .domain(d3.extent(wordSizes))
+                     .interpolator(d3.interpolate("#9ca5a1", "#202321"));
+      console.log(colorScaleEntireBook(122));
+      var colorScaleChapters = d3.scaleSequential()
+                     .domain(d3.extent(wordSizes))
+                     .interpolator(d3.interpolate("#bbc1be", "#7d8983"));
 
 // append the svg object to the body of the page
       var svg = d3.select("#wordcloud").append("svg")
@@ -144,7 +152,9 @@ export default {
             .style("font-size", function (d) {
               return d.size;
             })
-            .attr("fill", "#7e8983") //#96949E
+            .attr("fill", function (d) {
+              return key === "0" ? colorScaleEntireBook(d.size) : colorScaleChapters(d.size);
+            }) //#96949E
             .attr("text-anchor", "middle")
             .style("font-family", "Impact")
             .transition()

@@ -80,7 +80,13 @@ export default {
   },
   methods: {
     onChange(event, data) {
-      this.$emit("changeTopic", data)
+      d3.select(`#topic-${data}`)
+        .style("opacity", this.settings.opacityCircles);
+      const noMatchTopics = termsData.filter(topic => topic.topic !== data);
+      noMatchTopics.forEach(topic => d3.select(`#topic-${topic.topic}`)
+                                       .style("opacity", 0.3))
+            
+      this.$emit("changeTopic", data);
     },
 
     init() {

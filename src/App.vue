@@ -61,7 +61,7 @@ export default {
       anne: require('./assets/anne.svg'),
       showBubbleChart: true,
       chapterKey: "",
-      characterKey: {},
+      characterKey: "",
       topicKey: ""
     }
   },

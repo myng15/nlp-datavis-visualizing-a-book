@@ -99,7 +99,7 @@ export default {
       .enter()
       .append("text")
       .attr('x', xLabel)
-      .attr('y', function(d){ return valuesToShow.indexOf(d) === 1 ? yCircle - rScale(d) - 5 : valuesToShow.indexOf(d) === 2 ? yCircle - rScale(d) - 10 
+      .attr('y', function(d){ return valuesToShow.indexOf(d) === 1 ? yCircle - rScale(d) - 5 : valuesToShow.indexOf(d) === 2 ? yCircle - rScale(d) - 12 
                                                                       : yCircle - rScale(d) } )
       .text( function(d){ return d } )
       .style("font-size", 11)

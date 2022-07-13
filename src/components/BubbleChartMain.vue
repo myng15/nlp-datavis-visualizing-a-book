@@ -246,7 +246,7 @@ export default {
               .style("background", "white")
               .style("box-shadow", "3px 3px 10px rgba(0, 0, 0, 0.4)")
               .style("border-radius", "5px")
-              .html("Frequency (terms): " + d.count 
+              .html("Frequency (in terms): " + d.count 
                     // + "<br>Top words: " + topTerms + ",..."
                     );
     }

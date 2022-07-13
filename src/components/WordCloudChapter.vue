@@ -212,6 +212,7 @@ select{
     box-shadow: 5px 5px 10px rgba(0,0,0,0.05);
     cursor: pointer;
     font-size: 16px;
+    border-radius: 5px;
 }
 
 ul.menu {

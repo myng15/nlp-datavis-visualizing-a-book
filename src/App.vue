@@ -159,6 +159,14 @@ body {
   box-shadow: 5px 5px 10px rgba(0,0,0,0.05);
 }
 
+#submain3-buttons button:first-child {
+  border-radius: 5px 0 0 5px;
+}
+
+#submain3-buttons button:last-child {
+  border-radius: 0 5px 5px 0;
+}
+
 #submain3-buttons button:not(:last-child) {
   border-right: none; 
 }

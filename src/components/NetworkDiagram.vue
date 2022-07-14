@@ -58,16 +58,19 @@ export default {
       //Scales
       let colorNode = d3.scaleOrdinal(d3.schemeTableau10.concat(d3.schemeDark2)); //change color theme from schemeCategory10
 
+      //Getting max value to set domain
+      var maxValue = Math.max(...data.nodes.map(o => o.size))
+
       let nodeSize = d3.scaleLinear()
-          .domain([0, 1000]) // unit: occurences 
-          .range([5, 25]) // unit: pixels
+          .domain([0, maxValue]) // unit: occurences
+          .range([5, 15]) // unit: pixels
 
 
       let simulation = d3.forceSimulation()
           .force("link", d3.forceLink().id(function (d) {
             return d.id;
-          }).distance(100).strength(1))
-          .force("charge", d3.forceManyBody().strength(-1200))
+          }).distance(20).strength(0.09))
+          .force("charge", d3.forceManyBody().strength(-400))
           .force("center", d3.forceCenter(width / 2, height / 2))
 
       let strokeWidth = d3.scaleLinear()
@@ -104,12 +107,12 @@ export default {
           .text(function (d) {
             return d.name;
           })
-          .attr('x', -15)
-          .attr('y', d => d.name == "Anne Shirley" || d.name == "Marilla Cuthbert" ? -35 : d.name == "Diana Barry" ? -25 : -15)
+          .attr('x', -4)
+          .attr('y', d => d.name == "Anne Shirley" || d.name == "Marilla Cuthbert" ? -20 : d.name == "Diana Barry" ? -25 : -15)
           .attr("fill", function(d) {
             return d.color;
           })
-          .style("font-size", "12px")
+          .style("font-size", "11px")
           .on("click", (event, d) => this.onChange(event, d.name, d.color))
 
       node.append("title")

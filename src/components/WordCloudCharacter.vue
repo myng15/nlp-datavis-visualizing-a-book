@@ -1,6 +1,5 @@
 <template>
   <div id="wordcloudcharacter">
-    <h3>Most frequent words per character</h3>
   </div>
 </template>
 

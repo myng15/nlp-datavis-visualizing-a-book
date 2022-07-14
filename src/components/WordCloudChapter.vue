@@ -84,7 +84,7 @@ export default {
         d3.select("#wordcloud")
           .append("div")
           .attr("id", "other-chapters")
-          .text(`Other chapters associated with this topic: ${otherChaptersOfTopic}`);
+          .text(`This chapter has the same dominant topic as chapters: ${otherChaptersOfTopic}`);
         this.init(this.key);
       }
     }

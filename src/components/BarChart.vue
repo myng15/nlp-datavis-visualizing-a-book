@@ -63,7 +63,7 @@ export default {
           .domain(data.map(function (d) {
             return d.Segment;
           }))
-          .padding(0.05);
+          .padding(0.4);
       svg.append("g")
 //Getting max value to set length of y-axis
       var maxValue = Math.max(...data.map(o => o.Value))
@@ -74,12 +74,12 @@ export default {
           .range([height, 0]);
       svg.append("g")
       svg.append("text")
-          .style("fill", "#696969")
-          .style("font-size", "12px")
+          .style("fill", "#313036")
+          .style("font-size", "11px")
           .attr("class", "y label")
           .attr("text-anchor", "end")
-          .attr("y", 2)
-          .attr("dy", "1em")
+          .attr("y", 1)
+          .attr("dy", "0.9em")
           .attr("dx", "1em")
           .text(name);
 

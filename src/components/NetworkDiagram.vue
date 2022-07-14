@@ -1,6 +1,5 @@
 <template>
   <div id="network">
-    <h3>Character Network</h3>
   </div>
 </template>
 
@@ -39,7 +38,7 @@ export default {
     init() {
       const margin = {top: 2, right: 5, bottom: 10, left: 10},
           width = 500 - margin.left - margin.right,
-          height = 450 - margin.top - margin.bottom;
+          height = 380 - margin.top - margin.bottom;
 
       const svg = d3.select("#network")
           .append("svg")
@@ -67,8 +66,8 @@ export default {
       let simulation = d3.forceSimulation()
           .force("link", d3.forceLink().id(function (d) {
             return d.id;
-          }).distance(150).strength(1))
-          .force("charge", d3.forceManyBody().strength(-1500))
+          }).distance(100).strength(1))
+          .force("charge", d3.forceManyBody().strength(-1200))
           .force("center", d3.forceCenter(width / 2, height / 2))
 
       let strokeWidth = d3.scaleLinear()

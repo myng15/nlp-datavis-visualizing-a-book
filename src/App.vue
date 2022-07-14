@@ -9,7 +9,7 @@
       </div>
     </div>
     <div id = "main1">
-      <div> general info following soon</div>
+      <h1> general info following soon </h1>
       <BarChart></BarChart>
 <!--      <div class="arrow">
         <div class="line"></div>
@@ -53,6 +53,7 @@ import WordCloudChapter from "@/components/WordCloudChapter";
 import BubbleChart from "@/components/BubbleChart";
 import CirclePack from "./components/CirclePack.vue";
 import WordCloudCharacter from "@/components/WordCloudCharacter";
+//import ReadabilityPieChart from "@/components/ReadabilityPieChart";
 
 export default {
   name: 'App',
@@ -71,7 +72,9 @@ export default {
     BubbleChart,
     NetworkDiagram,
     CirclePack,
-    WordCloudCharacter
+    WordCloudCharacter,
+   // ReadabilityPieChart
+
 },
   methods: {
     toggle(e) {

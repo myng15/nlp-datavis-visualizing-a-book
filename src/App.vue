@@ -2,7 +2,7 @@
   <div id="app">
     <div id="header">
       <div id="div1">
-        <img :src="anne" :width="150" :height="150"/>
+        <img :src="anne" :width="150" :height="80"/>
       </div>
       <div id="div2">
         <H1>BookVisualizer - Anne of Green Gables </H1>
@@ -110,17 +110,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #18A999;
-  margin-top: 10px;
+  margin-top: 2px;
 }
 
 #main1 {
-  padding: 15px;
+  padding: 5px;
   display: grid;
-  row-gap: 10px;
-  row-gap: 10px;
+  row-gap: 5px;
+  row-gap: 5px;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 5px;
+  grid-auto-rows: minmax(50px, auto);
   grid-column: 2 / 2;
   grid-row: 1;
 }
@@ -138,10 +138,10 @@ body {
 
 #main3 {
   display: grid;
-  row-gap: 10px;
-  row-gap: 10px;
+  row-gap: 5px;
+  row-gap: 5px;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
+  grid-gap: 5px;
   grid-auto-rows: minmax(100px, auto);
   grid-column: 2/2;
   grid-row: 1;
@@ -149,7 +149,7 @@ body {
 
 
 #submain3{
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 #submain3-buttons button {
@@ -206,7 +206,7 @@ body {
   padding: 2px;
   display: inline-block;
   width: auto;
-  height: 150px;
+  height: 75px;
   justify-content:left;
   float:left;
 }
@@ -215,16 +215,16 @@ body {
   background: #109648;
   padding: 2px;
   width: auto;
-  height: 150px;
+  height: 75px;
   display: inline-block;
   flex-direction: column;
   justify-content: left;
   text-align: center;
-  line-height: 100px;
+  line-height: 50px;
 }
 
 #header{
-  padding: 10px;
+  padding: 5px;
   background: #109648;
 }
 h1 {

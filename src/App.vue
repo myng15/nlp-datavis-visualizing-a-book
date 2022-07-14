@@ -1,48 +1,55 @@
 <template>
   <div id="app">
     <div id="header">
-      <div id="div1">
-        <img :src="anne" :width="150" :height="150"/>
-      </div>
       <div id="div2">
         <H1>BookVisualizer - Anne of Green Gables </H1>
       </div>
     </div>
-    <div id = "main1">
-      <div> general info following soon</div>
+    <div id="main1">
+      <div id="main3">
+        <NetworkDiagram v-on:changeCharacter="characterChange($event)"></NetworkDiagram>
+        <WordCloudCharacter :characterKey="characterKey" @changeCharacter="characterChange"></WordCloudCharacter>
+      </div>
+
+      <!--     <img :src="anne" :width="150" :height="80"/>-->
       <BarChart></BarChart>
-<!--      <div class="arrow">
-        <div class="line"></div>
-        <div class="point"></div>
-      </div>-->
+      <!--      <div class="arrow">
+              <div class="line"></div>
+              <div class="point"></div>
+            </div>-->
     </div>
-  <div id="main2">
-   <NetworkDiagram v-on:changeCharacter="characterChange($event)"></NetworkDiagram>
-   <WordCloudCharacter :characterKey="characterKey" @changeCharacter="characterChange"></WordCloudCharacter>
-  </div>
-  <div id="main3">
-    <div id="submain3">
-      <div id="submain3-buttons">
-        <button
-          class="toggle"
-          @click="toggle"
-          :class="[showBubbleChart ? 'btn-active' : 'btn-inactive']"
-        >Intertopic Distance Map</button>
-        <button
-          class="toggle"
-          @click="toggle"
-          :class="[!showBubbleChart ? 'btn-active' : 'btn-inactive']"
-        >Top Terms per Topic</button>
-      </div>
-      <div id="bubble-chart-container" :class="[showBubbleChart ? 'chart-active' : 'chart-inactive']">
-        <BubbleChart :chapterKey="chapterKey" @changeChapter="chapterChange" v-on:topic="getTopic($event)"></BubbleChart>
-      </div>
-      <div id="circle-pack-container" :class="[!showBubbleChart ? 'chart-active' : 'chart-inactive']">
-        <CirclePack :chapterKey="chapterKey" @changeChapter="chapterChange" @changeTopicFromCirclePack="getTopic($event)"></CirclePack>
-      </div>
+    <div id="main2">
+
+
     </div>
-    <WordCloudChapter v-on:changeChapter="chapterChange($event)" :topicKey="topicKey" @topic="getTopic"></WordCloudChapter>
-  </div>
+    <div id="main3">
+      <div id="submain3">
+        <div id="submain3-buttons">
+          <button
+              class="toggle"
+              @click="toggle"
+              :class="[showBubbleChart ? 'btn-active' : 'btn-inactive']"
+          >Intertopic Distance Map
+          </button>
+          <button
+              class="toggle"
+              @click="toggle"
+              :class="[!showBubbleChart ? 'btn-active' : 'btn-inactive']"
+          >Top Terms per Topic
+          </button>
+        </div>
+        <div id="bubble-chart-container" :class="[showBubbleChart ? 'chart-active' : 'chart-inactive']">
+          <BubbleChart :chapterKey="chapterKey" @changeChapter="chapterChange"
+                       v-on:topic="getTopic($event)"></BubbleChart>
+        </div>
+        <div id="circle-pack-container" :class="[!showBubbleChart ? 'chart-active' : 'chart-inactive']">
+          <CirclePack :chapterKey="chapterKey" @changeChapter="chapterChange"
+                      @changeTopicFromCirclePack="getTopic($event)"></CirclePack>
+        </div>
+      </div>
+      <WordCloudChapter v-on:changeChapter="chapterChange($event)" :topicKey="topicKey"
+                        @topic="getTopic"></WordCloudChapter>
+    </div>
   </div>
 </template>
 
@@ -53,6 +60,7 @@ import WordCloudChapter from "@/components/WordCloudChapter";
 import BubbleChart from "@/components/BubbleChart";
 import CirclePack from "./components/CirclePack.vue";
 import WordCloudCharacter from "@/components/WordCloudCharacter";
+//import ReadabilityPieChart from "@/components/ReadabilityPieChart";
 
 export default {
   name: 'App',
@@ -71,22 +79,24 @@ export default {
     BubbleChart,
     NetworkDiagram,
     CirclePack,
-    WordCloudCharacter
-},
+    WordCloudCharacter,
+    // ReadabilityPieChart
+
+  },
   methods: {
     toggle(e) {
-      if (!e.target.classList.contains('btn-active')){
+      if (!e.target.classList.contains('btn-active')) {
         this.showBubbleChart = !this.showBubbleChart;
       }
     },
-    chapterChange(event){
+    chapterChange(event) {
       this.chapterKey = event;
     },
-    characterChange(event){
-      this.characterKey=event;
+    characterChange(event) {
+      this.characterKey = event;
     },
-    getTopic(event){
-      this.topicKey=event;
+    getTopic(event) {
+      this.topicKey = event;
     }
   }
 }
@@ -107,17 +117,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #18A999;
-  margin-top: 10px;
+  margin-top: 2px;
 }
 
 #main1 {
-  padding: 15px;
+  padding: 5px;
   display: grid;
-  row-gap: 10px;
-  row-gap: 10px;
+  row-gap: 5px;
+  row-gap: 5px;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 5px;
+  grid-auto-rows: minmax(50px, auto);
   grid-column: 2 / 2;
   grid-row: 1;
 }
@@ -135,28 +145,28 @@ body {
 
 #main3 {
   display: grid;
-  row-gap: 10px;
-  row-gap: 10px;
+  row-gap: 5px;
+  row-gap: 5px;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
+  grid-gap: 5px;
   grid-auto-rows: minmax(100px, auto);
   grid-column: 2/2;
   grid-row: 1;
 }
 
 
-#submain3{
-  margin-bottom: 10px;
+#submain3 {
+  margin-bottom: 5px;
 }
 
 #submain3-buttons button {
-  border: 1px solid #bbc1be; 
+  border: 1px solid #bbc1be;
   font-size: 16px;
-  font-weight: bold; 
-  padding: 10px 24px; 
-  cursor: pointer; 
+  font-weight: bold;
+  padding: 10px 24px;
+  cursor: pointer;
   transition: 0.3s;
-  box-shadow: 5px 5px 10px rgba(0,0,0,0.05);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05);
 }
 
 #submain3-buttons button:first-child {
@@ -168,10 +178,10 @@ body {
 }
 
 #submain3-buttons button:not(:last-child) {
-  border-right: none; 
+  border-right: none;
 }
 
-#submain3-buttons button:hover{
+#submain3-buttons button:hover {
   background-color: #18A999; /* #3e8e41; */
   color: white;
 }
@@ -181,7 +191,7 @@ body {
 }
 
 .btn-active {
-  background-color: #18A999;/* #3e8e41; */
+  background-color: #18A999; /* #3e8e41; */
   color: white;
 }
 
@@ -203,35 +213,37 @@ body {
   padding: 2px;
   display: inline-block;
   width: auto;
-  height: 150px;
-  justify-content:left;
-  float:left;
+  height: 75px;
+  justify-content: left;
+  float: left;
 }
 
 #div2 {
   background: #109648;
-  padding: 2px;
+  padding: 1px;
   width: auto;
-  height: 150px;
+  height: 6px;
   display: inline-block;
   flex-direction: column;
   justify-content: left;
   text-align: center;
-  line-height: 100px;
+  line-height: 4px;
 }
 
-#header{
-  padding: 10px;
+#header {
+  padding: 5px;
   background: #109648;
 }
+
 h1 {
   color: #F7F0F0;
-  text-align:center;
+  text-align: center;
+  font-size: 18px;
 }
 
 .arrow {
   width: 120px;
-  position:relative;
+  position: relative;
 }
 
 .line {

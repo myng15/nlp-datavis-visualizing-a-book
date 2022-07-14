@@ -46,7 +46,7 @@ export default {
       // set the dimensions and margins of the graph
       var margin = {top:0 , right: 0, bottom: 0, left: 100},
           width = 460 - margin.left - margin.right,
-          height = 20 - margin.top - margin.bottom;
+          height = 15 - margin.top - margin.bottom;
 // append the svg object to the body of the page
       var svg = d3.select("#barchart")
           .append("div")
@@ -63,34 +63,26 @@ export default {
           .domain(data.map(function (d) {
             return d.Segment;
           }))
-          .padding(0.1);
+          .padding(0.4);
       svg.append("g")
-        /*  .attr("transform", "translate(0," + height + ")")
-          .call(d3.axisBottom(x))
-          .selectAll("text")
-          .attr("transform", "translate(-10,0)rotate(-45)")
-          .style("text-anchor", "end")
-          .selectAll("text").remove();*/
 //Getting max value to set length of y-axis
       var maxValue = Math.max(...data.map(o => o.Value))
-      // console.log(maxValue);
+
 // Add Y axis
       var y = d3.scaleLinear()
           .domain([0, maxValue])
           .range([height, 0]);
       svg.append("g")
       svg.append("text")
-          .style("fill", "#696969")
-          .style("font-size", "12px")
+          .style("fill", "#313036")
+          .style("font-size", "11px")
           .attr("class", "y label")
           .attr("text-anchor", "end")
-          .attr("y", 2)
-          .attr("dy", "1em")
+          .attr("y", 1)
+          .attr("dy", "0.9em")
           .attr("dx", "1em")
-         // .attr("transform", "rotate(-90)")
           .text(name);
-          /*.call(d3.axisLeft(y))
-          .selectAll("text").remove();*/
+
 // Bars
       svg.selectAll("mybar")
           .data(data)

@@ -1,5 +1,6 @@
 <template>
   <div id="barchart">
+    <h5> Character Occurrences and Sentiments</h5>
   </div>
 </template>
 

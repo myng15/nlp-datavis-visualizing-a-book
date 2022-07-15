@@ -1,5 +1,6 @@
 <template>
   <div id="network">
+    <h5> Character Network</h5>
   </div>
 </template>
 
@@ -38,7 +39,7 @@ export default {
     init() {
       const margin = {top: 2, right: 5, bottom: 10, left: 10},
           width = 500 - margin.left - margin.right,
-          height = 380 - margin.top - margin.bottom;
+          height = 400 - margin.top - margin.bottom;
 
       const svg = d3.select("#network")
           .append("svg")
@@ -117,7 +118,7 @@ export default {
 
       node.append("title")
           .text(function (d) {
-            return 'Whatever you want to show as tooltip!'
+            return d.name + ' occurred ' +d.size + " times in the book"
           });
 
 

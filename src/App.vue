@@ -1,27 +1,19 @@
 <template>
   <div id="app">
     <div id="header">
-      <div id="div2">
+      <div id="div1">
         <H1>BookVisualizer - Anne of Green Gables </H1>
       </div>
     </div>
-    <div id="main1">
-      <div id="main3">
+    <h3>Overview on General Information & Book Statistics</h3>
+    <div id="main1"> <img :src="anne" :width="150" :height="150"/> </div>
+    <h3>Overview on Characters</h3>
+      <div id="main2">
+        <BarChart></BarChart>
         <NetworkDiagram v-on:changeCharacter="characterChange($event)"></NetworkDiagram>
         <WordCloudCharacter :characterKey="characterKey" @changeCharacter="characterChange"></WordCloudCharacter>
       </div>
-
-      <!--     <img :src="anne" :width="150" :height="80"/>-->
-      <BarChart></BarChart>
-      <!--      <div class="arrow">
-              <div class="line"></div>
-              <div class="point"></div>
-            </div>-->
-    </div>
-    <div id="main2">
-
-
-    </div>
+    <h3>Overview on Topics</h3>
     <div id="main3">
       <div id="submain3">
         <div id="submain3-buttons">
@@ -117,30 +109,69 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #18A999;
-  margin-top: 2px;
 }
 
-#main1 {
+
+#div1 {
+  background: #109648;
   padding: 5px;
+  width: auto;
+  height: 6px;
+  display: inline-block;
+  flex-direction: column;
+  justify-content: left;
+  text-align: center;
+  line-height: 4px;
+  margin-bottom: 10px;
+}
+
+#header {
+  padding: 10px;
+  background: #109648;
+  margin-bottom: 10px;
+}
+
+h1 {
+  color: #F7F0F0;
+  text-align: center;
+  font-size: 28px;
+}
+
+h3 {
+  color: #18A999;
+  text-align: left;
+  font-size: 20px;
+  margin-left: 20px;
+  margin-bottom: 0px;
+}
+
+
+#main1 {
   display: grid;
-  row-gap: 5px;
-  row-gap: 5px;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 5px;
-  grid-auto-rows: minmax(50px, auto);
-  grid-column: 2 / 2;
+  row-gap: 0px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0px;
+  grid-auto-rows: minmax(100px, auto);
+  grid-column: 3/3;
   grid-row: 1;
+  margin-bottom: 10px;
+  margin-top: 0px;
+  border-bottom:2px solid #bdbdbd;
+  padding: 5px;
 }
 
 #main2 {
   display: grid;
   row-gap: 10px;
   row-gap: 10px;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
   grid-auto-rows: minmax(100px, auto);
-  grid-column: 2/2;
+  grid-column: 3/3;
   grid-row: 1;
+  margin-bottom: 10px;
+  border-bottom:2px solid #bdbdbd;
+  padding: 10px;
 }
 
 #main3 {
@@ -152,6 +183,8 @@ body {
   grid-auto-rows: minmax(100px, auto);
   grid-column: 2/2;
   grid-row: 1;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 
@@ -208,38 +241,6 @@ body {
   display: none;
 }
 
-#div1 {
-  background: #109648;
-  padding: 2px;
-  display: inline-block;
-  width: auto;
-  height: 75px;
-  justify-content: left;
-  float: left;
-}
-
-#div2 {
-  background: #109648;
-  padding: 1px;
-  width: auto;
-  height: 6px;
-  display: inline-block;
-  flex-direction: column;
-  justify-content: left;
-  text-align: center;
-  line-height: 4px;
-}
-
-#header {
-  padding: 5px;
-  background: #109648;
-}
-
-h1 {
-  color: #F7F0F0;
-  text-align: center;
-  font-size: 18px;
-}
 
 .arrow {
   width: 120px;

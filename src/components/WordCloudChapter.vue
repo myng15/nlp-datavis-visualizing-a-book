@@ -68,7 +68,8 @@ export default {
     key: {
       deep: true,
       handler() {
-        d3.select("#wordcloud").select("svg").remove()
+        this.updateOtherChaptersInfo();
+        d3.select("#wordcloud").select("svg").remove();
         this.init(this.key);
       }
     },
@@ -78,13 +79,14 @@ export default {
         const topic = parseInt(this.topicKey);
         const chaptersOfTopic = termsData[topic-1].chapters;
         this.key = chaptersOfTopic[0];
-        const otherChaptersOfTopic = chaptersOfTopic.slice(1).join(", ")
-        d3.select("#wordcloud").select("#other-chapters").remove()
-        d3.select("#wordcloud").select("svg").remove()
+        const otherChaptersOfTopic = chaptersOfTopic.slice(1).join(", ");
+        d3.select("#wordcloud").select("#other-chapters").remove();
+        d3.select("#wordcloud").select("svg").remove();
         d3.select("#wordcloud")
           .append("div")
           .attr("id", "other-chapters")
           .text(`This chapter has the same dominant topic as chapters: ${otherChaptersOfTopic}`);
+
         this.init(this.key);
       }
     }
@@ -95,6 +97,22 @@ export default {
   methods: {
     onChange() {
       this.$emit("changeChapter", this.key)
+    },
+
+    updateOtherChaptersInfo(){
+      d3.select("#wordcloud").select("#other-chapters").remove();
+      const chapter = parseInt(this.key);
+      if(chapter !== 0) {
+          const matchTopic = termsData.find(topic => topic.chapters.includes(chapter)).topic;
+          const topic = parseInt(matchTopic);
+          const chaptersOfTopic = termsData[topic-1].chapters;
+          const otherChaptersOfTopic = chaptersOfTopic.filter(c => c !== chapter).join(", ");
+          console.log(otherChaptersOfTopic)
+          d3.select("#wordcloud")
+            .append("div")
+            .attr("id", "other-chapters")
+            .text(`This chapter has the same dominant topic as chapters: ${otherChaptersOfTopic}`);
+      }
     },
 
     init(key) {
@@ -167,7 +185,7 @@ export default {
             });
       }
 
-    // Add bubble tooltips
+    //Add wordcloud tooltips
     const tooltip = d3.select('#wordcloud').append("div")
                       .attr("id", "wordcloud-tooltip");
     

@@ -108,7 +108,7 @@ export default {
     // Add x-axis
     this.svgContainer.append("g")
       .attr("transform", "translate(" + this.settings.margin.left + "," + (this.settings.height + this.settings.margin.top) + ")")
-      .call(d3.axisBottom(xScale))
+      .call(d3.axisBottom(xScale).tickFormat(()=>{return ""})) //tickFormat(()=>{return ""})to remove tick labels
 
     const yScale = d3.scaleLinear()
           .range([this.settings.height, 50]) //range goes in the opposite direction as compared to xScale because yScale grows from the bottom upwards
@@ -116,14 +116,15 @@ export default {
     // Add y-axis
     this.svgContainer.append("g")
       .attr("transform", "translate(" + this.settings.margin.left + "," + this.settings.margin.top + ")")
-      .call(d3.axisLeft(yScale));
+      .call(d3.axisLeft(yScale).tickFormat(()=>{return ""})) //tickFormat(()=>{return ""})to remove tick labels
 
     this.chartWrapper = this.svgContainer
           // .append("g")
           // .attr("class", "chartWrapper")
           .select("#chartWrapper")
           .attr("transform", "translate(" + this.settings.margin.left + "," + this.settings.margin.top + ")");
-
+    
+    // Add grid on chart
     // this.chartWrapper
     //   // .append("g")
     //   //   .attr("class", "grid")
@@ -145,22 +146,22 @@ export default {
     //     )
     
     // Add axis labels   
-    this.chartWrapper.append("text")
-          .attr("x", (this.settings.width / 2))
-          .attr("y", this.settings.height + this.settings.margin.top)
-          .attr("dy", "1em")
-          .style("text-anchor", "middle")
-          .style("fill", "#18A999")
-          .text("PC2");
+    // this.chartWrapper.append("text")
+    //       .attr("x", (this.settings.width / 2))
+    //       .attr("y", this.settings.height + this.settings.margin.top)
+    //       .attr("dy", "1em")
+    //       .style("text-anchor", "middle")
+    //       .style("fill", "#18A999")
+    //       .text("PC2");
 
-    this.chartWrapper.append("text")
-          .attr("transform", "rotate(-90)")
-          .attr("y", 0 - this.settings.margin.left)
-          .attr("x", 0 - (this.settings.height / 2))
-          .attr("dy", "2.5em")
-          .style("text-anchor", "middle")
-          .style("fill", "#18A999")
-          .text("PC1");
+    // this.chartWrapper.append("text")
+    //       .attr("transform", "rotate(-90)")
+    //       .attr("y", 0 - this.settings.margin.left)
+    //       .attr("x", 0 - (this.settings.height / 2))
+    //       .attr("dy", "2.5em")
+    //       .style("text-anchor", "middle")
+    //       .style("fill", "#18A999")
+    //       .text("PC1");
 
     const rScale = d3.scaleLinear()
 			.range([15, 25])

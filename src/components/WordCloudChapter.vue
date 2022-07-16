@@ -156,6 +156,7 @@ export default {
             }) //#96949E
             .attr("text-anchor", "middle")
             .style("font-family", "Impact")
+            .style("cursor", "default")
             .transition()
             .duration(500)
             .attr("transform", function (d) {
@@ -166,7 +167,32 @@ export default {
             });
       }
 
+    // Add bubble tooltips
+    const tooltip = d3.select('#wordcloud').append("div")
+                      .attr("id", "wordcloud-tooltip");
+    
+    /** @param {MouseEvent} e 
+     * @param {Object} d //word data
+    */
+    const handleMouseOver = (e, d) => {
+      d3.select("#wordcloud-tooltip")
+              // .style("left", e.pageX + "px")
+              // .style("top", e.pageY + "px")
+              .attr("transform", function () {
+              return "translate(" + [d.x, d.y] + ")";
+            })
+              .attr('text-anchor', 'middle')
+              .style("display", "block")
+              .style("background", "white")
+              .style("box-shadow", "3px 3px 10px rgba(0, 0, 0, 0.4)")
+              .style("border-radius", "5px")
+              .html("Frequency: " + d.size);
+    }
 
+    d3.select('#wordcloud').selectAll("text").on("mouseover", handleMouseOver)
+           .on("mouseout", () => {
+              tooltip.style("display", "none");
+    });
     }
   }
 };

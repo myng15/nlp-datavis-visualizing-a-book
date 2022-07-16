@@ -118,14 +118,4 @@ export default {
 </script>
 
 <style>
-ul {
-  text-align: left;
-}
-ul li {
-  list-style: none;
-}
-#legendElementWrapper {
-  cursor: pointer;
-}
-
 </style>

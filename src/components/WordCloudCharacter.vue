@@ -1,6 +1,7 @@
 <template>
   <div id="wordcloudcharacter">
-  </div>
+    <h5> Most Frequent Words per Character</h5>
+    <p id="placeholder">Click on a node to show the most frequent words.</p></div>
 </template>
 
 <script>
@@ -22,6 +23,7 @@ export default {
     characterKey: {
       deep: true,
       handler() {
+        d3.select("#wordcloudcharacter").select("p").remove()
         d3.select("#wordcloudcharacter").select("svg").remove()
         this.init();
       }
@@ -146,4 +148,9 @@ ul.menu li {
   margin-top: 1em;
   position: relative;
 }
+#placeholder{
+  margin-top: 150px;
+  text-align: center;
+}
+
 </style>

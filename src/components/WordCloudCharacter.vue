@@ -39,8 +39,8 @@ export default {
                      .interpolator(d3.interpolate("#bbc1be", characterColor));
       
 // set the dimensions and margins of the graph
-      var margin = {top: 2, right: 2, bottom: 2, left: 2},
-          width = 300 - margin.left - margin.right,
+      var margin = {top:0 , right: 5, bottom: 0, left: 0},
+          width = 375 - margin.left - margin.right,
           height = 300 - margin.top - margin.bottom;
 
 

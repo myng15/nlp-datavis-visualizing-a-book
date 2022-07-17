@@ -66,7 +66,7 @@ export default {
       var color = d3
           .scaleOrdinal()
           .domain(Object.keys(data)) //<-- set domain to ['a','b','c','d','e']
-          .range(['#8AF3FF','#F7F0F0']);
+          .range(['#109648','#F7F0F0']);
 
 // Compute the position of each group on the pie:
       var pie = d3.pie()
@@ -97,7 +97,7 @@ export default {
           .attr("dy", ".35em")
           .attr("text-anchor", "middle")
           .attr("style","font-family:Ubuntu")
-          .attr("font-size","50")
+          .attr("font-size","70")
           .text("📖");
     }
   }

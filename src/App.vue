@@ -8,21 +8,31 @@
     <h3>Overview on General Information & Book Statistics</h3>
     <div id="main1"><img :src="anne" :width="150" :height="150"/>
       <div id="textinfo">
-        <ul>
-          <li>Title: Anne of Green Gables</li>
-          <li>Author: Lucy Maud Montgomery</li>
-          <li>Published in 1908</li>
-          <li>Suitable for 6th and 7th grade</li>
-          <li>Estimated reading time: 9 hours</li>
-          <li>Pages: 381</li>
-          <li>Total number of words: 108321</li>
-          <li>Chapter length (avg.): 10 pages</li>
-          <li>Sentence length (avg.): 16 words</li>
-          <li>Main settings: Avonlea, Green Gables and White Sands</li>
-        </ul>
+        <div id="list1">
+          <ul>
+            <li>Title: Anne of Green Gables</li>
+            <li>Author: Lucy Maud Montgomery</li>
+            <li>Published in 1908</li>
+            <li>Suitable for 6th and 7th grade</li>
+            <li>Estimated reading time: 9 hours</li>
+          </ul>
+        </div>
+        <div id="list2">
+          <ul>
+            <li>Pages: 381</li>
+            <li>Total number of words: 108321</li>
+            <li>Chapter length (avg.): 10 pages</li>
+            <li>Sentence length (avg.): 16 words</li>
+            <li>Main settings: Avonlea, Green Gables and White Sands</li>
+          </ul>
+        </div>
       </div>
-      <ReadabilityPieChart></ReadabilityPieChart>
-      <QuotationPieChart></QuotationPieChart>
+      <div id="difflevel"><h4>Difficulty Level</h4>
+        <ReadabilityPieChart></ReadabilityPieChart>
+      </div>
+      <div id="conversational"><h4>Conversational Activity</h4>
+        <QuotationPieChart></QuotationPieChart>
+      </div>
     </div>
     <h3>Overview on Characters</h3>
     <div id="main2">
@@ -174,7 +184,7 @@ h3 {
   grid-column: 3/3;
   grid-row: 1;
   margin-bottom: 10px;
-  margin-top: 0px;
+  margin-top: 10px;
   border-bottom: 2px solid #bdbdbd;
   padding: 5px;
 }
@@ -286,6 +296,8 @@ h3 {
 ul {
   list-style-type: "📗";
   margin-top: 0px;
+  margin-left: 0px;
+  margin: 0px;
 }
 
 li {
@@ -294,8 +306,43 @@ li {
   font-size: 14px;
 }
 
-#textinfo{
-  width:400px;
+#textinfo {
+  display: grid;
+  row-gap: 1px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0px;
+  grid-auto-rows: minmax(100px, auto);
+  grid-column: 2/2;
+  grid-column-gap: 0px;
+  grid-row: 1;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  width: 700px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 0px;
+
 }
+
+#list1 {
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 250px;
+}
+
+#list2 {
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 500px;
+}
+
+#difflevel {
+  margin-top: 0px;
+}
+
+#conversational {
+  margin-top: 0px;
+}
+
 
 </style>

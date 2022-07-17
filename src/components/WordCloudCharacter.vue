@@ -175,6 +175,8 @@ ul.menu li {
   position: relative;
 }
 #placeholder{
+  width: 375px;
+  height: 300px;
   margin-top: 150px;
   text-align: center;
 }
@@ -188,4 +190,8 @@ ul.menu li {
     line-height: 20px;
     text-align: left;
   }
+
+p{
+  font-size: 14px;
+}
 </style>

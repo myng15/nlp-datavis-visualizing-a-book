@@ -7,12 +7,20 @@
     </div>
     <h3>Overview on General Information & Book Statistics</h3>
     <div id="main1"><img :src="anne" :width="150" :height="150"/>
-      <ul>
-        <li>Title: Anne of Green Gables</li>
-        <li>Author: Lucy Maud Montgomery</li>
-        <li>Published in 1908</li>
-        <li>Suitable for 6th and 7th grade</li>
-      </ul>
+      <div id="textinfo">
+        <ul>
+          <li>Title: Anne of Green Gables</li>
+          <li>Author: Lucy Maud Montgomery</li>
+          <li>Published in 1908</li>
+          <li>Suitable for 6th and 7th grade</li>
+          <li>Estimated reading time: 9 hours</li>
+          <li>Pages: 381</li>
+          <li>Total number of words: 108321</li>
+          <li>Chapter length (avg.): 10 pages</li>
+          <li>Sentence length (avg.): 16 words</li>
+          <li>Main settings: Avonlea, Green Gables and White Sands</li>
+        </ul>
+      </div>
       <ReadabilityPieChart></ReadabilityPieChart>
       <QuotationPieChart></QuotationPieChart>
     </div>
@@ -277,12 +285,17 @@ h3 {
 
 ul {
   list-style-type: "📗";
+  margin-top: 0px;
 }
 
 li {
   text-align: left;
   padding-left: 4px;
-  font-size: 16px;
+  font-size: 14px;
+}
+
+#textinfo{
+  width:400px;
 }
 
 </style>

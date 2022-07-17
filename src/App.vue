@@ -13,7 +13,8 @@
         <li>Published in 1908</li>
         <li>Suitable for 6th and 7th grade</li>
       </ul>
-      <ReadabilityPieChart :data="priceData" :width="200" :height="200"></ReadabilityPieChart>
+      <ReadabilityPieChart></ReadabilityPieChart>
+      <QuotationPieChart></QuotationPieChart>
     </div>
     <h3>Overview on Characters</h3>
     <div id="main2">
@@ -61,7 +62,7 @@ import BubbleChart from "@/components/BubbleChart";
 import CirclePack from "./components/CirclePack.vue";
 import WordCloudCharacter from "@/components/WordCloudCharacter";
 import ReadabilityPieChart from "@/components/ReadabilityPieChart";
-import ReadabilityData from "@/data/general_info/readability_score.json";
+import QuotationPieChart from "@/components/QuotationPieChart";
 
 export default {
   name: 'App',
@@ -72,7 +73,6 @@ export default {
       chapterKey: "",
       characterKey: "",
       topicKey: "",
-      priceData: ReadabilityData,
     };
   },
   components: {
@@ -82,7 +82,8 @@ export default {
     NetworkDiagram,
     CirclePack,
     WordCloudCharacter,
-    ReadabilityPieChart
+    ReadabilityPieChart,
+    QuotationPieChart
 
   },
   methods: {

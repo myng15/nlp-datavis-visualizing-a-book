@@ -1,5 +1,5 @@
 <template>
-  <div id="piechart1"></div>
+  <div id="piechart2"></div>
 </template>
 
 <script>
@@ -52,7 +52,7 @@ export default {
       var radius = Math.min(width, height) / 2 - margin
 
 // append the svg object to the div called 'my_dataviz'
-      var svg = d3.select("#piechart1")
+      var svg = d3.select("#piechart2")
           .append("svg")
           .attr("width", width)
           .attr("height", height)
@@ -60,13 +60,13 @@ export default {
           .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
 // Create dummy data
-      var data = {a: 2, b: 6}
+      var data = {a: 76, b: 24}
 
 // set the color scale
       var color = d3
           .scaleOrdinal()
           .domain(Object.keys(data)) //<-- set domain to ['a','b','c','d','e']
-          .range(['#8AF3FF','#F7F0F0']);
+          .range(['#8AF3FF', '#F7F0F0']);
 
 // Compute the position of each group on the pie:
       var pie = d3.pie()
@@ -98,7 +98,8 @@ export default {
           .attr("text-anchor", "middle")
           .attr("style","font-family:Ubuntu")
           .attr("font-size","50")
-          .text("📖");
+          .attr("background", "black")
+          .text("💭");
     }
   }
 }

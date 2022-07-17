@@ -194,12 +194,10 @@ export default {
     */
     const handleMouseOver = (e, d) => {
       d3.select("#wordcloud-tooltip")
-              // .style("left", e.pageX + "px")
-              // .style("top", e.pageY + "px")
-              .attr("transform", function () {
-              return "translate(" + [d.x, d.y] + ")";
-            })
+              .style("left", e.pageX + "px")
+              .style("top", e.pageY + "px")
               .attr('text-anchor', 'middle')
+              .style("position", "absolute")
               .style("display", "block")
               .style("background", "white")
               .style("box-shadow", "3px 3px 10px rgba(0, 0, 0, 0.4)")
@@ -271,4 +269,13 @@ ul.menu li {
   margin-top: 1em;
   position: relative;
 }
+
+#wordcloud-tooltip {
+    max-width: 120px;
+    height: auto;
+    padding: 5px;
+    pointer-events: none;
+    line-height: 20px;
+    text-align: left;
+  }
 </style>

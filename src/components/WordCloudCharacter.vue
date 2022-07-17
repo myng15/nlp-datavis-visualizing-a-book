@@ -102,6 +102,7 @@ export default {
             )
             .attr("text-anchor", "middle")
             .style("font-family", "Impact")
+            .style("cursor", "default")
             .transition()
             .duration(500)
             .attr("transform", function (d) {
@@ -111,6 +112,31 @@ export default {
               return d.text;
             });
       }
+
+      //Add wordcloud tooltips
+    const tooltip = d3.select('#wordcloudcharacter').append("div")
+                      .attr("id", "wordcloud-character-tooltip");
+    
+    /** @param {MouseEvent} e 
+     * @param {Object} d //word data
+    */
+    const handleMouseOver = (e, d) => {
+      d3.select("#wordcloud-character-tooltip")
+              .style("left", e.pageX + "px")
+              .style("top", e.pageY + "px")
+              .style("position", "absolute")
+              .attr('text-anchor', 'middle')
+              .style("display", "block")
+              .style("background", "white")
+              .style("box-shadow", "3px 3px 10px rgba(0, 0, 0, 0.4)")
+              .style("border-radius", "5px")
+              .html("Frequency: " + d.size);
+    }
+
+    d3.select('#wordcloudcharacter').selectAll("text").on("mouseover", handleMouseOver)
+           .on("mouseout", () => {
+              tooltip.style("display", "none");
+    });
     }
   }
 };
@@ -153,4 +179,13 @@ ul.menu li {
   text-align: center;
 }
 
+#wordcloud-character-tooltip {
+    position: absolute;
+    max-width: 120px;
+    height: auto;
+    padding: 5px;
+    pointer-events: none;
+    line-height: 20px;
+    text-align: left;
+  }
 </style>

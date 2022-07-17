@@ -6,13 +6,21 @@
       </div>
     </div>
     <h3>Overview on General Information & Book Statistics</h3>
-    <div id="main1"> <img :src="anne" :width="150" :height="150"/> </div>
+    <div id="main1"><img :src="anne" :width="150" :height="150"/>
+      <ul>
+        <li>Title: Anne of Green Gables</li>
+        <li>Author: Lucy Maud Montgomery</li>
+        <li>Published in 1908</li>
+        <li>Suitable for 6th and 7th grade</li>
+      </ul>
+      <ReadabilityPieChart :data="priceData" :width="200" :height="200"></ReadabilityPieChart>
+    </div>
     <h3>Overview on Characters</h3>
-      <div id="main2">
-        <BarChart></BarChart>
-        <NetworkDiagram v-on:changeCharacter="characterChange($event)"></NetworkDiagram>
-        <WordCloudCharacter :characterKey="characterKey" @changeCharacter="characterChange"></WordCloudCharacter>
-      </div>
+    <div id="main2">
+      <BarChart></BarChart>
+      <NetworkDiagram v-on:changeCharacter="characterChange($event)"></NetworkDiagram>
+      <WordCloudCharacter :characterKey="characterKey" @changeCharacter="characterChange"></WordCloudCharacter>
+    </div>
     <h3>Overview on Topics</h3>
     <div id="main3">
       <div id="submain3">
@@ -52,7 +60,8 @@ import WordCloudChapter from "@/components/WordCloudChapter";
 import BubbleChart from "@/components/BubbleChart";
 import CirclePack from "./components/CirclePack.vue";
 import WordCloudCharacter from "@/components/WordCloudCharacter";
-//import ReadabilityPieChart from "@/components/ReadabilityPieChart";
+import ReadabilityPieChart from "@/components/ReadabilityPieChart";
+import ReadabilityData from "@/data/general_info/readability_score.json";
 
 export default {
   name: 'App',
@@ -62,8 +71,9 @@ export default {
       showBubbleChart: true,
       chapterKey: "",
       characterKey: "",
-      topicKey: ""
-    }
+      topicKey: "",
+      priceData: ReadabilityData,
+    };
   },
   components: {
     WordCloudChapter,
@@ -72,7 +82,7 @@ export default {
     NetworkDiagram,
     CirclePack,
     WordCloudCharacter,
-    // ReadabilityPieChart
+    ReadabilityPieChart
 
   },
   methods: {
@@ -90,7 +100,7 @@ export default {
     getTopic(event) {
       this.topicKey = event;
     }
-  }
+  },
 }
 </script>
 
@@ -149,14 +159,14 @@ h3 {
 #main1 {
   display: grid;
   row-gap: 0px;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 0px;
   grid-auto-rows: minmax(100px, auto);
   grid-column: 3/3;
   grid-row: 1;
   margin-bottom: 10px;
   margin-top: 0px;
-  border-bottom:2px solid #bdbdbd;
+  border-bottom: 2px solid #bdbdbd;
   padding: 5px;
 }
 
@@ -170,7 +180,7 @@ h3 {
   grid-column: 3/3;
   grid-row: 1;
   margin-bottom: 10px;
-  border-bottom:2px solid #bdbdbd;
+  border-bottom: 2px solid #bdbdbd;
   padding: 10px;
 }
 
@@ -262,6 +272,16 @@ h3 {
   border-bottom: 20px solid transparent;
   border-left: 30px solid blue;
   float: right;
+}
+
+ul {
+  list-style-type: "📗";
+}
+
+li {
+  text-align: left;
+  padding-left: 4px;
+  font-size: 16px;
 }
 
 </style>

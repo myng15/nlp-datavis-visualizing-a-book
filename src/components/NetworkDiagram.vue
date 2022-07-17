@@ -89,7 +89,7 @@ export default {
           .attr("stroke", function (d) {
             return d.color;
           })
-          //.attr("stroke-width", strokeWidth);//Define a scale for stroke width or stroke opacity!
+      //.attr("stroke-width", strokeWidth);//Define a scale for stroke width or stroke opacity!
 
       let node = svg.append("g")
           .attr("class", "nodes")
@@ -108,8 +108,8 @@ export default {
           .text(function (d) {
             return d.name;
           })
-          .attr('x', -30)
-          .attr('y', d => d.name == "Anne Shirley" || d.name == "Marilla Cuthbert" ? -20 : -13)
+          .attr('x', -4)
+          .attr('y', d => d.name == "Anne Shirley" || d.name == "Marilla Cuthbert" ? -20 : d.name == "Diana Barry" ? -25 : -15)
           .attr("fill", function(d) {
             return d.color;
           })
@@ -287,12 +287,12 @@ ul.menu li {
 .nodes circle {
   stroke: #fff;
   stroke-width: 1.5px;
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 text {
   font-family: sans-serif;
   font-weight: bold;
-  cursor: pointer; 
+  cursor: pointer;
 }
 </style>

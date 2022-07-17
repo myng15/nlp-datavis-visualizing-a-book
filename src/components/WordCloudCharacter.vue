@@ -113,7 +113,7 @@ export default {
             });
       }
 
-      //Add wordcloud tooltips
+    //Add wordcloud tooltips
     const tooltip = d3.select('#wordcloudcharacter').append("div")
                       .attr("id", "wordcloud-character-tooltip");
     
@@ -124,7 +124,6 @@ export default {
       d3.select("#wordcloud-character-tooltip")
               .style("left", e.pageX + "px")
               .style("top", e.pageY + "px")
-              .style("position", "absolute")
               .attr('text-anchor', 'middle')
               .style("display", "block")
               .style("background", "white")

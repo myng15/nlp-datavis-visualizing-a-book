@@ -197,7 +197,7 @@ export default {
               .style("left", e.pageX + "px")
               .style("top", e.pageY + "px")
               .attr('text-anchor', 'middle')
-              .style("position", "absolute")
+              // .style("position", "absolute")
               .style("display", "block")
               .style("background", "white")
               .style("box-shadow", "3px 3px 10px rgba(0, 0, 0, 0.4)")
@@ -271,6 +271,7 @@ ul.menu li {
 }
 
 #wordcloud-tooltip {
+    position: absolute;
     max-width: 120px;
     height: auto;
     padding: 5px;

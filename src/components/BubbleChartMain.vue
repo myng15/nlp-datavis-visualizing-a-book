@@ -250,7 +250,6 @@ export default {
               .html("Frequency (in terms): " + d.count 
                     // + "<br>Top words: " + topTerms + ",..."
                     );
-      console.log(e)
     }
 
     this.bubbles.on("mouseover", handleMouseOver)

@@ -25,43 +25,60 @@ import BarChartLegend from "@/components/BarChartLegend"
 // import Ruby from "@/data/barchart_sentiment/Ruby Gillis.json";
 // import Stacy from "@/data/barchart_sentiment/Miss Stacy.json";
 
-import fakeChar from "@/data/barchart_sentiment_rel_sents/Chapterlegend.json";
-import Anne from "@/data/barchart_sentiment_rel_sents/Anne Shirley.json";
-import Alexander from "@/data/barchart_sentiment_rel_sents/Alexander Spencer.json";
-import Diana from "@/data/barchart_sentiment_rel_sents/Diana Barry.json";
-import Marilla from "@/data/barchart_sentiment_rel_sents/Marilla Cuthbert.json";
-import Matthew from "@/data/barchart_sentiment_rel_sents/Matthew Cuthbert.json";
-import Rachel from "@/data/barchart_sentiment_rel_sents/Rachel Lynde.json";
-import Gilbert from "@/data/barchart_sentiment_rel_sents/Gilbert Blythe.json";
-import Jane from "@/data/barchart_sentiment_rel_sents/Jane Andrews.json";
-import Josie from "@/data/barchart_sentiment_rel_sents/Josie Pye.json";
-import Josephine from "@/data/barchart_sentiment_rel_sents/Josephine Barry.json";
-import Phillips from "@/data/barchart_sentiment_rel_sents/Mr. Phillips.json";
-import Allan from "@/data/barchart_sentiment_rel_sents/Mrs. Allan.json";
-import Barry from "@/data/barchart_sentiment_rel_sents/Mrs. Barry.json";
-import Ruby from "@/data/barchart_sentiment_rel_sents/Ruby Gillis.json";
-import Stacy from "@/data/barchart_sentiment_rel_sents/Miss Stacy.json";
+import fakeChar from "@/data/barchart_sentiment_rel_sents/000_Chapterlegend.json";
+import Anne from "@/data/barchart_sentiment_rel_sents/001_Anne Shirley.json";
+import Alexander from "@/data/barchart_sentiment_rel_sents/015_Alexander Spencer.json";
+import Diana from "@/data/barchart_sentiment_rel_sents/003_Diana Barry.json";
+import Marilla from "@/data/barchart_sentiment_rel_sents/002_Marilla Cuthbert.json";
+import Matthew from "@/data/barchart_sentiment_rel_sents/004_Matthew Cuthbert.json";
+import Rachel from "@/data/barchart_sentiment_rel_sents/005_Rachel Lynde.json";
+import Gilbert from "@/data/barchart_sentiment_rel_sents/006_Gilbert Blythe.json";
+import Jane from "@/data/barchart_sentiment_rel_sents/007_Jane Andrews.json";
+import Josie from "@/data/barchart_sentiment_rel_sents/008_Josie Pye.json";
+import Josephine from "@/data/barchart_sentiment_rel_sents/014_Josephine Barry.json";
+import Phillips from "@/data/barchart_sentiment_rel_sents/013_Mr. Phillips.json";
+import Allan from "@/data/barchart_sentiment_rel_sents/010_Mrs. Allan.json";
+import Barry from "@/data/barchart_sentiment_rel_sents/012_Mrs. Barry.json";
+import Ruby from "@/data/barchart_sentiment_rel_sents/009_Ruby Gillis.json";
+import Stacy from "@/data/barchart_sentiment_rel_sents/011_Miss Stacy.json";
 
 export default {
   components: {BarChartLegend},
   mounted() {
     // NEW DATA
+    // this.init(this.concatData(fakeChar), "Chapter");
+    // this.init(this.concatData(Anne), "Anne Shirley");
+    // this.init(this.concatData(Marilla), "Marilla Cuthbert");
+    // this.init(this.concatData(Diana), "Diana Barry");
+    // this.init(this.concatData(Matthew), "Matthew Cuthbert");
+    // this.init(this.concatData(Rachel), "Rachel Lynde");
+    // this.init(this.concatData(Gilbert), "Gilbert Blythe");
+    // this.init(this.concatData(Jane), "Jane Andrews");
+    // this.init(this.concatData(Josie), "Josie Pye");
+    // this.init(this.concatData(Ruby), "Ruby Gillis");
+    // this.init(this.concatData(Allan), "Mrs. Allan");
+    // this.init(this.concatData(Stacy), "Miss Stacy");
+    //  this.init(this.concatData(Barry), "Mrs. Barry");
+    // this.init(this.concatData(Phillips), "Mr. Phillips");
+    // this.init(this.concatData(Josephine), "Josephine Barry");
+    // this.init(this.concatData(Alexander), "Alexander Spencer");    
+    
     this.init(this.concatData(fakeChar), "Chapter");
-    this.init(this.concatData(Anne), "Anne Shirley");
-    this.init(this.concatData(Diana), "Diana Barry");
+    this.init(this.concatData(Rachel), "Rachel Lynde");
     this.init(this.concatData(Marilla), "Marilla Cuthbert");
     this.init(this.concatData(Matthew), "Matthew Cuthbert");
-    this.init(this.concatData(Rachel), "Rachel Lynde");
-    this.init(this.concatData(Gilbert), "Gilbert Blythe");
-    this.init(this.concatData(Jane), "Jane Andrews");
-    this.init(this.concatData(Josie), "Josie Pye");
-    this.init(this.concatData(Phillips), "Mr. Phillips");
-    this.init(this.concatData(Ruby), "Ruby Gillis");
     this.init(this.concatData(Alexander), "Alexander Spencer");
-    this.init(this.concatData(Stacy), "Miss Stacy");
-    this.init(this.concatData(Josephine), "Josephine Barry");
+    this.init(this.concatData(Diana), "Diana Barry");
+    this.init(this.concatData(Jane), "Jane Andrews");
+    this.init(this.concatData(Anne), "Anne Shirley");
     this.init(this.concatData(Barry), "Mrs. Barry");
+    this.init(this.concatData(Ruby), "Ruby Gillis");
+    this.init(this.concatData(Gilbert), "Gilbert Blythe");
+    this.init(this.concatData(Phillips), "Mr. Phillips");
+    this.init(this.concatData(Josie), "Josie Pye");
+    this.init(this.concatData(Josephine), "Josephine Barry");
     this.init(this.concatData(Allan), "Mrs. Allan");
+    this.init(this.concatData(Stacy), "Miss Stacy");
     
     // OLD DATA
     // this.init(Anne, "Anne Shirley");
@@ -99,7 +116,13 @@ export default {
           .append("div")
           .append("svg")
           .attr("id", name === "Chapter" ? "fake-char" : "")
-          .attr("style", name === "Chapter" ? "outline: none" : "outline: solid 2px #bdbdbd")
+          .attr("style", name === "Chapter" ? "outline: none" : 
+                         name === "Anne Shirley" ? "outline: solid 2.5px #548C2F" :
+                         name === "Diana Barry" ? "outline: solid 2.5px #BC69AA" :
+                         name === "Marilla Cuthbert" ? "outline: solid 2.5px #1C448E" :
+                         name === "Matthew Cuthbert" ? "outline: solid 2.5px #ffa600" :
+                         name === "Rachel Lynde" ? "outline: solid 2.5px #931F1D" :
+                         "outline: solid 2px #bdbdbd")
           .attr("width", width + margin.left + margin.right)
           .attr("height", height + margin.top + margin.bottom)
           .append("g")
@@ -122,7 +145,12 @@ export default {
           .range([height, 0]);
       svg.append("g")
       svg.append("text")
-          .style("fill", "#313036")
+          .style("fill",name === "Anne Shirley" ? "#548C2F" :
+                        name === "Diana Barry" ? "#BC69AA" :
+                        name === "Marilla Cuthbert" ? "#1C448E" :
+                        name === "Matthew Cuthbert" ? "#ffa600" :
+                        name === "Rachel Lynde" ? "#931F1D" :
+                        "#313036")
           .style("font-size", "11px")
           .attr("class", "y label")
           .attr("text-anchor", "end")
@@ -136,6 +164,7 @@ export default {
           .data(data)
           .enter()
           .append("rect")
+          .attr("class", name === "Chapter" ? "" : "real-bar")
           .attr("id", d => d.Chapter + "-" + d.Segment)
           .attr("x", function (d) {
             return x(d.Segment);
@@ -151,6 +180,32 @@ export default {
             return d.Color;
           })
 
+// Add barchart tooltips
+    const tooltip = d3.select('#barchart').append("div")
+                      .attr("id", "barchart-tooltip");
+    
+    /** @param {MouseEvent} e 
+     * @param {Object} d //Each topic object in chart data
+    */
+    const handleMouseOver = (e, d) => {
+      // const topTermsArray = termsData[this.data_chart.indexOf(d)].terms.slice(0, 10);
+      // const topTerms = topTermsArray.map(i => i.name).join(", ")
+      d3.select("#barchart-tooltip")
+              .style("left", e.pageX + "px")
+              .style("top", e.pageY + "px")
+              .style("display", "block")
+              .style("background", "white")
+              .style("box-shadow", "3px 3px 10px rgba(0, 0, 0, 0.4)")
+              .style("border-radius", "5px")
+              .html(d.Segment + " (" + d.Chapter + "): \n" +
+                    + d.Mentions + " mentions");
+      
+    }
+    
+    d3.select('#barchart').selectAll(".real-bar").on("mouseover", handleMouseOver)
+           .on("mouseout", () => {
+              tooltip.style("display", "none");
+    });
 
 // Add chapter number tags on top
       const legendChapters = ["1", "6", "11", "16", "21", "26", "31", "36", "38"]
@@ -246,5 +301,13 @@ ul.menu li {
     width: 1.5px;
 } */
 
-
+#barchart-tooltip {
+    position: absolute;
+    max-width: 100px;
+    height: auto;
+    padding: 5px;
+    pointer-events: none;
+    line-height: 20px;
+    text-align: left;
+  }
 </style>

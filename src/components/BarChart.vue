@@ -6,41 +6,76 @@
 
 <script>
 import * as d3 from "d3";
-import Anne from "@/data/barchart_sentiment/Anne Shirley.json";
-import Alexander from "@/data/barchart_sentiment/Alexander Spencer.json";
-import Diana from "@/data/barchart_sentiment/Diana Barry.json";
-import Marilla from "@/data/barchart_sentiment/Marilla Cuthbert.json";
-import Matthew from "@/data/barchart_sentiment/Matthew Cuthbert.json";
-import Rachel from "@/data/barchart_sentiment/Rachel Lynde.json";
-import Gilbert from "@/data/barchart_sentiment/Gilbert Blythe.json";
-import Jane from "@/data/barchart_sentiment/Jane Andrews.json";
-import Josie from "@/data/barchart_sentiment/Josie Pye.json";
-import Josephine from "@/data/barchart_sentiment/Josephine Barry.json";
-import Phillips from "@/data/barchart_sentiment/Mr. Phillips.json";
-import Allan from "@/data/barchart_sentiment/Mrs. Allan.json";
-import Barry from "@/data/barchart_sentiment/Mrs. Barry.json";
-import Ruby from "@/data/barchart_sentiment/Ruby Gillis.json";
-import Stacy from "@/data/barchart_sentiment/Miss Stacy.json";
+// import Anne from "@/data/barchart_sentiment/Anne Shirley.json";
+// import Alexander from "@/data/barchart_sentiment/Alexander Spencer.json";
+// import Diana from "@/data/barchart_sentiment/Diana Barry.json";
+// import Marilla from "@/data/barchart_sentiment/Marilla Cuthbert.json";
+// import Matthew from "@/data/barchart_sentiment/Matthew Cuthbert.json";
+// import Rachel from "@/data/barchart_sentiment/Rachel Lynde.json";
+// import Gilbert from "@/data/barchart_sentiment/Gilbert Blythe.json";
+// import Jane from "@/data/barchart_sentiment/Jane Andrews.json";
+// import Josie from "@/data/barchart_sentiment/Josie Pye.json";
+// import Josephine from "@/data/barchart_sentiment/Josephine Barry.json";
+// import Phillips from "@/data/barchart_sentiment/Mr. Phillips.json";
+// import Allan from "@/data/barchart_sentiment/Mrs. Allan.json";
+// import Barry from "@/data/barchart_sentiment/Mrs. Barry.json";
+// import Ruby from "@/data/barchart_sentiment/Ruby Gillis.json";
+// import Stacy from "@/data/barchart_sentiment/Miss Stacy.json";
 
+import fakeChar from "@/data/barchart_sentiment_rel_sents/Chapterlegend.json";
+import Anne from "@/data/barchart_sentiment_rel_sents/Anne Shirley.json";
+import Alexander from "@/data/barchart_sentiment_rel_sents/Alexander Spencer.json";
+import Diana from "@/data/barchart_sentiment_rel_sents/Diana Barry.json";
+import Marilla from "@/data/barchart_sentiment_rel_sents/Marilla Cuthbert.json";
+import Matthew from "@/data/barchart_sentiment_rel_sents/Matthew Cuthbert.json";
+import Rachel from "@/data/barchart_sentiment_rel_sents/Rachel Lynde.json";
+import Gilbert from "@/data/barchart_sentiment_rel_sents/Gilbert Blythe.json";
+import Jane from "@/data/barchart_sentiment_rel_sents/Jane Andrews.json";
+import Josie from "@/data/barchart_sentiment_rel_sents/Josie Pye.json";
+import Josephine from "@/data/barchart_sentiment_rel_sents/Josephine Barry.json";
+import Phillips from "@/data/barchart_sentiment_rel_sents/Mr. Phillips.json";
+import Allan from "@/data/barchart_sentiment_rel_sents/Mrs. Allan.json";
+import Barry from "@/data/barchart_sentiment_rel_sents/Mrs. Barry.json";
+import Ruby from "@/data/barchart_sentiment_rel_sents/Ruby Gillis.json";
+import Stacy from "@/data/barchart_sentiment_rel_sents/Miss Stacy.json";
 
 export default {
   components: {},
   mounted() {
-    this.init(Anne, "Anne Shirley");
-    this.init(Diana, "Diana Barry");
-    this.init(Marilla, "Marilla Cuthbert");
-    this.init(Matthew, "Matthew Cuthbert");
-    this.init(Rachel, "Rachel Lynde");
-    this.init(Gilbert, "Gilbert Blythe");
-    this.init(Jane, "Jane Andrews");
-    this.init(Josie, "Josie Pye");
-    this.init(Phillips, "Mr. Phillips");
-    this.init(Ruby, "Ruby Gillis");
-    this.init(Alexander, "Alexander Spencer");
-    this.init(Stacy, "Miss Stacy");
-    this.init(Josephine, "Josephine Barry");
-    this.init(Barry, "Mrs. Barry");
-    this.init(Allan, "Mrs. Allan");
+    // NEW DATA
+    this.init(this.concatData(fakeChar), "Chapter");
+    this.init(this.concatData(Anne), "Anne Shirley");
+    this.init(this.concatData(Diana), "Diana Barry");
+    this.init(this.concatData(Marilla), "Marilla Cuthbert");
+    this.init(this.concatData(Matthew), "Matthew Cuthbert");
+    this.init(this.concatData(Rachel), "Rachel Lynde");
+    this.init(this.concatData(Gilbert), "Gilbert Blythe");
+    this.init(this.concatData(Jane), "Jane Andrews");
+    this.init(this.concatData(Josie), "Josie Pye");
+    this.init(this.concatData(Phillips), "Mr. Phillips");
+    this.init(this.concatData(Ruby), "Ruby Gillis");
+    this.init(this.concatData(Alexander), "Alexander Spencer");
+    this.init(this.concatData(Stacy), "Miss Stacy");
+    this.init(this.concatData(Josephine), "Josephine Barry");
+    this.init(this.concatData(Barry), "Mrs. Barry");
+    this.init(this.concatData(Allan), "Mrs. Allan");
+    
+    // OLD DATA
+    // this.init(Anne, "Anne Shirley");
+    // this.init(Diana, "Diana Barry");
+    // this.init(Marilla, "Marilla Cuthbert");
+    // this.init(Matthew, "Matthew Cuthbert");
+    // this.init(Rachel, "Rachel Lynde");
+    // this.init(Gilbert, "Gilbert Blythe");
+    // this.init(Jane, "Jane Andrews");
+    // this.init(Josie, "Josie Pye");
+    // this.init(Phillips, "Mr. Phillips");
+    // this.init(Ruby, "Ruby Gillis");
+    // this.init(Alexander, "Alexander Spencer");
+    // this.init(Stacy, "Miss Stacy");
+    // this.init(Josephine, "Josephine Barry");
+    // this.init(Barry, "Mrs. Barry");
+    // this.init(Allan, "Mrs. Allan");
   },
   methods: {
     concatData(data){
@@ -50,16 +85,18 @@ export default {
       }
       return newData;
     },
+
     init(data, name) {
       // set the dimensions and margins of the graph
       var margin = {top:0 , right: 0, bottom: 0, left: 100},
-          width = 475 - margin.left - margin.right,
-          height = 20 - margin.top - margin.bottom;
+          width = 600 - margin.left - margin.right,
+          height = name === "Chapter" ? 30 - margin.top - margin.bottom : 20 - margin.top - margin.bottom;
 // append the svg object to the body of the page
       var svg = d3.select("#barchart")
           .append("div")
           .append("svg")
-          .attr("style", "outline: solid 2px #bdbdbd")
+          .attr("id", name === "Chapter" ? "fake-char" : "")
+          .attr("style", name === "Chapter" ? "outline: none" : "outline: solid 2px #bdbdbd")
           .attr("width", width + margin.left + margin.right)
           .attr("height", height + margin.top + margin.bottom)
           .append("g")
@@ -87,7 +124,7 @@ export default {
           .attr("class", "y label")
           .attr("text-anchor", "end")
           .attr("y", 1)
-          .attr("dy", "0.9em")
+          .attr("dy", name === "Chapter" ? "1.5em" : "1.1em")
           .attr("dx", "1em")
           .text(name);
 
@@ -96,6 +133,7 @@ export default {
           .data(data)
           .enter()
           .append("rect")
+          .attr("id", d => d.Chapter + "-" + d.Segment)
           .attr("x", function (d) {
             return x(d.Segment);
           })
@@ -110,37 +148,52 @@ export default {
             return d.Color;
           })
 
-      // svg.selectAll("chapter-number")
-      // .data(data)
-      // .enter()
-      // .append("text")
-      // .attr("class", "chapter-number")
-      // .text(function(d) {
-      //   return "C"+d.Chapter.slice(8); //remove "Chapter ", take only chapter number
-      // })
-      //   .attr("text-anchor", "end")
-      //   .attr("fill", "black")
-      //   .style("font-size", "12px")
-      //   // .attr("transform", "translate(" + 0 + "," + 20 + ")")
-      //   .attr("x", function(d, i) {
-      //       return i * (width / data.length) + 1;
-      //   })
-      //   .attr("y", function(d) {
-      //       // return height - (d * 4);
-      //       return height - y(d.Value) - 1;
-      //   });
+      // Add chapter number tags on top
+      const legendChapters = ["1", "6", "11", "16", "21", "26", "31", "36", "38"]
+      const isFirstSegment = (d) => {
+        const segmentsOfChapter = data.filter(item => item.Chapter === d.Chapter);
+        const firstSegmentOfChapter = segmentsOfChapter[0] 
+        return d.Segment === firstSegmentOfChapter.Segment;
+      } 
+      const countSegmentsOfChapter = (d) => {
+        return data.filter(item => item.Chapter === d.Chapter).length;
+      }
+      const nrSegmentsPerChapter = []
+      for (const chapter in fakeChar){
+        nrSegmentsPerChapter.push(fakeChar[chapter].length)
+      }
 
-      // this.bubbles.append('text')
-      //           .attr("class", "bubble-label")
-      //           .attr("x", function(d) {return xScale(d.x)})
-      //           .attr("y", function(d) {return d.count < 1200 ? yScale(d.y) - 22 
-      //                                                         : d.count > 2000 ? yScale(d.y) - 30
-      //                                                         : yScale(d.y) - 28}) //https://jonathansoma.com/lede/storytelling/d3/text-elements/ for difference between attr "x"/"y" and "dx"/"dy"
-      //           .attr("text-anchor", "middle")
-      //           .style("font-size", "12px")
-      //           .text(d => topicNames[this.data_chart.indexOf(d)+1])
-      //           .on("click", (event, d) => this.onChange(event, this.data_chart.indexOf(d)+1));
+      if(name === "Chapter") {
+        // Add x-axisTop
+        const legendXScale = d3.scaleLinear()
+                            .range([20, width])
+                            .domain(d3.extent([0, 100]))
+        svg.append('g').attr('transform', 'translate(0,' + height + ')')
+                       .call(d3.axisTop(legendXScale).tickValues(nrSegmentsPerChapter).tickFormat(function(d,i){ return legendChapters[i]}));
 
+        
+        // svg.append("g")
+        // .attr("transform", "translate(" + 0 + "," + height + ")")
+        // .call(d3.axisTop(legendXScale)) //tickFormat(()=>{return ""})to remove tick labels
+
+        svg.selectAll("chapter-number")
+        .data(data)
+        .enter()
+        .append("text")
+        .attr("class", "chapter-number")
+        .text(function(d) {
+          return legendChapters.includes(d.Chapter.slice(8)) && isFirstSegment(d) ? d.Chapter.slice(8) : ""; //remove "Chapter ", take only chapter number
+        })
+          .attr("text-anchor", "middle")
+          .attr("fill", "black")
+          .style("font-size", "12px")
+          .attr("x", function(d) {
+              return x(d.Segment) + x.bandwidth(d)*countSegmentsOfChapter(d) - x.bandwidth();
+          })
+          .attr("y", function(d) {
+              return height - y(d.Value) - 2;
+          });
+      }
     }
 
   }
@@ -176,7 +229,19 @@ ul.menu li {
   margin-top: 0;
   position: relative;
 }
-
+/* .chapter-number {
+  position: relative;
+}
+.chapter-number:before {
+    content:""; 
+    background: black; 
+    position: absolute; 
+    display: block;
+    bottom: 0; 
+    left: 0; 
+    height: 1px; 
+    width: 1.5px;
+} */
 
 
 </style>

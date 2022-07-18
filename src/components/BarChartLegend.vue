@@ -16,7 +16,7 @@ export default {
       const gray = "#7f8285" //neutral 
       const red = "#f995a6" //positive
       
-      // Observable Ansatz
+      // Observable color legend
       function Legend(color, {
         title,
         tickSize = 6,
@@ -114,7 +114,7 @@ export default {
       })
       
 
-      //Alternative 
+      //Alternative color legend
       const width = 250;
       const height = 15;
       const margin = {top: 10, bottom: 0, left: 0, right: 0};

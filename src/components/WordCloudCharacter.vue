@@ -40,12 +40,11 @@ export default {
       
 // set the dimensions and margins of the graph
       var margin = {top:0 , right: 5, bottom: 0, left: 0},
-          width = 375 - margin.left - margin.right,
+          width = 250 - margin.left - margin.right,
           height = 300 - margin.top - margin.bottom;
 
 
 // append the svg object to the body of the page
-      
       var svg = d3.select("#wordcloudcharacter").append("svg")
           .attr("width", width + margin.left + margin.right)
           .attr("height", height + margin.top + margin.bottom)

@@ -1,11 +1,14 @@
 <template>
-  <div id="barchart">
+  <div id="barchart-container">
     <h5> Character Occurrences and Sentiments</h5>
+    <div id="barchart"></div>
+    <BarChartLegend/>
   </div>
 </template>
 
 <script>
 import * as d3 from "d3";
+import BarChartLegend from "@/components/BarChartLegend"
 // import Anne from "@/data/barchart_sentiment/Anne Shirley.json";
 // import Alexander from "@/data/barchart_sentiment/Alexander Spencer.json";
 // import Diana from "@/data/barchart_sentiment/Diana Barry.json";
@@ -40,7 +43,7 @@ import Ruby from "@/data/barchart_sentiment_rel_sents/Ruby Gillis.json";
 import Stacy from "@/data/barchart_sentiment_rel_sents/Miss Stacy.json";
 
 export default {
-  components: {},
+  components: {BarChartLegend},
   mounted() {
     // NEW DATA
     this.init(this.concatData(fakeChar), "Chapter");
@@ -89,9 +92,9 @@ export default {
     init(data, name) {
       // set the dimensions and margins of the graph
       var margin = {top:0 , right: 0, bottom: 0, left: 100},
-          width = 600 - margin.left - margin.right,
-          height = name === "Chapter" ? 30 - margin.top - margin.bottom : 20 - margin.top - margin.bottom;
-// append the svg object to the body of the page
+          width = 550 - margin.left - margin.right,
+          height = 20 - margin.top - margin.bottom;
+      // append the svg object to the body of the page
       var svg = d3.select("#barchart")
           .append("div")
           .append("svg")
@@ -148,7 +151,8 @@ export default {
             return d.Color;
           })
 
-      // Add chapter number tags on top
+
+// Add chapter number tags on top
       const legendChapters = ["1", "6", "11", "16", "21", "26", "31", "36", "38"]
       const isFirstSegment = (d) => {
         const segmentsOfChapter = data.filter(item => item.Chapter === d.Chapter);
@@ -162,20 +166,18 @@ export default {
       for (const chapter in fakeChar){
         nrSegmentsPerChapter.push(fakeChar[chapter].length)
       }
-
+      
       if(name === "Chapter") {
-        // Add x-axisTop
+        // Add Chapter legend using d3.axisTop
+        // const domain = legendChapters.map(d => {return x(fakeChar[parseInt(d)].Segment) + x.bandwidth()*nrSegmentsPerChapter[0] - x.bandwidth()});
+        const domain = nrSegmentsPerChapter.map(chapter => {return x.bandwidth()*chapter})
         const legendXScale = d3.scaleLinear()
                             .range([20, width])
-                            .domain(d3.extent([0, 100]))
+                            .domain(d3.extent(domain))
         svg.append('g').attr('transform', 'translate(0,' + height + ')')
-                       .call(d3.axisTop(legendXScale).tickValues(nrSegmentsPerChapter).tickFormat(function(d,i){ return legendChapters[i]}));
+                       .call(d3.axisTop(legendXScale).tickValues(domain).tickFormat(function(d,i){ return legendChapters[i]}));
 
-        
-        // svg.append("g")
-        // .attr("transform", "translate(" + 0 + "," + height + ")")
-        // .call(d3.axisTop(legendXScale)) //tickFormat(()=>{return ""})to remove tick labels
-
+        //Add Chapter legend manually
         svg.selectAll("chapter-number")
         .data(data)
         .enter()
@@ -188,7 +190,7 @@ export default {
           .attr("fill", "black")
           .style("font-size", "12px")
           .attr("x", function(d) {
-              return x(d.Segment) + x.bandwidth(d)*countSegmentsOfChapter(d) - x.bandwidth();
+              return x(d.Segment) + x.bandwidth()*countSegmentsOfChapter(d) - x.bandwidth();
           })
           .attr("y", function(d) {
               return height - y(d.Value) - 2;
@@ -205,6 +207,7 @@ body {
   font-family: 'PT Sans', sans-serif;
   background-color: #eee;
 }
+
 #barchart {
   margin-left: 20px;
 }

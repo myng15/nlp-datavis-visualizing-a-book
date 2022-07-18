@@ -190,14 +190,17 @@ h3 {
 }
 
 #main2 {
-  display: grid;
-  row-gap: 10px;
-  row-gap: 10px;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+  /* display: grid; */
+  /* row-gap: 10px;
+  row-gap: 10px; */
+  /* grid-template-columns: repeat(3, 1fr); */
+  /* grid-template-columns: 2fr 1fr 1fr; */
+  /* grid-gap: 10px;
   grid-auto-rows: minmax(100px, auto);
   grid-column: 3/3;
-  grid-row: 1;
+  grid-row: 1; */
+  display: flex;
+  flex-direction: row;
   margin-bottom: 10px;
   border-bottom: 2px solid #bdbdbd;
   padding: 10px;

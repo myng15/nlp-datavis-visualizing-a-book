@@ -243,7 +243,6 @@ export default {
       d3.select("#bubble-tooltip")
               .style("left", e.pageX + "px")
               .style("top", e.pageY + "px")
-              .style("position", "absolute")
               .style("display", "block")
               .style("background", "white")
               .style("box-shadow", "3px 3px 10px rgba(0, 0, 0, 0.4)")
@@ -251,7 +250,6 @@ export default {
               .html("Frequency (in terms): " + d.count 
                     // + "<br>Top words: " + topTerms + ",..."
                     );
-      console.log(e)
     }
 
     this.bubbles.on("mouseover", handleMouseOver)
@@ -274,6 +272,7 @@ export default {
 }
 
 #bubble-tooltip {
+    position: absolute;
     max-width: 200px;
     height: auto;
     padding: 5px;

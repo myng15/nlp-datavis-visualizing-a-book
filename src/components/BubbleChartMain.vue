@@ -275,10 +275,11 @@ export default {
     position: absolute;
     max-width: 200px;
     height: auto;
-    padding: 5px;
+    padding: 4px;
     pointer-events: none;
-    line-height: 20px;
     text-align: left;
+    line-height: 16px;
+    font-size: 12.5px;
   }
   
 </style>

@@ -80,22 +80,6 @@ export default {
     this.init(this.concatData(Allan), "Mrs. Allan");
     this.init(this.concatData(Stacy), "Miss Stacy");
     
-    // OLD DATA
-    // this.init(Anne, "Anne Shirley");
-    // this.init(Diana, "Diana Barry");
-    // this.init(Marilla, "Marilla Cuthbert");
-    // this.init(Matthew, "Matthew Cuthbert");
-    // this.init(Rachel, "Rachel Lynde");
-    // this.init(Gilbert, "Gilbert Blythe");
-    // this.init(Jane, "Jane Andrews");
-    // this.init(Josie, "Josie Pye");
-    // this.init(Phillips, "Mr. Phillips");
-    // this.init(Ruby, "Ruby Gillis");
-    // this.init(Alexander, "Alexander Spencer");
-    // this.init(Stacy, "Miss Stacy");
-    // this.init(Josephine, "Josephine Barry");
-    // this.init(Barry, "Mrs. Barry");
-    // this.init(Allan, "Mrs. Allan");
   },
   methods: {
     concatData(data){
@@ -181,15 +165,13 @@ export default {
           })
 
 // Add barchart tooltips
-    const tooltip = d3.select('#barchart').append("div")
+    const tooltip = d3.select('#barchart-container').append("div")
                       .attr("id", "barchart-tooltip");
     
     /** @param {MouseEvent} e 
      * @param {Object} d //Each topic object in chart data
     */
     const handleMouseOver = (e, d) => {
-      // const topTermsArray = termsData[this.data_chart.indexOf(d)].terms.slice(0, 10);
-      // const topTerms = topTermsArray.map(i => i.name).join(", ")
       d3.select("#barchart-tooltip")
               .style("left", e.pageX + "px")
               .style("top", e.pageY + "px")
@@ -197,7 +179,7 @@ export default {
               .style("background", "white")
               .style("box-shadow", "3px 3px 10px rgba(0, 0, 0, 0.4)")
               .style("border-radius", "5px")
-              .html(d.Segment + " (" + d.Chapter + "): \n" +
+              .html(d.Segment + " (" + d.Chapter + "): <br>" +
                     + d.Mentions + " mentions");
       
     }
@@ -225,12 +207,12 @@ export default {
       if(name === "Chapter") {
         // Add Chapter legend using d3.axisTop
         // const domain = legendChapters.map(d => {return x(fakeChar[parseInt(d)].Segment) + x.bandwidth()*nrSegmentsPerChapter[0] - x.bandwidth()});
-        const domain = nrSegmentsPerChapter.map(chapter => {return x.bandwidth()*chapter})
-        const legendXScale = d3.scaleLinear()
-                            .range([20, width])
-                            .domain(d3.extent(domain))
-        svg.append('g').attr('transform', 'translate(0,' + height + ')')
-                       .call(d3.axisTop(legendXScale).tickValues(domain).tickFormat(function(d,i){ return legendChapters[i]}));
+        // const domain = nrSegmentsPerChapter.map(chapter => {return x.bandwidth()*chapter})
+        // const legendXScale = d3.scaleLinear()
+        //                     .range([20, width])
+        //                     .domain(d3.extent(domain))
+        // svg.append('g').attr('transform', 'translate(0,' + height + ')')
+        //                .call(d3.axisTop(legendXScale).tickValues(domain).tickFormat(function(d,i){ return legendChapters[i]}));
 
         //Add Chapter legend manually
         svg.selectAll("chapter-number")
@@ -241,11 +223,11 @@ export default {
         .text(function(d) {
           return legendChapters.includes(d.Chapter.slice(8)) && isFirstSegment(d) ? d.Chapter.slice(8) : ""; //remove "Chapter ", take only chapter number
         })
-          .attr("text-anchor", "middle")
+          .attr("text-anchor", "end")
           .attr("fill", "black")
           .style("font-size", "12px")
           .attr("x", function(d) {
-              return x(d.Segment) + x.bandwidth()*countSegmentsOfChapter(d) - x.bandwidth();
+              return x(d.Segment) + x.bandwidth()*countSegmentsOfChapter(d) + x.bandwidth();
           })
           .attr("y", function(d) {
               return height - y(d.Value) - 2;
@@ -303,11 +285,13 @@ ul.menu li {
 
 #barchart-tooltip {
     position: absolute;
-    max-width: 100px;
+    max-width: 90px;
     height: auto;
-    padding: 5px;
+    margin: 0;
+    padding: 2px 1px 2px 4px;
     pointer-events: none;
-    line-height: 20px;
+    line-height: 16px;
     text-align: left;
+    font-size: 12.5px;
   }
 </style>

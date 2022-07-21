@@ -39,8 +39,8 @@ export default {
                      .interpolator(d3.interpolate("#bbc1be", characterColor));
       
 // set the dimensions and margins of the graph
-      var margin = {top:0 , right: 5, bottom: 0, left: 0},
-          width = 250 - margin.left - margin.right,
+      var margin = {top:50, right: 5, bottom: 0, left: 0},
+          width = 300 - margin.left - margin.right,
           height = 300 - margin.top - margin.bottom;
 
 
@@ -183,10 +183,11 @@ ul.menu li {
     position: absolute;
     max-width: 120px;
     height: auto;
-    padding: 5px;
+    padding: 4px;
     pointer-events: none;
-    line-height: 20px;
     text-align: left;
+    line-height: 16px;
+    font-size: 12.5px;
   }
 
 p{

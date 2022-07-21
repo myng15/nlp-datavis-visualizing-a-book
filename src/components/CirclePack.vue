@@ -82,8 +82,9 @@ export default {
       const pack = data => d3.pack()
                             .size([this.settings.width, this.settings.height])
                             .padding(1)(d3.hierarchy(data)
-                            .sum(d => d.value)
-                            .sort((a, b) => b.value - a.value))
+                                        // sort circle packs descendingly according to sum of all children's values
+                                          .sum(d => d.value)
+                                          .sort((a, b) => b.value - a.value)) 
 
       const root = pack(packData);
       let focus = root;

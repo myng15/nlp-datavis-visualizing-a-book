@@ -50,9 +50,6 @@ export default {
               `translate(${margin.left}, ${margin.top})`);
 
       const data = cooccurrences;
-      // console.log("Data", data)
-
-      // console.log(data.links.index)
 
       /* eslint-disable */
 
@@ -116,12 +113,34 @@ export default {
           .style("font-size", "11px")
           .on("click", (event, d) => this.onChange(event, d.name, d.color))
 
-      node.append("title")
-          .text(function (d) {
-            return d.name + ' occurred ' +d.size + " times in the book"
-          });
+      // node.append("title")
+      //     .text(function (d) {
+      //       return d.name + ' occurred ' +d.size + " times in the book"
+      //     });
 
+      //Add network tooltips
+    const tooltip = d3.select('#network').append("div")
+                      .attr("id", "network-tooltip");
+    
+    /** @param {MouseEvent} e 
+     * @param {Object} d //word data
+    */
+    const handleMouseOver = (e, d) => {
+      d3.select("#network-tooltip")
+              .style("left", e.pageX + "px")
+              .style("top", e.pageY + "px")
+              .attr('text-anchor', 'middle')
+              .style("display", "block")
+              .style("background", "white")
+              .style("box-shadow", "3px 3px 10px rgba(0, 0, 0, 0.4)")
+              .style("border-radius", "5px")
+              .text("Total occurences: " + d.size + " times");
+    }
 
+    d3.select('#network').selectAll("circle").on("mouseover", handleMouseOver)
+           .on("mouseout", () => {
+              tooltip.style("display", "none");
+    });
       // Create a drag handler and append it to the node object instead
       let drag_handler = d3.drag()
           .on("start", dragstarted)
@@ -294,5 +313,16 @@ text {
   font-family: sans-serif;
   font-weight: bold;
   cursor: pointer;
+}
+
+#network-tooltip {
+  position: absolute;
+  max-width: 120px;
+  height: auto;
+  padding: 4px;
+  pointer-events: none;
+  text-align: left;
+  line-height: 16px;
+  font-size: 12.5px;
 }
 </style>

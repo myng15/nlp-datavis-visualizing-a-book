@@ -16,12 +16,11 @@ export default {
       const gray = "#7f8285" //neutral 
       const red = "#f995a6" //positive
       
-      // Observable color legend
       function Legend(color, {
         title,
         tickSize = 6,
         width = 320, 
-        height = 44 + tickSize,
+        height = 46 + tickSize,
         marginTop = 18,
         marginRight = 0,
         marginBottom = 16 + tickSize,
@@ -84,6 +83,7 @@ export default {
               .attr("fill", "currentColor")
               .attr("text-anchor", "start")
               .attr("font-weight", "bold")
+              .style("font-size", "11px")
               .attr("class", "title")
               .text(title))
             // .call(g => g.append("text")
@@ -115,55 +115,55 @@ export default {
       
 
       //Alternative color legend
-      const width = 250;
-      const height = 15;
-      const margin = {top: 10, bottom: 0, left: 0, right: 0};
-      const svg = d3.select("#barchartlegend")
-        .append("svg")
-        .attr("width", (width))
-        .attr("height", (height))
-        // .attr("transform", "rotate(90)")
-        .style("margin", margin.top);
+    //   const width = 250;
+    //   const height = 15;
+    //   const margin = {top: 10, bottom: 0, left: 0, right: 0};
+    //   const svg = d3.select("#barchartlegend")
+    //     .append("svg")
+    //     .attr("width", (width))
+    //     .attr("height", (height))
+    //     // .attr("transform", "rotate(90)")
+    //     .style("margin", margin.top);
       
-      const legendWrapper = svg.append("g").attr("id", "legendWrapper").attr("width", width)
-        .attr("height", height)
-      const linearGradient = legendWrapper.append("linearGradient")
-      .attr("id", "linear-gradient");
+    //   const legendWrapper = svg.append("g").attr("id", "legendWrapper").attr("width", width)
+    //     .attr("height", height)
+    //   const linearGradient = legendWrapper.append("linearGradient")
+    //   .attr("id", "linear-gradient");
 
-      linearGradient.append("stop")
-          .attr("offset", "0%")
-          .attr("stop-color", blue); 
+    //   linearGradient.append("stop")
+    //       .attr("offset", "0%")
+    //       .attr("stop-color", blue); 
 
-      linearGradient.append("stop")
-          .attr("offset", "50%")
-          .attr("stop-color", gray); 
+    //   linearGradient.append("stop")
+    //       .attr("offset", "50%")
+    //       .attr("stop-color", gray); 
 
-      linearGradient.append("stop")
-          .attr("offset", "100%")
-          .attr("stop-color", red); 
+    //   linearGradient.append("stop")
+    //       .attr("offset", "100%")
+    //       .attr("stop-color", red); 
 
-      legendWrapper.append("rect")
-          .attr("width", width)
-          .attr("height", height)
-          .style("fill", "url(#linear-gradient)");
+    //   legendWrapper.append("rect")
+    //       .attr("width", width)
+    //       .attr("height", height)
+    //       .style("fill", "url(#linear-gradient)");
       
-      // legendWrapper.append("svg").attr("id", "color-legend")
-      // const valuesToShow = ["Negative", "Neutral", "Positive"]
-      var x = d3.scaleLinear()
-        .domain([-1, 0, 1])
-        .range([0, width]);
+    //   // legendWrapper.append("svg").attr("id", "color-legend")
+    //   // const valuesToShow = ["Negative", "Neutral", "Positive"]
+    //   var x = d3.scaleLinear()
+    //     .domain([-1, 0, 1])
+    //     .range([0, width]);
 
-    var axis = d3.axisBottom(x);
+    // var axis = d3.axisBottom(x);
 
-    legendWrapper
-        .append("g")
-        .attr("id", "g-runoff")
-        .attr("class", "axis")
-        .attr("width", width)
-        .attr("height", height)
-        .attr("transform", "translate(0,20)")
-        .attr("fill", "black")
-        .call(axis.ticks(2));
+    // legendWrapper
+    //     .append("g")
+    //     .attr("id", "g-runoff")
+    //     .attr("class", "axis")
+    //     .attr("width", width)
+    //     .attr("height", height)
+    //     .attr("transform", "translate(0,20)")
+    //     .attr("fill", "black")
+    //     .call(axis.ticks(2));
 
 
 

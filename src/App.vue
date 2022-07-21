@@ -225,9 +225,9 @@ h3 {
 
 #submain3-buttons button {
   border: 1px solid #bbc1be;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
-  padding: 10px 24px;
+  padding: 5px 12px;
   cursor: pointer;
   transition: 0.3s;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05);

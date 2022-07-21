@@ -245,7 +245,7 @@ h3 {
 }
 select{
     margin-bottom: 10px;
-    padding: 10px;
+    padding: 5px 12px;
     border: none;
     outline: none;
     font-weight: bold;
@@ -253,8 +253,9 @@ select{
     color: white;
     box-shadow: 5px 5px 10px rgba(0,0,0,0.05);
     cursor: pointer;
-    font-size: 16px;
+    font-size: 15px;
     border-radius: 5px;
+    font-family: 'PT Sans', sans-serif;
 }
 
 ul.menu {

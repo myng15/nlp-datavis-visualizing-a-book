@@ -48,6 +48,31 @@ export default {
     this.init(this.concatData(Allan), "Mrs. Allan");
     this.init(this.concatData(Stacy), "Miss Stacy");
     
+    // Add barchart tooltips
+    const tooltip = d3.select('#barchart-container').append("div")
+                      .attr("id", "barchart-tooltip");
+    
+    /** @param {MouseEvent} e 
+     * @param {Object} d //Each segment object in chart data
+    */
+    const handleMouseOver = (e, d) => {
+      d3.select("#barchart-tooltip")
+              .style("left", e.pageX + "px")
+              .style("top", e.pageY + "px")
+              .style("display", "block")
+              .style("background", "white")
+              .style("box-shadow", "3px 3px 10px rgba(0, 0, 0, 0.4)")
+              .style("border-radius", "5px")
+              .html(d.Segment + " (" + d.Chapter + "): <br>" +
+                    + d.Mentions + " mentions");
+      
+    }
+    
+    d3.select('#barchart').selectAll(".real-bar").on("mouseover", handleMouseOver)
+           .on("mouseout", () => {
+              tooltip.style("display", "none");
+    });
+
     // Add chapter separators
     // var margin = {top:0 , right: 0, bottom: 0, left: 100},
     //       width = 550 - margin.left - margin.right,
@@ -171,30 +196,30 @@ export default {
             return d.Color;
           })
 
-// Add barchart tooltips
-    const tooltip = d3.select('#barchart-container').append("div")
-                      .attr("id", "barchart-tooltip");
+// // Add barchart tooltips
+//     const tooltip = d3.select('#barchart-container').append("div")
+//                       .attr("id", "barchart-tooltip");
     
-    /** @param {MouseEvent} e 
-     * @param {Object} d //Each topic object in chart data
-    */
-    const handleMouseOver = (e, d) => {
-      d3.select("#barchart-tooltip")
-              .style("left", e.pageX + "px")
-              .style("top", e.pageY + "px")
-              .style("display", "block")
-              .style("background", "white")
-              .style("box-shadow", "3px 3px 10px rgba(0, 0, 0, 0.4)")
-              .style("border-radius", "5px")
-              .html(d.Segment + " (" + d.Chapter + "): <br>" +
-                    + d.Mentions + " mentions");
+//     /** @param {MouseEvent} e 
+//      * @param {Object} d //Each topic object in chart data
+//     */
+//     const handleMouseOver = (e, d) => {
+//       d3.select("#barchart-tooltip")
+//               .style("left", e.pageX + "px")
+//               .style("top", e.pageY + "px")
+//               .style("display", "block")
+//               .style("background", "white")
+//               .style("box-shadow", "3px 3px 10px rgba(0, 0, 0, 0.4)")
+//               .style("border-radius", "5px")
+//               .html(d.Segment + " (" + d.Chapter + "): <br>" +
+//                     + d.Mentions + " mentions");
       
-    }
+//     }
     
-    d3.select('#barchart').selectAll(".real-bar").on("mouseover", handleMouseOver)
-           .on("mouseout", () => {
-              tooltip.style("display", "none");
-    });
+//     d3.select('#barchart').selectAll(".real-bar").on("mouseover", handleMouseOver)
+//            .on("mouseout", () => {
+//               tooltip.style("display", "none");
+//     });
 
 // Add chapter number tags on top
       if(name === "Chapter") {

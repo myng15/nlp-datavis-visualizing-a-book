@@ -161,11 +161,11 @@ export default {
           .range([height, 0]);
       svg.append("g")
       svg.append("text")
-          .style("fill",name === "Anne Shirley" ? "#548C2F" :
-                        name === "Diana Barry" ? "#BC69AA" :
-                        name === "Marilla Cuthbert" ? "#1C448E" :
+          .style("fill",name === "Anne Shirley" ? "#cc79a7" :
+                        name === "Diana Barry" ? "#d55e00" :
+                        name === "Marilla Cuthbert" ? "#0072B2" :
                         name === "Matthew Cuthbert" ? "#ffa600" :
-                        name === "Rachel Lynde" ? "#931F1D" :
+                        name === "Rachel Lynde" ? "#009e7a" :
                         "#313036")
           .style("font-size", "11px")
           .attr("class", "y label")

@@ -100,13 +100,8 @@ export default {
           .append("div")
           .append("svg")
           .attr("id", name === "Chapter" ? "fake-char" : "")
-          .attr("style", name === "Chapter" ? "outline: none" : 
-                         name === "Anne Shirley" ? "outline: solid 2.5px #548C2F" :
-                         name === "Diana Barry" ? "outline: solid 2.5px #BC69AA" :
-                         name === "Marilla Cuthbert" ? "outline: solid 2.5px #1C448E" :
-                         name === "Matthew Cuthbert" ? "outline: solid 2.5px #ffa600" :
-                         name === "Rachel Lynde" ? "outline: solid 2.5px #931F1D" :
-                         "outline: solid 2px #bdbdbd")
+          .attr("style", name === "Chapter" ? "outline: none" :
+                         "outline: solid 1px #bdbdbd")
           .attr("width", width + margin.left + margin.right)
           .attr("height", height + margin.top + margin.bottom)
           .append("g")

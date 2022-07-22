@@ -80,6 +80,50 @@ export default {
     this.init(this.concatData(Allan), "Mrs. Allan");
     this.init(this.concatData(Stacy), "Miss Stacy");
     
+    // Add chapter separators
+    // var margin = {top:0 , right: 0, bottom: 0, left: 100},
+    //       width = 550 - margin.left - margin.right,
+    //       // eslint-disable-next-line no-unused-vars
+    //       height = 20 - margin.top - margin.bottom;
+    // const data = this.concatData(fakeChar)
+    // const legendChapters = ["1", "6", "11", "16", "21", "26", "31", "36", "38"]
+    // const isFirstSegment = (d) => {
+    //   const segmentsOfChapter = data.filter(item => item.Chapter === d.Chapter);
+    //   const firstSegmentOfChapter = segmentsOfChapter[0] 
+    //   return d.Segment === firstSegmentOfChapter.Segment;
+    // } 
+    // // eslint-disable-next-line no-unused-vars
+    // const countSegmentsOfChapter = (d) => {
+    //   return data.filter(item => item.Chapter === d.Chapter).length;
+    // }
+    // const nrSegmentsPerChapter = []
+    // for (const chapter in fakeChar){
+    //   nrSegmentsPerChapter.push(fakeChar[chapter].length)
+    // }
+    // var x = d3.scaleBand()
+    //     .range([20, width])
+    //     .domain(data.map(function (d) {
+    //       return d.Segment;
+    //     }))
+    //     .padding(0.4);
+    // d3.select("#barchart")
+    //   .append("svg")
+    //   .selectAll("chapter-line")
+    //   .data(data)
+    //   .enter()
+    //   .append("line")
+    //     .attr('x1', function(d) {
+    //         return legendChapters.includes(d.Chapter.slice(8)) && isFirstSegment(d) ? x(d.Segment) : "";} )
+    //     .attr('x2', function(d) {
+    //         return legendChapters.includes(d.Chapter.slice(8)) && isFirstSegment(d) ? x(d.Segment) : "";} )
+    //     .attr('y1', function(d) {
+    //         return legendChapters.includes(d.Chapter.slice(8)) && isFirstSegment(d) ? x(d.Segment) : "";} )
+    //     .attr('y2', function(d) {
+    //         return legendChapters.includes(d.Chapter.slice(8)) && isFirstSegment(d) ? x(d.Segment) + height*15 : "";} )
+    //     .attr('stroke', '#bdbdbd')
+    //     .attr('stroke-width', 1)
+    //     .style("position", "absolute")
+
   },
   methods: {
     concatData(data){
@@ -95,18 +139,13 @@ export default {
       var margin = {top:0 , right: 0, bottom: 0, left: 100},
           width = 550 - margin.left - margin.right,
           height = 20 - margin.top - margin.bottom;
+      
       // append the svg object to the body of the page
       var svg = d3.select("#barchart")
           .append("div")
           .append("svg")
           .attr("id", name === "Chapter" ? "fake-char" : "")
-          .attr("style", name === "Chapter" ? "outline: none" : 
-                         name === "Anne Shirley" ? "outline: solid 2.5px #548C2F" :
-                         name === "Diana Barry" ? "outline: solid 2.5px #BC69AA" :
-                         name === "Marilla Cuthbert" ? "outline: solid 2.5px #1C448E" :
-                         name === "Matthew Cuthbert" ? "outline: solid 2.5px #ffa600" :
-                         name === "Rachel Lynde" ? "outline: solid 2.5px #931F1D" :
-                         "outline: solid 2px #bdbdbd")
+          .attr("style", name === "Chapter" ? "outline: none" : "outline: solid 1px #bdbdbd")
           .attr("width", width + margin.left + margin.right)
           .attr("height", height + margin.top + margin.bottom)
           .append("g")
@@ -190,6 +229,17 @@ export default {
     });
 
 // Add chapter number tags on top
+      if(name === "Chapter") {
+        // Add Chapter legend using d3.axisTop
+        // const domain = legendChapters.map(d => {return x(fakeChar[parseInt(d)].Segment) + x.bandwidth()*nrSegmentsPerChapter[0] - x.bandwidth()});
+        // const domain = nrSegmentsPerChapter.map(chapter => {return x.bandwidth()*chapter})
+        // const legendXScale = d3.scaleLinear()
+        //                     .range([20, width])
+        //                     .domain(d3.extent(domain))
+        // svg.append('g').attr('transform', 'translate(0,' + height + ')')
+        //                .call(d3.axisTop(legendXScale).tickValues(domain).tickFormat(function(d,i){ return legendChapters[i]}));
+        
+      
       const legendChapters = ["1", "6", "11", "16", "21", "26", "31", "36", "38"]
       const isFirstSegment = (d) => {
         const segmentsOfChapter = data.filter(item => item.Chapter === d.Chapter);
@@ -203,18 +253,8 @@ export default {
       for (const chapter in fakeChar){
         nrSegmentsPerChapter.push(fakeChar[chapter].length)
       }
-      
-      if(name === "Chapter") {
-        // Add Chapter legend using d3.axisTop
-        // const domain = legendChapters.map(d => {return x(fakeChar[parseInt(d)].Segment) + x.bandwidth()*nrSegmentsPerChapter[0] - x.bandwidth()});
-        // const domain = nrSegmentsPerChapter.map(chapter => {return x.bandwidth()*chapter})
-        // const legendXScale = d3.scaleLinear()
-        //                     .range([20, width])
-        //                     .domain(d3.extent(domain))
-        // svg.append('g').attr('transform', 'translate(0,' + height + ')')
-        //                .call(d3.axisTop(legendXScale).tickValues(domain).tickFormat(function(d,i){ return legendChapters[i]}));
 
-        //Add Chapter legend manually
+        //Add Chapter legend 
         svg.selectAll("chapter-number")
         .data(data)
         .enter()
@@ -223,15 +263,33 @@ export default {
         .text(function(d) {
           return legendChapters.includes(d.Chapter.slice(8)) && isFirstSegment(d) ? d.Chapter.slice(8) : ""; //remove "Chapter ", take only chapter number
         })
-          .attr("text-anchor", "end")
+          .attr("text-anchor", "start")
           .attr("fill", "black")
           .style("font-size", "12px")
           .attr("x", function(d) {
-              return x(d.Segment) + x.bandwidth()*countSegmentsOfChapter(d) + x.bandwidth();
+              return x(d.Segment);
+              // return x(d.Segment) + x.bandwidth()*countSegmentsOfChapter(d) + x.bandwidth();
           })
           .attr("y", function(d) {
               return height - y(d.Value) - 2;
           });
+
+      // Add chapter separators
+      svg
+      .selectAll("chapter-line")
+      .data(data)
+      .enter()
+      .append("line")
+        .attr('x1', function(d) {
+            return legendChapters.includes(d.Chapter.slice(8)) && isFirstSegment(d) ? x(d.Segment) : 0;} )
+        .attr('x2', function(d) {
+            return legendChapters.includes(d.Chapter.slice(8)) && isFirstSegment(d) ? x(d.Segment) : 0;} )
+        .attr('y1', function(d) {
+            return legendChapters.includes(d.Chapter.slice(8)) && isFirstSegment(d) ? x(data[0].Segment) + x.bandwidth()*countSegmentsOfChapter(data[0]) + x.bandwidth() - height/2 : 0;} )
+        .attr('y2', function(d) {
+            return legendChapters.includes(d.Chapter.slice(8)) && isFirstSegment(d) ? x(data[0].Segment) + x.bandwidth()*countSegmentsOfChapter(data[0]) + x.bandwidth() + (height+margin.top+margin.bottom)*19 : 0;} )
+        .attr('stroke', 'rgba(189, 189, 189, 0.5)')
+        .attr('stroke-width', 1.5)
       }
     }
 
@@ -283,6 +341,9 @@ ul.menu li {
     width: 1.5px;
 } */
 
+svg {
+  overflow: visible;
+}
 #barchart-tooltip {
     position: absolute;
     max-width: 90px;

@@ -9,21 +9,6 @@
 <script>
 import * as d3 from "d3";
 import BarChartLegend from "@/components/BarChartLegend"
-// import Anne from "@/data/barchart_sentiment/Anne Shirley.json";
-// import Alexander from "@/data/barchart_sentiment/Alexander Spencer.json";
-// import Diana from "@/data/barchart_sentiment/Diana Barry.json";
-// import Marilla from "@/data/barchart_sentiment/Marilla Cuthbert.json";
-// import Matthew from "@/data/barchart_sentiment/Matthew Cuthbert.json";
-// import Rachel from "@/data/barchart_sentiment/Rachel Lynde.json";
-// import Gilbert from "@/data/barchart_sentiment/Gilbert Blythe.json";
-// import Jane from "@/data/barchart_sentiment/Jane Andrews.json";
-// import Josie from "@/data/barchart_sentiment/Josie Pye.json";
-// import Josephine from "@/data/barchart_sentiment/Josephine Barry.json";
-// import Phillips from "@/data/barchart_sentiment/Mr. Phillips.json";
-// import Allan from "@/data/barchart_sentiment/Mrs. Allan.json";
-// import Barry from "@/data/barchart_sentiment/Mrs. Barry.json";
-// import Ruby from "@/data/barchart_sentiment/Ruby Gillis.json";
-// import Stacy from "@/data/barchart_sentiment/Miss Stacy.json";
 
 import fakeChar from "@/data/barchart_sentiment_rel_sents/000_Chapterlegend.json";
 import Anne from "@/data/barchart_sentiment_rel_sents/001_Anne Shirley.json";
@@ -45,24 +30,7 @@ import Stacy from "@/data/barchart_sentiment_rel_sents/011_Miss Stacy.json";
 export default {
   components: {BarChartLegend},
   mounted() {
-    // NEW DATA
-    // this.init(this.concatData(fakeChar), "Chapter");
-    // this.init(this.concatData(Anne), "Anne Shirley");
-    // this.init(this.concatData(Marilla), "Marilla Cuthbert");
-    // this.init(this.concatData(Diana), "Diana Barry");
-    // this.init(this.concatData(Matthew), "Matthew Cuthbert");
-    // this.init(this.concatData(Rachel), "Rachel Lynde");
-    // this.init(this.concatData(Gilbert), "Gilbert Blythe");
-    // this.init(this.concatData(Jane), "Jane Andrews");
-    // this.init(this.concatData(Josie), "Josie Pye");
-    // this.init(this.concatData(Ruby), "Ruby Gillis");
-    // this.init(this.concatData(Allan), "Mrs. Allan");
-    // this.init(this.concatData(Stacy), "Miss Stacy");
-    //  this.init(this.concatData(Barry), "Mrs. Barry");
-    // this.init(this.concatData(Phillips), "Mr. Phillips");
-    // this.init(this.concatData(Josephine), "Josephine Barry");
-    // this.init(this.concatData(Alexander), "Alexander Spencer");    
-    
+
     this.init(this.concatData(fakeChar), "Chapter");
     this.init(this.concatData(Rachel), "Rachel Lynde");
     this.init(this.concatData(Marilla), "Marilla Cuthbert");

@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app-container">
     <div id="header">
       <div id="div1">
         <H1>BookVisualizer - Anne of Green Gables </H1>
@@ -131,13 +131,14 @@ body {
   background-color: #eee;
 }
 
-#app {
+#app-container {
   background: #F7F0F0;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #18A999;
+  width: 100vw;
 }
 
 

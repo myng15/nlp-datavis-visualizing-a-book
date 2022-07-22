@@ -77,7 +77,7 @@ export default {
         .attr("cy", function(d){ return yCircle - rScale(d) } )
         .attr("r", function(d){ return rScale(d) })
         .style("fill", "none")
-        .attr("stroke", "black")
+        .attr("stroke", "#18A999")
 
     svg
       .selectAll("legend")
@@ -90,7 +90,7 @@ export default {
                                                                       : yCircle - rScale(d) } )
         .attr('y2', function(d){ return valuesToShow.indexOf(d) === 1 ? yCircle - rScale(d) - 5 : valuesToShow.indexOf(d) === 2 ? yCircle - rScale(d) - 10 
                                                                       : yCircle - rScale(d) } )
-        .attr('stroke', 'black')
+        .attr('stroke', '#18A999')
         .style('stroke-dasharray', ('2,2'))
 
     svg
@@ -104,6 +104,7 @@ export default {
       .text( function(d){ return d } )
       .style("font-size", 11)
       .attr('alignment-baseline', 'middle')
+      .style('fill', '#18A999')
   },
   methods: {
     key_dom: function(key){

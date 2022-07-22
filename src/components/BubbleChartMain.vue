@@ -101,22 +101,25 @@ export default {
       .select("#bubble-chart-svg")
       .attr("width", (this.settings.width + this.settings.margin.left + this.settings.margin.right + 50))
       .attr("height", (this.settings.height + this.settings.margin.top + this.settings.margin.bottom))
+      .style("border-bottom", "1px solid #18A999")
+      .style("border-left", "1px solid #18A999")
+      .style("margin", "30px")
 
     const xScale = d3.scaleLinear()
       .range([0, this.settings.width])
       .domain(this.key_dom(this.key_x))
     // Add x-axis
-    this.svgContainer.append("g")
-      .attr("transform", "translate(" + this.settings.margin.left + "," + (this.settings.height + this.settings.margin.top) + ")")
-      .call(d3.axisBottom(xScale).tickFormat(()=>{return ""})) //tickFormat(()=>{return ""})to remove tick labels
+    // this.svgContainer.append("g")
+    //   .attr("transform", "translate(" + this.settings.margin.left + "," + (this.settings.height + this.settings.margin.top) + ")")
+    //   .call(d3.axisBottom(xScale).tickFormat(()=>{return ""}).tickSize(0)) //tickFormat(()=>{return ""})to remove tick labels
 
     const yScale = d3.scaleLinear()
           .range([this.settings.height, 50]) //range goes in the opposite direction as compared to xScale because yScale grows from the bottom upwards
           .domain(this.key_dom(this.key_y))
     // Add y-axis
-    this.svgContainer.append("g")
-      .attr("transform", "translate(" + this.settings.margin.left + "," + this.settings.margin.top + ")")
-      .call(d3.axisLeft(yScale).tickFormat(()=>{return ""})) //tickFormat(()=>{return ""})to remove tick labels
+    // this.svgContainer.append("g")
+    //   .attr("transform", "translate(" + this.settings.margin.left + "," + this.settings.margin.top + ")")
+    //   .call(d3.axisLeft(yScale).tickFormat(()=>{return ""}).tickSize(0)) //tickFormat(()=>{return ""})to remove tick labels
 
     this.chartWrapper = this.svgContainer
           // .append("g")

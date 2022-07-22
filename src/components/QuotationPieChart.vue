@@ -44,8 +44,8 @@ export default {
   methods: {
     render() {
 // set the dimensions and margins of the graph
-      var width = 150
-      var height = 150
+      var width = 125
+      var height = 125
       var margin = 5
 
 // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
@@ -82,7 +82,7 @@ export default {
           .enter()
           .append('path')
           .attr('d', d3.arc()
-              .innerRadius(50)         // This is the size of the donut hole
+              .innerRadius(45)         // This is the size of the donut hole
               .outerRadius(radius)
           )
           .attr('fill', function (d) {
@@ -97,7 +97,7 @@ export default {
           .attr("dy", ".35em")
           .attr("text-anchor", "middle")
           .attr("style","font-family:Ubuntu")
-          .attr("font-size","70")
+          .attr("font-size","65")
           .attr("background", "black")
           .text("💬");
     }

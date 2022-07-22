@@ -39,7 +39,7 @@ export default {
       legend_class: [],
       settings: {
         margin: { 
-          top: 20, 
+          top: 0, 
           right: 30, 
           bottom: 40, 
           left: 80
@@ -85,4 +85,5 @@ export default {
     height: 100%;
     width: 100%;
   }
+
 </style>

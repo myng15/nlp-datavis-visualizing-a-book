@@ -5,7 +5,7 @@
         <H1>BookVisualizer - Anne of Green Gables </H1>
       </div>
     </div>
-    <h3>Overview on General Information & Book Statistics</h3>
+    <h3>Book Statistics</h3>
     <div id="main1"><img :src="anne" :width="150" :height="150"/>
       <div id="textinfo">
         <div id="list1">
@@ -34,13 +34,13 @@
         <QuotationPieChart></QuotationPieChart>
       </div>
     </div>
-    <h3>Overview on Characters</h3>
+    <h3>Characters</h3>
     <div id="main2">
       <BarChart></BarChart>
       <NetworkDiagram v-on:changeCharacter="characterChange($event)"></NetworkDiagram>
       <WordCloudCharacter :characterKey="characterKey" @changeCharacter="characterChange"></WordCloudCharacter>
     </div>
-    <h3>Overview on Topics</h3>
+    <h3>Topics</h3>
     <div id="main3">
       <div id="submain3">
         <div id="submain3-buttons">
@@ -138,6 +138,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #18A999;
+  overflow-x: hidden;
 }
 
 

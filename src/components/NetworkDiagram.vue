@@ -56,13 +56,17 @@ export default {
       //Scales
       let colorNode = d3.scaleOrdinal(d3.schemeTableau10.concat(d3.schemeDark2)); //change color theme from schemeCategory10
 
+
+      //Getting the min value to set domain
+      var minValue = Math.min(...data.nodes.map(o => o.size))
+
       //Getting max value to set domain
       var maxValue = Math.max(...data.nodes.map(o => o.size))
 
-      let nodeSize = d3.scaleLinear()
-          .domain([0, maxValue]) // unit: occurences
-          .range([5, 15]) // unit: pixels
-
+      let nodeSize = d3.scalePow()
+          .exponent(0.2)
+          .domain([minValue, maxValue]) // unit: occurences
+          .range([4, 20]) // unit: pixels
 
       let simulation = d3.forceSimulation()
           .force("link", d3.forceLink().id(function (d) {

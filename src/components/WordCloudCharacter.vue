@@ -1,6 +1,6 @@
 <template>
   <div id="wordcloudcharacter">
-    <h5> Most Frequent Words per Character</h5>
+    <h5>Most Frequent Words per Character</h5>
     <p id="placeholder">Click on a node to show the most frequent words.</p></div>
 </template>
 
@@ -39,8 +39,8 @@ export default {
                      .interpolator(d3.interpolate("#bbc1be", characterColor));
       
 // set the dimensions and margins of the graph
-      var margin = {top:50, right: 5, bottom: 0, left: 0},
-          width = 300 - margin.left - margin.right,
+      var margin = {top:50, right: 0, bottom: 0, left: 0},
+          width = 200 - margin.left - margin.right,
           height = 300 - margin.top - margin.bottom;
 
 
@@ -173,7 +173,7 @@ ul.menu li {
   position: relative;
 }
 #placeholder{
-  width: 375px;
+  width: 200px;
   height: 300px;
   margin-top: 150px;
   text-align: center;
@@ -192,5 +192,10 @@ ul.menu li {
 
 p{
   font-size: 14px;
+  align-content: center;
+}
+
+h5{
+  text-align: center;
 }
 </style>

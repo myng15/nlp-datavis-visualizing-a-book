@@ -64,7 +64,7 @@ export default {
               .style("box-shadow", "3px 3px 10px rgba(0, 0, 0, 0.4)")
               .style("border-radius", "5px")
               .html(" " + d.Label + " <br>" +
-                    + d.Mentions + " mentions");
+                    + d.Mentions + " mentions <br> Sentiment: " + d.Sentiment);
       
     }
     

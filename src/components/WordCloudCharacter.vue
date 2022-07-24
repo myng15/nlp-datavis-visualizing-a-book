@@ -188,6 +188,7 @@ ul.menu li {
   width: 200px;
   height: 300px;
   margin-top: 150px;
+  margin-left: 70px;
   text-align: center;
 }
 

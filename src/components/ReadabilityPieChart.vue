@@ -99,6 +99,28 @@ export default {
           .attr("style","font-family:Ubuntu")
           .attr("font-size","65")
           .text("📖");
+
+      //Add  tooltips
+      const tooltip = d3.select('#piechart1').append("div")
+          .attr("id", "piechart-tooltip");
+
+      const handleMouseOver = (e, data) => {
+        d3.select("#piechart-tooltip")
+            .style("left", e.pageX + "px")
+            .style("top", e.pageY + "px")
+            .attr('text-anchor', 'middle')
+            // .style("position", "absolute")
+            .style("display", "block")
+            .style("background", "white")
+            .style("box-shadow", "3px 3px 10px rgba(0, 0, 0, 0.4)")
+            .style("border-radius", "5px")
+            .html(data.value);
+      }
+
+      d3.select('#piechart1').selectAll("text").on("mouseover", handleMouseOver)
+          .on("mouseout", () => {
+            tooltip.style("display", "none");
+          });
     }
   }
 }
@@ -133,6 +155,17 @@ ul.menu {
 ul.menu li {
   margin-top: 0;
   position: relative;
+}
+
+#piechart-tooltip {
+  position: absolute;
+  max-width: 120px;
+  height: auto;
+  padding: 4px;
+  pointer-events: none;
+  text-align: left;
+  line-height: 16px;
+  font-size: 12.5px;
 }
 
 

@@ -108,8 +108,8 @@ export default {
 
       const handleMouseOver = (e, data) => {
         d3.select("#piechart2-tooltip")
-            .style("left", e.pageX + "px")
-            .style("top", e.pageY + "px")
+            .style("left", (e.pageX - 50) + "px")
+            .style("top", (e.pageY + 15) + "px")
             .attr('text-anchor', 'middle')
             // .style("position", "absolute")
             .style("display", "block")
@@ -161,7 +161,7 @@ ul.menu li {
 
 #piechart2-tooltip {
   position: absolute;
-  max-width: 120px;
+  max-width: 100px;
   height: auto;
   padding: 4px;
   pointer-events: none;

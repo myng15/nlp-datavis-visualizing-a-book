@@ -279,6 +279,11 @@ export default {
   font-family: 'PT Sans', sans-serif;
 }
 
+#network > svg {
+  margin: 20px;
+  padding: 0;
+}
+
 .title {
   position: absolute;
   text-align: center;

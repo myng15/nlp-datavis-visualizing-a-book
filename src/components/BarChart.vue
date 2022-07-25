@@ -196,31 +196,6 @@ export default {
             return d.Color;
           })
 
-// // Add barchart tooltips
-//     const tooltip = d3.select('#barchart-container').append("div")
-//                       .attr("id", "barchart-tooltip");
-    
-//     /** @param {MouseEvent} e 
-//      * @param {Object} d //Each topic object in chart data
-//     */
-//     const handleMouseOver = (e, d) => {
-//       d3.select("#barchart-tooltip")
-//               .style("left", e.pageX + "px")
-//               .style("top", e.pageY + "px")
-//               .style("display", "block")
-//               .style("background", "white")
-//               .style("box-shadow", "3px 3px 10px rgba(0, 0, 0, 0.4)")
-//               .style("border-radius", "5px")
-//               .html(d.Segment + " (" + d.Chapter + "): <br>" +
-//                     + d.Mentions + " mentions");
-      
-//     }
-    
-//     d3.select('#barchart').selectAll(".real-bar").on("mouseover", handleMouseOver)
-//            .on("mouseout", () => {
-//               tooltip.style("display", "none");
-//     });
-
 // Add chapter number tags on top
       if(name === "Chapter") {
         // Add Chapter legend using d3.axisTop
@@ -280,7 +255,7 @@ export default {
         .attr('y1', function(d) {
             return legendChapters.includes(d.Chapter.slice(8)) && isFirstSegment(d) ? x(data[0].Segment) + x.bandwidth()*countSegmentsOfChapter(data[0]) + x.bandwidth() - height/2 : 0;} )
         .attr('y2', function(d) {
-            return legendChapters.includes(d.Chapter.slice(8)) && isFirstSegment(d) ? x(data[0].Segment) + x.bandwidth()*countSegmentsOfChapter(data[0]) + x.bandwidth() + (height+margin.top+margin.bottom)*19 : 0;} )
+            return legendChapters.includes(d.Chapter.slice(8)) && isFirstSegment(d) ? x(data[0].Segment) + x.bandwidth()*countSegmentsOfChapter(data[0]) + x.bandwidth() + (height+margin.top+margin.bottom)*19.05: 0;} )
         .attr('stroke', 'rgba(189, 189, 189, 0.5)')
         .attr('stroke-width', 1.5)
       }

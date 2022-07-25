@@ -107,7 +107,7 @@ export default {
           const topic = parseInt(matchTopic);
           const chaptersOfTopic = termsData[topic-1].chapters;
           const otherChaptersOfTopic = chaptersOfTopic.filter(c => c !== chapter).join(", ");
-          console.log(otherChaptersOfTopic)
+          
           d3.select("#wordcloud")
             .append("div")
             .attr("id", "other-chapters")
@@ -125,10 +125,10 @@ export default {
       var wordSizes = myWords.map(d => d[1]);
       var colorScaleEntireBook = d3.scaleSequential()
                      .domain(d3.extent(wordSizes))
-                     .interpolator(d3.interpolate("#9ca5a1", "#202321"));
+                     .interpolator(d3.interpolate("#79857f", "#202321")); //#9ca5a1,#8a9691
       var colorScaleChapters = d3.scaleSequential()
                      .domain(d3.extent(wordSizes))
-                     .interpolator(d3.interpolate("#bbc1be", "#7d8983"));
+                     .interpolator(d3.interpolate("#939d98", "#202321")); //#bbc1be,#7d8983
 
 // append the svg object to the body of the page
       var svg = d3.select("#wordcloud").append("svg")
@@ -143,11 +143,18 @@ export default {
       var minValue = Math.min(...myWords.map(d => d[1]))
 
       var maxValue = Math.max(...myWords.map(d => d[1]))
-
+      
       //scale for adjusting word size
+
+      // eslint-disable-next-line no-unused-vars
+      var fontSizeEntireBook = d3.scaleLog()
+          .domain([minValue, maxValue])
+          .range([10, 40]);
+
+      // eslint-disable-next-line no-unused-vars
       var fontSize = d3.scaleLinear()
           .domain([minValue, maxValue])
-          .range([20, 60]);
+          .range([12, 35]);
 
 
 // Constructs a new cloud layout instance. It run an algorithm to find the position of words that suits your requirements
@@ -155,15 +162,16 @@ export default {
       var layout = cloud()
           .size([width, height])
           .words(myWords.map(function (d) {
-            return {text: d[0], size: d[1]};
+            return {text: d[0], size: d[1], count: d[1]}; //count preserves the real data value
           }))
-          .padding(1)        //space between words
+          .padding(0)        //space between words
           .rotate(function () {
             return ~~(Math.random() * 2) * 90;
           }) // font size of words
           .font("Impact")
           .fontSize(function (d) {
-            return fontSize(d.size)
+            return key === "0" ? fontSizeEntireBook(d.size) : fontSize(d.size);
+            // return d.size; 
           })
           .on("end", draw);
       layout.start();
@@ -179,13 +187,16 @@ export default {
             .data(words)
             .enter().append("text")
             .style("font-size", function (d) {
-              return d.size;
+              // return d.size;
+              return key === "0" ? fontSizeEntireBook(d.count): fontSize(d.count);
             })
             .attr("fill", function (d) {
-              return key === "0" ? colorScaleEntireBook(d.size) : colorScaleChapters(d.size);
+              return key === "0" ? colorScaleEntireBook(d.count) : colorScaleChapters(d.count);
             }) //#96949E
             .attr("text-anchor", "middle")
             .style("font-family", "Impact")
+            .style("margin", 0)
+            .style("padding", 0)
             .style("cursor", "default")
             .transition()
             .duration(500)
@@ -204,6 +215,7 @@ export default {
     /** @param {MouseEvent} e 
      * @param {Object} d //word data
     */
+   
     const handleMouseOver = (e, d) => {
       d3.select("#wordcloud-tooltip")
               .style("left", e.pageX + "px")
@@ -214,11 +226,13 @@ export default {
               .style("background", "white")
               .style("box-shadow", "3px 3px 10px rgba(0, 0, 0, 0.4)")
               .style("border-radius", "5px")
-              .html("Frequency: " + d.size);
+              .html("Frequency: " + d.count);
+      
     }
 
-    d3.select('#wordcloud').selectAll("text").on("mouseover", handleMouseOver)
-           .on("mouseout", () => {
+    d3.select('#wordcloud').selectAll("text")
+          .on("mouseover", handleMouseOver)
+          .on("mouseout", () => {
               tooltip.style("display", "none");
     });
     }
@@ -283,6 +297,10 @@ ul.menu li {
   position: relative;
 }
 
+svg {
+  margin: 0;
+  padding: 0;
+}
 #wordcloud-tooltip {
     position: absolute;
     max-width: 120px;

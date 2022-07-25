@@ -25,6 +25,7 @@ export default {
       handler() {
         d3.select("#wordcloudcharacter").select("p").remove()
         d3.select("#wordcloudcharacter").select("svg").remove()
+        d3.select("#wordcloudcharacter").select("#wordcloud-character-tooltip").remove()
         this.init();
       }
     }

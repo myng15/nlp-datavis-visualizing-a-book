@@ -38,7 +38,7 @@ export default {
 
     init() {
       const margin = {top: 2, right: 5, bottom: 10, left: 10},
-          width = 400 - margin.left - margin.right,
+          width = 450 - margin.left - margin.right,
           height = 400 - margin.top - margin.bottom;
 
       const svg = d3.select("#network")

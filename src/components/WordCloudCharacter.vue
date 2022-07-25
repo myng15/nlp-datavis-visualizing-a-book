@@ -40,7 +40,7 @@ export default {
                      .interpolator(d3.interpolate("#bbc1be", characterColor));
       
 // set the dimensions and margins of the graph
-      var margin = {top:50, right: 0, bottom: 0, left: 0},
+      var margin = {top:50, right: 0, bottom: 0, left: -15},
           width = 300 - margin.left - margin.right,
           height = 300 - margin.top - margin.bottom;
 

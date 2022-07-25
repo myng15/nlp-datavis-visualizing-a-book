@@ -309,7 +309,7 @@ ul.menu li {
     width: 1.5px;
 } */
 
-#barchart {
+svg {
   overflow: visible;
 }
 #barchart-tooltip {

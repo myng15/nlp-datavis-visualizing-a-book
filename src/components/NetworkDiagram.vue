@@ -110,7 +110,7 @@ export default {
             return d.name;
           })
           .attr('x', -30)
-          .attr('y', d => d.name == "Anne Shirley" || d.name == "Marilla Cuthbert" ? -20 : -13)
+          .attr('y', d => d.name == "Anne Shirley" || d.name == "Marilla Cuthbert" ? -20 : d.name == "Diana Barry" || d.name == "Matthew Cuthbert" ? -16 : -13)
           .attr("fill", function(d) {
             return d.color;
           })

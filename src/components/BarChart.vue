@@ -165,7 +165,7 @@ export default {
                         name === "Diana Barry" ? "#d55e00" :
                         name === "Marilla Cuthbert" ? "#0072B2" :
                         name === "Matthew Cuthbert" ? "#ffa600" :
-                        name === "Rachel Lynde" ? "#009e7a" :
+                        name === "Rachel Lynde" ? "#56b4e9" :
                         "#313036")
           .style("font-size", "11px")
           .attr("class", "y label")

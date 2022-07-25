@@ -91,6 +91,7 @@ export default {
           .attr("stroke", "#bdbdbd")
           .style("stroke-width", "2px")
           .style("opacity", 0.7)
+          .style("cursor", function(d) {return d.value === 76 ? "pointer" : "default"})
 
 
       svg.append("svg:text")
@@ -103,10 +104,10 @@ export default {
 
       //Add  tooltips
       const tooltip = d3.select('#piechart2').append("div")
-          .attr("id", "piechart-tooltip");
+          .attr("id", "piechart2-tooltip");
 
       const handleMouseOver = (e, data) => {
-        d3.select("#piechart-tooltip")
+        d3.select("#piechart2-tooltip")
             .style("left", e.pageX + "px")
             .style("top", e.pageY + "px")
             .attr('text-anchor', 'middle')
@@ -115,10 +116,10 @@ export default {
             .style("background", "white")
             .style("box-shadow", "3px 3px 10px rgba(0, 0, 0, 0.4)")
             .style("border-radius", "5px")
-            .html(data.value);
+            .html("Conversation Activity Score: " + data.value + "/100");
       }
 
-      d3.select('#piechart2').selectAll("text").on("mouseover", handleMouseOver)
+      d3.select('#piechart2').selectAll("path").on("mouseover", (e,d) => {if(d.value === 76) {handleMouseOver(e, d)}})
           .on("mouseout", () => {
             tooltip.style("display", "none");
           });
@@ -158,7 +159,7 @@ ul.menu li {
   position: relative;
 }
 
-#piechart-tooltip {
+#piechart2-tooltip {
   position: absolute;
   max-width: 120px;
   height: auto;

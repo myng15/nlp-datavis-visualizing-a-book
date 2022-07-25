@@ -41,8 +41,8 @@ export default {
       
 // set the dimensions and margins of the graph
       var margin = {top:50, right: 0, bottom: 0, left: -15},
-          width = 300 - margin.left - margin.right,
-          height = 300 - margin.top - margin.bottom;
+          width = 250 - margin.left - margin.right,
+          height = 250 - margin.top - margin.bottom;
 
 
 // append the svg object to the body of the page
@@ -72,7 +72,7 @@ export default {
           .words(myWords.map(function (d) {
             return {text: d[0], size: d[1], count: d[1]};
           }))
-          .padding(3)
+          .padding(2.5)
           // .padding(4,2)        //space between words
           .rotate(function () {
             return ~~(Math.random() * 2) * 90;
@@ -115,8 +115,6 @@ export default {
             )
             .attr("text-anchor", "middle")
             .style("font-family", "Impact")
-            .style("margin", 0)
-            .style("padding", 0)
             .style("cursor", "default")
             .transition()
             .duration(500)
@@ -194,6 +192,11 @@ ul.menu li {
   margin-top: 150px;
   margin-left: 70px;
   text-align: center;
+}
+
+#wordcloudcharacter > svg {
+  margin: 20px;
+  padding: 0;
 }
 
 #wordcloud-character-tooltip {

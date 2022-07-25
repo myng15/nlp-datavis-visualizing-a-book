@@ -121,8 +121,8 @@ export default {
       var myWords = data[key];
 // set the dimensions and margins of the graph
       var margin = {top: 2, right: 2, bottom: 2, left: 2},
-          width = 400 - margin.left - margin.right,
-          height = 400 - margin.top - margin.bottom;
+          width = 300 - margin.left - margin.right,
+          height = 300 - margin.top - margin.bottom;
 
       var wordSizes = myWords.map(d => d[1]);
       var colorScaleEntireBook = d3.scaleSequential()
@@ -136,9 +136,10 @@ export default {
       var svg = d3.select("#wordcloud").append("svg")
           .attr("width", width + margin.left + margin.right)
           .attr("height", height + margin.top + margin.bottom)
-          .append("g")
-          .attr("transform",
-              "translate(" + margin.left + "," + margin.top + ")");
+          //Redundant:
+          // .append("g")
+          // .attr("transform",
+          //     "translate(" + margin.left + "," + margin.top + ")");
 
 
       //Getting min and max value of wordsize
@@ -151,7 +152,7 @@ export default {
       // eslint-disable-next-line no-unused-vars
       var fontSizeEntireBook = d3.scaleLog()
           .domain([minValue, maxValue])
-          .range([10, 40]);
+          .range([12, 40]);
 
       // eslint-disable-next-line no-unused-vars
       var fontSize = d3.scaleLinear()

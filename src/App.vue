@@ -1,5 +1,5 @@
 <template>
-  <div id="app-container">
+  <div id="app">
     <div id="header">
       <div id="div1">
         <H1>BookVisualizer - Anne of Green Gables </H1>
@@ -129,22 +129,17 @@ export default {
 body {
   font-family: 'PT Sans', sans-serif;
   background-color: #eee;
-  width: 100vw;
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
 }
 
-#app-container {
+#app {
   background: #F7F0F0;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #18A999;
-  /* width: 100vw;
-  overflow-x: hidden; */
-  
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 
@@ -165,7 +160,6 @@ body {
   padding: 10px;
   background: #109648;
   margin-bottom: 10px;
-  margin: 5px;
 }
 
 h1 {
@@ -182,6 +176,11 @@ h3 {
   margin-bottom: 0px;
 }
 
+h4 {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
 
 #main1 {
   display: grid;
@@ -192,25 +191,25 @@ h3 {
   grid-column: 3/3;
   grid-row: 1;
   margin-bottom: 10px;
-  margin-top: 10px;
+  margin-top: 4px;
   border-bottom: 2px solid #bdbdbd;
   padding: 5px;
 }
 
 #main2 {
-  display: grid; 
-  row-gap: 10px;
-  row-gap: 10px;
+  display: grid;
+  row-gap: 0px;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+  grid-gap: 0px;
   grid-auto-rows: minmax(100px, auto);
   grid-column: 3/3;
   grid-row: 1;
   /* display: flex;
   flex-direction: row;*/
   margin-bottom: 10px;
+  margin-top: 4px;
   border-bottom: 2px solid #bdbdbd;
-  padding: 10px;
+  padding: 5px;
 }
 
 #main3 {
@@ -223,7 +222,8 @@ h3 {
   grid-column: 2/2;
   grid-row: 1;
   margin-bottom: 10px;
-  margin-top: 10px;
+  margin-top: 4px;
+  padding: 5px;
 }
 
 

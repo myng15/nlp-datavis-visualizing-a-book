@@ -138,6 +138,18 @@ export default {
           .attr("transform",
               "translate(" + margin.left + "," + margin.top + ")");
 
+
+      //Getting min and max value of wordsize
+      var minValue = Math.min(...myWords.map(d => d[1]))
+
+      var maxValue = Math.max(...myWords.map(d => d[1]))
+
+      //scale for adjusting word size
+      var fontSize = d3.scaleLinear()
+          .domain([minValue, maxValue])
+          .range([20, 60]);
+
+
 // Constructs a new cloud layout instance. It run an algorithm to find the position of words that suits your requirements
 // Wordcloud features that are different from one word to the other must be here
       var layout = cloud()
@@ -151,7 +163,7 @@ export default {
           }) // font size of words
           .font("Impact")
           .fontSize(function (d) {
-            return key === "0" ? d.size/2 : d.size * 5;
+            return fontSize(d.size)
           })
           .on("end", draw);
       layout.start();

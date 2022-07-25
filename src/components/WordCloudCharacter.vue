@@ -52,6 +52,18 @@ export default {
           .attr("transform",
               "translate(" + margin.left + "," + margin.top + ")");
 
+
+      //Getting min and max value of wordsize
+      var minValue = Math.min(...myWords.map(d => d[1]))
+
+      var maxValue = Math.max(...myWords.map(d => d[1]))
+
+      //scale for adjusting word size
+      var fontSize = d3.scaleLinear()
+          .domain([minValue, maxValue])
+          .range([15, 50]);
+
+
 // Constructs a new cloud layout instance. It run an algorithm to find the position of words that suits your requirements
 // Wordcloud features that are different from one word to the other must be here
       var layout = cloud()
@@ -64,7 +76,7 @@ export default {
             return ~~(Math.random() * 2) * 90;
           }) // font size of words
           .fontSize(function (d) {
-            return d3.min(wordSizes) >= 20 ? d.size : d3.min(wordSizes) >= 10 ? d.size*2 : d3.min(wordSizes) >= 3 ? d.size*4 : d.size*15;
+            return fontSize(d.size)
           })
           .on("end", draw);
       layout.start();
@@ -176,6 +188,7 @@ ul.menu li {
   width: 200px;
   height: 300px;
   margin-top: 150px;
+  margin-left: 70px;
   text-align: center;
 }
 

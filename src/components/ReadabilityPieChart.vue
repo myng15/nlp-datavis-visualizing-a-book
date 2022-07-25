@@ -44,8 +44,8 @@ export default {
   methods: {
     render() {
 // set the dimensions and margins of the graph
-      var width = 150
-      var height = 150
+      var width = 125
+      var height = 125
       var margin = 5
 
 // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
@@ -82,7 +82,7 @@ export default {
           .enter()
           .append('path')
           .attr('d', d3.arc()
-              .innerRadius(50)         // This is the size of the donut hole
+              .innerRadius(45)         // This is the size of the donut hole
               .outerRadius(radius)
           )
           .attr('fill', function (d) {
@@ -97,8 +97,30 @@ export default {
           .attr("dy", ".35em")
           .attr("text-anchor", "middle")
           .attr("style","font-family:Ubuntu")
-          .attr("font-size","70")
+          .attr("font-size","65")
           .text("📖");
+
+      //Add  tooltips
+      const tooltip = d3.select('#piechart1').append("div")
+          .attr("id", "piechart-tooltip");
+
+      const handleMouseOver = (e, data) => {
+        d3.select("#piechart-tooltip")
+            .style("left", e.pageX + "px")
+            .style("top", e.pageY + "px")
+            .attr('text-anchor', 'middle')
+            // .style("position", "absolute")
+            .style("display", "block")
+            .style("background", "white")
+            .style("box-shadow", "3px 3px 10px rgba(0, 0, 0, 0.4)")
+            .style("border-radius", "5px")
+            .html(data.value);
+      }
+
+      d3.select('#piechart1').selectAll("text").on("mouseover", handleMouseOver)
+          .on("mouseout", () => {
+            tooltip.style("display", "none");
+          });
     }
   }
 }
@@ -133,6 +155,17 @@ ul.menu {
 ul.menu li {
   margin-top: 0;
   position: relative;
+}
+
+#piechart-tooltip {
+  position: absolute;
+  max-width: 120px;
+  height: auto;
+  padding: 4px;
+  pointer-events: none;
+  text-align: left;
+  line-height: 16px;
+  font-size: 12.5px;
 }
 
 

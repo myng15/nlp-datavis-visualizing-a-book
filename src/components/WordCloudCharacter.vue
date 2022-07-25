@@ -41,7 +41,7 @@ export default {
       
 // set the dimensions and margins of the graph
       var margin = {top:50, right: 0, bottom: 0, left: 0},
-          width = 200 - margin.left - margin.right,
+          width = 300 - margin.left - margin.right,
           height = 300 - margin.top - margin.bottom;
 
 
@@ -62,7 +62,7 @@ export default {
       //scale for adjusting word size
       var fontSize = d3.scaleLinear()
           .domain([minValue, maxValue])
-          .range([15, 50]);
+          .range([15, 40]);
 
 
 // Constructs a new cloud layout instance. It run an algorithm to find the position of words that suits your requirements
@@ -70,9 +70,10 @@ export default {
       var layout = cloud()
           .size([width, height])
           .words(myWords.map(function (d) {
-            return {text: d[0], size: d[1]};
+            return {text: d[0], size: d[1], count: d[1]};
           }))
-          .padding(4,2)        //space between words
+          .padding(3)
+          // .padding(4,2)        //space between words
           .rotate(function () {
             return ~~(Math.random() * 2) * 90;
           }) // font size of words
@@ -106,14 +107,16 @@ export default {
             .data(words)
             .enter().append("text")
             .style("font-size", function (d) {
-              return d.size;
+              return fontSize(d.count);
             })
             .attr("fill", function (d) {
-              return colorScale(d.size);
+              return colorScale(d.count);
             }
             )
             .attr("text-anchor", "middle")
             .style("font-family", "Impact")
+            .style("margin", 0)
+            .style("padding", 0)
             .style("cursor", "default")
             .transition()
             .duration(500)
@@ -141,7 +144,7 @@ export default {
               .style("background", "white")
               .style("box-shadow", "3px 3px 10px rgba(0, 0, 0, 0.4)")
               .style("border-radius", "5px")
-              .html("Frequency: " + d.size);
+              .html("Frequency: " + d.count);
     }
 
     d3.select('#wordcloudcharacter').selectAll("text").on("mouseover", handleMouseOver)

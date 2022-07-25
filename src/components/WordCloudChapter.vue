@@ -152,12 +152,12 @@ export default {
       // eslint-disable-next-line no-unused-vars
       var fontSizeEntireBook = d3.scaleLog()
           .domain([minValue, maxValue])
-          .range([12, 40]);
+          .range([12, 45]);
 
       // eslint-disable-next-line no-unused-vars
       var fontSize = d3.scaleLinear()
           .domain([minValue, maxValue])
-          .range([12, 35]);
+          .range([15, 35]);
 
 
 // Constructs a new cloud layout instance. It run an algorithm to find the position of words that suits your requirements
@@ -167,7 +167,7 @@ export default {
           .words(myWords.map(function (d) {
             return {text: d[0], size: d[1], count: d[1]}; //count preserves the real data value
           }))
-          .padding(0)        //space between words
+          .padding(0.5)        //space between words
           .rotate(function () {
             return ~~(Math.random() * 2) * 90;
           }) // font size of words

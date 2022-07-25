@@ -300,8 +300,8 @@ ul.menu li {
   position: relative;
 }
 
-svg {
-  margin: 0;
+#wordcloud {
+  margin: 10px;
   padding: 0;
 }
 #wordcloud-tooltip {

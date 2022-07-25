@@ -19,7 +19,7 @@ export default {
           left: 10
         },
       width:      200,
-      height:     130,
+      height:     110,
       opacityCircles: 0.9,
       topicKey: ""
     }
@@ -182,6 +182,9 @@ export default {
 </script>
 
 <style>
+#circle-pack {
+  overflow: hidden;
+}
  #circle-labels text {
     font-size: 60%;
   }

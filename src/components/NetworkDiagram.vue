@@ -138,7 +138,7 @@ export default {
               .style("background", "white")
               .style("box-shadow", "3px 3px 10px rgba(0, 0, 0, 0.4)")
               .style("border-radius", "5px")
-              .text("Total occurences: " + d.size + " times");
+              .text("Total occurrences: " + d.size + " times");
     }
 
     d3.select('#network').selectAll("circle").on("mouseover", handleMouseOver)

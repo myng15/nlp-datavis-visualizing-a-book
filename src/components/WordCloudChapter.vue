@@ -70,6 +70,7 @@ export default {
       handler() {
         this.updateOtherChaptersInfo();
         d3.select("#wordcloud").select("svg").remove();
+        d3.select("#wordcloud").select("#wordcloud-tooltip").remove()
         this.init(this.key);
       }
     },
@@ -82,6 +83,7 @@ export default {
         const otherChaptersOfTopic = chaptersOfTopic.slice(1).join(", ");
         d3.select("#wordcloud").select("#other-chapters").remove();
         d3.select("#wordcloud").select("svg").remove();
+        d3.select("#wordcloud").select("#wordcloud-tooltip").remove()
         d3.select("#wordcloud")
           .append("div")
           .attr("id", "other-chapters")

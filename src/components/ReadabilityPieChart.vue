@@ -91,6 +91,7 @@ export default {
           .attr("stroke", "#bdbdbd")
           .style("stroke-width", "2px")
           .style("opacity", 0.7)
+          .style("cursor", function(d) {return d.value === 2 ? "pointer" : "default"})
 
 
       svg.append("svg:text")
@@ -114,10 +115,10 @@ export default {
             .style("background", "white")
             .style("box-shadow", "3px 3px 10px rgba(0, 0, 0, 0.4)")
             .style("border-radius", "5px")
-            .html(data.value);
+            .html("Readability Score: " + data.value + "/8\n(Suitable for 6th and 7th grade)");
       }
-
-      d3.select('#piechart1').selectAll("text").on("mouseover", handleMouseOver)
+      
+      d3.select('#piechart1').selectAll("path").on("mouseover", (e,d) => {if(d.value === 2) {handleMouseOver(e, d)}})
           .on("mouseout", () => {
             tooltip.style("display", "none");
           });

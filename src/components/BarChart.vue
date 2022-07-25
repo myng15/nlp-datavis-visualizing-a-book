@@ -64,7 +64,7 @@ export default {
               .style("box-shadow", "3px 3px 10px rgba(0, 0, 0, 0.4)")
               .style("border-radius", "5px")
               .html(" " + d.Label + " <br>" +
-                    + d.Mentions + " mentions <br> Sentiment: " + d.Sentiment);
+                    "Mentions: " + d.Mentions + "<br> Sentiment: " + d.Sentiment);
       
     }
     
@@ -314,10 +314,10 @@ svg {
 }
 #barchart-tooltip {
     position: absolute;
-    max-width: 90px;
+    max-width: 100px;
     height: auto;
     margin: 0;
-    padding: 2px 1px 2px 4px;
+    padding: 2px 2px 2px 3px;
     pointer-events: none;
     line-height: 16px;
     text-align: left;

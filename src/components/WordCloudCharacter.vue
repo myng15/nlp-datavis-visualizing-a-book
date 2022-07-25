@@ -1,7 +1,7 @@
 <template>
   <div id="wordcloudcharacter">
     <h5>Most Frequent Words per Character</h5>
-    <p id="placeholder">Click on a node to show the most frequent words.</p></div>
+    <p id="placeholder">Click on a character node to show their most frequent words.</p></div>
 </template>
 
 <script>
@@ -186,12 +186,18 @@ ul.menu li {
   margin-top: 1em;
   position: relative;
 }
+
 #placeholder{
-  width: 200px;
-  height: 300px;
-  margin-top: 150px;
-  margin-left: 70px;
+  width: 220px;
+  height: auto; 
+  margin-top: 100px; 
+  margin-left: 35px;
   text-align: center;
+  padding: 60px 10px;
+  cursor: default;
+  border: solid 1px #bbc1be;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 #wordcloudcharacter > svg {

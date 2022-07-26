@@ -7,7 +7,7 @@
 <script>
 
 import * as d3 from "d3";
-import data from "@/data/wordcloud/top_words_quotes_by_character.json";
+import data from "@/data/wordcloud/top_words_quotes_by_character_new.json";
 import cloud from "d3-cloud"
 
 export default {
@@ -191,7 +191,7 @@ ul.menu li {
   width: 220px;
   height: auto; 
   margin-top: 100px; 
-  margin-left: 35px;
+  margin-left: 55px;
   text-align: center;
   padding: 60px 10px;
   cursor: default;

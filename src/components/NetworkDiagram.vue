@@ -1,6 +1,6 @@
 <template>
   <div id="network">
-    <h4> Character Network</h4>
+    <h4>Character Network</h4>
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 
 import * as d3 from "d3";
 import cooccurrences from "@/data/network/cooccurrences.json";
-import wordsData from "@/data/wordcloud/top_words_quotes_by_character.json";
+import wordsData from "@/data/wordcloud/top_words_quotes_by_character_new.json";
 import cloud from "d3-cloud";
 
 export default {

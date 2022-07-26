@@ -1,7 +1,7 @@
 <template>
   <div id="wordcloud">
     <!-- <h3>Most frequent words per chapter</h3> -->
-    <div><span id="chapter-wc-title">Most frequent words (N-grams):</span> {{ selected }}
+    <div id="wordcloud-wrapper"><span id="chapter-wc-title">Most frequent words (N-grams):</span> {{ selected }}
       <select style="font-family:'PT Sans', sans-serifSans" name="selected" @change="onChange($event)" v-model="key">
         <option disabled value="">Select a chapter</option>
         <option value="0">Entire Book</option>
@@ -312,8 +312,12 @@ ul.menu li {
 }
 
 #wordcloud {
-  margin: 10px;
+  margin: 0;
   padding: 0;
+}
+
+#wordcloud-wrapper {
+  margin: 0;
 }
 #wordcloud > svg {
   margin-top: 5px;

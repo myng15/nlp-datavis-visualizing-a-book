@@ -99,8 +99,9 @@ export default {
       // .select("#bubble-chart")
       // .append("svg")
       .select("#bubble-chart-svg")
-      .attr("width", (this.settings.width + this.settings.margin.left + this.settings.margin.right + 50))
-      .attr("height", (this.settings.height + this.settings.margin.top + this.settings.margin.bottom))
+      .attr("viewBox", `-${this.settings.width/2} -${this.settings.height/2} ${this.settings.width} ${this.settings.height}`)
+      // .attr("width", (this.settings.width + this.settings.margin.left + this.settings.margin.right + 50))
+      // .attr("height", (this.settings.height + this.settings.margin.top + this.settings.margin.bottom))
       .style("border-bottom", "1px solid #18A999")
       .style("border-left", "1px solid #18A999")
       .style("margin", "30px")
@@ -125,8 +126,21 @@ export default {
           // .append("g")
           // .attr("class", "chartWrapper")
           .select("#chartWrapper")
-          .attr("transform", "translate(" + this.settings.margin.left + "," + this.settings.margin.top + ")");
+          .attr("transform", "translate(" + this.settings.margin.left + "," + this.settings.margin.top + ")")
     
+    this.chartWrapper.append("line")
+            .attr("x1", -80)
+            .attr("x2", -80)
+            .attr("y1", -5)
+            .attr("y2", 300)
+            .attr("stroke", "#18A999")
+    this.chartWrapper.append("line")
+            .attr("x1", -80)
+            .attr("x2", 500)
+            .attr("y1", 300)
+            .attr("y2", 300)
+            .attr("stroke", "#18A999")
+
     // Add grid on chart
     // this.chartWrapper
     //   // .append("g")

@@ -33,6 +33,9 @@
       <div id="conversational"><h4>Conversational Activity</h4>
         <QuotationPieChart></QuotationPieChart>
       </div>
+      <div id="fantasy"><h4>Fantasy Score</h4>
+        <FantasyScore></FantasyScore>
+      </div>
     </div>
     <h3>Characters</h3>
     <div id="main2">
@@ -81,6 +84,7 @@ import CirclePack from "./components/CirclePack.vue";
 import WordCloudCharacter from "@/components/WordCloudCharacter";
 import ReadabilityPieChart from "@/components/ReadabilityPieChart";
 import QuotationPieChart from "@/components/QuotationPieChart";
+import FantasyScore from "@/components/FantasyScore";
 
 export default {
   name: 'App',
@@ -101,7 +105,8 @@ export default {
     CirclePack,
     WordCloudCharacter,
     ReadabilityPieChart,
-    QuotationPieChart
+    QuotationPieChart,
+    FantasyScore
 
   },
   methods: {
@@ -187,7 +192,7 @@ h5 {
 #main1 {
   display: grid;
   row-gap: 0px;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-gap: 0px;
   grid-auto-rows: minmax(100px, auto);
   grid-column: 3/3;
@@ -352,6 +357,10 @@ li {
 }
 
 #conversational {
+  margin-top: 0px;
+}
+
+#fantasy {
   margin-top: 0px;
 }
 

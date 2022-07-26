@@ -58,7 +58,7 @@ export default {
       .append("svg")
       .attr("width", (this.width))
       .attr("height", (this.height))
-      .attr("transform", "translate(" + this.settings.width*1.15 + "," + + (this.settings.height - this.settings.margin.top - this.settings.margin.bottom - 20) + ")");
+      .attr("transform", "translate(" + this.settings.width*1.22 + "," + + (this.settings.height - this.settings.margin.top - this.settings.margin.bottom - 20) + ")");
       // .attr("transform", "translate(" + this.settings.margin.left*-.8 + "," + + (this.settings.height - this.settings.margin.top - this.settings.margin.bottom - 20) + ")");
 
     const rScale = d3.scaleLinear()

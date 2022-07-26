@@ -37,9 +37,9 @@ export default {
     this.init(this.concatData(Marilla), "Marilla Cuthbert");
     this.init(this.concatData(Alexander), "Alexander Spencer");
     this.init(this.concatData(Diana), "Diana Barry");
-    this.init(this.concatData(Jane), "Jane Andrews");
     this.init(this.concatData(Anne), "Anne Shirley");
     this.init(this.concatData(Barry), "Mrs. Barry");
+    this.init(this.concatData(Jane), "Jane Andrews");
     this.init(this.concatData(Ruby), "Ruby Gillis");
     this.init(this.concatData(Gilbert), "Gilbert Blythe");
     this.init(this.concatData(Phillips), "Mr. Phillips");

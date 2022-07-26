@@ -62,7 +62,18 @@ export default {
   },
   components: {},
   data() {
-    return {key: ""};
+    return {
+      key: "",
+      topicNames: {
+      1: "Friends & love", 
+      2:"School activities", 
+      3: "Fashion & shows", 
+      4: "Anne's emotional world", 
+      5: "Life at Green Gables", 
+      6: "Incidents with the Barrys", 
+      7: "Mistakes & apologies"
+    }
+    };
   },
   watch: {
     key: {
@@ -87,8 +98,8 @@ export default {
         d3.select("#wordcloud")
           .append("div")
           .attr("id", "other-chapters")
-          .text(`This chapter has the same dominant topic as chapters: ${otherChaptersOfTopic}`);
-
+          .html(`This chapter has the same dominant topic <strong><em>(${this.topicNames[topic]})</em></strong> as chapters: ${otherChaptersOfTopic}`);
+        console.log(this.topicNames[topic])
         this.init(this.key);
       }
     }
@@ -113,7 +124,7 @@ export default {
           d3.select("#wordcloud")
             .append("div")
             .attr("id", "other-chapters")
-            .text(`This chapter has the same dominant topic as chapters: ${otherChaptersOfTopic}`);
+            .html(`This chapter has the same dominant topic <strong><em>(${this.topicNames[topic]})</em></strong> as chapters: ${otherChaptersOfTopic}`);
       }
     },
 
@@ -304,6 +315,9 @@ ul.menu li {
   margin: 10px;
   padding: 0;
 }
+#wordcloud > svg {
+  margin-top: 10px;
+}
 #wordcloud-tooltip {
     position: absolute;
     max-width: 120px;
@@ -314,4 +328,5 @@ ul.menu li {
     line-height: 16px;
     font-size: 12.5px;
   }
+
 </style>

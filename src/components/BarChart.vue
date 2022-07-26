@@ -295,19 +295,6 @@ ul.menu li {
   margin-top: 0;
   position: relative;
 }
-/* .chapter-number {
-  position: relative;
-}
-.chapter-number:before {
-    content:""; 
-    background: black; 
-    position: absolute; 
-    display: block;
-    bottom: 0; 
-    left: 0; 
-    height: 1px; 
-    width: 1.5px;
-} */
 
 svg {
   overflow: visible;

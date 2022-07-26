@@ -1,6 +1,6 @@
 <template>
   <div id="network">
-    <h5> Character Network</h5>
+    <h4> Character Network</h4>
   </div>
 </template>
 

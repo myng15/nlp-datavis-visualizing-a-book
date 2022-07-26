@@ -1,6 +1,6 @@
 <template>
   <div id="barchart-container">
-    <h5> Character Occurrences and Sentiments</h5>
+    <h4> Character Occurrences and Sentiments</h4>
     <div id="barchart"></div>
     <BarChartLegend/>
   </div>

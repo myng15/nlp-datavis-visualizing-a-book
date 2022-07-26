@@ -1,6 +1,6 @@
 <template>
   <div id="wordcloudcharacter">
-    <h5>Most Frequent Words per Character</h5>
+    <h4>Most Frequent Words per Character</h4>
     <p id="placeholder">Click on a character node to show their most frequent words.</p></div>
 </template>
 

@@ -132,7 +132,7 @@ export default {
       var myWords = data[key];
 // set the dimensions and margins of the graph
       var margin = {top: 2, right: 2, bottom: 2, left: 2},
-          width = 300 - margin.left - margin.right,
+          width = 350 - margin.left - margin.right,
           height = 300 - margin.top - margin.bottom;
 
       var wordSizes = myWords.map(d => d[1]);
@@ -316,7 +316,7 @@ ul.menu li {
   padding: 0;
 }
 #wordcloud > svg {
-  margin-top: 10px;
+  margin-top: 5px;
 }
 #wordcloud-tooltip {
     position: absolute;

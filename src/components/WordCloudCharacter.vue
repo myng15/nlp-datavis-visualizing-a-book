@@ -191,7 +191,7 @@ ul.menu li {
   width: 220px;
   height: auto; 
   margin-top: 100px; 
-  margin-left: 35px;
+  margin-left: 55px;
   text-align: center;
   padding: 60px 10px;
   cursor: default;

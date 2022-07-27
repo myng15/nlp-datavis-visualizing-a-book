@@ -23,7 +23,7 @@ import Josie from "@/data/barchart_sentiment_rel_sents_appearancesorted/012_Josi
 import Josephine from "@/data/barchart_sentiment_rel_sents_appearancesorted/013_Josephine Barry.json";
 import Phillips from "@/data/barchart_sentiment_rel_sents_appearancesorted/011_Mr. Phillips.json";
 import Allan from "@/data/barchart_sentiment_rel_sents_appearancesorted/014_Mrs. Allan.json";
-import Barry from "@/data/barchart_sentiment_rel_sents_appearancesorted/008_Mrs. Barry.json";
+import Barry from "@/data/barchart_sentiment_rel_sents_appearancesorted/007_Mrs. Barry.json";
 import Ruby from "@/data/barchart_sentiment_rel_sents_appearancesorted/009_Ruby Gillis.json";
 import Stacy from "@/data/barchart_sentiment_rel_sents_appearancesorted/015_Miss Stacy.json";
 

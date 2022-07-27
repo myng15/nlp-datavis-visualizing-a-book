@@ -83,7 +83,7 @@ export default {
               .attr("fill", "currentColor")
               .attr("text-anchor", "start")
               .attr("font-weight", "bold")
-              .style("font-size", "11px")
+              .style("font-size", "12px")
               .attr("class", "title")
               .text(title))
             // .call(g => g.append("text")

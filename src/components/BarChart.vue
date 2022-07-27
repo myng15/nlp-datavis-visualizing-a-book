@@ -167,7 +167,7 @@ export default {
                         name === "Matthew Cuthbert" ? "#ffa600" :
                         name === "Rachel Lynde" ? "#56b4e9" :
                         "#313036")
-          .style("font-size", "11px")
+          .style("font-size", "12px")
           .attr("class", "y label")
           .attr("text-anchor", "end")
           .attr("y", 1)

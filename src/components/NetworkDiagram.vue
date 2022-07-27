@@ -114,7 +114,7 @@ export default {
           .attr("fill", function(d) {
             return d.color;
           })
-          .style("font-size", "11px")
+          .style("font-size", "12px")
           .on("click", (event, d) => this.onChange(event, d.name, d.color))
 
       // node.append("title")

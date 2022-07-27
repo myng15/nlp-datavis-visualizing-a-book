@@ -275,9 +275,9 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
 
-#network {
+/* #network {
   font-family: 'PT Sans', sans-serif;
-}
+} */
 
 #network > svg {
   margin: 20px;
@@ -318,8 +318,8 @@ ul.menu li {
   cursor: pointer;
 }
 
-text {
-  font-family: sans-serif;
+.nodes text {
+  /* font-family: sans-serif; */
   font-weight: bold;
   cursor: pointer;
 }

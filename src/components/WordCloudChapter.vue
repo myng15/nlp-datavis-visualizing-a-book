@@ -2,7 +2,7 @@
   <div id="wordcloud">
     <!-- <h3>Most frequent words per chapter</h3> -->
     <div id="wordcloud-wrapper"><span id="chapter-wc-title">Most Frequent Words (N-grams):</span> {{ selected }}
-      <select style="font-family:'PT Sans', sans-serifSans" name="selected" @change="onChange($event)" v-model="key">
+      <select name="selected" @change="onChange($event)" v-model="key">
         <option disabled value="">Select a chapter</option>
         <option value="0">Entire Book</option>
         <option value="1">Chapter 1</option>
@@ -259,7 +259,7 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
 
 body {
-  font-family: 'PT Sans', sans-serif;
+  /* font-family: 'PT Sans', sans-serif; */
   background-color: #eee;
 }
 
@@ -293,9 +293,9 @@ select{
     color: white;
     box-shadow: 5px 5px 10px rgba(0,0,0,0.05);
     cursor: pointer;
-    font-size: 15px;
+    font-size: 14px;
     border-radius: 5px;
-    font-family: 'PT Sans', sans-serif;
+    /* font-family: 'PT Sans', sans-serif; */
 }
 
 ul.menu {

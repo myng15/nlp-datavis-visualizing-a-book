@@ -267,7 +267,7 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
 body {
-  font-family: 'PT Sans', sans-serif;
+  /* font-family: 'PT Sans', sans-serif; */
   background-color: #eee;
 }
 
@@ -310,4 +310,9 @@ svg {
     text-align: left;
     font-size: 12.5px;
   }
+
+#barchart text {
+  font-weight: bold;
+  cursor: default;
+}
 </style>

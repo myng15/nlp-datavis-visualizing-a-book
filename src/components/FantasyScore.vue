@@ -103,10 +103,10 @@ export default {
 
       //Add  tooltips
       const tooltip = d3.select('#piechart3').append("div")
-          .attr("id", "piechart-tooltip");
+          .attr("id", "piechart3-tooltip");
 
       const handleMouseOver = (e, data) => {
-        d3.select("#piechart-tooltip")
+        d3.select("#piechart3-tooltip")
             .style("left", e.pageX + "px")
             .style("top", (e.pageY + 15) + "px")
             .attr('text-anchor', 'middle')
@@ -158,7 +158,7 @@ ul.menu li {
   position: relative;
 }
 
-#piechart-tooltip {
+#piechart3-tooltip {
   position: absolute;
   max-width: 100px;
   height: auto;

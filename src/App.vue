@@ -70,6 +70,7 @@
         </div>
       </div>
       <WordCloudChapter v-on:changeChapter="chapterChange($event)" :topicKey="topicKey"
+                        @changeTopicFromWordCloud="getTopic($event)"
                         ></WordCloudChapter>
     </div>
   </div>

@@ -2,38 +2,90 @@
     "Anne Shirley": [
         [
             "imagine",
-            48
+            60
         ],
         [
-            "right",
-            35
+            "hair",
+            41
         ],
         [
             "love",
-            32
+            39
         ],
         [
-            "glad",
-            30
-        ],
-        [
-            "live",
-            30
+            "ask",
+            37
         ],
         [
             "lovely",
-            30
+            37
+        ],
+        [
+            "glad",
+            36
+        ],
+        [
+            "course",
+            35
+        ],
+        [
+            "live",
+            35
+        ],
+        [
+            "miss",
+            34
+        ],
+        [
+            "pretty",
+            33
+        ],
+        [
+            "school",
+            33
+        ],
+        [
+            "way",
+            32
+        ],
+        [
+            "night",
+            32
+        ],
+        [
+            "stacy",
+            29
+        ],
+        [
+            "use",
+            29
+        ],
+        [
+            "home",
+            29
+        ],
+        [
+            "read",
+            29
+        ],
+        [
+            "life",
+            29
+        ],
+        [
+            "long",
+            28
         ],
         [
             "nice",
             28
         ],
         [
-            "talk",
-            28
+            "green",
+            27
         ],
         [
-            "miss",
+            "grow",
             27
         ],
         [
@@ -41,65 +93,73 @@
             26
         ],
         [
-            "life",
+            "day",
             26
         ],
         [
-            "home",
+            "mind",
+            26
+        ],
+        [
+            "stay",
+            26
+        ],
+        [
+            "hear",
+            26
+        ],
+        [
+            "friend",
+            26
+        ],
+        [
+            "morning",
             25
         ],
         [
-            "school",
+            "red",
             25
-        ],
-        [
-            "hair",
-            25
-        ],
-        [
-            "hard",
-            25
-        ],
-        [
-            "course",
-            24
-        ],
-        [
-            "night",
-            23
-        ],
-        [
-            "stacy",
-            23
-        ],
-        [
-            "cake",
-            23
-        ],
-        [
-            "read",
-            22
         ]
     ],
     "Marilla Cuthbert": [
         [
-            "school",
-            22
-        ],
-        [
-            "talk",
-            20
-        ],
-        [
-            "right",
-            19
-        ],
-        [
             "child",
-            19
+            33
+        ],
+        [
+            "hear",
+            26
+        ],
+        [
+            "school",
+            25
         ],
         [
             "home",
+            24
+        ],
+        [
+            "real",
+            23
+        ],
+        [
+            "stay",
+            23
+        ],
+        [
+            "bring",
+            20
+        ],
+        [
+            "bad",
+            19
+        ],
+        [
+            "hair",
+            19
+        ],
+        [
+            "use",
             18
         ],
         [
@@ -107,43 +167,31 @@
             17
         ],
         [
-            "real",
+            "old",
             17
         ],
         [
-            "use",
+            "learn",
             16
-        ],
-        [
-            "bad",
-            16
-        ],
-        [
-            "stay",
-            16
-        ],
-        [
-            "bring",
-            15
-        ],
-        [
-            "new",
-            14
         ],
         [
             "mind",
+            16
+        ],
+        [
+            "hope",
+            15
+        ],
+        [
+            "way",
             14
         ],
         [
-            "hear",
+            "night",
             13
         ],
         [
-            "dress",
-            13
-        ],
-        [
-            "learn",
+            "man",
             13
         ],
         [
@@ -151,53 +199,101 @@
             13
         ],
         [
-            "hope",
+            "work",
+            13
+        ],
+        [
+            "send",
+            13
+        ],
+        [
+            "prayer",
+            13
+        ],
+        [
+            "matter",
+            13
+        ],
+        [
+            "nice",
             12
         ],
         [
-            "minister",
+            "word",
+            12
+        ],
+        [
+            "tea",
+            12
+        ],
+        [
+            "head",
             12
         ],
         [
             "course",
             12
+        ],
+        [
+            "leave",
+            12
+        ],
+        [
+            "miss",
+            12
         ]
     ],
     "Diana Barry": [
+        [
+            "school",
+            8
+        ],
+        [
+            "hear",
+            8
+        ],
         [
             "mother",
             8
         ],
         [
-            "hear",
+            "year",
             7
         ],
         [
-            "geraldine",
-            6
-        ],
-        [
             "home",
+            7
+        ],
+        [
+            "nice",
+            7
+        ],
+        [
+            "new",
+            7
+        ],
+        [
+            "head",
+            7
+        ],
+        [
+            "sit",
             6
         ],
         [
-            "year",
+            "pretty",
             6
         ],
         [
-            "guess",
+            "mind",
             6
         ],
         [
-            "hair",
+            "lovely",
             6
         ],
         [
-            "school",
-            6
-        ],
-        [
-            "sure",
+            "pass",
             5
         ],
         [
@@ -205,11 +301,7 @@
             5
         ],
         [
-            "away",
-            5
-        ],
-        [
-            "sit",
+            "old",
             5
         ],
         [
@@ -217,105 +309,117 @@
             5
         ],
         [
-            "splendid",
-            5
-        ],
-        [
-            "nice",
-            5
-        ],
-        [
             "night",
             5
         ],
         [
-            "town",
+            "jane",
             5
         ],
         [
-            "mind",
+            "sure",
             5
         ],
         [
-            "head",
+            "miss",
             5
         ],
         [
             "awful",
             5
+        ],
+        [
+            "way",
+            5
+        ],
+        [
+            "write",
+            5
+        ],
+        [
+            "perfectly",
+            4
+        ],
+        [
+            "evening",
+            4
+        ],
+        [
+            "day",
+            4
+        ],
+        [
+            "friend",
+            4
+        ],
+        [
+            "easy",
+            4
+        ],
+        [
+            "afraid",
+            4
+        ],
+        [
+            "blythe",
+            4
         ]
     ],
     "Matthew Cuthbert": [
         [
-            "guess",
+            "dunno",
             9
         ],
         [
-            "imagine",
+            "pretty",
             8
         ],
         [
-            "ask",
+            "use",
             7
+        ],
+        [
+            "big",
+            7
+        ],
+        [
+            "kind",
+            6
         ],
         [
             "boy",
             6
         ],
         [
-            "right",
+            "word",
             6
-        ],
-        [
-            "beautiful",
-            6
-        ],
-        [
-            "dunno",
-            6
-        ],
-        [
-            "dress",
-            5
         ],
         [
             "tree",
             5
         ],
         [
-            "pretty",
+            "exactly",
             5
         ],
         [
-            "glad",
+            "stacy",
             5
         ],
         [
-            "love",
+            "write",
             5
         ],
         [
-            "home",
-            4
+            "reckon",
+            5
         ],
         [
-            "white",
-            4
+            "hard",
+            5
         ],
         [
-            "red",
-            4
-        ],
-        [
-            "far",
-            4
-        ],
-        [
-            "use",
-            4
-        ],
-        [
-            "expect",
+            "afraid",
             4
         ],
         [
@@ -323,69 +427,43 @@
             4
         ],
         [
-            "bring",
-            4
-        ]
-    ],
-    "Rachel Lynde": [
-        [
-            "child",
-            19
-        ],
-        [
-            "real",
-            9
-        ],
-        [
-            "bring",
-            7
-        ],
-        [
-            "way",
-            6
-        ],
-        [
-            "temper",
-            6
-        ],
-        [
-            "old",
-            5
-        ],
-        [
-            "mistake",
-            5
-        ],
-        [
-            "orphan",
-            4
-        ],
-        [
-            "right",
-            4
-        ],
-        [
-            "kind",
-            4
-        ],
-        [
             "course",
             4
         ],
         [
-            "hear",
+            "green",
             4
         ],
         [
-            "turn",
+            "expect",
             4
         ],
         [
-            "man",
+            "gable",
+            4
+        ],
+        [
+            "grow",
+            4
+        ],
+        [
+            "love",
+            4
+        ],
+        [
+            "morning",
             3
         ],
         [
-            "shed",
+            "way",
+            3
+        ],
+        [
+            "tired",
+            3
+        ],
+        [
+            "story",
             3
         ],
         [
@@ -393,53 +471,195 @@
             3
         ],
         [
-            "head",
+            "dreadful",
             3
         ],
         [
-            "poor",
+            "miss",
             3
+        ],
+        [
+            "sure",
+            3
+        ],
+        [
+            "bed",
+            3
+        ]
+    ],
+    "Rachel Lynde": [
+        [
+            "child",
+            16
+        ],
+        [
+            "real",
+            9
+        ],
+        [
+            "bring",
+            8
+        ],
+        [
+            "wife",
+            8
+        ],
+        [
+            "minister",
+            7
+        ],
+        [
+            "dress",
+            7
+        ],
+        [
+            "way",
+            7
+        ],
+        [
+            "new",
+            7
+        ],
+        [
+            "shed",
+            6
+        ],
+        [
+            "bad",
+            6
+        ],
+        [
+            "boy",
+            6
+        ],
+        [
+            "course",
+            6
+        ],
+        [
+            "sleeve",
+            5
+        ],
+        [
+            "mistake",
+            5
+        ],
+        [
+            "today",
+            5
+        ],
+        [
+            "school",
+            5
         ],
         [
             "pretty",
-            3
+            5
         ],
         [
-            "hope",
-            3
+            "old",
+            5
+        ],
+        [
+            "year",
+            5
+        ],
+        [
+            "temper",
+            5
+        ],
+        [
+            "set",
+            5
+        ],
+        [
+            "orphan",
+            5
+        ],
+        [
+            "home",
+            5
+        ],
+        [
+            "start",
+            4
+        ],
+        [
+            "kind",
+            4
+        ],
+        [
+            "stay",
+            4
+        ],
+        [
+            "turn",
+            4
+        ],
+        [
+            "puff",
+            4
+        ],
+        [
+            "declare",
+            4
+        ],
+        [
+            "need",
+            4
         ]
     ],
     "Gilbert Blythe": [
         [
             "friend",
+            4
+        ],
+        [
+            "awfully",
             3
+        ],
+        [
+            "hair",
+            3
+        ],
+        [
+            "flat",
+            2
         ],
         [
             "carrot",
             2
         ],
         [
-            "deep",
-            1
+            "help",
+            2
         ],
         [
-            "care",
-            1
+            "fun",
+            2
         ],
         [
-            "ask",
-            1
+            "sorry",
+            2
+        ],
+        [
+            "honest",
+            2
         ],
         [
             "home",
+            2
+        ],
+        [
+            "priscilla",
             1
         ],
         [
-            "destiny",
+            "camelot",
             1
         ],
         [
-            "right",
+            "mad",
             1
         ],
         [
@@ -447,43 +667,79 @@
             1
         ],
         [
-            "way",
+            "leak",
             1
         ],
         [
-            "walk",
+            "ago",
             1
         ],
         [
-            "study",
+            "barge",
             1
         ],
         [
-            "happen",
+            "sweet",
             1
         ],
         [
-            "oblivionwe",
+            "climb",
+            1
+        ],
+        [
+            "joke",
+            1
+        ],
+        [
+            "kind",
+            1
+        ],
+        [
+            "destiny",
+            1
+        ],
+        [
+            "earth",
+            1
+        ],
+        [
+            "rhine",
+            1
+        ],
+        [
+            "vex",
+            1
+        ],
+        [
+            "landing",
+            1
+        ],
+        [
+            "begin",
+            1
+        ],
+        [
+            "pretty",
+            1
+        ],
+        [
+            "pile",
             1
         ],
         [
             "thwart",
             1
-        ],
-        [
-            "eithershroud",
-            1
-        ],
-        [
-            "help",
-            1
-        ],
-        [
-            "feeling",
-            1
         ]
     ],
     "Jane Andrews": [
+        [
+            "hair",
+            3
+        ],
+        [
+            "splendid",
+            3
+        ],
         [
             "worry",
             3
@@ -493,55 +749,23 @@
             3
         ],
         [
-            "splendid",
-            3
-        ],
-        [
             "course",
             3
-        ],
-        [
-            "smile",
-            2
-        ],
-        [
-            "win",
-            2
-        ],
-        [
-            "fail",
-            2
         ],
         [
             "spend",
             2
         ],
         [
-            "study",
+            "use",
             2
         ],
         [
-            "rich",
+            "man",
             2
         ],
         [
-            "wear",
-            2
-        ],
-        [
-            "romantic",
-            2
-        ],
-        [
-            "jane",
-            2
-        ],
-        [
-            "dress",
-            2
-        ],
-        [
-            "old",
+            "american",
             2
         ],
         [
@@ -549,123 +773,251 @@
             2
         ],
         [
+            "school",
+            2
+        ],
+        [
+            "romantic",
+            2
+        ],
+        [
             "sister",
             2
         ],
         [
-            "cake",
+            "jane",
+            2
+        ],
+        [
+            "smile",
+            2
+        ],
+        [
+            "home",
+            2
+        ],
+        [
+            "rich",
+            2
+        ],
+        [
+            "study",
+            2
+        ],
+        [
+            "wear",
+            2
+        ],
+        [
+            "horrid",
             1
         ],
         [
-            "teach",
+            "queen",
             1
         ],
         [
-            "sympathize",
+            "push",
+            1
+        ],
+        [
+            "silly",
+            1
+        ],
+        [
+            "hotel",
+            1
+        ],
+        [
+            "trace",
+            1
+        ],
+        [
+            "tonight",
+            1
+        ],
+        [
+            "quiet",
+            1
+        ],
+        [
+            "news",
+            1
+        ],
+        [
+            "day",
+            1
+        ],
+        [
+            "ice",
             1
         ]
     ],
     "Josie Pye": [
         [
+            "today",
+            3
+        ],
+        [
+            "scholarship",
+            3
+        ],
+        [
             "dare",
             2
         ],
         [
-            "scholarship",
+            "win",
             2
         ],
         [
-            "ridgepole",
+            "professor",
+            2
+        ],
+        [
+            "homesick",
+            2
+        ],
+        [
+            "academy",
+            2
+        ],
+        [
+            "red",
             2
         ],
         [
             "year",
-            2
-        ],
-        [
-            "walk",
-            2
-        ],
-        [
-            "believe",
             2
         ],
         [
             "board",
+            2
+        ],
+        [
+            "ambition",
+            2
+        ],
+        [
+            "likely",
+            2
+        ],
+        [
+            "eye",
             1
         ],
         [
-            "speak",
+            "redheaded",
             1
         ],
         [
-            "afford",
+            "long",
             1
         ],
         [
-            "miss",
+            "moustache",
             1
         ],
         [
-            "pass",
+            "dangerous",
             1
         ],
         [
-            "climb",
+            "fair",
             1
         ],
         [
-            "announce",
+            "cuthbert",
             1
         ],
         [
-            "medal",
+            "fall",
             1
         ],
         [
-            "gilbert",
+            "band",
             1
         ],
         [
-            "tremaine",
+            "interesting",
             1
         ],
         [
-            "avery",
+            "intention",
             1
         ],
         [
-            "care",
+            "ask",
             1
         ],
         [
-            "win",
+            "respect",
             1
         ],
         [
-            "word",
+            "selfcontrol",
+            1
+        ],
+        [
+            "kill",
+            1
+        ],
+        [
+            "kerwollowps",
+            1
+        ],
+        [
+            "send",
+            1
+        ],
+        [
+            "walk",
             1
         ]
     ],
-    "Miss Stacy": [
+    "Ruby Gillis": [
         [
-            "year",
-            3
+            "dead",
+            2
         ],
         [
-            "stock",
+            "frightened",
             1
         ],
         [
-            "pupil",
+            "act",
             1
         ],
         [
-            "truth",
+            "mind",
             1
         ],
         [
-            "work",
+            "playacting",
+            1
+        ],
+        [
+            "fright",
+            1
+        ],
+        [
+            "sit",
+            1
+        ],
+        [
+            "commencement",
+            1
+        ],
+        [
+            "float",
+            1
+        ],
+        [
+            "wicked",
+            1
+        ],
+        [
+            "fun",
             1
         ],
         [
@@ -673,59 +1025,27 @@
             1
         ],
         [
-            "past",
+            "die",
             1
         ],
         [
-            "grow",
+            "wear",
             1
         ],
         [
-            "tug",
+            "pretend",
             1
         ],
         [
-            "world",
+            "jane",
             1
         ],
         [
-            "interested",
+            "abominably",
             1
         ],
         [
-            "leave",
-            1
-        ],
-        [
-            "avonlea",
-            1
-        ],
-        [
-            "entrance",
-            1
-        ],
-        [
-            "knowthe",
-            1
-        ],
-        [
-            "decide",
-            1
-        ],
-        [
-            "deserve",
-            1
-        ],
-        [
-            "health",
-            1
-        ],
-        [
-            "vacation",
-            1
-        ],
-        [
-            "school",
+            "flat",
             1
         ]
     ],
@@ -735,11 +1055,11 @@
             2
         ],
         [
-            "away",
-            2
+            "thought",
+            1
         ],
         [
-            "resent",
+            "love",
             1
         ],
         [
@@ -747,11 +1067,23 @@
             1
         ],
         [
-            "share",
+            "pleasant",
             1
         ],
         [
-            "thought",
+            "return",
+            1
+        ],
+        [
+            "resent",
+            1
+        ],
+        [
+            "offer",
+            1
+        ],
+        [
+            "share",
             1
         ],
         [
@@ -775,27 +1107,7 @@
             1
         ],
         [
-            "offer",
-            1
-        ],
-        [
-            "return",
-            1
-        ],
-        [
-            "pleasant",
-            1
-        ],
-        [
-            "experience",
-            1
-        ],
-        [
             "influence",
-            1
-        ],
-        [
-            "fear",
             1
         ],
         [
@@ -803,29 +1115,125 @@
             1
         ],
         [
-            "sure",
+            "experience",
             1
         ],
         [
             "feeling",
             1
+        ],
+        [
+            "fear",
+            1
+        ],
+        [
+            "unfaithful",
+            1
+        ],
+        [
+            "understand",
+            1
+        ],
+        [
+            "sure",
+            1
+        ],
+        [
+            "nature",
+            1
+        ],
+        [
+            "life",
+            1
+        ],
+        [
+            "lonely",
+            1
+        ],
+        [
+            "long",
+            1
+        ],
+        [
+            "sample",
+            1
+        ],
+        [
+            "case",
+            1
         ]
     ],
-    "Ruby Gillis": [
+    "Miss Stacy": [
         [
-            "commencement",
+            "year",
+            3
+        ],
+        [
+            "leave",
             1
         ],
         [
-            "frightened",
+            "avonlea",
             1
         ],
         [
-            "wicked",
+            "school",
             1
         ],
         [
-            "playacting",
+            "outofdoor",
+            1
+        ],
+        [
+            "stay",
+            1
+        ],
+        [
+            "interested",
+            1
+        ],
+        [
+            "health",
+            1
+        ],
+        [
+            "work",
+            1
+        ],
+        [
+            "world",
+            1
+        ],
+        [
+            "jolly",
+            1
+        ],
+        [
+            "entrance",
+            1
+        ],
+        [
+            "pupil",
+            1
+        ],
+        [
+            "vitality",
+            1
+        ],
+        [
+            "deserve",
+            1
+        ],
+        [
+            "grow",
+            1
+        ],
+        [
+            "past",
+            1
+        ],
+        [
+            "vacation",
             1
         ],
         [
@@ -833,155 +1241,37 @@
             1
         ],
         [
-            "jane",
+            "stock",
             1
         ],
         [
-            "fun",
+            "war",
             1
         ],
         [
-            "red",
+            "decide",
             1
         ],
         [
-            "flat",
+            "tug",
             1
         ],
         [
-            "spot",
+            "carry",
             1
         ],
         [
-            "deadi",
+            "truth",
             1
         ],
         [
-            "float",
-            1
-        ],
-        [
-            "die",
-            1
-        ],
-        [
-            "itnor",
-            1
-        ],
-        [
-            "dead",
-            1
-        ],
-        [
-            "itit",
-            1
-        ],
-        [
-            "sit",
-            1
-        ],
-        [
-            "right",
-            1
-        ],
-        [
-            "awful",
-            1
-        ],
-        [
-            "acksually",
-            1
-        ]
-    ],
-    "Josephine Barry": [
-        [
-            "officer",
-            1
-        ],
-        [
-            "objectionable",
-            1
-        ],
-        [
-            "roof",
-            1
-        ],
-        [
-            "british",
-            1
-        ],
-        [
-            "reduce",
-            1
-        ],
-        [
-            "gentlewoman",
-            1
-        ],
-        [
-            "lady",
-            1
-        ],
-        [
-            "hope",
-            1
-        ],
-        [
-            "boarder",
-            1
-        ],
-        [
-            "talk",
-            1
-        ],
-        [
-            "meet",
-            1
-        ],
-        [
-            "enjoy",
-            1
-        ],
-        [
-            "neighborhood",
-            1
-        ],
-        [
-            "table",
-            1
-        ],
-        [
-            "house",
-            1
-        ],
-        [
-            "academy",
-            1
-        ],
-        [
-            "careful",
-            1
-        ],
-        [
-            "sort",
-            1
-        ],
-        [
-            "husband",
-            1
-        ],
-        [
-            "quiet",
+            "ambition",
             1
         ]
     ],
     "Mrs. Barry": [
         [
-            "flower",
-            1
-        ],
-        [
-            "garden",
+            "book",
             1
         ],
         [
@@ -989,27 +1279,7 @@
             1
         ],
         [
-            "matter",
-            1
-        ],
-        [
-            "read",
-            1
-        ],
-        [
-            "fatherwhat",
-            1
-        ],
-        [
-            "book",
-            1
-        ],
-        [
-            "eye",
-            1
-        ],
-        [
-            "strain",
+            "garden",
             1
         ],
         [
@@ -1017,17 +1287,223 @@
             1
         ],
         [
+            "father",
+            1
+        ],
+        [
+            "matter",
+            1
+        ],
+        [
+            "eye",
+            1
+        ],
+        [
+            "flower",
+            1
+        ],
+        [
             "carmody",
             1
         ],
         [
-            "ankle",
+            "strain",
+            1
+        ],
+        [
+            "read",
+            1
+        ]
+    ],
+    "Josephine Barry": [
+        [
+            "annegirl",
+            3
+        ],
+        [
+            "home",
+            2
+        ],
+        [
+            "funny",
+            2
+        ],
+        [
+            "cheer",
+            2
+        ],
+        [
+            "use",
+            2
+        ],
+        [
+            "quiet",
+            1
+        ],
+        [
+            "presently",
+            1
+        ],
+        [
+            "officer",
+            1
+        ],
+        [
+            "miserable",
+            1
+        ],
+        [
+            "visit",
+            1
+        ],
+        [
+            "declare",
+            1
+        ],
+        [
+            "mind",
+            1
+        ],
+        [
+            "splashing",
+            1
+        ],
+        [
+            "remember",
+            1
+        ],
+        [
+            "mercy",
+            1
+        ],
+        [
+            "enjoy",
+            1
+        ],
+        [
+            "avonlea",
+            1
+        ],
+        [
+            "british",
+            1
+        ],
+        [
+            "weak",
+            1
+        ],
+        [
+            "meet",
+            1
+        ],
+        [
+            "tear",
+            1
+        ],
+        [
+            "grow",
+            1
+        ],
+        [
+            "tall",
+            1
+        ],
+        [
+            "lady",
+            1
+        ],
+        [
+            "stay",
+            1
+        ],
+        [
+            "reduce",
+            1
+        ],
+        [
+            "connect",
+            1
+        ],
+        [
+            "flood",
+            1
+        ],
+        [
+            "simply",
+            1
+        ],
+        [
+            "neighborhood",
             1
         ]
     ],
     "Mr. Phillips": [
         [
+            "afternoon",
+            2
+        ],
+        [
+            "vindictive",
+            1
+        ],
+        [
+            "temper",
+            1
+        ],
+        [
+            "pupil",
+            1
+        ],
+        [
+            "rest",
+            1
+        ],
+        [
+            "company",
+            1
+        ],
+        [
+            "spirit",
+            1
+        ],
+        [
+            "boy",
+            1
+        ],
+        [
+            "indulge",
+            1
+        ],
+        [
+            "blackboard",
+            1
+        ],
+        [
+            "display",
+            1
+        ],
+        [
+            "stand",
+            1
+        ],
+        [
+            "taste",
+            1
+        ],
+        [
             "hear",
+            1
+        ],
+        [
+            "platform",
+            1
+        ],
+        [
+            "fond",
+            1
+        ],
+        [
+            "sorry",
             1
         ]
     ],
@@ -1041,23 +1517,55 @@
             2
         ],
         [
+            "dear",
+            2
+        ],
+        [
             "help",
             2
+        ],
+        [
+            "cuthbert",
+            1
+        ],
+        [
+            "wish",
+            1
+        ],
+        [
+            "providential",
+            1
+        ],
+        [
+            "scold",
+            1
+        ],
+        [
+            "expect",
+            1
+        ],
+        [
+            "sorry",
+            1
+        ],
+        [
+            "large",
+            1
+        ],
+        [
+            "difference",
+            1
         ],
         [
             "bad",
             1
         ],
         [
-            "bless",
+            "heedlessness",
             1
         ],
         [
-            "shed",
-            1
-        ],
-        [
-            "lane",
+            "angelically",
             1
         ],
         [
@@ -1065,19 +1573,7 @@
             1
         ],
         [
-            "family",
-            1
-        ],
-        [
-            "instruction",
-            1
-        ],
-        [
-            "cuthbert",
-            1
-        ],
-        [
-            "hard",
+            "real",
             1
         ],
         [
@@ -1085,7 +1581,43 @@
             1
         ],
         [
-            "girldidnt",
+            "instruction",
+            1
+        ],
+        [
+            "terrible",
+            1
+        ],
+        [
+            "daughter",
+            1
+        ],
+        [
+            "thank",
+            1
+        ],
+        [
+            "minute",
+            1
+        ],
+        [
+            "shed",
+            1
+        ],
+        [
+            "hard",
+            1
+        ],
+        [
+            "decide",
+            1
+        ],
+        [
+            "bless",
+            1
+        ],
+        [
+            "lane",
             1
         ],
         [
@@ -1094,22 +1626,6 @@
         ],
         [
             "word",
-            1
-        ],
-        [
-            "daughter",
-            1
-        ],
-        [
-            "providential",
-            1
-        ],
-        [
-            "terrible",
-            1
-        ],
-        [
-            "large",
             1
         ]
     ]

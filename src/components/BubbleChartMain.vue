@@ -92,6 +92,7 @@ export default {
       noMatchTopics.forEach(topic => d3.select(`#topicPack-${topic.topic}`)
                                        .style("opacity", 0.3))
 
+      this.topicKey = data.toString();
       this.$emit("changeTopic", data.toString());
     },
     init() {

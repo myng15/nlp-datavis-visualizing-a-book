@@ -90,6 +90,8 @@ export default {
     topicKey: {
       deep: true,
       handler() {
+              console.log(this.topicKey)
+
         const topic = parseInt(this.topicKey);
         const chaptersOfTopic = termsData[topic-1].chapters;
         this.chapterKey = chaptersOfTopic[0];
@@ -112,6 +114,11 @@ export default {
   methods: {
     onChange() {
       this.$emit("changeChapter", this.chapterKey)
+
+      // Force a change of topic when Entire Book is selected, otherwise topicKey won't be changed (because Entire Book has no topic) and effects in topicKey's watcher won't respond
+      if(this.chapterKey === "0") {
+          this.$emit("changeTopicFromWordCloud", "0")
+        }
     },
 
     updateOtherChaptersInfo(){

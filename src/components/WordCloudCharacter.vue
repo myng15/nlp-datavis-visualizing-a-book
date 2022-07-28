@@ -7,7 +7,7 @@
 <script>
 
 import * as d3 from "d3";
-import data from "@/data/wordcloud/top_words_quotes_by_character_new.json";
+import data from "@/data/wordcloud/top_words_quotes_by_character.json";
 import cloud from "d3-cloud"
 
 export default {
@@ -25,6 +25,7 @@ export default {
       handler() {
         d3.select("#wordcloudcharacter").select("p").remove()
         d3.select("#wordcloudcharacter").select("svg").remove()
+        d3.select('#wordcloudcharacter').select("#wordcloud-character-name").remove()
         d3.select("#wordcloudcharacter").select("#wordcloud-character-tooltip").remove()
         this.init();
       }
@@ -32,6 +33,14 @@ export default {
   },
   methods: {
     init() {
+      // Add character name
+      d3.select('#wordcloudcharacter').append("div")
+                      .attr("id", "wordcloud-character-name")
+                      .style("margin-top", "10px")
+                      .style("color", this.characterKey.charColor)
+                      .text(this.characterKey.charName);   
+
+      // Draw word cloud
       var myWords = data[this.characterKey.charName]; 
       var characterColor = this.characterKey.charColor;
       var wordSizes = myWords.map(d => d[1]);

@@ -17,7 +17,7 @@ export default {
     this.init();
   },
   data() {
-    return {characterKey: ""}
+    return {characterKey: {}}
   },
   watch: {
     characterKey: {

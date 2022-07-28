@@ -2,7 +2,7 @@
   <div id="app">
     <div id="header">
       <div id="div1">
-        <H1>BookVisualizer - Anne of Green Gables </H1>
+        <h1>BookVisualizer - Anne of Green Gables </h1>
       </div>
     </div>
     <h3>Book Statistics</h3>
@@ -70,7 +70,7 @@
         </div>
       </div>
       <WordCloudChapter v-on:changeChapter="chapterChange($event)" :topicKey="topicKey"
-                        @topic="getTopic"></WordCloudChapter>
+                        ></WordCloudChapter>
     </div>
   </div>
 </template>
@@ -88,12 +88,13 @@ import FantasyScore from "@/components/FantasyScore";
 
 export default {
   name: 'App',
+  props: {selected: String},
   data() {
     return {
       anne: require('./assets/anne.svg'),
       showBubbleChart: true,
       chapterKey: "",
-      characterKey: "",
+      characterKey: {},
       topicKey: "",
     };
   },

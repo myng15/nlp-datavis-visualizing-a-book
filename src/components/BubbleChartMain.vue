@@ -51,7 +51,7 @@ export default {
       deep: true,
       handler() {
         const chapter = parseInt(this.chapterKey);
-        
+
         // If word cloud for the entire book is being shown:
         if(chapter === 0) {
           termsData.forEach(topic => d3.select(`#topic-${topic.topic}`)
@@ -92,7 +92,7 @@ export default {
       noMatchTopics.forEach(topic => d3.select(`#topicPack-${topic.topic}`)
                                        .style("opacity", 0.3))
 
-      this.$emit("changeTopic", data);
+      this.$emit("changeTopic", data.toString());
     },
     init() {
     this.svgContainer = d3

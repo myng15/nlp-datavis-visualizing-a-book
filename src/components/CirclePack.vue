@@ -175,7 +175,6 @@ export default {
           .on("start", function(d) { if (d.parent === focus) this.style.display = "inline"; })
           .on("end", function(d) { if (d.parent !== focus) this.style.display = "none"; });
     }
-      
     }
   }
 }

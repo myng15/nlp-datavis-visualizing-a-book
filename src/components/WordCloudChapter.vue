@@ -2,7 +2,7 @@
   <div id="wordcloud">
     <!-- <h3>Most frequent words per chapter</h3> -->
     <div id="wordcloud-wrapper"><span id="chapter-wc-title">Most Frequent Words (N-grams):</span> {{ selected }}
-      <select name="selected" @change="onChange($event)" v-model="key">
+      <select name="selected" @change="onChange($event)" v-model="chapterKey">
         <option disabled value="">Select a chapter</option>
         <option value="0">Entire Book</option>
         <option value="1">Chapter 1</option>
@@ -58,12 +58,13 @@ import cloud from "d3-cloud"
 
 export default {
   props: {
+    selected: String,
     topicKey: String
   },
   components: {},
   data() {
     return {
-      key: "",
+      chapterKey: "",
       topicNames: {
       1: "Friends & love", 
       2:"School activities", 
@@ -76,13 +77,14 @@ export default {
     };
   },
   watch: {
-    key: {
+    chapterKey: {
       deep: true,
       handler() {
         this.updateOtherChaptersInfo();
         d3.select("#wordcloud").select("svg").remove();
         d3.select("#wordcloud").select("#wordcloud-tooltip").remove()
-        this.init(this.key);
+        this.init(this.chapterKey);
+        this.$emit("changeChapter", this.chapterKey.toString())
       }
     },
     topicKey: {
@@ -90,7 +92,7 @@ export default {
       handler() {
         const topic = parseInt(this.topicKey);
         const chaptersOfTopic = termsData[topic-1].chapters;
-        this.key = chaptersOfTopic[0];
+        this.chapterKey = chaptersOfTopic[0];
         const otherChaptersOfTopic = chaptersOfTopic.slice(1).join(", ");
         d3.select("#wordcloud").select("#other-chapters").remove();
         d3.select("#wordcloud").select("svg").remove();
@@ -99,8 +101,8 @@ export default {
           .append("div")
           .attr("id", "other-chapters")
           .html(`This chapter has the same dominant topic <strong><em>(${this.topicNames[topic]})</em></strong> as chapters: ${otherChaptersOfTopic}`);
-        console.log(this.topicNames[topic])
-        this.init(this.key);
+        // console.log(this.topicNames[topic])
+        this.init(this.chapterKey);
       }
     }
   },
@@ -109,12 +111,12 @@ export default {
   },
   methods: {
     onChange() {
-      this.$emit("changeChapter", this.key)
+      this.$emit("changeChapter", this.chapterKey)
     },
 
     updateOtherChaptersInfo(){
       d3.select("#wordcloud").select("#other-chapters").remove();
-      const chapter = parseInt(this.key);
+      const chapter = parseInt(this.chapterKey);
       if(chapter !== 0) {
           const matchTopic = termsData.find(topic => topic.chapters.includes(chapter)).topic;
           const topic = parseInt(matchTopic);
@@ -130,6 +132,7 @@ export default {
 
     init(key) {
       var myWords = data[key];
+      
 // set the dimensions and margins of the graph
       var margin = {top: 2, right: 2, bottom: 2, left: 2},
           width = 350 - margin.left - margin.right,

@@ -91,7 +91,7 @@ export default {
           .attr("stroke", "#bdbdbd")
           .style("stroke-width", "2px")
           .style("opacity", 0.7)
-          .style("cursor", function(d) {return d.value === 76 ? "pointer" : "default"})
+          .style("cursor", "default")
 
 
       svg.append("svg:text")

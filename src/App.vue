@@ -13,7 +13,7 @@
             <li>Title: Anne of Green Gables</li>
             <li>Author: Lucy Maud Montgomery</li>
             <li>Published in 1908</li>
-            <li>Suitable for 6th and 7th grade</li>
+            <li>Suitable for 5th and 6th grade</li>
             <li>Estimated reading time: 9 hours</li>
           </ul>
         </div>
@@ -27,13 +27,13 @@
           </ul>
         </div>
       </div>
-      <div id="difflevel"><h4>Difficulty Level</h4>
+      <div id="difflevel"><h4>Readability</h4>
         <ReadabilityPieChart></ReadabilityPieChart>
       </div>
       <div id="conversational"><h4>Conversational Activity</h4>
         <QuotationPieChart></QuotationPieChart>
       </div>
-      <div id="fantasy"><h4>Fantasy Score</h4>
+      <div id="fantasy"><h4>Fantasy Level</h4>
         <FantasyScore></FantasyScore>
       </div>
     </div>

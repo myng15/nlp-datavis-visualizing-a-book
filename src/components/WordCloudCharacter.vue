@@ -49,9 +49,9 @@ export default {
                      .interpolator(d3.interpolate("#bbc1be", characterColor));
       
 // set the dimensions and margins of the graph
-      var margin = {top:50, right: 0, bottom: 0, left: -15},
-          width = 250 - margin.left - margin.right,
-          height = 250 - margin.top - margin.bottom;
+      var margin = {top:40, right: 0, bottom: 0, left: -15},
+          width = 300 - margin.left - margin.right,
+          height = 300 - margin.top - margin.bottom;
 
 
 // append the svg object to the body of the page

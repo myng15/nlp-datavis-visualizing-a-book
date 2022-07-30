@@ -74,7 +74,7 @@ export default {
     },
 
     init() {
-      const packData = {name: "packData", children: []} //keys MUST be "name" and "children" (for all data levels) to be able to apply d3.hierarchy()
+      const packData = {name: "packData", children: []} 
       for (const topic of termsData) {
         packData.children.push({name: topic.topic, children: topic.terms.slice(0, 15)})
       }
@@ -89,11 +89,6 @@ export default {
       const root = pack(packData);
       let focus = root;
       let view;
-      //Color scheme according to a data node's depth in the hierarchy (here there is only 1 level i.e. only the topic nodes have children and therefore have the first color in the range hsl(110,80%,80%))
-      // const color = d3.scaleLinear()
-      //                 .domain([0, 5])
-      //                 .range(["hsl(110,80%,80%)", "hsl(228,30%,40%)"])
-      //                 .interpolate(d3.interpolateHcl)
 
       const circlePackSvg = d3.select("#circle-pack").append("svg")
       .attr("viewBox", `-${this.settings.width/2} -${this.settings.height/2} ${this.settings.width} ${this.settings.height}`)
@@ -106,16 +101,14 @@ export default {
       .selectAll("circle")
       .data(root.descendants().slice(1))
       .join("circle")
-        // .attr("fill", d => d.children ? color(d.depth) : "white") //if using color scale above
         .attr("id", d => `topicPack-${d.data.name}`)
         .attr("fill", d => d.children ? "#bbc1be" : "white")
         .attr("pointer-events", d => !d.children ? "none" : null)
         .on("mouseover", function() { d3.select(this).attr("stroke", "gray"); })
         .on("mouseout", function() { d3.select(this).attr("stroke", null); })
         .on("click", (event, d) => {
-          //For zooming effect
           focus !== d && (zoom(event, d), event.stopPropagation())
-          //For interaction with WordCloudChapter
+
           this.onChange(event, d.data.name)
         });
 

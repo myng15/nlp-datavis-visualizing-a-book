@@ -23,7 +23,6 @@ export default {
     characterKey: {
       deep: true,
       handler() {
-        // console.log(this.characterKey)
         this.initWordCloud()
       }
 
@@ -32,7 +31,6 @@ export default {
   methods: {
 
     onChange(event, name, color) {
-      // this.$emit("changeCharacter", data)
       this.$emit("changeCharacter", {charName: name, charColor: color})
     },
 
@@ -54,7 +52,7 @@ export default {
       /* eslint-disable */
 
       //Scales
-      let colorNode = d3.scaleOrdinal(d3.schemeTableau10.concat(d3.schemeDark2)); //change color theme from schemeCategory10
+      let colorNode = d3.scaleOrdinal(d3.schemeTableau10.concat(d3.schemeDark2)); 
 
 
       //Getting the min value to set domain
@@ -201,7 +199,6 @@ export default {
     initWordCloud(key){
 
       var myWords = wordsData[key];
-      // console.log(data[key]);
 // set the dimensions and margins of the graph
       var margin = {top: 2, right: 2, bottom: 2, left: 2},
           width = 450 - margin.left - margin.right,

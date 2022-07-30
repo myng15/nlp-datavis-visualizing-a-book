@@ -114,59 +114,6 @@ export default {
       })
       
 
-      //Alternative color legend
-    //   const width = 250;
-    //   const height = 15;
-    //   const margin = {top: 10, bottom: 0, left: 0, right: 0};
-    //   const svg = d3.select("#barchartlegend")
-    //     .append("svg")
-    //     .attr("width", (width))
-    //     .attr("height", (height))
-    //     // .attr("transform", "rotate(90)")
-    //     .style("margin", margin.top);
-      
-    //   const legendWrapper = svg.append("g").attr("id", "legendWrapper").attr("width", width)
-    //     .attr("height", height)
-    //   const linearGradient = legendWrapper.append("linearGradient")
-    //   .attr("id", "linear-gradient");
-
-    //   linearGradient.append("stop")
-    //       .attr("offset", "0%")
-    //       .attr("stop-color", blue); 
-
-    //   linearGradient.append("stop")
-    //       .attr("offset", "50%")
-    //       .attr("stop-color", gray); 
-
-    //   linearGradient.append("stop")
-    //       .attr("offset", "100%")
-    //       .attr("stop-color", red); 
-
-    //   legendWrapper.append("rect")
-    //       .attr("width", width)
-    //       .attr("height", height)
-    //       .style("fill", "url(#linear-gradient)");
-      
-    //   // legendWrapper.append("svg").attr("id", "color-legend")
-    //   // const valuesToShow = ["Negative", "Neutral", "Positive"]
-    //   var x = d3.scaleLinear()
-    //     .domain([-1, 0, 1])
-    //     .range([0, width]);
-
-    // var axis = d3.axisBottom(x);
-
-    // legendWrapper
-    //     .append("g")
-    //     .attr("id", "g-runoff")
-    //     .attr("class", "axis")
-    //     .attr("width", width)
-    //     .attr("height", height)
-    //     .attr("transform", "translate(0,20)")
-    //     .attr("fill", "black")
-    //     .call(axis.ticks(2));
-
-
-
 // Alina's code
 //       var colorScale1 = d3.scaleSequential(d3.interpolatePlasma)
 //           .domain([0, 20]);

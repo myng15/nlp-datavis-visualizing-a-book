@@ -72,51 +72,6 @@ export default {
            .on("mouseout", () => {
               tooltip.style("display", "none");
     });
-
-    // Add chapter separators
-    // var margin = {top:0 , right: 0, bottom: 0, left: 100},
-    //       width = 550 - margin.left - margin.right,
-    //       // eslint-disable-next-line no-unused-vars
-    //       height = 20 - margin.top - margin.bottom;
-    // const data = this.concatData(fakeChar)
-    // const legendChapters = ["1", "6", "11", "16", "21", "26", "31", "36", "38"]
-    // const isFirstSegment = (d) => {
-    //   const segmentsOfChapter = data.filter(item => item.Chapter === d.Chapter);
-    //   const firstSegmentOfChapter = segmentsOfChapter[0] 
-    //   return d.Segment === firstSegmentOfChapter.Segment;
-    // } 
-    // // eslint-disable-next-line no-unused-vars
-    // const countSegmentsOfChapter = (d) => {
-    //   return data.filter(item => item.Chapter === d.Chapter).length;
-    // }
-    // const nrSegmentsPerChapter = []
-    // for (const chapter in fakeChar){
-    //   nrSegmentsPerChapter.push(fakeChar[chapter].length)
-    // }
-    // var x = d3.scaleBand()
-    //     .range([20, width])
-    //     .domain(data.map(function (d) {
-    //       return d.Segment;
-    //     }))
-    //     .padding(0.4);
-    // d3.select("#barchart")
-    //   .append("svg")
-    //   .selectAll("chapter-line")
-    //   .data(data)
-    //   .enter()
-    //   .append("line")
-    //     .attr('x1', function(d) {
-    //         return legendChapters.includes(d.Chapter.slice(8)) && isFirstSegment(d) ? x(d.Segment) : "";} )
-    //     .attr('x2', function(d) {
-    //         return legendChapters.includes(d.Chapter.slice(8)) && isFirstSegment(d) ? x(d.Segment) : "";} )
-    //     .attr('y1', function(d) {
-    //         return legendChapters.includes(d.Chapter.slice(8)) && isFirstSegment(d) ? x(d.Segment) : "";} )
-    //     .attr('y2', function(d) {
-    //         return legendChapters.includes(d.Chapter.slice(8)) && isFirstSegment(d) ? x(d.Segment) + height*15 : "";} )
-    //     .attr('stroke', '#bdbdbd')
-    //     .attr('stroke-width', 1)
-    //     .style("position", "absolute")
-
   },
   methods: {
     concatData(data){

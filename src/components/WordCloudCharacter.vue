@@ -100,12 +100,7 @@ export default {
           color += letters[Math.floor(Math.random() * 16)];
         }
         return color;
-      }
-
-      // Use the same color as this character's node in node-link diagram
-      // const characterColor = this.characterKey.charColor;
-      // console.log(characterColor)
-      
+      }      
 // This function takes the output of 'layout' above and draw the words
 // Wordcloud features that are THE SAME from one word to the other can be here
       function draw(words) {

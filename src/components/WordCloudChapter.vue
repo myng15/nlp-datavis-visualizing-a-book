@@ -52,7 +52,6 @@
 
 import * as d3 from "d3";
 import data from "@/data/wordcloud/top_words_whole_book.json";
-// eslint-disable-next-line no-unused-vars
 import termsData from "@/data/bubblechart/top_terms_arr_per_topic_7.json";
 import cloud from "d3-cloud"
 
@@ -103,7 +102,6 @@ export default {
           .append("div")
           .attr("id", "other-chapters")
           .html(`This chapter has the same dominant topic <strong><em>(${this.topicNames[topic]})</em></strong> as chapters: ${otherChaptersOfTopic}`);
-        // console.log(this.topicNames[topic])
         this.init(this.chapterKey);
       }
     }
@@ -115,7 +113,6 @@ export default {
     onChange() {
       this.$emit("changeChapter", this.chapterKey)
 
-      // Force a change of topic when Entire Book is selected, otherwise topicKey won't be changed (because Entire Book has no topic) and effects in topicKey's watcher won't respond
       if(this.chapterKey === "0") {
           this.$emit("changeTopicFromWordCloud", "0")
         }
@@ -148,10 +145,10 @@ export default {
       var wordSizes = myWords.map(d => d[1]);
       var colorScaleEntireBook = d3.scaleSequential()
                      .domain(d3.extent(wordSizes))
-                     .interpolator(d3.interpolate("#79857f", "#202321")); //#9ca5a1,#8a9691
+                     .interpolator(d3.interpolate("#79857f", "#202321")); 
       var colorScaleChapters = d3.scaleSequential()
                      .domain(d3.extent(wordSizes))
-                     .interpolator(d3.interpolate("#939d98", "#202321")); //#bbc1be,#7d8983
+                     .interpolator(d3.interpolate("#939d98", "#202321")); 
 
 // append the svg object to the body of the page
       var svg = d3.select("#wordcloud").append("svg")
@@ -216,7 +213,7 @@ export default {
             })
             .attr("fill", function (d) {
               return key === "0" ? colorScaleEntireBook(d.count) : colorScaleChapters(d.count);
-            }) //#96949E
+            }) 
             .attr("text-anchor", "middle")
             .style("font-family", "Impact")
             .style("margin", 0)

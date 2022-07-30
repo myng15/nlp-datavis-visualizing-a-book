@@ -1,21 +1,5 @@
 <template>
-  <div id="bubble-chart-legends">
-    <!-- //For adding topic legends:
-    <ul id="bubble-legends">
-      <li
-          v-for="(input, index) in legend_class"
-          :key="`input-${index}`"
-      >
-        <div id="legendElementWrapper"
-        >
-          <svg id="rectLegend" width="15" height="15">
-            <rect id="rectLegend2" width="15" height="15"/>
-          </svg>
-          {{ input }}
-        </div>
-      </li>
-    </ul> -->
-  </div>
+  <div id="bubble-chart-legends"></div>
 </template>
 
 <script>
@@ -35,32 +19,14 @@ export default {
       key_r: "count"
     }
   },
-  created: function() {
-    // For adding topic legends:
-    // const topicNames = {
-    //   1: "Friends & love", 
-    //   2:"School activities", 
-    //   3: "Fashion & shows", 
-    //   4: "Anne's emotional world", 
-    //   5: "Life at Green Gables", 
-    //   6: "Incidents with the Barrys", 
-    //   7: "Mistakes & apologies"
-    // }
-    // this.legend_class = this.data_chart.map(a => topicNames[this.data_chart.indexOf(a)+1])
-  },
   mounted: function() {
-    // Add topic legends
-    // const colorScale = d3.scaleOrdinal(d3.schemeTableau10).domain(this.data_chart);
-    // d3.selectAll("#legendElementWrapper").select("svg").select("rect").data(this.data_chart).style("fill", function(d) {return colorScale(d);})
-
     // Add word count legends
     const svg = d3.select("#bubble-chart-legends")
       .append("svg")
       .attr("width", (this.width))
       .attr("height", (this.height))
       .attr("transform", "translate(" + this.settings.width*1.22 + "," + + (this.settings.height - this.settings.margin.top - this.settings.margin.bottom - 20) + ")");
-      // .attr("transform", "translate(" + this.settings.margin.left*-.8 + "," + + (this.settings.height - this.settings.margin.top - this.settings.margin.bottom - 20) + ")");
-
+  
     const rScale = d3.scaleLinear()
         .range([15,25])
         .domain(this.key_dom(this.key_r))  

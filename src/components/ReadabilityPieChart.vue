@@ -59,7 +59,7 @@ export default {
           .append("g")
           .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-// Create dummy data
+// Create data
       var data = {a: 8, b: 5}
 
 // set the color scale

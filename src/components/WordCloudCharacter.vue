@@ -16,7 +16,6 @@ export default {
   },
   components: {},
   mounted() {
-    // this.init();
   },
   /* eslint-disable */
   watch: {

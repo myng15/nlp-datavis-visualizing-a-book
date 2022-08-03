@@ -26,18 +26,6 @@ export default {
     },
   data: function() {
     return {
-      // settings: {
-      //   margin: { 
-      //     top: 20, 
-      //     right: 40, 
-      //     bottom: 60, 
-      //     left: 80
-      //   },
-      // width: 400,
-      // height: 267,
-      // opacityCircles: 0.9,
-      // // colorScale: d3.scaleOrdinal(d3.schemeSet2).domain(chartData)
-      // },
       svgContainer: Object,
       chartWrapper: Object,
       key_x: "x", //x-coordinate of bubble
@@ -97,12 +85,8 @@ export default {
     },
     init() {
     this.svgContainer = d3
-      // .select("#bubble-chart")
-      // .append("svg")
       .select("#bubble-chart-svg")
       .attr("viewBox", `-${this.settings.width/2} -${this.settings.height/2} ${this.settings.width} ${this.settings.height}`)
-      // .attr("width", (this.settings.width + this.settings.margin.left + this.settings.margin.right + 50))
-      // .attr("height", (this.settings.height + this.settings.margin.top + this.settings.margin.bottom))
       .style("border-bottom", "1px solid #18A999")
       .style("border-left", "1px solid #18A999")
       .style("margin", "30px")
@@ -153,7 +137,6 @@ export default {
                 .attr("cy", function(d) {return yScale(d.y);})
                 .attr("r", function(d) {return rScale(d.count)})
                 .style("opacity", this.settings.opacityCircles)
-                // .style("fill", function(d) {return colorScale(d);})
                 .style("fill", "#bbc1be")
                 .style("stroke", "white")
                 .attr("stroke-width", 2)

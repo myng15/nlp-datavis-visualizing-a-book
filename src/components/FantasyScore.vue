@@ -59,7 +59,7 @@ export default {
           .append("g")
           .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-// Create dummy data
+// Create data
       var data = {a: 0, b: 2}
 
 // set the color scale
@@ -110,7 +110,6 @@ export default {
             .style("left", e.pageX + "px")
             .style("top", (e.pageY + 15) + "px")
             .attr('text-anchor', 'middle')
-            // .style("position", "absolute")
             .style("display", "block")
             .style("background", "white")
             .style("box-shadow", "3px 3px 10px rgba(0, 0, 0, 0.4)")

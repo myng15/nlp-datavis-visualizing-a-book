@@ -88,7 +88,6 @@ export default {
           .attr("stroke", function (d) {
             return d.color;
           })
-      //.attr("stroke-width", strokeWidth);//Define a scale for stroke width or stroke opacity!
 
       let node = svg.append("g")
           .attr("class", "nodes")
@@ -115,10 +114,6 @@ export default {
           .style("font-size", "12px")
           .on("click", (event, d) => this.onChange(event, d.name, d.color))
 
-      // node.append("title")
-      //     .text(function (d) {
-      //       return d.name + ' occurred ' +d.size + " times in the book"
-      //     });
 
       //Add network tooltips
     const tooltip = d3.select('#network').append("div")
@@ -271,10 +266,6 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
-
-/* #network {
-  font-family: 'PT Sans', sans-serif;
-} */
 
 #network > svg {
   margin: 20px;

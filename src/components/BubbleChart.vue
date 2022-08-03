@@ -57,15 +57,6 @@ export default {
     that.data = Object.values(data)
     this.data_chart = this.data
   },
-  // watch: {
-  //   chapterKey: {
-  //     deep: true,
-  //     handler() {
-  //       console.log(this.chapterKey)
-  //       // const topTermsArray = termsData[this.data_chart.indexOf(d)].terms.slice(0, 10);
-  //     }
-  //   }
-  // },
    
   methods: {
     topicChange(event){

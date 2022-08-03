@@ -153,16 +153,6 @@ export default {
 
 // Add chapter number tags on top
       if(name === "Chapter") {
-        // Add Chapter legend using d3.axisTop
-        // const domain = legendChapters.map(d => {return x(fakeChar[parseInt(d)].Segment) + x.bandwidth()*nrSegmentsPerChapter[0] - x.bandwidth()});
-        // const domain = nrSegmentsPerChapter.map(chapter => {return x.bandwidth()*chapter})
-        // const legendXScale = d3.scaleLinear()
-        //                     .range([20, width])
-        //                     .domain(d3.extent(domain))
-        // svg.append('g').attr('transform', 'translate(0,' + height + ')')
-        //                .call(d3.axisTop(legendXScale).tickValues(domain).tickFormat(function(d,i){ return legendChapters[i]}));
-        
-      
       const legendChapters = ["1", "6", "11", "16", "21", "26", "31", "36", "38"]
       const isFirstSegment = (d) => {
         const segmentsOfChapter = data.filter(item => item.Chapter === d.Chapter);
@@ -191,7 +181,6 @@ export default {
           .style("font-size", "12px")
           .attr("x", function(d) {
               return x(d.Segment);
-              // return x(d.Segment) + x.bandwidth()*countSegmentsOfChapter(d) + x.bandwidth();
           })
           .attr("y", function(d) {
               return height - y(d.Value) - 2;

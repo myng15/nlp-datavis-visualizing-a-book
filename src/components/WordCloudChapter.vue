@@ -1,6 +1,5 @@
 <template>
   <div id="wordcloud">
-    <!-- <h3>Most frequent words per chapter</h3> -->
     <div id="wordcloud-wrapper"><span id="chapter-wc-title">Most Frequent Words (N-grams):</span> {{ selected }}
       <select name="selected" @change="onChange($event)" v-model="chapterKey">
         <option disabled value="">Select a chapter</option>
@@ -154,11 +153,6 @@ export default {
       var svg = d3.select("#wordcloud").append("svg")
           .attr("width", width + margin.left + margin.right)
           .attr("height", height + margin.top + margin.bottom)
-          //Redundant:
-          // .append("g")
-          // .attr("transform",
-          //     "translate(" + margin.left + "," + margin.top + ")");
-
 
       //Getting min and max value of wordsize
       var minValue = Math.min(...myWords.map(d => d[1]))
@@ -166,7 +160,6 @@ export default {
       var maxValue = Math.max(...myWords.map(d => d[1]))
       
       //scale for adjusting word size
-
       // eslint-disable-next-line no-unused-vars
       var fontSizeEntireBook = d3.scaleLog()
           .domain([minValue, maxValue])

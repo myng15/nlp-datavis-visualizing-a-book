@@ -15,7 +15,7 @@ The app was created within the project module ***VIS-Proj-M: Visualizing a Book*
 
 - **Semantic Topic Analysis:** Generated and visualized topics and their semantic distances using Latent Dirichlet Allocation, TF-IDF, and dimensionality reduction.
 
-- **Interactive Visualization Dashboard:** Designed and developed a dynamic web dashboard featuring word clouds, topic maps, character networks, and sentiment-over-time charts, which can interact with each other.
+- **Interactive Visualization Dashboard:** Designed and developed a dynamic web dashboard featuring word clouds, topic maps, character networks, and sentiment-over-time charts. Some of these visualizations can interact with each other upon clicking on certain visual components.
 
 
 ## Visual Analysis Features
